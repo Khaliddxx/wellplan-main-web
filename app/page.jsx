@@ -9,6 +9,7 @@ import ComparisonMatrix from './components/ComparisonMatrix';
 import TestimonialCarousel from './components/TestimonialCarousel';
 import ScrollWithinStatic from './components/ScrollWithinStatic';
 import AnimatedMetrics from './components/AnimatedMetrics';
+import FinalCTA from './components/FinalCTA';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -164,7 +165,10 @@ export default function Home() {
       {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* CTA Section */}
+      {/* Final CTA with gradient mesh */}
+      <FinalCTA />
+
+      {/* Legacy CTA Section */}
       <CTASection />
     </div>
   );
