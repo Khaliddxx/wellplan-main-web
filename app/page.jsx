@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import IconCarousel from './components/IconCarousel';
 import FeatureShowcase from './components/FeatureShowcase';
+import ComparisonMatrix from './components/ComparisonMatrix';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -141,6 +142,9 @@ export default function Home() {
 
       {/* Feature Showcase with Graphics */}
       <FeatureShowcase />
+
+      {/* Comparison Matrix */}
+      <ComparisonMatrix />
 
       {/* Case Studies */}
       <CaseStudiesSection />
