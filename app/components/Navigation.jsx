@@ -138,15 +138,15 @@ export default function Navigation() {
                   <ChevronDown size={16} className="group-hover:rotate-180 transition duration-300" />
                 </button>
 
-                {/* Megamenu - Within Navbar Width */}
+                {/* Megamenu - Full Page Width */}
                 {activeDropdown === menu && (
-                  <div className="absolute left-0 right-0 -mx-6 top-full pt-0 bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl">
-                    <div className="px-6 py-16">
-                      <div className="grid grid-cols-3 gap-16">
+                  <div className="fixed left-0 right-0 top-full pt-0 w-screen bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl" onMouseEnter={() => setActiveDropdown(menu)} onMouseLeave={() => setActiveDropdown(null)}>
+                    <div className="max-w-7xl mx-auto px-6 py-24">
+                      <div className="grid grid-cols-3 gap-20">
                         {/* Feature Cards */}
                         <div className="col-span-2">
-                          <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-8">Features</h4>
-                          <div className="grid grid-cols-2 gap-8">
+                          <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-10">Features</h4>
+                          <div className="grid grid-cols-2 gap-10">
                             {menus[menu].features.map((feature, idx) => (
                               <Link
                                 key={idx}
@@ -167,8 +167,8 @@ export default function Navigation() {
 
                         {/* Connections Sidebar */}
                         <div>
-                          <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-8">Integrations</h4>
-                          <div className="space-y-5 mb-8">
+                          <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-10">Integrations</h4>
+                          <div className="space-y-6 mb-10">
                             {menus[menu].connections.map((conn, idx) => (
                               <div key={idx} className="flex items-center gap-4 p-4 rounded-lg hover:bg-slate-800/50 transition cursor-pointer">
                                 <div className={`w-12 h-12 rounded-lg ${conn.color} flex items-center justify-center text-xl flex-shrink-0`}>
