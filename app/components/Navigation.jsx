@@ -133,32 +133,34 @@ export default function Navigation() {
 
                 {/* Megamenu */}
                 {activeDropdown === menu && (
-                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 pointer-events-auto">
-                    <div className={`${menus[menu].width} bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl p-8`}>
-                      <div className="grid grid-cols-3 gap-12">
-                        {menus[menu].sections.map((section, idx) => (
-                          <div key={idx}>
-                            <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6 opacity-80">
-                              {section.title}
-                            </h4>
-                            <div className="space-y-4">
-                              {section.items.map((item, itemIdx) => (
-                                <Link
-                                  key={itemIdx}
-                                  href={item.href}
-                                  className="block hover:translate-x-1 transition"
-                                >
-                                  <p className="font-semibold text-gray-100 hover:text-blue-400 transition">
-                                    {item.name}
-                                  </p>
-                                  <p className="text-sm text-gray-500 hover:text-gray-400 transition">
-                                    {item.desc}
-                                  </p>
-                                </Link>
-                              ))}
+                  <div className="absolute left-0 right-0 top-full pt-0 pointer-events-auto w-screen">
+                    <div className="w-full bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/50 shadow-2xl p-8">
+                      <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-3 gap-12">
+                          {menus[menu].sections.map((section, idx) => (
+                            <div key={idx}>
+                              <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6 opacity-80">
+                                {section.title}
+                              </h4>
+                              <div className="space-y-4">
+                                {section.items.map((item, itemIdx) => (
+                                  <Link
+                                    key={itemIdx}
+                                    href={item.href}
+                                    className="block hover:translate-x-1 transition"
+                                  >
+                                    <p className="font-semibold text-gray-100 hover:text-blue-400 transition">
+                                      {item.name}
+                                    </p>
+                                    <p className="text-sm text-gray-500 hover:text-gray-400 transition">
+                                      {item.desc}
+                                    </p>
+                                  </Link>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
