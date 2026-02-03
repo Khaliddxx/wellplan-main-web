@@ -7,6 +7,7 @@ import IconCarousel from './components/IconCarousel';
 import FeatureShowcase from './components/FeatureShowcase';
 import ComparisonMatrix from './components/ComparisonMatrix';
 import TestimonialCarousel from './components/TestimonialCarousel';
+import ScrollWithinStatic from './components/ScrollWithinStatic';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -149,6 +150,9 @@ export default function Home() {
 
       {/* Testimonial Carousel */}
       <TestimonialCarousel />
+
+      {/* Scroll Within Static */}
+      <ScrollWithinStatic />
 
       {/* Case Studies */}
       <CaseStudiesSection />
