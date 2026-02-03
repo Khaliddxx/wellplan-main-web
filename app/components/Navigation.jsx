@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const closeTimeoutRef = useRef(null);
 
   // Megamenu data - WellPlan focused
   const menus = {
@@ -130,8 +131,15 @@ export default function Navigation() {
               <div
                 key={menu}
                 className="relative group"
-                onMouseEnter={() => setActiveDropdown(menu)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => {
+                  clearTimeout(closeTimeoutRef.current);
+                  setActiveDropdown(menu);
+                }}
+                onMouseLeave={() => {
+                  closeTimeoutRef.current = setTimeout(() => {
+                    setActiveDropdown(null);
+                  }, 200);
+                }}
               >
                 <button className="flex items-center gap-2 text-gray-300 font-medium hover:text-white transition py-2">
                   {menu}
@@ -140,7 +148,14 @@ export default function Navigation() {
 
                 {/* Megamenu - Full Page Width */}
                 {activeDropdown === menu && (
-                  <div className="fixed left-0 right-0 top-full pt-0 w-screen bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl" onMouseEnter={() => setActiveDropdown(menu)} onMouseLeave={() => setActiveDropdown(null)}>
+                  <div className="fixed left-0 right-0 top-full pt-0 w-screen bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl" onMouseEnter={() => {
+                    clearTimeout(closeTimeoutRef.current);
+                    setActiveDropdown(menu);
+                  }} onMouseLeave={() => {
+                    closeTimeoutRef.current = setTimeout(() => {
+                      setActiveDropdown(null);
+                    }, 200);
+                  }}>
                     <div className="max-w-7xl mx-auto px-6 py-24">
                       <div className="grid grid-cols-3 gap-20">
                         {/* Feature Cards */}
