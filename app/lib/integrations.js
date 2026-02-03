@@ -1,0 +1,18 @@
+export const integrations = [
+  { name: 'HubSpot', category: 'CRM', icon: '🎯', color: 'bg-orange-500' },
+  { name: 'Salesforce', category: 'CRM', icon: '☁️', color: 'bg-blue-600' },
+  { name: 'Slack', category: 'Team', icon: '💬', color: 'bg-purple-500' },
+  { name: 'Gmail', category: 'Email', icon: '✉️', color: 'bg-red-500' },
+  { name: 'WhatsApp', category: 'Messaging', icon: '📱', color: 'bg-green-500' },
+  { name: 'Facebook', category: 'Social', icon: '👥', color: 'bg-blue-600' },
+  { name: 'Instagram', category: 'Social', icon: '📸', color: 'bg-pink-500' },
+  { name: 'LinkedIn', category: 'Social', icon: '💼', color: 'bg-blue-700' },
+  { name: 'Zapier', category: 'Automation', icon: '⚡', color: 'bg-orange-600' },
+  { name: 'Stripe', category: 'Payments', icon: '💳', color: 'bg-blue-600' },
+  { name: 'Shopify', category: 'E-Commerce', icon: '🛒', color: 'bg-green-600' },
+  { name: 'Google Sheets', category: 'Productivity', icon: '📊', color: 'bg-green-500' },
+  { name: 'Twilio', category: 'SMS', icon: '☎️', color: 'bg-red-600' },
+  { name: 'SendGrid', category: 'Email', icon: '📧', color: 'bg-blue-500' },
+  { name: 'Webhooks', category: 'Custom', icon: '🔌', color: 'bg-slate-600' },
+  { name: 'REST API', category: 'Custom', icon: '⚙️', color: 'bg-slate-700' },
+];
