@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ChevronDown, Zap, Users, BarChart3, Shield, Inbox, Automation } from 'lucide-react';
+import { ChevronDown, Zap, Users, BarChart3, Shield, Inbox, Workflow } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Navigation() {
           title: 'FEATURES',
           items: [
             { icon: Inbox, label: 'Lead Capture', desc: 'Multi-channel lead forms' },
-            { icon: Automation, label: 'Lead Nurture', desc: 'Automated email sequences' },
+            { icon: Workflow, label: 'Lead Nurture', desc: 'Automated email sequences' },
             { icon: Zap, label: 'Lead Close', desc: 'Sales acceleration tools' },
             { icon: BarChart3, label: 'Analytics', desc: 'Real-time conversion tracking' },
             { icon: Shield, label: 'Security', desc: 'Enterprise-grade protection' },
