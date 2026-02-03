@@ -1,35 +1,24 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 export default function IconCarousel() {
   const integrations = [
-    { name: 'Zapier', icon: '⚡' },
-    { name: 'HubSpot', icon: '🔗' },
-    { name: 'Salesforce', icon: '☁️' },
-    { name: 'Slack', icon: '💬' },
-    { name: 'Gmail', icon: '✉️' },
-    { name: 'WhatsApp', icon: '📱' },
-    { name: 'Facebook', icon: '👥' },
-    { name: 'Instagram', icon: '📸' },
-    { name: 'LinkedIn', icon: '💼' },
-    { name: 'Google Sheets', icon: '📊' },
-    { name: 'Stripe', icon: '💳' },
-    { name: 'Shopify', icon: '🛒' },
-    { name: 'Twilio', icon: '☎️' },
-    { name: 'SendGrid', icon: '📧' },
-    { name: 'Mailchimp', icon: '🐒' },
-    { name: 'Calendly', icon: '📅' },
+    { name: 'Zapier', color: 'from-orange-400 to-orange-500' },
+    { name: 'HubSpot', color: 'from-orange-500 to-orange-600' },
+    { name: 'Salesforce', color: 'from-blue-600 to-blue-700' },
+    { name: 'Slack', color: 'from-purple-400 to-purple-500' },
+    { name: 'Gmail', color: 'from-red-500 to-red-600' },
+    { name: 'WhatsApp', color: 'from-green-500 to-green-600' },
+    { name: 'Facebook', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', color: 'from-pink-500 to-orange-500' },
+    { name: 'LinkedIn', color: 'from-blue-700 to-blue-800' },
+    { name: 'Google Sheets', color: 'from-green-600 to-green-700' },
+    { name: 'Stripe', color: 'from-blue-600 to-blue-700' },
+    { name: 'Shopify', color: 'from-green-600 to-green-700' },
+    { name: 'Twilio', color: 'from-red-600 to-red-700' },
+    { name: 'SendGrid', color: 'from-blue-600 to-blue-700' },
+    { name: 'Mailchimp', color: 'from-yellow-500 to-orange-500' },
+    { name: 'Calendly', color: 'from-blue-500 to-blue-600' },
   ];
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setScrollPosition((prev) => (prev + 1) % (integrations.length * 100));
-    }, 50);
-    return () => clearInterval(interval);
-  }, [integrations.length]);
 
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-slate-950 to-slate-900/50 overflow-hidden">
@@ -59,8 +48,9 @@ export default function IconCarousel() {
                 key={`first-${idx}`}
                 className="flex-shrink-0 w-32 h-32 bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center gap-3 hover:border-blue-500/50 hover:bg-slate-800/50 transition-all duration-300 cursor-pointer group"
               >
-                <div className="text-5xl group-hover:scale-110 transition-transform">
-                  {integration.icon}
+                {/* Colored badge with first letter */}
+                <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${integration.color} flex items-center justify-center text-2xl font-black text-white group-hover:scale-110 transition-transform shadow-lg`}>
+                  {integration.name.charAt(0)}
                 </div>
                 <p className="text-sm font-semibold text-gray-300 text-center group-hover:text-blue-400 transition">
                   {integration.name}
@@ -74,8 +64,9 @@ export default function IconCarousel() {
                 key={`second-${idx}`}
                 className="flex-shrink-0 w-32 h-32 bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl border border-slate-700/50 flex flex-col items-center justify-center gap-3 hover:border-blue-500/50 hover:bg-slate-800/50 transition-all duration-300 cursor-pointer group"
               >
-                <div className="text-5xl group-hover:scale-110 transition-transform">
-                  {integration.icon}
+                {/* Colored badge with first letter */}
+                <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${integration.color} flex items-center justify-center text-2xl font-black text-white group-hover:scale-110 transition-transform shadow-lg`}>
+                  {integration.name.charAt(0)}
                 </div>
                 <p className="text-sm font-semibold text-gray-300 text-center group-hover:text-blue-400 transition">
                   {integration.name}
