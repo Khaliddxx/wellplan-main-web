@@ -1,6 +1,10 @@
-'use client';
-
 import { siteData } from '../../lib/data';
+
+export async function generateStaticParams() {
+  return siteData.objectives.map((obj) => ({
+    slug: obj.slug,
+  }));
+}
 
 export default function ObjectivePage({ params }) {
   const objective = siteData.objectives.find(o => o.slug === params.slug);
@@ -103,10 +107,4 @@ export default function ObjectivePage({ params }) {
       </section>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return siteData.objectives.map((obj) => ({
-    slug: obj.slug,
-  }));
 }
