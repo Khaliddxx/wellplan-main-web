@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import IconCarousel from './components/IconCarousel';
+import FeatureShowcase from './components/FeatureShowcase';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -137,6 +138,9 @@ export default function Home() {
 
       {/* Icon Carousel */}
       <IconCarousel />
+
+      {/* Feature Showcase with Graphics */}
+      <FeatureShowcase />
 
       {/* Case Studies */}
       <CaseStudiesSection />
