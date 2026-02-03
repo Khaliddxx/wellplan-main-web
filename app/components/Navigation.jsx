@@ -146,9 +146,9 @@ export default function Navigation() {
                   <ChevronDown size={16} className="group-hover:rotate-180 transition duration-300" />
                 </button>
 
-                {/* Megamenu - Absolute positioning, not full screen */}
+                {/* Megamenu - Fixed positioning, respects viewport */}
                 {activeDropdown === menu && (
-                  <div className="absolute left-0 right-0 top-full pt-2 bg-slate-950 backdrop-blur-2xl border border-slate-700 shadow-2xl rounded-b-2xl" style={{ minWidth: '900px', maxHeight: '500px', overflowY: 'auto' }} onMouseEnter={() => {
+                  <div className="fixed left-0 right-0 top-[73px] bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl" style={{ maxHeight: 'calc(100vh - 73px)', overflowY: 'auto' }} onMouseEnter={() => {
                     clearTimeout(closeTimeoutRef.current);
                     setActiveDropdown(menu);
                   }} onMouseLeave={() => {
