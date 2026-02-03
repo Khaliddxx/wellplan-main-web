@@ -9,7 +9,7 @@ export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const closeTimeoutRef = useRef(null);
 
-  // Megamenu data - WellPlan focused
+  // Megamenu data - WellPlan focused with real links
   const menus = {
     Product: {
       features: [
@@ -17,32 +17,32 @@ export default function Navigation() {
           title: 'Shared Team Inbox',
           desc: 'Centralize chats across channels',
           icon: '📥',
-          href: '#',
+          href: '/integrations',
         },
         {
           title: 'AI Lead Bot',
           desc: 'Automated lead qualification',
           icon: '🤖',
-          href: '#',
+          href: '/case-studies',
         },
         {
           title: 'Broadcast Campaigns',
           desc: 'Bulk messaging at scale',
           icon: '📢',
-          href: '#',
+          href: '/case-studies',
         },
         {
           title: 'CRM & Integrations',
           desc: 'Sync with HubSpot, Salesforce',
           icon: '🔗',
-          href: '#',
+          href: '/integrations',
         },
       ],
       connections: [
-        { name: 'WhatsApp', icon: '💬', color: 'bg-green-500' },
-        { name: 'Instagram', icon: '📸', color: 'bg-pink-500' },
-        { name: 'Facebook', icon: '👥', color: 'bg-blue-600' },
-        { name: 'SMS/Twilio', icon: '📱', color: 'bg-red-500' },
+        { name: 'WhatsApp', icon: '💬', color: 'bg-green-500', href: '/integrations' },
+        { name: 'Instagram', icon: '📸', color: 'bg-pink-500', href: '/integrations' },
+        { name: 'Facebook', icon: '👥', color: 'bg-blue-600', href: '/integrations' },
+        { name: 'SMS/Twilio', icon: '📱', color: 'bg-red-500', href: '/integrations' },
       ],
     },
     Solutions: {
@@ -51,66 +51,66 @@ export default function Navigation() {
           title: 'Lead Generation',
           desc: 'Capture high-quality leads',
           icon: '🎯',
-          href: '#',
+          href: '/industries',
         },
         {
           title: 'Customer Support',
           desc: '24/7 automated support',
           icon: '🆘',
-          href: '#',
+          href: '/case-studies',
         },
         {
           title: 'Sales Engagement',
           desc: 'Multi-channel sales outreach',
           icon: '📞',
-          href: '#',
+          href: '/case-studies',
         },
         {
           title: 'Appointment Booking',
           desc: 'Automated scheduling',
           icon: '📅',
-          href: '#',
+          href: '/case-studies',
         },
       ],
       connections: [
-        { name: 'HubSpot', icon: '🎯', color: 'bg-orange-500' },
-        { name: 'Zapier', icon: '⚡', color: 'bg-orange-600' },
-        { name: 'Webhooks', icon: '🔌', color: 'bg-blue-500' },
-        { name: 'Custom API', icon: '⚙️', color: 'bg-slate-600' },
+        { name: 'For Agencies', icon: '🏢', color: 'bg-orange-500', href: '/industries/agencies' },
+        { name: 'For SaaS', icon: '☁️', color: 'bg-blue-600', href: '/industries/saas' },
+        { name: 'For E-Commerce', icon: '🛒', color: 'bg-green-500', href: '/industries/ecommerce' },
+        { name: 'For Real Estate', icon: '🏠', color: 'bg-slate-600', href: '/industries/real-estate' },
       ],
     },
     Resources: {
       features: [
         {
-          title: 'API Docs',
-          desc: 'Complete developer guide',
-          icon: '📚',
-          href: '#',
-        },
-        {
           title: 'Case Studies',
           desc: 'Real results from customers',
           icon: '📊',
-          href: '#',
+          href: '/case-studies',
         },
         {
-          title: 'Academy',
-          desc: 'Free certification courses',
-          icon: '🎓',
-          href: '#',
+          title: 'Integrations',
+          desc: '200+ tool connections',
+          icon: '🔗',
+          href: '/integrations',
         },
         {
-          title: 'Community',
-          desc: 'Connect with other users',
-          icon: '👥',
-          href: '#',
+          title: 'Industries',
+          desc: 'Solutions by industry',
+          icon: '🏢',
+          href: '/industries',
+        },
+        {
+          title: 'Pricing',
+          desc: 'Simple, transparent pricing',
+          icon: '💰',
+          href: '/pricing',
         },
       ],
       connections: [
-        { name: 'Help Center', icon: '❓', color: 'bg-blue-500' },
-        { name: 'Status Page', icon: '✅', color: 'bg-green-500' },
-        { name: 'Contact Sales', icon: '📞', color: 'bg-purple-500' },
-        { name: 'Roadmap', icon: '🗺️', color: 'bg-orange-500' },
+        { name: 'Help Center', icon: '❓', color: 'bg-blue-500', href: '#' },
+        { name: 'Status Page', icon: '✅', color: 'bg-green-500', href: '#' },
+        { name: 'Contact Sales', icon: '📞', color: 'bg-purple-500', href: '#' },
+        { name: 'Roadmap', icon: '🗺️', color: 'bg-orange-500', href: '#' },
       ],
     },
   };
@@ -185,15 +185,15 @@ export default function Navigation() {
                           <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-10">Integrations</h4>
                           <div className="space-y-6 mb-10">
                             {menus[menu].connections.map((conn, idx) => (
-                              <div key={idx} className="flex items-center gap-4 p-4 rounded-lg hover:bg-slate-800/50 transition cursor-pointer">
+                              <Link key={idx} href={conn.href} className="flex items-center gap-4 p-4 rounded-lg hover:bg-slate-800/50 transition cursor-pointer">
                                 <div className={`w-12 h-12 rounded-lg ${conn.color} flex items-center justify-center text-xl flex-shrink-0`}>
                                   {conn.icon}
                                 </div>
                                 <div>
                                   <p className="font-semibold text-white text-sm">{conn.name}</p>
-                                  <p className="text-xs text-gray-500">Connect now</p>
+                                  <p className="text-xs text-gray-500">Learn more</p>
                                 </div>
-                              </div>
+                              </Link>
                             ))}
                           </div>
                           <button className="w-full px-4 py-2 text-sm text-blue-400 hover:text-blue-300 font-semibold">
