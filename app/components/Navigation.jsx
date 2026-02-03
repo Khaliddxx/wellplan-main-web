@@ -2,162 +2,163 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ChevronDown, Zap, Users, BarChart3, Shield, Inbox, Workflow } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const megamenus = {
+  // Megamenu data
+  const menus = {
     Product: {
-      columns: [
+      sections: [
         {
-          title: 'FEATURES',
+          title: 'Features',
           items: [
-            { icon: Inbox, label: 'Lead Capture', desc: 'Multi-channel lead forms' },
-            { icon: Workflow, label: 'Lead Nurture', desc: 'Automated email sequences' },
-            { icon: Zap, label: 'Lead Close', desc: 'Sales acceleration tools' },
-            { icon: BarChart3, label: 'Analytics', desc: 'Real-time conversion tracking' },
-            { icon: Shield, label: 'Security', desc: 'Enterprise-grade protection' },
-          ],
+            { name: 'Lead Capture', href: '/features#capture', desc: 'Multi-channel forms & landing pages' },
+            { name: 'Lead Nurture', href: '/features#nurture', desc: 'Automated email & SMS sequences' },
+            { name: 'Lead Close', href: '/features#close', desc: 'Sales acceleration & CRM integration' },
+            { name: 'Analytics', href: '/features#analytics', desc: 'Real-time conversion tracking' },
+          ]
         },
         {
-          title: 'INTEGRATIONS',
+          title: 'By Use Case',
           items: [
-            { icon: null, label: 'Zapier', desc: '1000+ app connections' },
-            { icon: null, label: 'Webhooks', desc: 'Custom API integration' },
-            { icon: null, label: 'CRM Sync', desc: 'HubSpot, Salesforce, more' },
-            { icon: null, label: 'Email', desc: 'Gmail, Outlook integration' },
-          ],
+            { name: 'Lead Generation', href: '/solutions#generation', desc: 'High-volume lead capture' },
+            { name: 'Appointment Booking', href: '/solutions#booking', desc: 'Automated scheduling' },
+            { name: 'E-commerce', href: '/solutions#ecommerce', desc: 'Product inquiries & sales' },
+            { name: 'Real Estate', href: '/solutions#realestate', desc: 'Property lead management' },
+          ]
         },
+        {
+          title: 'Resources',
+          items: [
+            { name: 'API Docs', href: '/docs/api', desc: 'Complete API reference' },
+            { name: 'Integrations', href: '/integrations', desc: '200+ app connections' },
+            { name: 'Webhooks', href: '/docs/webhooks', desc: 'Custom integrations' },
+            { name: 'Templates', href: '/templates', desc: 'Ready-to-use flows' },
+          ]
+        }
       ],
-      preview: {
-        title: 'PRODUCT OVERVIEW',
-        description: 'All-in-one platform for lead capture, nurturing, and closing',
-        cta: 'Take a Product Tour',
-      },
+      width: 'w-screen max-w-6xl'
     },
     Solutions: {
-      columns: [
+      sections: [
         {
-          title: 'BY INDUSTRY',
+          title: 'By Industry',
           items: [
-            { icon: Users, label: 'Agencies', desc: 'Client lead management' },
-            { icon: Users, label: 'SaaS', desc: 'Enterprise B2B flows' },
-            { icon: Users, label: 'E-Commerce', desc: 'E-comm lead generation' },
-            { icon: Users, label: 'Real Estate', desc: 'Property inquiry handling' },
-          ],
+            { name: 'Agencies', href: '/industries/agencies', desc: 'Client lead management' },
+            { name: 'SaaS', href: '/industries/saas', desc: 'Enterprise B2B leads' },
+            { name: 'E-Commerce', href: '/industries/ecommerce', desc: 'Product-driven leads' },
+            { name: 'Services', href: '/industries/services', desc: 'Consultation bookings' },
+          ]
         },
         {
-          title: 'BY USE CASE',
+          title: 'Use Cases',
           items: [
-            { icon: null, label: 'Lead Generation', desc: 'Capture high-quality leads' },
-            { icon: null, label: 'Lead Scoring', desc: 'Prioritize hot prospects' },
-            { icon: null, label: 'Appointment Booking', desc: 'Automated scheduling' },
-            { icon: null, label: 'Webinar Registration', desc: 'Event lead capture' },
-          ],
+            { name: 'Lead Scoring', href: '/solutions#scoring', desc: 'AI-powered qualification' },
+            { name: 'Lead Distribution', href: '/solutions#distribution', desc: 'Smart assignment' },
+            { name: 'Lead Qualification', href: '/solutions#qualification', desc: 'Auto-qualification' },
+            { name: 'Lead Enrichment', href: '/solutions#enrichment', desc: 'Data completion' },
+          ]
         },
+        {
+          title: 'Popular',
+          items: [
+            { name: 'Competitors', href: '/compare', desc: 'vs HubSpot, Salesforce' },
+            { name: 'Case Studies', href: '/case-studies', desc: '3x lead growth stories' },
+            { name: 'ROI Calculator', href: '/roi', desc: 'Calculate your savings' },
+            { name: 'Demo', href: '/demo', desc: 'See it in action' },
+          ]
+        }
       ],
-      preview: {
-        title: 'PLATFORM OVERVIEW',
-        description: 'Purpose-built for your industry and use case',
-        cta: 'Explore Solutions',
-      },
+      width: 'w-screen max-w-6xl'
     },
     Resources: {
-      columns: [
+      sections: [
         {
-          title: 'LEARN',
+          title: 'Learn',
           items: [
-            { icon: null, label: 'Documentation', desc: 'Complete API docs' },
-            { icon: null, label: 'Guides', desc: 'Step-by-step tutorials' },
-            { icon: null, label: 'Blog', desc: 'Latest lead gen tips' },
-            { icon: null, label: 'Webinars', desc: 'Expert-led sessions' },
-          ],
+            { name: 'Documentation', href: '/docs', desc: 'Complete guides' },
+            { name: 'Blog', href: '/blog', desc: 'Lead gen tips & tricks' },
+            { name: 'Webinars', href: '/webinars', desc: 'Expert sessions' },
+            { name: 'Academy', href: '/academy', desc: 'Certification program' },
+          ]
         },
         {
-          title: 'COMPARE',
+          title: 'Support',
           items: [
-            { icon: null, label: 'vs Competitors', desc: 'Feature comparison' },
-            { icon: null, label: 'Case Studies', desc: '50% conversion increase' },
-            { icon: null, label: 'Pricing', desc: 'Transparent, no surprises' },
-            { icon: null, label: 'ROI Calculator', desc: 'See your savings' },
-          ],
+            { name: 'Help Center', href: '/help', desc: 'FAQs & troubleshooting' },
+            { name: 'Community', href: '/community', desc: 'User forum' },
+            { name: 'Contact Sales', href: '/sales', desc: 'Enterprise support' },
+            { name: 'Status', href: '/status', desc: 'System uptime' },
+          ]
         },
+        {
+          title: 'Company',
+          items: [
+            { name: 'About', href: '/about', desc: 'Our story' },
+            { name: 'Pricing', href: '/pricing', desc: 'Plans & pricing' },
+            { name: 'Partners', href: '/partners', desc: 'Partnership program' },
+            { name: 'Careers', href: '/careers', desc: 'Join our team' },
+          ]
+        }
       ],
-      preview: {
-        title: 'SUCCESS STORIES',
-        description: 'See how customers achieved 50%+ conversion increases',
-        cta: 'Read Case Studies',
-      },
-    },
+      width: 'w-screen max-w-6xl'
+    }
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-700/50">
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50">
+      <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <Link href="/" className="text-2xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition">
             WellPlan
           </Link>
 
-          {/* Menu Items */}
-          <div className="flex gap-8 items-center">
-            {Object.keys(megamenus).map((menu) => (
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-1">
+            {Object.keys(menus).map((menu) => (
               <div
                 key={menu}
-                className="relative"
-                onMouseEnter={() => setActiveMenu(menu)}
-                onMouseLeave={() => setActiveMenu(null)}
+                className="relative group"
+                onMouseEnter={() => setActiveDropdown(menu)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-gray-300 hover:text-blue-400 font-semibold transition py-2">
+                <button className="px-4 py-2 text-gray-300 font-medium hover:text-white hover:bg-slate-800/50 rounded-lg transition flex items-center gap-1">
                   {menu}
-                  <ChevronDown size={16} className={`transition ${activeMenu === menu ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={16} className="group-hover:rotate-180 transition duration-300" />
                 </button>
 
-                {/* Megamenu Dropdown */}
-                {activeMenu === menu && (
-                  <div className="absolute left-0 top-full pt-4 w-screen left-1/2 -translate-x-1/2">
-                    <div className="bg-slate-900/98 backdrop-blur-xl border border-slate-700/50 rounded-lg shadow-2xl">
-                      <div className="grid grid-cols-3 gap-8 p-8 max-w-6xl">
-                        {/* Columns */}
-                        {megamenus[menu].columns.map((col, idx) => (
+                {/* Megamenu */}
+                {activeDropdown === menu && (
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 pointer-events-auto">
+                    <div className={`${menus[menu].width} bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl p-8`}>
+                      <div className="grid grid-cols-3 gap-12">
+                        {menus[menu].sections.map((section, idx) => (
                           <div key={idx}>
-                            <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6">
-                              {col.title}
+                            <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6 opacity-80">
+                              {section.title}
                             </h4>
                             <div className="space-y-4">
-                              {col.items.map((item, itemIdx) => (
-                                <div key={itemIdx} className="cursor-pointer hover:translate-x-1 transition">
-                                  <div className="flex items-start gap-3">
-                                    {item.icon && <item.icon size={20} className="text-blue-400 mt-1 flex-shrink-0" />}
-                                    <div>
-                                      <p className="font-semibold text-gray-100">{item.label}</p>
-                                      <p className="text-sm text-gray-400">{item.desc}</p>
-                                    </div>
-                                  </div>
-                                </div>
+                              {section.items.map((item, itemIdx) => (
+                                <Link
+                                  key={itemIdx}
+                                  href={item.href}
+                                  className="block hover:translate-x-1 transition"
+                                >
+                                  <p className="font-semibold text-gray-100 hover:text-blue-400 transition">
+                                    {item.name}
+                                  </p>
+                                  <p className="text-sm text-gray-500 hover:text-gray-400 transition">
+                                    {item.desc}
+                                  </p>
+                                </Link>
                               ))}
                             </div>
                           </div>
                         ))}
-
-                        {/* Preview Panel */}
-                        <div className="col-span-1 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-6 flex flex-col justify-between h-80">
-                          <div>
-                            <h3 className="text-white font-bold text-lg mb-2">
-                              {megamenus[menu].preview.title}
-                            </h3>
-                            <p className="text-blue-100 text-sm">
-                              {megamenus[menu].preview.description}
-                            </p>
-                          </div>
-                          <button className="text-white font-bold hover:gap-2 transition flex items-center gap-1">
-                            {megamenus[menu].preview.cta} →
-                          </button>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -165,34 +166,25 @@ export default function Navigation() {
               </div>
             ))}
 
-            {/* Simple Top-Level Items */}
-            <Link href="/pricing" className="text-gray-300 hover:text-blue-400 font-semibold transition">
+            {/* Top-level items */}
+            <Link href="/pricing" className="px-4 py-2 text-gray-300 font-medium hover:text-white hover:bg-slate-800/50 rounded-lg transition">
               Pricing
-            </Link>
-            <Link href="/about" className="text-gray-300 hover:text-blue-400 font-semibold transition">
-              About
             </Link>
           </div>
 
-          {/* Right Side */}
-          <div className="flex gap-4 items-center">
-            <button className="text-gray-300 hover:text-white transition font-semibold">
+          {/* Right Side - Desktop */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button className="px-4 py-2 text-gray-300 font-medium hover:text-white transition">
               Sign In
             </button>
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-bold hover:shadow-lg hover:shadow-blue-500/50 transition">
+            <button className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-blue-500/50 hover:from-blue-400 hover:to-blue-500 transition">
               Get Started
             </button>
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        <div className="lg:hidden flex justify-between items-center">
-          <Link href="/" className="text-xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            WellPlan
-          </Link>
-
+          {/* Mobile Menu Button */}
           <button
-            className="text-blue-400 text-2xl"
+            className="lg:hidden text-blue-400 text-2xl hover:text-blue-300 transition"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             ☰
@@ -201,39 +193,46 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-slate-700/50 space-y-2">
-            {Object.keys(megamenus).map((menu) => (
-              <div key={menu}>
-                <button className="w-full text-left px-4 py-3 text-blue-400 font-bold hover:bg-slate-800/50 rounded transition">
+          <div className="lg:hidden mt-6 pb-6 border-t border-slate-700/50">
+            {Object.keys(menus).map((menu) => (
+              <details key={menu} className="group mb-2">
+                <summary className="px-4 py-3 text-gray-300 font-medium hover:bg-slate-800/50 rounded-lg cursor-pointer hover:text-white transition flex items-center justify-between">
                   {menu}
-                </button>
-                <div className="pl-8 space-y-2 pb-2">
-                  {megamenus[menu].columns.map((col, colIdx) =>
-                    col.items.map((item, itemIdx) => (
-                      <Link
-                        key={`${colIdx}-${itemIdx}`}
-                        href="#"
-                        className="block text-gray-300 text-sm hover:text-blue-400 transition"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))
-                  )}
+                  <ChevronDown size={16} className="group-open:rotate-180 transition" />
+                </summary>
+                <div className="pl-6 space-y-2 mt-2">
+                  {menus[menu].sections.map((section, secIdx) => (
+                    <div key={secIdx}>
+                      <p className="text-xs text-blue-400 font-bold uppercase mb-3 opacity-70">{section.title}</p>
+                      {section.items.map((item, itemIdx) => (
+                        <Link
+                          key={itemIdx}
+                          href={item.href}
+                          className="block px-4 py-2 text-gray-400 text-sm hover:text-blue-400 hover:bg-slate-800/50 rounded transition"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
                 </div>
-              </div>
+              </details>
             ))}
-            <Link href="/pricing" className="block px-4 py-3 text-gray-300 hover:text-blue-400 transition">
+
+            <Link
+              href="/pricing"
+              className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition mt-2"
+              onClick={() => setMobileOpen(false)}
+            >
               Pricing
             </Link>
-            <Link href="/about" className="block px-4 py-3 text-gray-300 hover:text-blue-400 transition">
-              About
-            </Link>
-            <div className="px-4 py-4 border-t border-slate-700/50 mt-4 flex gap-2">
-              <button className="flex-1 text-gray-300 text-sm font-semibold hover:text-white transition">
+
+            <div className="mt-6 pt-6 border-t border-slate-700/50 space-y-2">
+              <button className="w-full px-4 py-2 text-gray-300 font-medium hover:text-white transition">
                 Sign In
               </button>
-              <button className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-bold text-sm">
+              <button className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg">
                 Get Started
               </button>
             </div>
