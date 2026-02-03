@@ -125,7 +125,7 @@ export default function Navigation() {
           </Link>
 
           {/* Menu Items */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4">
             {Object.keys(menus).map((menu) => (
               <div
                 key={menu}
@@ -198,10 +198,10 @@ export default function Navigation() {
           </div>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4">
-            <button className="text-gray-300 hover:text-white transition font-medium">
+          <div className="flex items-center gap-3">
+            <Link href="https://app.wellplan.io" target="_blank" className="text-gray-300 hover:text-white transition font-medium">
               Sign In
-            </button>
+            </Link>
             <button className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition">
               Get Started
             </button>
