@@ -1,6 +1,10 @@
-'use client';
-
 import { getIndustry, siteData } from '../../lib/data';
+
+export async function generateStaticParams() {
+  return siteData.industries.map((industry) => ({
+    slug: industry.slug,
+  }));
+}
 
 export default function IndustryPage({ params }) {
   const industry = getIndustry(params.slug);
@@ -84,10 +88,4 @@ export default function IndustryPage({ params }) {
       </section>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return siteData.industries.map((industry) => ({
-    slug: industry.slug,
-  }));
 }
