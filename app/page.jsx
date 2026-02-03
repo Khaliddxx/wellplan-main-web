@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import Hero from './components/Hero';
+import EnhancedHero from './components/EnhancedHero';
 import IconCarousel from './components/IconCarousel';
 import FeatureShowcase from './components/FeatureShowcase';
 import ComparisonMatrix from './components/ComparisonMatrix';
@@ -29,12 +29,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-white overflow-hidden">
-      {/* Hero Section - Sleekflow Style */}
-      <Hero />
-
-      {/* Original Hero - Hidden for now */}
-      <section ref={containerRef} className="hidden relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-slate-950 text-white">
+    <div className="bg-slate-950 text-white overflow-hidden">
+      {/* Enhanced Hero - Best of Both Worlds */}
+      <EnhancedHero />
         {/* Animated Background */}
         <div className="absolute inset-0 z-0">
           <motion.div
