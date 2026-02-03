@@ -1,5 +1,5 @@
 import './globals.css';
-import Navigation from './components/Navigation';
+import MegaNav from './components/MegaNav';
 import Footer from './components/Footer';
 
 export const metadata = {
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navigation />
+        <MegaNav />
         <main>
           {children}
         </main>
