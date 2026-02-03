@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from 'react';
 import IconCarousel from './components/IconCarousel';
 import FeatureShowcase from './components/FeatureShowcase';
 import ComparisonMatrix from './components/ComparisonMatrix';
+import TestimonialCarousel from './components/TestimonialCarousel';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -145,6 +146,9 @@ export default function Home() {
 
       {/* Comparison Matrix */}
       <ComparisonMatrix />
+
+      {/* Testimonial Carousel */}
+      <TestimonialCarousel />
 
       {/* Case Studies */}
       <CaseStudiesSection />
