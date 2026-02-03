@@ -138,10 +138,10 @@ export default function Navigation() {
                   <ChevronDown size={16} className="group-hover:rotate-180 transition duration-300" />
                 </button>
 
-                {/* Megamenu - Full Width Below */}
+                {/* Megamenu - Navbar Width Below */}
                 {activeDropdown === menu && (
-                  <div className="fixed left-0 right-0 top-full pt-0 w-screen bg-slate-900/98 backdrop-blur-xl border-b border-slate-700/50 shadow-2xl">
-                    <div className="max-w-7xl mx-auto px-6 py-12">
+                  <div className="absolute left-0 right-0 top-full pt-0 bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl" style={{ width: 'calc(100vw - 48px)', marginLeft: '-6px', maxWidth: 'calc(100% + 12px)' }}>
+                    <div className="px-6 py-12">
                       <div className="grid grid-cols-3 gap-12">
                         {/* Feature Cards */}
                         <div className="col-span-2">
