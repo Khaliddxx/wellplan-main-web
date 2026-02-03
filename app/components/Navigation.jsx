@@ -9,108 +9,108 @@ export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const closeTimeoutRef = useRef(null);
 
-  // Megamenu data - WellPlan focused with real links
+  // Megamenu data - Properly organized by actual sitemap
   const menus = {
     Product: {
       features: [
         {
-          title: 'Shared Team Inbox',
-          desc: 'Centralize chats across channels',
-          icon: '📥',
-          href: '/integrations',
+          title: 'Features',
+          desc: 'All platform features',
+          icon: '⭐',
+          href: '/features',
         },
         {
-          title: 'AI Lead Bot',
-          desc: 'Automated lead qualification',
-          icon: '🤖',
+          title: 'Case Studies',
+          desc: 'Real customer results',
+          icon: '📊',
           href: '/case-studies',
         },
         {
-          title: 'Broadcast Campaigns',
-          desc: 'Bulk messaging at scale',
-          icon: '📢',
-          href: '/case-studies',
-        },
-        {
-          title: 'CRM & Integrations',
-          desc: 'Sync with HubSpot, Salesforce',
+          title: 'Integrations',
+          desc: '200+ app connections',
           icon: '🔗',
           href: '/integrations',
         },
+        {
+          title: 'Pricing',
+          desc: 'Simple pricing',
+          icon: '💰',
+          href: '/pricing',
+        },
       ],
       connections: [
+        { name: 'HubSpot', icon: '🎯', color: 'bg-orange-500', href: '/integrations' },
+        { name: 'Salesforce', icon: '☁️', color: 'bg-blue-600', href: '/integrations' },
+        { name: 'Zapier', icon: '⚡', color: 'bg-orange-600', href: '/integrations' },
         { name: 'WhatsApp', icon: '💬', color: 'bg-green-500', href: '/integrations' },
-        { name: 'Instagram', icon: '📸', color: 'bg-pink-500', href: '/integrations' },
-        { name: 'Facebook', icon: '👥', color: 'bg-blue-600', href: '/integrations' },
-        { name: 'SMS/Twilio', icon: '📱', color: 'bg-red-500', href: '/integrations' },
       ],
     },
     Solutions: {
       features: [
         {
-          title: 'Lead Generation',
-          desc: 'Capture high-quality leads',
-          icon: '🎯',
+          title: 'By Industry',
+          desc: 'Solutions for your sector',
+          icon: '🏢',
           href: '/industries',
         },
         {
-          title: 'Customer Support',
-          desc: '24/7 automated support',
-          icon: '🆘',
-          href: '/case-studies',
+          title: 'For Agencies',
+          desc: 'Client lead management',
+          icon: '🎨',
+          href: '/industries/agencies',
         },
         {
-          title: 'Sales Engagement',
-          desc: 'Multi-channel sales outreach',
-          icon: '📞',
-          href: '/case-studies',
+          title: 'For SaaS',
+          desc: 'B2B lead generation',
+          icon: '☁️',
+          href: '/industries/saas',
         },
         {
-          title: 'Appointment Booking',
-          desc: 'Automated scheduling',
-          icon: '📅',
-          href: '/case-studies',
+          title: 'For E-Commerce',
+          desc: 'Product-driven leads',
+          icon: '🛒',
+          href: '/industries/ecommerce',
         },
       ],
       connections: [
-        { name: 'For Agencies', icon: '🏢', color: 'bg-orange-500', href: '/industries/agencies' },
-        { name: 'For SaaS', icon: '☁️', color: 'bg-blue-600', href: '/industries/saas' },
-        { name: 'For E-Commerce', icon: '🛒', color: 'bg-green-500', href: '/industries/ecommerce' },
-        { name: 'For Real Estate', icon: '🏠', color: 'bg-slate-600', href: '/industries/real-estate' },
+        { name: 'Real Estate', icon: '🏠', color: 'bg-slate-600', href: '/industries/real-estate' },
+        { name: 'Coaching', icon: '🎯', color: 'bg-purple-500', href: '/industries/coaching' },
+        { name: 'Healthcare', icon: '⚕️', color: 'bg-red-500', href: '/industries/healthcare' },
+        { name: 'All Industries', icon: '→', color: 'bg-blue-500', href: '/industries' },
       ],
     },
     Resources: {
       features: [
         {
           title: 'Case Studies',
-          desc: 'Real results from customers',
-          icon: '📊',
+          desc: 'Customer success stories',
+          icon: '📈',
           href: '/case-studies',
         },
         {
           title: 'Integrations',
-          desc: '200+ tool connections',
-          icon: '🔗',
+          desc: 'Connect your tools',
+          icon: '🔌',
           href: '/integrations',
         },
         {
           title: 'Industries',
           desc: 'Solutions by industry',
-          icon: '🏢',
+          icon: '🏪',
           href: '/industries',
         },
         {
-          title: 'Pricing',
-          desc: 'Simple, transparent pricing',
-          icon: '💰',
-          href: '/pricing',
+          title: 'Help & Support',
+          desc: 'Get help anytime',
+          icon: '❓',
+          href: '#',
         },
       ],
       connections: [
-        { name: 'Help Center', icon: '❓', color: 'bg-blue-500', href: '#' },
+        { name: 'Documentation', icon: '📚', color: 'bg-blue-500', href: '#' },
+        { name: 'API Reference', icon: '⚙️', color: 'bg-slate-600', href: '#' },
         { name: 'Status Page', icon: '✅', color: 'bg-green-500', href: '#' },
-        { name: 'Contact Sales', icon: '📞', color: 'bg-purple-500', href: '#' },
-        { name: 'Roadmap', icon: '🗺️', color: 'bg-orange-500', href: '#' },
+        { name: 'Contact Us', icon: '📞', color: 'bg-purple-500', href: '#' },
       ],
     },
   };
@@ -146,9 +146,9 @@ export default function Navigation() {
                   <ChevronDown size={16} className="group-hover:rotate-180 transition duration-300" />
                 </button>
 
-                {/* Megamenu - Full Page Width */}
+                {/* Megamenu - Absolute positioning, not full screen */}
                 {activeDropdown === menu && (
-                  <div className="fixed left-0 right-0 top-full pt-0 w-screen bg-slate-950 backdrop-blur-2xl border-b border-slate-700 shadow-2xl" onMouseEnter={() => {
+                  <div className="absolute left-0 right-0 top-full pt-2 bg-slate-950 backdrop-blur-2xl border border-slate-700 shadow-2xl rounded-b-2xl" style={{ minWidth: '900px', maxHeight: '500px', overflowY: 'auto' }} onMouseEnter={() => {
                     clearTimeout(closeTimeoutRef.current);
                     setActiveDropdown(menu);
                   }} onMouseLeave={() => {
