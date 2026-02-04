@@ -8,8 +8,7 @@ import {
   FloatingElement, 
   TextReveal, 
   staggerContainer, 
-  staggerItem,
-  AnimatedCounter
+  staggerItem
 } from '@/components/animations'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
@@ -32,7 +31,7 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-32 pb-20">
+    <section className="relative min-h-screen overflow-hidden pt-24 pb-20">
       {/* Dynamic gradient background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -177,7 +176,7 @@ const ObjectivesSection = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {objectives.map((obj, idx) => (
+          {objectives.map((obj) => (
             <motion.a
               key={obj.id}
               href={`/objectives/${obj.slug}`}

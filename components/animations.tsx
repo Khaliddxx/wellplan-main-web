@@ -45,7 +45,7 @@ export const staggerItem = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.25, 0.25, 0.25, 0.75],
+      ease: 'easeOut' as const,
     },
   },
 }
@@ -56,9 +56,7 @@ interface AnimatedCounterProps {
   delay?: number
 }
 
-export const AnimatedCounter = ({ value, duration = 2, delay = 0 }: AnimatedCounterProps) => {
-  const numValue = typeof value === 'string' ? parseInt(value) : value
-
+export const AnimatedCounter = ({ value, delay = 0 }: AnimatedCounterProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -153,7 +151,7 @@ export const TextReveal = ({ text, delay = 0 }: TextRevealProps) => {
           transition={{
             duration: 0.5,
             delay: delay + index * 0.05,
-            ease: [0.25, 0.25, 0.25, 0.75],
+            ease: 'easeOut',
           }}
           className="inline-block mr-2"
         >
