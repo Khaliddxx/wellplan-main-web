@@ -217,14 +217,23 @@ const features = [
 export default function StickyFeatureScroll() {
   return (
     <section className="bg-[#0a0a0a]">
-      {features.map((feature, index) => (
-        <FeatureSection key={feature.id} feature={feature} index={index} />
-      ))}
+      {/* Mobile: TikTok-style snap scroll container */}
+      <div className="md:hidden snap-section-mobile scrollbar-hide">
+        {features.map((feature, index) => (
+          <FeatureSection key={feature.id} feature={feature} index={index} isMobile={true} />
+        ))}
+      </div>
+      {/* Desktop: Normal scroll with parallax */}
+      <div className="hidden md:block">
+        {features.map((feature, index) => (
+          <FeatureSection key={feature.id} feature={feature} index={index} isMobile={false} />
+        ))}
+      </div>
     </section>
   );
 }
 
-function FeatureSection({ feature, index }) {
+function FeatureSection({ feature, index, isMobile }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -236,7 +245,7 @@ function FeatureSection({ feature, index }) {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-16 sm:py-32">
+    <div ref={ref} className={`min-h-screen flex items-center ${isMobile ? 'py-8 px-4' : 'py-32'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className={`grid lg:grid-cols-2 gap-8 sm:gap-16 items-center ${index % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
           {/* Content */}
