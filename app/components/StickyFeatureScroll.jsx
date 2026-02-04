@@ -299,7 +299,7 @@ function FeatureSection({ feature, index }) {
           {/* Visual */}
           <motion.div 
             style={{ opacity, scale }}
-            className="lg:[direction:ltr] h-[350px] sm:h-[500px] relative hidden sm:block"
+            className="lg:[direction:ltr] h-[280px] sm:h-[400px] lg:h-[500px] relative"
           >
             {feature.visual}
           </motion.div>
