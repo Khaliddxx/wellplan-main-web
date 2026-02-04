@@ -214,14 +214,43 @@ export default function Navigation() {
       )}
 
       {mobileOpen && (
-        <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-1">
-          <Link href="/features/capturing" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Features</Link>
-          <Link href="/solutions/coaches" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Solutions</Link>
-          <Link href="/integrations" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Integrations</Link>
-          <Link href="/pricing" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
-          <div className="pt-4 mt-4 border-t border-white/10">
+        <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+          {/* Features */}
+          <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Features</div>
+          <Link href="/features/capturing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>
+            <span className="text-[#214CE5] mr-2">●</span> Capture Leads
+          </Link>
+          <Link href="/features/nurturing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>
+            <span className="text-purple-400 mr-2">●</span> Nurture Contacts
+          </Link>
+          <Link href="/features/closing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>
+            <span className="text-emerald-400 mr-2">●</span> Close Deals
+          </Link>
+          
+          {/* Solutions */}
+          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Solutions</div>
+          <Link href="/solutions/agencies" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>For Agencies</Link>
+          <Link href="/solutions/coaches" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>For Coaches</Link>
+          <Link href="/solutions/sales-teams" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>For Sales Teams</Link>
+          
+          {/* Resources */}
+          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Resources</div>
+          <Link href="/integrations" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Integrations</Link>
+          <Link href="/blog" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Blog</Link>
+          <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Book a Demo</Link>
+          
+          {/* Main Links */}
+          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Company</div>
+          <Link href="/pricing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
+          <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Support</a>
+          
+          {/* CTA */}
+          <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
             <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
-              <Zap className="w-4 h-4" />Try Free
+              <Zap className="w-4 h-4" />Start Free Trial
+            </Link>
+            <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-white/10 text-gray-300 font-medium rounded-lg" onClick={() => setMobileOpen(false)}>
+              Login
             </Link>
           </div>
         </div>
