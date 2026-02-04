@@ -575,7 +575,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Real customer results</p>
           </div>
         </Link>
-        <Link href="#docs" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="https://knowledge.wellplan.io/kb" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center group-hover:scale-110 transition">
             <BookOpen className="w-5 h-5 text-[#6B8EFF]" />
           </div>
@@ -584,7 +584,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Guides and references</p>
           </div>
         </Link>
-        <Link href="#blog" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="/blog" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Newspaper className="w-5 h-5 text-purple-400" />
           </div>
@@ -593,7 +593,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Latest updates & tips</p>
           </div>
         </Link>
-        <Link href="#calculator" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="/roi-calculator" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Calculator className="w-5 h-5 text-pink-400" />
           </div>
@@ -608,7 +608,7 @@ function ResourcesDropdown() {
           <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
           <span className="text-[11px] font-bold text-white uppercase tracking-wider">Support</span>
         </div>
-        <Link href="#tutorials" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Play className="w-5 h-5 text-red-400" />
           </div>
@@ -617,7 +617,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Learn WellPlan</p>
           </div>
         </Link>
-        <Link href="#api" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <FileText className="w-5 h-5 text-orange-400" />
           </div>
@@ -626,7 +626,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Build integrations</p>
           </div>
         </Link>
-        <Link href="#help" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="https://help.leadconnectorhq.com/support/home" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <HelpCircle className="w-5 h-5 text-cyan-400" />
           </div>
@@ -635,7 +635,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">FAQs and support</p>
           </div>
         </Link>
-        <Link href="#demo" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="/demo" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Calendar className="w-5 h-5 text-green-400" />
           </div>
