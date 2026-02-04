@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
+import ScrollToTop from './ScrollToTop';
 
 export default function ClientProviders({ children }) {
   const pathname = usePathname();
@@ -15,6 +16,9 @@ export default function ClientProviders({ children }) {
   return (
     <>
       {children}
+      
+      {/* Scroll to Top Button (mobile only) */}
+      <ScrollToTop />
       
       {/* WellPlan Chat Widget */}
       <Script
