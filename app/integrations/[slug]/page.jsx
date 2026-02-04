@@ -1,6 +1,7 @@
 import { integrations } from '@/app/lib/integrations';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import IntegrationBrandIcon from '@/app/components/IntegrationBrandIcons';
 
 export default function IntegrationDetailPage({ params }) {
   const integration = integrations.find(i => i.slug === params.slug);
@@ -27,8 +28,8 @@ export default function IntegrationDetailPage({ params }) {
 
         {/* Header */}
         <div className="flex items-start gap-6 mb-12">
-          <div className={`w-20 h-20 rounded-2xl ${integration.color} flex items-center justify-center text-4xl shadow-xl`}>
-            {integration.icon}
+          <div className={`w-20 h-20 rounded-2xl ${integration.color} flex items-center justify-center shadow-xl`}>
+            <IntegrationBrandIcon slug={integration.slug} size={40} />
           </div>
           <div className="flex-1">
             <h1 className="text-5xl font-black mb-4">{integration.name}</h1>
@@ -101,8 +102,8 @@ export default function IntegrationDetailPage({ params }) {
                   href={`/integrations/${related.slug}`}
                   className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl hover:border-blue-500/50 hover:bg-slate-800 transition group"
                 >
-                  <div className={`w-12 h-12 rounded-lg ${related.color} flex items-center justify-center text-2xl mb-4`}>
-                    {related.icon}
+                  <div className={`w-12 h-12 rounded-lg ${related.color} flex items-center justify-center mb-4`}>
+                    <IntegrationBrandIcon slug={related.slug} size={24} />
                   </div>
                   <h3 className="font-bold mb-2 group-hover:text-blue-400 transition">
                     {related.name}
