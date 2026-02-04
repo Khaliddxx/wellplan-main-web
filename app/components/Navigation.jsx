@@ -88,7 +88,7 @@ export default function Navigation() {
           <Link href="/features" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Features</Link>
           <Link href="/industries" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Solutions</Link>
           <Link href="/pricing" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
-          <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
+          <div className="pt-4 mt-4 border-t border-white/10">
             <Link href="https://app.wellplan.io" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-blue-500 text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
               <Zap className="w-4 h-4" />Try Free
             </Link>
@@ -143,21 +143,31 @@ function FeaturesDropdown() {
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
           <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Connections</span>
         </div>
-        {[{ n: 'WhatsApp', d: 'Official Business API', i: '💬' }, { n: 'Instagram', d: 'DMs & Comments', i: '📸' }, { n: 'Facebook', d: 'Messenger & Comments', i: '👤' }, { n: 'HubSpot', d: 'Sync your CRM', i: '🎯' }].map((item, idx) => (
-          <Link key={idx} href={`/integrations/${item.n.toLowerCase()}`} className="flex items-center gap-2.5 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
-            <span className="text-base">{item.i}</span>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[10px] text-gray-600">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="/integrations/whatsapp" className="flex items-center gap-2.5 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <span className="text-base">💬</span>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">WhatsApp</p><p className="text-[10px] text-gray-600">Official Business API</p></div>
+        </Link>
+        <Link href="/integrations/instagram" className="flex items-center gap-2.5 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <span className="text-base">📸</span>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Instagram</p><p className="text-[10px] text-gray-600">DMs & Comments</p></div>
+        </Link>
+        <Link href="/integrations/facebook" className="flex items-center gap-2.5 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <span className="text-base">👤</span>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Facebook</p><p className="text-[10px] text-gray-600">Messenger & Comments</p></div>
+        </Link>
+        <Link href="/integrations/hubspot" className="flex items-center gap-2.5 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <span className="text-base">🎯</span>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">HubSpot</p><p className="text-[10px] text-gray-600">Sync your CRM</p></div>
+        </Link>
         <Link href="/integrations" className="text-[11px] font-medium text-blue-400 hover:text-blue-300 mt-3 block">View all connections</Link>
 
         <div className="flex items-center gap-2 mt-6 mb-3">
           <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
           <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">More Features</span>
         </div>
-        {['Broadcast Campaigns', 'Lead Scoring', 'Analytics Dashboard'].map((name, idx) => (
-          <Link key={idx} href="/features" className="block py-1.5 text-[12px] text-gray-400 hover:text-white">{name}</Link>
-        ))}
+        <Link href="/features" className="block py-1.5 text-[12px] text-gray-400 hover:text-white">Broadcast Campaigns</Link>
+        <Link href="/features" className="block py-1.5 text-[12px] text-gray-400 hover:text-white">Lead Scoring</Link>
+        <Link href="/features" className="block py-1.5 text-[12px] text-gray-400 hover:text-white">Analytics Dashboard</Link>
         <Link href="/features" className="text-[11px] font-medium text-blue-400 hover:text-blue-300 mt-3 block">See all features →</Link>
       </div>
     </div>
@@ -172,22 +182,30 @@ function SolutionsDropdown() {
           <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
           <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">By Role</span>
         </div>
-        {[{ n: 'For Agencies', d: 'White-label for clients', Icon: Building2, c: 'blue' }, { n: 'For Coaches', d: 'Scale 1:1 relationships', Icon: Target, c: 'purple' }, { n: 'For Sales Teams', d: 'Close deals faster', Icon: Briefcase, c: 'emerald' }].map((item, idx) => (
-          <Link key={idx} href="/industries" className="flex items-center gap-3 py-2.5 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
-            <div className={`w-8 h-8 rounded-lg bg-${item.c}-500/20 flex items-center justify-center`}><item.Icon className={`w-4 h-4 text-${item.c}-400`} /></div>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[10px] text-gray-600">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="/industries/agencies" className="flex items-center gap-3 py-2.5 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center"><Building2 className="w-4 h-4 text-blue-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">For Agencies</p><p className="text-[10px] text-gray-600">White-label for clients</p></div>
+        </Link>
+        <Link href="/industries/coaching" className="flex items-center gap-3 py-2.5 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center"><Target className="w-4 h-4 text-purple-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">For Coaches</p><p className="text-[10px] text-gray-600">Scale 1:1 relationships</p></div>
+        </Link>
+        <Link href="/industries/sales" className="flex items-center gap-3 py-2.5 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center"><Briefcase className="w-4 h-4 text-emerald-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">For Sales Teams</p><p className="text-[10px] text-gray-600">Close deals faster</p></div>
+        </Link>
         <div className="flex items-center gap-2 mt-5 mb-3">
           <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
           <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Business Model</span>
         </div>
-        {[{ n: 'For B2B', d: 'Enterprise sales cycles' }, { n: 'For B2C', d: 'Consumer engagement' }].map((item, idx) => (
-          <Link key={idx} href="/industries" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
-            <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center"><Users className="w-4 h-4 text-orange-400" /></div>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[10px] text-gray-600">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="/industries" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center"><Users className="w-4 h-4 text-orange-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">For B2B</p><p className="text-[10px] text-gray-600">Enterprise sales cycles</p></div>
+        </Link>
+        <Link href="/industries" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center"><Users className="w-4 h-4 text-orange-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">For B2C</p><p className="text-[10px] text-gray-600">Consumer engagement</p></div>
+        </Link>
       </div>
 
       <div className="flex-1 p-5 border-r border-white/[0.08]">
@@ -195,12 +213,30 @@ function SolutionsDropdown() {
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
           <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Popular Industries</span>
         </div>
-        {[{ n: 'E-Commerce', d: 'Boost cart recovery', Icon: ShoppingCart, c: 'blue' }, { n: 'Real Estate', d: 'Never miss a lead', Icon: Home, c: 'emerald' }, { n: 'Healthcare', d: 'HIPAA-ready messaging', Icon: Stethoscope, c: 'red' }, { n: 'Education', d: 'Student & parent comms', Icon: GraduationCap, c: 'purple' }, { n: 'Restaurants', d: 'Reservations & promos', Icon: Utensils, c: 'orange' }, { n: 'Fitness', d: 'Class bookings', Icon: Dumbbell, c: 'pink' }].map((item, idx) => (
-          <Link key={idx} href={`/industries/${item.n.toLowerCase().replace(' ', '-')}`} className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
-            <div className={`w-7 h-7 rounded-lg bg-${item.c}-500/20 flex items-center justify-center`}><item.Icon className={`w-3.5 h-3.5 text-${item.c}-400`} /></div>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[10px] text-gray-600">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="/industries/ecommerce" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-blue-500/20 flex items-center justify-center"><ShoppingCart className="w-3.5 h-3.5 text-blue-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">E-Commerce</p><p className="text-[10px] text-gray-600">Boost cart recovery</p></div>
+        </Link>
+        <Link href="/industries/real-estate" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-emerald-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Real Estate</p><p className="text-[10px] text-gray-600">Never miss a lead</p></div>
+        </Link>
+        <Link href="/industries/healthcare" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center"><Stethoscope className="w-3.5 h-3.5 text-red-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Healthcare</p><p className="text-[10px] text-gray-600">HIPAA-ready messaging</p></div>
+        </Link>
+        <Link href="/industries/education" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-purple-500/20 flex items-center justify-center"><GraduationCap className="w-3.5 h-3.5 text-purple-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Education</p><p className="text-[10px] text-gray-600">Student & parent comms</p></div>
+        </Link>
+        <Link href="/industries/restaurants" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-orange-500/20 flex items-center justify-center"><Utensils className="w-3.5 h-3.5 text-orange-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Restaurants</p><p className="text-[10px] text-gray-600">Reservations & promos</p></div>
+        </Link>
+        <Link href="/industries/fitness" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-pink-500/20 flex items-center justify-center"><Dumbbell className="w-3.5 h-3.5 text-pink-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Fitness</p><p className="text-[10px] text-gray-600">Class bookings</p></div>
+        </Link>
       </div>
 
       <div className="w-[220px] p-5">
@@ -208,12 +244,14 @@ function SolutionsDropdown() {
           <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
           <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Specialized</span>
         </div>
-        {[{ n: 'Automotive', d: 'Dealership & service', Icon: Car }, { n: 'Professional Services', d: 'Law, accounting', Icon: Briefcase }].map((item, idx) => (
-          <Link key={idx} href="/industries" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
-            <div className="w-7 h-7 rounded-lg bg-purple-500/20 flex items-center justify-center"><item.Icon className="w-3.5 h-3.5 text-purple-400" /></div>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[10px] text-gray-600">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="/industries/automotive" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-purple-500/20 flex items-center justify-center"><Car className="w-3.5 h-3.5 text-purple-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Automotive</p><p className="text-[10px] text-gray-600">Dealership & service</p></div>
+        </Link>
+        <Link href="/industries/professional-services" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <div className="w-7 h-7 rounded-lg bg-purple-500/20 flex items-center justify-center"><Briefcase className="w-3.5 h-3.5 text-purple-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Professional Services</p><p className="text-[10px] text-gray-600">Law, accounting</p></div>
+        </Link>
 
         <div className="mt-5 p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-xl">
           <div className="flex items-center gap-2 mb-2">
@@ -235,26 +273,43 @@ function SolutionsDropdown() {
 }
 
 function ResourcesDropdown() {
-  const left = [{ n: 'Case Studies', d: 'Real customer results', Icon: BarChart3, c: 'emerald', h: '/case-studies' }, { n: 'Documentation', d: 'Guides and references', Icon: BookOpen, c: 'blue', h: '#docs' }, { n: 'Blog', d: 'Latest updates & tips', Icon: Newspaper, c: 'purple', h: '#blog' }, { n: 'ROI Calculator', d: 'Calculate your savings', Icon: Calculator, c: 'pink', h: '#calculator' }];
-  const right = [{ n: 'Video Tutorials', d: 'Learn WellPlan', Icon: Play, c: 'red', h: '#tutorials' }, { n: 'API Reference', d: 'Build integrations', Icon: FileText, c: 'orange', h: '#api' }, { n: 'Help Center', d: 'FAQs and support', Icon: HelpCircle, c: 'cyan', h: '#help' }, { n: 'Book a Demo', d: 'Schedule walkthrough', Icon: Calendar, c: 'green', h: '#demo' }];
-
   return (
     <div className="flex p-5 gap-1" style={{ width: '580px' }}>
       <div className="flex-1 space-y-1">
-        {left.map((item, idx) => (
-          <Link key={idx} href={item.h} className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className={`w-9 h-9 rounded-lg bg-${item.c}-500/20 flex items-center justify-center`}><item.Icon className={`w-4 h-4 text-${item.c}-400`} /></div>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[11px] text-gray-500">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="/case-studies" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center"><BarChart3 className="w-4 h-4 text-emerald-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Case Studies</p><p className="text-[11px] text-gray-500">Real customer results</p></div>
+        </Link>
+        <Link href="#docs" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-blue-500/20 flex items-center justify-center"><BookOpen className="w-4 h-4 text-blue-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Documentation</p><p className="text-[11px] text-gray-500">Guides and references</p></div>
+        </Link>
+        <Link href="#blog" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center"><Newspaper className="w-4 h-4 text-purple-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Blog</p><p className="text-[11px] text-gray-500">Latest updates & tips</p></div>
+        </Link>
+        <Link href="#calculator" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-pink-500/20 flex items-center justify-center"><Calculator className="w-4 h-4 text-pink-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">ROI Calculator</p><p className="text-[11px] text-gray-500">Calculate your savings</p></div>
+        </Link>
       </div>
       <div className="flex-1 space-y-1">
-        {right.map((item, idx) => (
-          <Link key={idx} href={item.h} className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className={`w-9 h-9 rounded-lg bg-${item.c}-500/20 flex items-center justify-center`}><item.Icon className={`w-4 h-4 text-${item.c}-400`} /></div>
-            <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">{item.n}</p><p className="text-[11px] text-gray-500">{item.d}</p></div>
-          </Link>
-        ))}
+        <Link href="#tutorials" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-red-500/20 flex items-center justify-center"><Play className="w-4 h-4 text-red-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Video Tutorials</p><p className="text-[11px] text-gray-500">Learn WellPlan</p></div>
+        </Link>
+        <Link href="#api" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-orange-500/20 flex items-center justify-center"><FileText className="w-4 h-4 text-orange-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">API Reference</p><p className="text-[11px] text-gray-500">Build integrations</p></div>
+        </Link>
+        <Link href="#help" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-cyan-500/20 flex items-center justify-center"><HelpCircle className="w-4 h-4 text-cyan-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Help Center</p><p className="text-[11px] text-gray-500">FAQs and support</p></div>
+        </Link>
+        <Link href="#demo" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition group">
+          <div className="w-9 h-9 rounded-lg bg-green-500/20 flex items-center justify-center"><Calendar className="w-4 h-4 text-green-400" /></div>
+          <div><p className="font-medium text-[13px] text-white group-hover:text-blue-400">Book a Demo</p><p className="text-[11px] text-gray-500">Schedule walkthrough</p></div>
+        </Link>
       </div>
     </div>
   );
