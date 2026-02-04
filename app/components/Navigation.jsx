@@ -21,30 +21,29 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">wellplan<span className="text-blue-500">®</span></span>
+            <span className="text-lg font-bold text-white">wellplan<span className="text-blue-400">®</span></span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {/* Features */}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter('features')}
               onMouseLeave={handleMouseLeave}
             >
-              <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'features' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'}`}>
+              <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'features' ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}>
                 Features
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'features' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'features' ? 'rotate-180' : ''}`} />
               </button>
-              {activeDropdown === 'features' && <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-blue-500" />}
             </div>
 
             {/* Solutions */}
@@ -53,11 +52,10 @@ export default function Navigation() {
               onMouseEnter={() => handleMouseEnter('solutions')}
               onMouseLeave={handleMouseLeave}
             >
-              <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'solutions' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'}`}>
+              <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'solutions' ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}>
                 Solutions
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
               </button>
-              {activeDropdown === 'solutions' && <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-blue-500" />}
             </div>
 
             {/* Resources */}
@@ -66,18 +64,17 @@ export default function Navigation() {
               onMouseEnter={() => handleMouseEnter('resources')}
               onMouseLeave={handleMouseLeave}
             >
-              <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'resources' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'}`}>
+              <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'resources' ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}>
                 Resources
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
               </button>
-              {activeDropdown === 'resources' && <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-blue-500" />}
             </div>
 
-            <Link href="/pricing" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition">
+            <Link href="/pricing" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">
               Pricing
             </Link>
 
-            <Link href="#contact" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition">
+            <Link href="#contact" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">
               Contact
             </Link>
           </div>
@@ -87,15 +84,15 @@ export default function Navigation() {
             <Link
               href="https://app.wellplan.io"
               target="_blank"
-              className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition shadow-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-blue-500/25"
             >
               <Zap className="w-4 h-4" />
-              Try WellPlan - It's Free
+              Try Free
             </Link>
             <Link
               href="https://app.wellplan.io"
               target="_blank"
-              className="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition"
             >
               Login
             </Link>
@@ -103,10 +100,10 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg"
+            className="lg:hidden p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -117,14 +114,14 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mega Menu Dropdowns */}
+      {/* Floating Dropdown Container */}
       {activeDropdown && (
-        <div
-          className="absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-xl"
-          onMouseEnter={() => handleMouseEnter(activeDropdown)}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="absolute left-0 right-0 top-16 flex justify-center px-6 pt-2">
+          <div
+            className="bg-[#111111] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
+            onMouseEnter={() => handleMouseEnter(activeDropdown)}
+            onMouseLeave={handleMouseLeave}
+          >
             {activeDropdown === 'features' && <FeaturesDropdown />}
             {activeDropdown === 'solutions' && <SolutionsDropdown />}
             {activeDropdown === 'resources' && <ResourcesDropdown />}
@@ -134,7 +131,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100">
+        <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5">
           <div className="px-4 py-4 space-y-1">
             <MobileMenuItem title="Features" href="/features" setMobileOpen={setMobileOpen} />
             <MobileMenuItem title="Solutions" href="/industries" setMobileOpen={setMobileOpen} />
@@ -142,18 +139,18 @@ export default function Navigation() {
             <MobileMenuItem title="Pricing" href="/pricing" setMobileOpen={setMobileOpen} />
             <MobileMenuItem title="Case Studies" href="/case-studies" setMobileOpen={setMobileOpen} />
             
-            <div className="pt-4 mt-4 border-t border-gray-100 space-y-2">
+            <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
               <Link
                 href="https://app.wellplan.io"
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg"
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-blue-500 text-white font-semibold rounded-lg"
                 onClick={() => setMobileOpen(false)}
               >
                 <Zap className="w-4 h-4" />
-                Try WellPlan Free
+                Try Free
               </Link>
               <Link
                 href="https://app.wellplan.io"
-                className="block w-full px-4 py-3 text-center text-gray-700 font-medium hover:bg-gray-50 rounded-lg"
+                className="block w-full px-4 py-3 text-center text-gray-300 font-medium hover:bg-white/5 rounded-lg"
                 onClick={() => setMobileOpen(false)}
               >
                 Login
@@ -170,7 +167,7 @@ function MobileMenuItem({ title, href, setMobileOpen }) {
   return (
     <Link
       href={href}
-      className="block px-4 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-lg"
+      className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg"
       onClick={() => setMobileOpen(false)}
     >
       {title}
@@ -186,7 +183,6 @@ function FeaturesDropdown() {
       href: '/features/shared-inbox',
       icon: MessageSquare,
       gradient: 'from-blue-500 to-cyan-500',
-      bgColor: 'bg-gradient-to-br from-blue-50 to-cyan-50',
     },
     {
       title: 'AI Lead Bot',
@@ -194,97 +190,85 @@ function FeaturesDropdown() {
       href: '/features/ai-lead-bot',
       icon: Bot,
       gradient: 'from-purple-500 to-pink-500',
-      bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50',
-    },
-    {
-      title: 'Automation Flows',
-      desc: 'Visual workflow builder',
-      href: '/features/automation-flows',
-      icon: Workflow,
-      gradient: 'from-orange-500 to-red-500',
-      bgColor: 'bg-gradient-to-br from-orange-50 to-red-50',
     },
   ];
 
   const integrations = [
-    { name: 'WhatsApp', desc: 'Official Business API', icon: '💬', color: 'bg-green-500', href: '/integrations/whatsapp' },
-    { name: 'Instagram', desc: 'DMs & Comments', icon: '📸', color: 'bg-pink-500', href: '/integrations/instagram' },
-    { name: 'HubSpot', desc: 'Sync your CRM', icon: '🎯', color: 'bg-orange-500', href: '/integrations/hubspot' },
-    { name: 'Zapier', desc: '5000+ app connections', icon: '⚡', color: 'bg-orange-600', href: '/integrations/zapier' },
+    { name: 'WhatsApp', desc: 'Official Business API', icon: '💬', href: '/integrations/whatsapp' },
+    { name: 'Instagram', desc: 'DMs & Comments', icon: '📸', href: '/integrations/instagram' },
+    { name: 'HubSpot', desc: 'Sync your CRM', icon: '🎯', href: '/integrations/hubspot' },
+    { name: 'Zapier', desc: '5000+ apps', icon: '⚡', href: '/integrations/zapier' },
   ];
 
   const moreFeatures = [
+    { name: 'Automation Flows', href: '/features/automation-flows' },
     { name: 'Broadcast Campaigns', href: '/features/broadcast-campaigns' },
     { name: 'Lead Scoring', href: '/features/lead-scoring' },
-    { name: 'Analytics & Reporting', href: '/features/analytics-reporting' },
-    { name: 'See all features', href: '/features', highlight: true },
+    { name: 'See all features →', href: '/features', highlight: true },
   ];
 
   return (
-    <div className="grid grid-cols-12 gap-8">
-      {/* Feature Cards - Left Side */}
-      <div className="col-span-8">
-        <div className="grid grid-cols-3 gap-4">
+    <div className="flex p-6 gap-8" style={{ width: '720px' }}>
+      {/* Feature Cards */}
+      <div className="flex-1">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Features</h4>
+        <div className="space-y-3">
           {featureCards.map((feature, idx) => (
             <Link
               key={idx}
               href={feature.href}
-              className={`group p-6 rounded-2xl ${feature.bgColor} hover:shadow-lg transition-all duration-200`}
+              className="group flex items-start gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition"
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <feature.icon className="w-6 h-6 text-white" />
+              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center flex-shrink-0`}>
+                <feature.icon className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-gray-600">{feature.desc}</p>
+              <div>
+                <h3 className="font-semibold text-white text-sm group-hover:text-blue-400 transition">
+                  {feature.title}
+                </h3>
+                <p className="text-xs text-gray-500 mt-0.5">{feature.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Right Sidebar */}
-      <div className="col-span-4 border-l border-gray-100 pl-8">
-        {/* Connections */}
-        <div className="mb-6">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Connections</h4>
-          <div className="space-y-3">
-            {integrations.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.href}
-                className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 transition group"
-              >
-                <div className={`w-10 h-10 ${item.color} rounded-lg flex items-center justify-center text-lg flex-shrink-0`}>
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-gray-900 group-hover:text-blue-600 transition">{item.name}</p>
-                  <p className="text-xs text-gray-500">{item.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <Link href="/integrations" className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-blue-600 hover:text-blue-700">
-            View all connections
-            <ChevronDown className="w-4 h-4 -rotate-90" />
-          </Link>
+      {/* Connections */}
+      <div className="w-48 border-l border-white/10 pl-6">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Connections</h4>
+        <div className="space-y-2">
+          {integrations.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.href}
+              className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-white/5 transition group"
+            >
+              <span className="text-lg">{item.icon}</span>
+              <div>
+                <p className="font-medium text-xs text-white group-hover:text-blue-400 transition">{item.name}</p>
+                <p className="text-[10px] text-gray-600">{item.desc}</p>
+              </div>
+            </Link>
+          ))}
         </div>
+        <Link href="/integrations" className="inline-flex items-center gap-1 mt-4 text-xs font-medium text-blue-400 hover:text-blue-300">
+          View all →
+        </Link>
+      </div>
 
-        {/* More Features */}
-        <div className="pt-6 border-t border-gray-100">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">More Features</h4>
-          <div className="space-y-2">
-            {moreFeatures.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.href}
-                className={`block py-1.5 text-sm ${item.highlight ? 'font-semibold text-blue-600 hover:text-blue-700' : 'text-gray-700 hover:text-gray-900'} transition`}
-              >
-                {item.name} {item.highlight && '→'}
-              </Link>
-            ))}
-          </div>
+      {/* More Features */}
+      <div className="w-40 border-l border-white/10 pl-6">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">More</h4>
+        <div className="space-y-1">
+          {moreFeatures.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.href}
+              className={`block py-1.5 text-xs ${item.highlight ? 'font-semibold text-blue-400 hover:text-blue-300' : 'text-gray-400 hover:text-white'} transition`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -299,15 +283,6 @@ function SolutionsDropdown() {
       href: '/industries/agencies',
       icon: Building2,
       gradient: 'from-blue-500 to-indigo-500',
-      bgColor: 'bg-gradient-to-br from-blue-50 to-indigo-50',
-    },
-    {
-      title: 'For E-Commerce',
-      desc: 'Convert browsers to buyers',
-      href: '/industries/ecommerce',
-      icon: ShoppingCart,
-      gradient: 'from-green-500 to-emerald-500',
-      bgColor: 'bg-gradient-to-br from-green-50 to-emerald-50',
     },
     {
       title: 'For Coaching',
@@ -315,78 +290,78 @@ function SolutionsDropdown() {
       href: '/industries/coaching',
       icon: Target,
       gradient: 'from-purple-500 to-violet-500',
-      bgColor: 'bg-gradient-to-br from-purple-50 to-violet-50',
     },
   ];
 
   const industries = [
-    { name: 'Real Estate', desc: 'Property inquiries', icon: '🏠', color: 'bg-slate-500', href: '/industries/real-estate' },
-    { name: 'Healthcare', desc: 'Patient acquisition', icon: '⚕️', color: 'bg-red-500', href: '/industries/healthcare' },
-    { name: 'SaaS', desc: 'B2B lead generation', icon: '☁️', color: 'bg-blue-600', href: '/industries/saas' },
+    { name: 'E-Commerce', icon: '🛒', href: '/industries/ecommerce' },
+    { name: 'Real Estate', icon: '🏠', href: '/industries/real-estate' },
+    { name: 'Healthcare', icon: '⚕️', href: '/industries/healthcare' },
+    { name: 'SaaS', icon: '☁️', href: '/industries/saas' },
   ];
 
   const moreLinks = [
-    { name: 'All Industries', href: '/industries', highlight: true },
+    { name: 'All Industries →', href: '/industries', highlight: true },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Book a Demo', href: '#demo' },
   ];
 
   return (
-    <div className="grid grid-cols-12 gap-8">
-      <div className="col-span-8">
-        <div className="grid grid-cols-3 gap-4">
+    <div className="flex p-6 gap-8" style={{ width: '680px' }}>
+      {/* Industry Cards */}
+      <div className="flex-1">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Solutions</h4>
+        <div className="space-y-3">
           {industryCards.map((item, idx) => (
             <Link
               key={idx}
               href={item.href}
-              className={`group p-6 rounded-2xl ${item.bgColor} hover:shadow-lg transition-all duration-200`}
+              className="group flex items-start gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition"
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <item.icon className="w-6 h-6 text-white" />
+              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0`}>
+                <item.icon className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
+              <div>
+                <h3 className="font-semibold text-white text-sm group-hover:text-blue-400 transition">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-gray-500 mt-0.5">{item.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
       </div>
 
-      <div className="col-span-4 border-l border-gray-100 pl-8">
-        <div className="mb-6">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">More Industries</h4>
-          <div className="space-y-3">
-            {industries.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.href}
-                className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 transition group"
-              >
-                <div className={`w-10 h-10 ${item.color} rounded-lg flex items-center justify-center text-lg flex-shrink-0`}>
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-gray-900 group-hover:text-blue-600 transition">{item.name}</p>
-                  <p className="text-xs text-gray-500">{item.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+      {/* More Industries */}
+      <div className="w-40 border-l border-white/10 pl-6">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Industries</h4>
+        <div className="space-y-2">
+          {industries.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.href}
+              className="flex items-center gap-2.5 py-1.5 text-gray-400 hover:text-white transition group"
+            >
+              <span className="text-sm">{item.icon}</span>
+              <span className="text-xs font-medium">{item.name}</span>
+            </Link>
+          ))}
         </div>
+      </div>
 
-        <div className="pt-6 border-t border-gray-100">
-          <div className="space-y-2">
-            {moreLinks.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.href}
-                className={`block py-1.5 text-sm ${item.highlight ? 'font-semibold text-blue-600 hover:text-blue-700' : 'text-gray-700 hover:text-gray-900'} transition`}
-              >
-                {item.name} {item.highlight && '→'}
-              </Link>
-            ))}
-          </div>
+      {/* Links */}
+      <div className="w-32 border-l border-white/10 pl-6">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">More</h4>
+        <div className="space-y-1">
+          {moreLinks.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.href}
+              className={`block py-1.5 text-xs ${item.highlight ? 'font-semibold text-blue-400 hover:text-blue-300' : 'text-gray-400 hover:text-white'} transition`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -401,7 +376,6 @@ function ResourcesDropdown() {
       href: '/case-studies',
       icon: BarChart3,
       gradient: 'from-emerald-500 to-teal-500',
-      bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50',
     },
     {
       title: 'Integrations',
@@ -409,15 +383,6 @@ function ResourcesDropdown() {
       href: '/integrations',
       icon: Workflow,
       gradient: 'from-violet-500 to-purple-500',
-      bgColor: 'bg-gradient-to-br from-violet-50 to-purple-50',
-    },
-    {
-      title: 'Help Center',
-      desc: 'Get started guides',
-      href: '#help',
-      icon: Users,
-      gradient: 'from-amber-500 to-orange-500',
-      bgColor: 'bg-gradient-to-br from-amber-50 to-orange-50',
     },
   ];
 
@@ -429,40 +394,43 @@ function ResourcesDropdown() {
   ];
 
   return (
-    <div className="grid grid-cols-12 gap-8">
-      <div className="col-span-8">
-        <div className="grid grid-cols-3 gap-4">
+    <div className="flex p-6 gap-8" style={{ width: '580px' }}>
+      {/* Resource Cards */}
+      <div className="flex-1">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Resources</h4>
+        <div className="space-y-3">
           {resourceCards.map((item, idx) => (
             <Link
               key={idx}
               href={item.href}
-              className={`group p-6 rounded-2xl ${item.bgColor} hover:shadow-lg transition-all duration-200`}
+              className="group flex items-start gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition"
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <item.icon className="w-6 h-6 text-white" />
+              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0`}>
+                <item.icon className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
+              <div>
+                <h3 className="font-semibold text-white text-sm group-hover:text-blue-400 transition">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-gray-500 mt-0.5">{item.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
       </div>
 
-      <div className="col-span-4 border-l border-gray-100 pl-8">
-        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Quick Links</h4>
-        <div className="space-y-3">
+      {/* Quick Links */}
+      <div className="w-44 border-l border-white/10 pl-6">
+        <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Quick Links</h4>
+        <div className="space-y-2">
           {quickLinks.map((item, idx) => (
             <Link
               key={idx}
               href={item.href}
-              className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 transition group"
+              className="flex items-center gap-2.5 py-1.5 text-gray-400 hover:text-white transition"
             >
-              <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-lg flex-shrink-0">
-                {item.icon}
-              </div>
-              <p className="font-medium text-sm text-gray-700 group-hover:text-blue-600 transition">{item.name}</p>
+              <span className="text-sm">{item.icon}</span>
+              <span className="text-xs font-medium">{item.name}</span>
             </Link>
           ))}
         </div>
