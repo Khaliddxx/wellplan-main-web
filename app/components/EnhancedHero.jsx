@@ -69,7 +69,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-7xl font-black mb-6 leading-tight"
+              className="text-6xl md:text-7xl font-black mb-6 leading-[0.9] md:leading-tight"
             >
               <span className="text-white">Capture. Nurture.</span>
               <br />
