@@ -1,7 +1,7 @@
 'use client';
 
 import './globals.css';
-import MegaNav from './components/MegaNav';
+import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <MegaNav />
+        <Navigation />
         <main>
           {children}
         </main>
