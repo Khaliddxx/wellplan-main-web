@@ -1,22 +1,19 @@
 import Link from 'next/link';
 import { integrations } from '@/app/lib/integrations';
-import { integrationIconMap, DefaultIntegrationIcon } from '@/app/components/IntegrationIcons';
 import { ArrowRight, Zap, Check } from 'lucide-react';
 
-const BRAND_BLUE = '#214CE5';
-
 // Category colors for variety while staying on-brand
-const categoryColors = {
-  'Messaging': { bg: 'bg-[#214CE5]/20', border: 'border-[#214CE5]/30', hover: 'hover:border-[#214CE5]/60', text: 'text-[#6B8EFF]' },
-  'Social': { bg: 'bg-pink-500/20', border: 'border-pink-500/30', hover: 'hover:border-pink-500/60', text: 'text-pink-400' },
-  'CRM': { bg: 'bg-emerald-500/20', border: 'border-emerald-500/30', hover: 'hover:border-emerald-500/60', text: 'text-emerald-400' },
-  'Email': { bg: 'bg-orange-500/20', border: 'border-orange-500/30', hover: 'hover:border-orange-500/60', text: 'text-orange-400' },
-  'SMS': { bg: 'bg-purple-500/20', border: 'border-purple-500/30', hover: 'hover:border-purple-500/60', text: 'text-purple-400' },
-  'Automation': { bg: 'bg-yellow-500/20', border: 'border-yellow-500/30', hover: 'hover:border-yellow-500/60', text: 'text-yellow-400' },
-  'E-Commerce': { bg: 'bg-cyan-500/20', border: 'border-cyan-500/30', hover: 'hover:border-cyan-500/60', text: 'text-cyan-400' },
-  'Payments': { bg: 'bg-green-500/20', border: 'border-green-500/30', hover: 'hover:border-green-500/60', text: 'text-green-400' },
-  'Productivity': { bg: 'bg-violet-500/20', border: 'border-violet-500/30', hover: 'hover:border-violet-500/60', text: 'text-violet-400' },
-  'Custom': { bg: 'bg-slate-500/20', border: 'border-slate-500/30', hover: 'hover:border-slate-500/60', text: 'text-slate-400' },
+const categoryStyles = {
+  'Messaging': { bg: 'bg-[#214CE5]/20', border: 'border-[#214CE5]/30', hover: 'hover:border-[#214CE5]/60', iconBg: 'bg-[#214CE5]/30' },
+  'Social': { bg: 'bg-pink-500/20', border: 'border-pink-500/30', hover: 'hover:border-pink-500/60', iconBg: 'bg-pink-500/30' },
+  'CRM': { bg: 'bg-emerald-500/20', border: 'border-emerald-500/30', hover: 'hover:border-emerald-500/60', iconBg: 'bg-emerald-500/30' },
+  'Email': { bg: 'bg-orange-500/20', border: 'border-orange-500/30', hover: 'hover:border-orange-500/60', iconBg: 'bg-orange-500/30' },
+  'SMS': { bg: 'bg-purple-500/20', border: 'border-purple-500/30', hover: 'hover:border-purple-500/60', iconBg: 'bg-purple-500/30' },
+  'Automation': { bg: 'bg-yellow-500/20', border: 'border-yellow-500/30', hover: 'hover:border-yellow-500/60', iconBg: 'bg-yellow-500/30' },
+  'E-Commerce': { bg: 'bg-cyan-500/20', border: 'border-cyan-500/30', hover: 'hover:border-cyan-500/60', iconBg: 'bg-cyan-500/30' },
+  'Payments': { bg: 'bg-green-500/20', border: 'border-green-500/30', hover: 'hover:border-green-500/60', iconBg: 'bg-green-500/30' },
+  'Productivity': { bg: 'bg-violet-500/20', border: 'border-violet-500/30', hover: 'hover:border-violet-500/60', iconBg: 'bg-violet-500/30' },
+  'Custom': { bg: 'bg-slate-500/20', border: 'border-slate-500/30', hover: 'hover:border-slate-500/60', iconBg: 'bg-slate-500/30' },
 };
 
 export const metadata = {
@@ -85,50 +82,46 @@ export default function IntegrationsPage() {
           const categoryIntegrations = integrations.filter(i => i.category === category);
           if (categoryIntegrations.length === 0) return null;
           
-          const colors = categoryColors[category] || categoryColors['Custom'];
+          const styles = categoryStyles[category] || categoryStyles['Custom'];
           
           return (
             <div key={category} id={category.toLowerCase().replace(' ', '-')} className="mb-16">
               <div className="flex items-center gap-4 mb-8">
-                <div className={`w-3 h-3 rounded-full ${colors.bg.replace('/20', '')}`} />
+                <div className={`w-3 h-3 rounded-full ${styles.iconBg}`} />
                 <h2 className="text-2xl font-bold text-white">{category}</h2>
                 <span className="text-sm text-gray-500">({categoryIntegrations.length})</span>
               </div>
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                {categoryIntegrations.map((integration) => {
-                  const IconComponent = integrationIconMap[integration.slug] || DefaultIntegrationIcon;
-                  
-                  return (
-                    <Link
-                      key={integration.slug}
-                      href={`/integrations/${integration.slug}`}
-                      className={`group relative flex flex-col items-center gap-4 p-6 rounded-2xl bg-[#111111] border ${colors.border} ${colors.hover} transition-all hover:shadow-lg hover:shadow-black/50 hover:-translate-y-1`}
-                    >
-                      {/* Icon Container */}
-                      <div className={`w-16 h-16 rounded-2xl ${colors.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                        <IconComponent size={28} className="text-white" />
-                      </div>
-                      
-                      {/* Name */}
-                      <div className="text-center">
-                        <p className="font-semibold text-white group-hover:text-[#6B8EFF] transition">
-                          {integration.name}
+                {categoryIntegrations.map((integration) => (
+                  <Link
+                    key={integration.slug}
+                    href={`/integrations/${integration.slug}`}
+                    className={`group relative flex flex-col items-center gap-4 p-6 rounded-2xl bg-[#111111] border ${styles.border} ${styles.hover} transition-all hover:shadow-lg hover:shadow-black/50 hover:-translate-y-1`}
+                  >
+                    {/* Icon Container */}
+                    <div className={`w-16 h-16 rounded-2xl ${styles.iconBg} flex items-center justify-center group-hover:scale-110 transition-transform text-3xl`}>
+                      {integration.icon}
+                    </div>
+                    
+                    {/* Name */}
+                    <div className="text-center">
+                      <p className="font-semibold text-white group-hover:text-[#6B8EFF] transition">
+                        {integration.name}
+                      </p>
+                      {integration.features && (
+                        <p className="text-xs text-gray-500 mt-1">
+                          {integration.features.length} features
                         </p>
-                        {integration.features && (
-                          <p className="text-xs text-gray-500 mt-1">
-                            {integration.features.length} features
-                          </p>
-                        )}
-                      </div>
-                      
-                      {/* Hover Arrow */}
-                      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition">
-                        <ArrowRight className="w-4 h-4 text-gray-500" />
-                      </div>
-                    </Link>
-                  );
-                })}
+                      )}
+                    </div>
+                    
+                    {/* Hover Arrow */}
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition">
+                      <ArrowRight className="w-4 h-4 text-gray-500" />
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           );
