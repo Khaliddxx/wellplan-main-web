@@ -1,21 +1,27 @@
 import { integrations } from './lib/integrations';
 
 export default function sitemap() {
-  const baseUrl = 'https://wellplan-main-web.vercel.app';
+  const baseUrl = 'https://wellplan.io';
 
   // Static pages
   const staticPages = [
-    '',
-    '/pricing',
-    '/integrations',
-    '/features',
-    '/case-studies',
-    '/industries',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
+    { route: '', priority: 1, changeFreq: 'weekly' },
+    { route: '/pricing', priority: 0.9, changeFreq: 'weekly' },
+    { route: '/integrations', priority: 0.9, changeFreq: 'weekly' },
+    { route: '/demo', priority: 0.9, changeFreq: 'monthly' },
+    { route: '/blog', priority: 0.8, changeFreq: 'daily' },
+    { route: '/roi-calculator', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/features/capturing', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/features/nurturing', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/features/closing', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/solutions/agencies', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/solutions/coaches', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/solutions/sales-teams', priority: 0.8, changeFreq: 'monthly' },
+  ].map((page) => ({
+    url: `${baseUrl}${page.route}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: page.changeFreq,
+    priority: page.priority,
   }));
 
   // Integration pages
@@ -23,7 +29,7 @@ export default function sitemap() {
     url: `${baseUrl}/integrations/${integration.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
-    priority: 0.7,
+    priority: 0.6,
   }));
 
   return [...staticPages, ...integrationPages];

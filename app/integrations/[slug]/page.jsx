@@ -3,6 +3,23 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import IntegrationBrandIcon from '@/app/components/IntegrationBrandIcons';
 
+export async function generateMetadata({ params }) {
+  const integration = integrations.find(i => i.slug === params.slug);
+  
+  if (!integration) {
+    return { title: 'Integration Not Found' };
+  }
+
+  return {
+    title: `${integration.name} Integration`,
+    description: `Connect ${integration.name} with WellPlan. ${integration.description}. Automate workflows and sync data seamlessly.`,
+    openGraph: {
+      title: `${integration.name} Integration | WellPlan`,
+      description: integration.description,
+    },
+  };
+}
+
 export default function IntegrationDetailPage({ params }) {
   const integration = integrations.find(i => i.slug === params.slug);
 
