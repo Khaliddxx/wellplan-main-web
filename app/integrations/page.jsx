@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { integrations } from '@/app/lib/integrations';
+import { BrandIcons, DefaultIcon } from '@/app/lib/brandIcons';
 import { ArrowRight, Zap, Check, Search } from 'lucide-react';
 import { useState } from 'react';
 
@@ -116,12 +117,15 @@ export default function IntegrationsPage() {
                 href={`/integrations/${integration.slug}`}
                 className="group relative flex flex-col items-center gap-4 p-6 rounded-2xl bg-[#111111] border border-white/5 hover:border-white/20 transition-all hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1"
               >
-                {/* Icon with Brand Color Background */}
+                {/* Brand Icon with Color Background */}
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform"
-                  style={{ backgroundColor: `${integration.brandColor}20` }}
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: `${integration.brandColor}15` }}
                 >
-                  {integration.icon}
+                  {BrandIcons[integration.slug] 
+                    ? BrandIcons[integration.slug]({ size: 32 })
+                    : <DefaultIcon size={32} color={integration.brandColor} />
+                  }
                 </div>
                 
                 {/* Name & Color Indicator */}
