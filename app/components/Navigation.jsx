@@ -197,9 +197,9 @@ export default function Navigation() {
       {activeDropdown && (
         <div className="absolute left-1/2 -translate-x-1/2 top-16 pt-2" onMouseEnter={() => handleMouseEnter(activeDropdown)} onMouseLeave={handleMouseLeave}>
           <div className="bg-[#0f1115] border border-white/10 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden">
-            {activeDropdown === 'features' && <FeaturesDropdown />}
-            {activeDropdown === 'solutions' && <SolutionsDropdown />}
-            {activeDropdown === 'resources' && <ResourcesDropdown />}
+            {activeDropdown === 'features' && <FeaturesDropdown onClose={() => setActiveDropdown(null)} />}
+            {activeDropdown === 'solutions' && <SolutionsDropdown onClose={() => setActiveDropdown(null)} />}
+            {activeDropdown === 'resources' && <ResourcesDropdown onClose={() => setActiveDropdown(null)} />}
           </div>
         </div>
       )}
@@ -207,7 +207,7 @@ export default function Navigation() {
       {mobileOpen && (
         <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-1">
           <Link href="/features" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Features</Link>
-          <Link href="/industries" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Solutions</Link>
+          <Link onClick={onClose} href="/industries" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Solutions</Link>
           <Link href="/pricing" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
           <div className="pt-4 mt-4 border-t border-white/10">
             <Link href="https://app.wellplan.io" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
@@ -220,7 +220,7 @@ export default function Navigation() {
   );
 }
 
-function FeaturesDropdown() {
+function FeaturesDropdown({ onClose }) {
   return (
     <div className="flex" style={{ width: '920px' }}>
       {/* 3 Pillars */}
@@ -238,19 +238,19 @@ function FeaturesDropdown() {
                 <p className="text-gray-500 text-xs mt-1">Attract & collect leads</p>
               </div>
               <div className="space-y-2">
-                <Link href="/features/forms" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/capturing" onClick={onClose} className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
                     <FormIcon size={14} />
                   </div>
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Forms & Surveys</span>
                 </Link>
-                <Link href="/features/landing-pages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/landing-pages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="white" width={14} height={14}><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
                   </div>
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Landing Pages</span>
                 </Link>
-                <Link href="/features/chat-widget" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/chat-widget" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="white" width={14} height={14}><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
                   </div>
@@ -272,19 +272,19 @@ function FeaturesDropdown() {
                 <p className="text-gray-500 text-xs mt-1">Engage & build trust</p>
               </div>
               <div className="space-y-2">
-                <Link href="/features/email" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/email" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
                     <EmailIcon size={14} />
                   </div>
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Email Campaigns</span>
                 </Link>
-                <Link href="/features/sms" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/sms" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
                     <SMSIcon size={14} />
                   </div>
                   <span className="text-xs text-gray-400 group-hover/item:text-white">SMS Marketing</span>
                 </Link>
-                <Link href="/features/automation" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/automation" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
                     <AutomationIcon size={14} />
                   </div>
@@ -306,19 +306,19 @@ function FeaturesDropdown() {
                 <p className="text-gray-500 text-xs mt-1">Convert & get paid</p>
               </div>
               <div className="space-y-2">
-                <Link href="/features/crm" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/crm" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
                     <PipelineIcon size={14} />
                   </div>
                   <span className="text-xs text-gray-400 group-hover/item:text-white">CRM & Pipeline</span>
                 </Link>
-                <Link href="/features/booking" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/booking" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
                     <CalendarIcon size={14} />
                   </div>
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Calendar Booking</span>
                 </Link>
-                <Link href="/features/payments" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/payments" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="white" width={14} height={14}><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
                   </div>
@@ -330,7 +330,7 @@ function FeaturesDropdown() {
         </div>
 
         {/* AI Bot Banner */}
-        <Link href="/features/ai-bot" className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
+        <Link onClick={onClose} href="/features/ai-bot" className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center shadow-lg shadow-[#214CE5]/30">
               <BotIcon size={24} />
@@ -381,7 +381,7 @@ function FeaturesDropdown() {
           </div>
         </div>
 
-        <Link href="/integrations" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mb-6">
+        <Link onClick={onClose} href="/integrations" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mb-6">
           View all integrations
           <ArrowRight className="w-3 h-3" />
         </Link>
@@ -392,16 +392,16 @@ function FeaturesDropdown() {
             <span className="text-[11px] font-bold text-white uppercase tracking-wider">Quick Links</span>
           </div>
           <Link href="/features" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ All Features</Link>
-          <Link href="/features/shared-inbox" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Shared Inbox</Link>
-          <Link href="/features/analytics" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Analytics & Reports</Link>
-          <Link href="/features/broadcasts" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Broadcast Campaigns</Link>
+          <Link onClick={onClose} href="/features/shared-inbox" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Shared Inbox</Link>
+          <Link onClick={onClose} href="/features/analytics" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Analytics & Reports</Link>
+          <Link onClick={onClose} href="/features/broadcasts" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Broadcast Campaigns</Link>
         </div>
       </div>
     </div>
   );
 }
 
-function SolutionsDropdown() {
+function SolutionsDropdown({ onClose }) {
   return (
     <div className="flex" style={{ width: '800px' }}>
       <div className="w-[220px] p-5 border-r border-white/[0.08]">
@@ -409,7 +409,7 @@ function SolutionsDropdown() {
           <div className="w-2 h-2 rounded-full bg-[#214CE5]"></div>
           <span className="text-[11px] font-bold text-white uppercase tracking-wider">By Role</span>
         </div>
-        <Link href="/industries/agencies" className="flex items-center gap-3 py-3 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+        <Link onClick={onClose} href="/industries/agencies" className="flex items-center gap-3 py-3 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
           <div className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center group-hover:bg-[#214CE5]/30 transition">
             <Building2 className="w-5 h-5 text-[#6B8EFF]" />
           </div>
@@ -418,7 +418,7 @@ function SolutionsDropdown() {
             <p className="text-[10px] text-gray-600">White-label for clients</p>
           </div>
         </Link>
-        <Link href="/industries/coaching" className="flex items-center gap-3 py-3 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+        <Link onClick={onClose} href="/industries/coaching" className="flex items-center gap-3 py-3 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
           <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition">
             <Target className="w-5 h-5 text-purple-400" />
           </div>
@@ -427,7 +427,7 @@ function SolutionsDropdown() {
             <p className="text-[10px] text-gray-600">Scale 1:1 relationships</p>
           </div>
         </Link>
-        <Link href="/industries/sales" className="flex items-center gap-3 py-3 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+        <Link onClick={onClose} href="/industries/sales" className="flex items-center gap-3 py-3 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
           <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center group-hover:bg-emerald-500/30 transition">
             <Briefcase className="w-5 h-5 text-emerald-400" />
           </div>
@@ -442,13 +442,13 @@ function SolutionsDropdown() {
             <div className="w-2 h-2 rounded-full bg-orange-400"></div>
             <span className="text-[11px] font-bold text-white uppercase tracking-wider">Business</span>
           </div>
-          <Link href="/industries/b2b" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <Link onClick={onClose} href="/industries/b2b" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
             <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
               <Users className="w-4 h-4 text-orange-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">B2B Sales</span>
           </Link>
-          <Link href="/industries/b2c" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
+          <Link onClick={onClose} href="/industries/b2c" className="flex items-center gap-3 py-2 hover:bg-white/[0.04] -mx-2 px-2 rounded-lg transition group">
             <div className="w-8 h-8 rounded-lg bg-pink-500/20 flex items-center justify-center">
               <Users className="w-4 h-4 text-pink-400" />
             </div>
@@ -463,7 +463,7 @@ function SolutionsDropdown() {
           <span className="text-[11px] font-bold text-white uppercase tracking-wider">Popular Industries</span>
         </div>
         <div className="grid grid-cols-2 gap-2">
-          <Link href="/industries/ecommerce" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/ecommerce" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center group-hover:scale-110 transition">
               <ShoppingCart className="w-5 h-5 text-[#6B8EFF]" />
             </div>
@@ -472,7 +472,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">Cart recovery & support</p>
             </div>
           </Link>
-          <Link href="/industries/real-estate" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/real-estate" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <Home className="w-5 h-5 text-emerald-400" />
             </div>
@@ -481,7 +481,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">Never miss a lead</p>
             </div>
           </Link>
-          <Link href="/industries/healthcare" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/healthcare" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <Stethoscope className="w-5 h-5 text-red-400" />
             </div>
@@ -490,7 +490,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">HIPAA-ready messaging</p>
             </div>
           </Link>
-          <Link href="/industries/education" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/education" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <GraduationCap className="w-5 h-5 text-purple-400" />
             </div>
@@ -499,7 +499,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">Student engagement</p>
             </div>
           </Link>
-          <Link href="/industries/restaurants" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/restaurants" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <Utensils className="w-5 h-5 text-orange-400" />
             </div>
@@ -508,7 +508,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">Reservations & promos</p>
             </div>
           </Link>
-          <Link href="/industries/fitness" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/fitness" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <Dumbbell className="w-5 h-5 text-pink-400" />
             </div>
@@ -517,7 +517,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">Class bookings</p>
             </div>
           </Link>
-          <Link href="/industries/automotive" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/automotive" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <Car className="w-5 h-5 text-cyan-400" />
             </div>
@@ -526,7 +526,7 @@ function SolutionsDropdown() {
               <p className="text-[10px] text-gray-600">Dealership & service</p>
             </div>
           </Link>
-          <Link href="/industries/professional-services" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
+          <Link onClick={onClose} href="/industries/professional-services" className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.04] border border-transparent hover:border-white/10 transition group">
             <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center group-hover:scale-110 transition">
               <Briefcase className="w-5 h-5 text-violet-400" />
             </div>
@@ -548,7 +548,7 @@ function SolutionsDropdown() {
                 <p className="text-[11px] text-gray-500">WellPlan adapts to any business model</p>
               </div>
             </div>
-            <Link href="#demo" className="px-4 py-2 bg-[#214CE5] hover:bg-[#1a3db8] text-white text-xs font-semibold rounded-lg transition">
+            <Link onClick={onClose} href="#demo" className="px-4 py-2 bg-[#214CE5] hover:bg-[#1a3db8] text-white text-xs font-semibold rounded-lg transition">
               Talk to Sales
             </Link>
           </div>
@@ -558,7 +558,7 @@ function SolutionsDropdown() {
   );
 }
 
-function ResourcesDropdown() {
+function ResourcesDropdown({ onClose }) {
   return (
     <div className="flex p-6 gap-6" style={{ width: '640px' }}>
       <div className="flex-1 space-y-1">
@@ -566,7 +566,7 @@ function ResourcesDropdown() {
           <div className="w-2 h-2 rounded-full bg-[#214CE5]"></div>
           <span className="text-[11px] font-bold text-white uppercase tracking-wider">Learn</span>
         </div>
-        <Link href="/case-studies" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href="/case-studies" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <BarChart3 className="w-5 h-5 text-emerald-400" />
           </div>
@@ -584,7 +584,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Guides and references</p>
           </div>
         </Link>
-        <Link href="/blog" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href="/blog" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Newspaper className="w-5 h-5 text-purple-400" />
           </div>
@@ -593,7 +593,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">Latest updates & tips</p>
           </div>
         </Link>
-        <Link href="/roi-calculator" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href="/roi-calculator" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Calculator className="w-5 h-5 text-pink-400" />
           </div>
@@ -635,7 +635,7 @@ function ResourcesDropdown() {
             <p className="text-[11px] text-gray-500">FAQs and support</p>
           </div>
         </Link>
-        <Link href="/demo" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href="/demo" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Calendar className="w-5 h-5 text-green-400" />
           </div>
