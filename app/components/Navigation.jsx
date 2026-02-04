@@ -215,11 +215,12 @@ export default function Navigation() {
 
       {mobileOpen && (
         <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-1">
-          <Link href="/features" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Features</Link>
-          <Link onClick={onClose} href="/industries" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Solutions</Link>
+          <Link href="/features/capturing" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Features</Link>
+          <Link href="/solutions/coaches" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Solutions</Link>
+          <Link href="/integrations" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Integrations</Link>
           <Link href="/pricing" className="block px-4 py-3 text-gray-300 font-medium hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
           <div className="pt-4 mt-4 border-t border-white/10">
-            <Link href="https://app.wellplan.io" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
+            <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
               <Zap className="w-4 h-4" />Try Free
             </Link>
           </div>
