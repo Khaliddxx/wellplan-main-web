@@ -176,7 +176,7 @@ export default function IntegrationLogoCarousel() {
   const doubled = [...integrations, ...integrations];
 
   return (
-    <section className="py-24 bg-[#0a0a0a] overflow-hidden">
+    <section className="py-16 sm:py-24 bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -184,7 +184,7 @@ export default function IntegrationLogoCarousel() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
             Connects with your <span className="bg-gradient-to-r from-[#214CE5] to-purple-500 bg-clip-text text-transparent">favorite tools</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -209,7 +209,7 @@ export default function IntegrationLogoCarousel() {
             <Link
               key={`row1-${idx}`}
               href={`/integrations/${integration.slug}`}
-              className="flex-shrink-0 w-40 h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group"
+              className="flex-shrink-0 w-28 sm:w-40 h-20 sm:h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-1 sm:gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group"
             >
               <div 
                 className="transition-transform duration-300 group-hover:scale-110"
@@ -241,7 +241,7 @@ export default function IntegrationLogoCarousel() {
             <Link
               key={`row2-${idx}`}
               href={`/integrations/${integration.slug}`}
-              className="flex-shrink-0 w-40 h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group"
+              className="flex-shrink-0 w-28 sm:w-40 h-20 sm:h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-1 sm:gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group"
             >
               <div 
                 className="transition-transform duration-300 group-hover:scale-110"

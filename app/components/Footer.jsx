@@ -5,15 +5,12 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/5">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#214CE5] to-[#1a3db8] rounded-xl flex items-center justify-center shadow-lg shadow-[#214CE5]/30">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-lg font-bold text-white">wellplan<span className="text-[#214CE5]">®</span></span>
+            <Link href="/" className="flex items-center mb-4">
+              <img src="/Frame 69.png" alt="WellPlan" className="h-8" />
             </Link>
             <p className="text-gray-500 text-sm mb-6 max-w-xs">
               The all-in-one platform to capture leads, nurture relationships, and close deals faster.

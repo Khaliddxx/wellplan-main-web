@@ -40,7 +40,7 @@ export default function HowItWorks() {
   const isInView = useInView(containerRef, { once: false, margin: '-100px' });
 
   return (
-    <section ref={containerRef} className="py-32 px-6 bg-[#0a0a0a] overflow-hidden">
+    <section ref={containerRef} className="py-16 sm:py-32 px-4 sm:px-6 bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -51,7 +51,7 @@ export default function HowItWorks() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6">
             <span className="text-sm font-medium text-gray-400">Simple 3-Step Process</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 text-white">
             How WellPlan Works
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">

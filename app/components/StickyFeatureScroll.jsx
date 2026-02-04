@@ -236,9 +236,9 @@ function FeatureSection({ feature, index }) {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-32">
-      <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
+    <div ref={ref} className="min-h-screen flex items-center py-16 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <div className={`grid lg:grid-cols-2 gap-8 sm:gap-16 items-center ${index % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
           {/* Content */}
           <motion.div 
             style={{ opacity, y }}
@@ -251,13 +251,13 @@ function FeatureSection({ feature, index }) {
               <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-black mb-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4">
               <span className={`bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
                 {feature.title}
               </span>
             </h2>
             
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
               {feature.headline}
             </h3>
             
@@ -266,11 +266,11 @@ function FeatureSection({ feature, index }) {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-8">
               {feature.stats.map((stat, i) => (
                 <div key={i} className="text-center">
                   <div 
-                    className="text-3xl font-black mb-1"
+                    className="text-2xl sm:text-3xl font-black mb-1"
                     style={{ color: feature.color }}
                   >
                     {stat.value}
@@ -299,7 +299,7 @@ function FeatureSection({ feature, index }) {
           {/* Visual */}
           <motion.div 
             style={{ opacity, scale }}
-            className="lg:[direction:ltr] h-[500px] relative"
+            className="lg:[direction:ltr] h-[350px] sm:h-[500px] relative hidden sm:block"
           >
             {feature.visual}
           </motion.div>

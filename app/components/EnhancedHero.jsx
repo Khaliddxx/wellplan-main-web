@@ -21,7 +21,7 @@ export default function EnhancedHero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center px-6 pt-32 pb-20 overflow-hidden bg-[#0a0a0a]">
+    <section className="relative min-h-screen flex items-center px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0a0a0a]">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         {/* Mouse follow gradient */}
@@ -69,7 +69,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-black mb-6 leading-[1.1]"
+              className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-[1.1]"
             >
               <span className="text-white">Capture. Nurture.</span>
               <br />
@@ -83,7 +83,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-400 mb-8 leading-relaxed max-w-lg"
+              className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg"
             >
               The all-in-one platform that turns visitors into leads, 
               leads into customers, and customers into raving fans.
@@ -118,7 +118,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center gap-6 text-sm text-gray-500"
+              className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500"
             >
               <span className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
