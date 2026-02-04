@@ -158,7 +158,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <img src="/logo-full-white.png" alt="WellPlan" className="h-8" />
+            <img src="/Frame 69.png" alt="WellPlan" className="h-8" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
