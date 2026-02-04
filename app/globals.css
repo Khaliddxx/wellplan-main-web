@@ -64,27 +64,3 @@ button, a, [role="button"] {
 ::selection {
   @apply bg-blue-500/50;
 }
-
-/* TikTok-style snap scrolling for feature sections on mobile */
-@media (max-width: 767px) {
-  .snap-section-mobile {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-  }
-  
-  .snap-section-mobile > * {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-  }
-}
-
-/* Hide scrollbar for snap sections */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
