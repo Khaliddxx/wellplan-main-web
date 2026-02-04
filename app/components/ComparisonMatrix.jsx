@@ -1,123 +1,167 @@
 'use client';
 
 import { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { Check, X, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+
+const competitors = [
+  { name: 'WellPlan', primary: true },
+  { name: 'HubSpot', primary: false },
+  { name: 'Salesforce', primary: false },
+  { name: 'ActiveCampaign', primary: false },
+];
+
+const features = [
+  { name: 'All-in-one Platform', wellplan: true, hubspot: true, salesforce: false, activecampaign: false },
+  { name: 'WhatsApp Business API', wellplan: true, hubspot: false, salesforce: false, activecampaign: false },
+  { name: 'AI Lead Qualification', wellplan: true, hubspot: true, salesforce: true, activecampaign: false },
+  { name: 'Automated Nurturing', wellplan: true, hubspot: true, salesforce: true, activecampaign: true },
+  { name: 'Built-in CRM', wellplan: true, hubspot: true, salesforce: true, activecampaign: true },
+  { name: 'Landing Page Builder', wellplan: true, hubspot: true, salesforce: false, activecampaign: true },
+  { name: 'AI Chatbots', wellplan: true, hubspot: false, salesforce: false, activecampaign: false },
+  { name: 'SMS Marketing', wellplan: true, hubspot: true, salesforce: false, activecampaign: true },
+  { name: 'Pipeline Management', wellplan: true, hubspot: true, salesforce: true, activecampaign: true },
+  { name: 'Affordable Pricing', wellplan: true, hubspot: false, salesforce: false, activecampaign: true },
+];
 
 export default function ComparisonMatrix() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: '-100px' });
 
-  const competitors = [
-    { name: 'WellPlan', icon: '⭐', primary: true },
-    { name: 'HubSpot', icon: '🎯', primary: false },
-    { name: 'Salesforce', icon: '☁️', primary: false },
-    { name: 'Pipedrive', icon: '🔄', primary: false },
-  ];
-
-  const features = [
-    { name: 'Multi-channel Lead Capture', wellplan: true, hubspot: true, salesforce: true, pipedrive: false },
-    { name: 'AI Lead Scoring', wellplan: true, hubspot: true, salesforce: false, pipedrive: false },
-    { name: 'Automated Nurturing', wellplan: true, hubspot: true, salesforce: true, pipedrive: false },
-    { name: 'WhatsApp Integration', wellplan: true, hubspot: false, salesforce: false, pipedrive: false },
-    { name: 'SMS Automation', wellplan: true, hubspot: true, salesforce: false, pipedrive: true },
-    { name: 'Real-time Analytics', wellplan: true, hubspot: true, salesforce: true, pipedrive: true },
-    { name: 'AI Chatbots', wellplan: true, hubspot: false, salesforce: false, pipedrive: false },
-    { name: 'Zapier Integration', wellplan: true, hubspot: true, salesforce: true, pipedrive: true },
-    { name: 'Custom Workflows', wellplan: true, hubspot: true, salesforce: true, pipedrive: true },
-    { name: 'API Access', wellplan: true, hubspot: true, salesforce: true, pipedrive: true },
-    { name: 'Affordable Pricing', wellplan: true, hubspot: false, salesforce: false, pipedrive: true },
-  ];
+  const getFeatureValue = (feature, competitor) => {
+    const key = competitor.toLowerCase().replace('campaign', 'campaign');
+    return feature[key];
+  };
 
   return (
-    <section ref={ref} className="py-32 px-4 bg-gradient-to-b from-slate-900/50 to-slate-950">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              WellPlan Wins
-            </span>
+    <section ref={ref} className="py-32 px-6 bg-[#0a0a0a]">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            <span className="text-white">Why Teams Choose</span>{' '}
+            <span className="bg-gradient-to-r from-[#214CE5] to-purple-400 bg-clip-text text-transparent">WellPlan</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            See how WellPlan stacks up against the competition. Better features, better price, better support.
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            More features, better value, simpler pricing
           </p>
-        </div>
+        </motion.div>
 
         {/* Comparison Table */}
-        <div 
-          className="overflow-x-auto rounded-2xl border border-slate-700/50 bg-slate-900/50 backdrop-blur-xl"
-          style={{
-            opacity: isInView ? 1 : 0,
-            transform: isInView ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 0.8s ease-out',
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.2 }}
+          className="overflow-x-auto"
         >
-          <table className="w-full">
-            {/* Header */}
-            <thead>
-              <tr className="border-b border-slate-700/50">
-                <th className="px-6 py-4 text-left text-gray-300 font-semibold bg-slate-800/30">Feature</th>
-                {competitors.map((comp) => (
-                  <th
-                    key={comp.name}
-                    className={`px-6 py-4 text-center font-semibold transition ${
-                      comp.primary
-                        ? 'bg-gradient-to-b from-blue-500/20 to-transparent text-blue-300'
-                        : 'text-gray-400 hover:text-gray-300'
-                    }`}
-                  >
-                    <div className="text-3xl mb-2">{comp.icon}</div>
-                    <div className="text-sm font-bold">{comp.name}</div>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-
-            {/* Body */}
-            <tbody>
-              {features.map((feature, idx) => (
-                <tr
+          <div className="min-w-[800px] bg-[#111111] border border-white/10 rounded-2xl overflow-hidden">
+            {/* Header Row */}
+            <div className="grid grid-cols-5 border-b border-white/10">
+              <div className="p-6 bg-white/[0.02]">
+                <span className="text-sm font-medium text-gray-500">Feature</span>
+              </div>
+              {competitors.map((comp, idx) => (
+                <div 
                   key={idx}
-                  className="border-b border-slate-700/30 hover:bg-slate-800/30 transition"
-                  style={{
-                    opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateX(0)' : 'translateX(-20px)',
-                    transition: `all 0.6s ease-out ${idx * 0.05}s`,
-                  }}
+                  className={`p-6 text-center ${comp.primary ? 'bg-[#214CE5]/10' : 'bg-white/[0.02]'}`}
                 >
-                  <td className="px-6 py-4 font-medium text-gray-300">{feature.name}</td>
-                  <td className="px-6 py-4 text-center">
-                    <span className="text-2xl">
-                      {feature.wellplan ? '✓' : '✗'}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    <span className="text-2xl text-gray-500">
-                      {feature.hubspot ? '✓' : '✗'}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    <span className="text-2xl text-gray-500">
-                      {feature.salesforce ? '✓' : '✗'}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    <span className="text-2xl text-gray-500">
-                      {feature.pipedrive ? '✓' : '✗'}
-                    </span>
-                  </td>
-                </tr>
+                  <span className={`font-bold ${comp.primary ? 'text-[#214CE5]' : 'text-gray-400'}`}>
+                    {comp.name}
+                  </span>
+                  {comp.primary && (
+                    <div className="mt-1 text-xs text-[#6B8EFF]">Recommended</div>
+                  )}
+                </div>
               ))}
-            </tbody>
-          </table>
-        </div>
+            </div>
+
+            {/* Feature Rows */}
+            {features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.1 + idx * 0.03 }}
+                className={`grid grid-cols-5 border-b border-white/5 hover:bg-white/[0.02] transition ${
+                  idx === features.length - 1 ? 'border-b-0' : ''
+                }`}
+              >
+                <div className="p-4 flex items-center">
+                  <span className="text-sm text-gray-300">{feature.name}</span>
+                </div>
+                {competitors.map((comp, compIdx) => {
+                  const hasFeature = feature[comp.name.toLowerCase().replace('campaign', 'campaign')];
+                  return (
+                    <div 
+                      key={compIdx}
+                      className={`p-4 flex items-center justify-center ${
+                        comp.primary ? 'bg-[#214CE5]/5' : ''
+                      }`}
+                    >
+                      {hasFeature ? (
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                          comp.primary ? 'bg-[#214CE5]' : 'bg-emerald-500/20'
+                        }`}>
+                          <Check className={`w-4 h-4 ${comp.primary ? 'text-white' : 'text-emerald-400'}`} />
+                        </div>
+                      ) : (
+                        <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                          <X className="w-4 h-4 text-gray-600" />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </motion.div>
+            ))}
+
+            {/* Pricing Row */}
+            <div className="grid grid-cols-5 bg-white/[0.02] border-t border-white/10">
+              <div className="p-6 flex items-center">
+                <span className="text-sm font-semibold text-white">Starting Price</span>
+              </div>
+              <div className="p-6 text-center bg-[#214CE5]/10">
+                <div className="text-2xl font-black text-[#214CE5]">$97</div>
+                <div className="text-xs text-gray-500">/month</div>
+              </div>
+              <div className="p-6 text-center">
+                <div className="text-2xl font-bold text-gray-400">$800</div>
+                <div className="text-xs text-gray-500">/month</div>
+              </div>
+              <div className="p-6 text-center">
+                <div className="text-2xl font-bold text-gray-400">$1,500</div>
+                <div className="text-xs text-gray-500">/month</div>
+              </div>
+              <div className="p-6 text-center">
+                <div className="text-2xl font-bold text-gray-400">$149</div>
+                <div className="text-xs text-gray-500">/month</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-400 mb-6">Ready to see the difference?</p>
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-bold hover:shadow-lg hover:shadow-blue-500/50 transition">
-            Start Free Trial - No Credit Card
-          </button>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-12"
+        >
+          <p className="text-gray-500 mb-6">Get all features at a fraction of the cost</p>
+          <Link
+            href="https://app.wellplan.io"
+            target="_blank"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] rounded-xl font-bold text-white hover:shadow-lg hover:shadow-[#214CE5]/30 transition group"
+          >
+            Start Free Trial
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

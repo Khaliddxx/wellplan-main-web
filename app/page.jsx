@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import EnhancedHero from './components/EnhancedHero';
+import HowItWorks from './components/HowItWorks';
 import IntegrationLogoCarousel from './components/IntegrationLogoCarousel';
 import StickyFeatureScroll from './components/StickyFeatureScroll';
 import ComparisonMatrix from './components/ComparisonMatrix';
@@ -19,6 +20,9 @@ export default function Home() {
       
       {/* Stats Section */}
       <StatsSection />
+
+      {/* How It Works - 3 Step Process */}
+      <HowItWorks />
 
       {/* Integration Logo Carousel - n8n style */}
       <IntegrationLogoCarousel />
