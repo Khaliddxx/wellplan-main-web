@@ -8,7 +8,7 @@ export default function MegaNav() {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -93,7 +93,7 @@ function NavItem({ label, active, children, onMouseEnter, onMouseLeave }) {
 
 function ProductDropdown() {
   return (
-    <div className="w-[1000px] bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
+    <div className="w-[1000px] bg-[#1a1a1a]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
       <div className="grid grid-cols-3 gap-6">
         {/* Left: Feature Cards */}
         <div className="col-span-2 space-y-4">
