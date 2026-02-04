@@ -7,6 +7,7 @@ import Link from 'next/link';
 const integrations = [
   {
     name: 'WhatsApp',
+    slug: 'whatsapp',
     color: '#25D366',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -16,6 +17,7 @@ const integrations = [
   },
   {
     name: 'Telegram',
+    slug: 'telegram',
     color: '#0088cc',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -25,6 +27,7 @@ const integrations = [
   },
   {
     name: 'Slack',
+    slug: 'slack',
     color: '#4A154B',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -34,6 +37,7 @@ const integrations = [
   },
   {
     name: 'Stripe',
+    slug: 'stripe',
     color: '#635BFF',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -43,6 +47,7 @@ const integrations = [
   },
   {
     name: 'HubSpot',
+    slug: 'hubspot',
     color: '#FF7A59',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -52,6 +57,7 @@ const integrations = [
   },
   {
     name: 'Salesforce',
+    slug: 'salesforce',
     color: '#00A1E0',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -61,6 +67,7 @@ const integrations = [
   },
   {
     name: 'Zapier',
+    slug: 'zapier',
     color: '#FF4F00',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -70,6 +77,7 @@ const integrations = [
   },
   {
     name: 'Google',
+    slug: 'gmail',
     color: '#4285F4',
     logo: (
       <svg viewBox="0 0 24 24" className="w-8 h-8">
@@ -82,6 +90,7 @@ const integrations = [
   },
   {
     name: 'Instagram',
+    slug: 'instagram',
     color: '#E4405F',
     gradient: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
     logo: (
@@ -92,6 +101,7 @@ const integrations = [
   },
   {
     name: 'Facebook',
+    slug: 'facebook',
     color: '#1877F2',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -101,6 +111,7 @@ const integrations = [
   },
   {
     name: 'Shopify',
+    slug: 'shopify',
     color: '#96BF48',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -110,6 +121,7 @@ const integrations = [
   },
   {
     name: 'Mailchimp',
+    slug: 'mailchimp',
     color: '#FFE01B',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -119,6 +131,7 @@ const integrations = [
   },
   {
     name: 'Twilio',
+    slug: 'twilio',
     color: '#F22F46',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -128,6 +141,7 @@ const integrations = [
   },
   {
     name: 'Calendly',
+    slug: 'calendly',
     color: '#006BFF',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -137,6 +151,7 @@ const integrations = [
   },
   {
     name: 'LinkedIn',
+    slug: 'linkedin',
     color: '#0A66C2',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -146,6 +161,7 @@ const integrations = [
   },
   {
     name: 'Messenger',
+    slug: 'facebook-messenger',
     color: '#0084FF',
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -190,9 +206,10 @@ export default function IntegrationLogoCarousel() {
           }}
         >
           {doubled.map((integration, idx) => (
-            <div
+            <Link
               key={`row1-${idx}`}
-              className="flex-shrink-0 w-40 h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group cursor-pointer"
+              href={`/integrations/${integration.slug}`}
+              className="flex-shrink-0 w-40 h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group"
             >
               <div 
                 className="transition-transform duration-300 group-hover:scale-110"
@@ -203,7 +220,7 @@ export default function IntegrationLogoCarousel() {
               <span className="text-xs font-medium text-gray-500 group-hover:text-gray-300 transition-colors">
                 {integration.name}
               </span>
-            </div>
+            </Link>
           ))}
         </motion.div>
       </div>
@@ -221,9 +238,10 @@ export default function IntegrationLogoCarousel() {
           }}
         >
           {[...doubled].reverse().map((integration, idx) => (
-            <div
+            <Link
               key={`row2-${idx}`}
-              className="flex-shrink-0 w-40 h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group cursor-pointer"
+              href={`/integrations/${integration.slug}`}
+              className="flex-shrink-0 w-40 h-24 bg-white/[0.03] border border-white/[0.08] rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group"
             >
               <div 
                 className="transition-transform duration-300 group-hover:scale-110"
@@ -234,7 +252,7 @@ export default function IntegrationLogoCarousel() {
               <span className="text-xs font-medium text-gray-500 group-hover:text-gray-300 transition-colors">
                 {integration.name}
               </span>
-            </div>
+            </Link>
           ))}
         </motion.div>
       </div>
