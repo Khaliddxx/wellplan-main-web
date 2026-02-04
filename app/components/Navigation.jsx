@@ -239,115 +239,55 @@ function FeaturesDropdown({ onClose }) {
       <div className="flex-1 p-6">
         <div className="grid grid-cols-3 gap-4">
           {/* CAPTURE */}
-          <div className="group">
+          <Link href="/features/capturing" onClick={onClose} className="group block">
             <div className="p-5 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-2xl hover:border-[#214CE5]/60 transition-all hover:shadow-lg hover:shadow-[#214CE5]/20">
-              <Link onClick={onClose} href="/features/capturing" className="block text-center mb-4 group/header">
+              <div className="block text-center mb-4 group/header">
                 <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
                   <CaptureIcon />
                 </div>
                 <span className="inline-block px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold uppercase tracking-wider mb-2">Step 1</span>
-                <h3 className="font-bold text-white text-lg group-hover/header:text-[#6B8EFF] transition">CAPTURE</h3>
+                <h3 className="font-bold text-white text-lg group-hover:text-[#6B8EFF] transition">CAPTURE</h3>
                 <p className="text-gray-500 text-xs mt-1">Attract & collect leads</p>
-              </Link>
-              <div className="space-y-2">
-                <Link onClick={onClose} href="/features/forms" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
-                    <FormIcon size={14} />
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Forms & Surveys</span>
-                </Link>
-                <Link onClick={onClose} href="/features/landing-pages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="white" width={14} height={14}><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Landing Pages</span>
-                </Link>
-                <Link onClick={onClose} href="/features/chat-widget" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="white" width={14} height={14}><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Chat Widget</span>
-                </Link>
               </div>
-              <Link onClick={onClose} href="/features/capturing" className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-[#214CE5]/20 text-[11px] font-semibold text-[#6B8EFF] hover:text-white transition">
-                View 5 more <ArrowRight className="w-3 h-3" />
-              </Link>
+              <div className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-[#214CE5]/20 text-[11px] font-semibold text-[#6B8EFF] group-hover:text-white transition">
+                Explore Capture <ArrowRight className="w-3 h-3" />
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* NURTURE */}
-          <div className="group">
+          <Link href="/features/nurturing" onClick={onClose} className="group block">
             <div className="p-5 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-2xl hover:border-purple-500/60 transition-all hover:shadow-lg hover:shadow-purple-500/20">
-              <Link onClick={onClose} href="/features/nurturing" className="block text-center mb-4 group/header">
-                <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
+              <div className="block text-center mb-4">
+                <div className="w-16 h-16 mb-4 mx-auto group-hover:scale-110 transition">
                   <NurtureIcon />
                 </div>
                 <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2">Step 2</span>
-                <h3 className="font-bold text-white text-lg group-hover/header:text-purple-400 transition">NURTURE</h3>
+                <h3 className="font-bold text-white text-lg group-hover:text-purple-400 transition">NURTURE</h3>
                 <p className="text-gray-500 text-xs mt-1">Engage & build trust</p>
-              </Link>
-              <div className="space-y-2">
-                <Link onClick={onClose} href="/features/email" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
-                    <EmailIcon size={14} />
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Email Campaigns</span>
-                </Link>
-                <Link onClick={onClose} href="/features/sms" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
-                    <SMSIcon size={14} />
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">SMS Marketing</span>
-                </Link>
-                <Link onClick={onClose} href="/features/automation" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
-                    <AutomationIcon size={14} />
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Workflow Automation</span>
-                </Link>
               </div>
-              <Link onClick={onClose} href="/features/nurturing" className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-purple-500/20 text-[11px] font-semibold text-purple-400 hover:text-white transition">
-                View 5 more <ArrowRight className="w-3 h-3" />
-              </Link>
+              <div className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-purple-500/20 text-[11px] font-semibold text-purple-400 group-hover:text-white transition">
+                Explore Nurture <ArrowRight className="w-3 h-3" />
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* CLOSE */}
-          <div className="group">
+          <Link href="/features/closing" onClick={onClose} className="group block">
             <div className="p-5 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-2xl hover:border-emerald-500/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
-              <Link onClick={onClose} href="/features/closing" className="block text-center mb-4 group/header">
-                <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
+              <div className="block text-center mb-4">
+                <div className="w-16 h-16 mb-4 mx-auto group-hover:scale-110 transition">
                   <CloseIcon />
                 </div>
                 <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">Step 3</span>
-                <h3 className="font-bold text-white text-lg group-hover/header:text-emerald-400 transition">CLOSE</h3>
+                <h3 className="font-bold text-white text-lg group-hover:text-emerald-400 transition">CLOSE</h3>
                 <p className="text-gray-500 text-xs mt-1">Convert & get paid</p>
-              </Link>
-              <div className="space-y-2">
-                <Link onClick={onClose} href="/features/crm" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
-                    <PipelineIcon size={14} />
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">CRM & Pipeline</span>
-                </Link>
-                <Link onClick={onClose} href="/features/booking" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
-                    <CalendarIcon size={14} />
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Calendar Booking</span>
-                </Link>
-                <Link onClick={onClose} href="/features/payments" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="white" width={14} height={14}><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
-                  </div>
-                  <span className="text-xs text-gray-400 group-hover/item:text-white">Payments & Invoicing</span>
-                </Link>
               </div>
-              <Link onClick={onClose} href="/features/closing" className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-emerald-500/20 text-[11px] font-semibold text-emerald-400 hover:text-white transition">
-                View 5 more <ArrowRight className="w-3 h-3" />
-              </Link>
+              <div className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-emerald-500/20 text-[11px] font-semibold text-emerald-400 group-hover:text-white transition">
+                Explore Close <ArrowRight className="w-3 h-3" />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* AI Bot Banner */}
