@@ -79,6 +79,18 @@ const StripeIcon = ({ size = 24 }) => (
   </svg>
 );
 
+const TelegramIcon = ({ size = 24 }) => (
+  <svg viewBox="0 0 24 24" fill="white" width={size} height={size}>
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+  </svg>
+);
+
+const ZapierIcon = ({ size = 24 }) => (
+  <svg viewBox="0 0 24 24" fill="#FF4F00" width={size} height={size}>
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 14.08h-3.19c-.18.792-.508 1.524-.96 2.172l2.256 2.256-1.414 1.414-2.256-2.256a6.008 6.008 0 01-2.172.96v3.19h-2v-3.19a6.008 6.008 0 01-2.172-.96l-2.256 2.256-1.414-1.414 2.256-2.256a6.008 6.008 0 01-.96-2.172h-3.19v-2h3.19c.18-.792.508-1.524.96-2.172L4.316 7.652l1.414-1.414 2.256 2.256a6.008 6.008 0 012.172-.96v-3.19h2v3.19c.792.18 1.524.508 2.172.96l2.256-2.256 1.414 1.414-2.256 2.256c.452.648.78 1.38.96 2.172h3.19v2z"/>
+  </svg>
+);
+
 const CalendarIcon = ({ size = 24 }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" width={size} height={size}>
     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -229,16 +241,16 @@ function FeaturesDropdown({ onClose }) {
           {/* CAPTURE */}
           <div className="group">
             <div className="p-5 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-2xl hover:border-[#214CE5]/60 transition-all hover:shadow-lg hover:shadow-[#214CE5]/20">
-              <div className="w-16 h-16 mb-4 mx-auto">
-                <CaptureIcon />
-              </div>
-              <div className="text-center mb-4">
+              <Link onClick={onClose} href="/features/capturing" className="block text-center mb-4 group/header">
+                <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
+                  <CaptureIcon />
+                </div>
                 <span className="inline-block px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold uppercase tracking-wider mb-2">Step 1</span>
-                <h3 className="font-bold text-white text-lg">CAPTURE</h3>
+                <h3 className="font-bold text-white text-lg group-hover/header:text-[#6B8EFF] transition">CAPTURE</h3>
                 <p className="text-gray-500 text-xs mt-1">Attract & collect leads</p>
-              </div>
+              </Link>
               <div className="space-y-2">
-                <Link onClick={onClose} href="/features/capturing" onClick={onClose} className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
+                <Link onClick={onClose} href="/features/forms" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-[#214CE5]/30 flex items-center justify-center">
                     <FormIcon size={14} />
                   </div>
@@ -257,20 +269,23 @@ function FeaturesDropdown({ onClose }) {
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Chat Widget</span>
                 </Link>
               </div>
+              <Link onClick={onClose} href="/features/capturing" className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-[#214CE5]/20 text-[11px] font-semibold text-[#6B8EFF] hover:text-white transition">
+                View 5 more <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
           </div>
 
           {/* NURTURE */}
           <div className="group">
             <div className="p-5 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-2xl hover:border-purple-500/60 transition-all hover:shadow-lg hover:shadow-purple-500/20">
-              <div className="w-16 h-16 mb-4 mx-auto">
-                <NurtureIcon />
-              </div>
-              <div className="text-center mb-4">
+              <Link onClick={onClose} href="/features/nurturing" className="block text-center mb-4 group/header">
+                <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
+                  <NurtureIcon />
+                </div>
                 <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2">Step 2</span>
-                <h3 className="font-bold text-white text-lg">NURTURE</h3>
+                <h3 className="font-bold text-white text-lg group-hover/header:text-purple-400 transition">NURTURE</h3>
                 <p className="text-gray-500 text-xs mt-1">Engage & build trust</p>
-              </div>
+              </Link>
               <div className="space-y-2">
                 <Link onClick={onClose} href="/features/email" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center">
@@ -291,20 +306,23 @@ function FeaturesDropdown({ onClose }) {
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Workflow Automation</span>
                 </Link>
               </div>
+              <Link onClick={onClose} href="/features/nurturing" className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-purple-500/20 text-[11px] font-semibold text-purple-400 hover:text-white transition">
+                View 5 more <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
           </div>
 
           {/* CLOSE */}
           <div className="group">
             <div className="p-5 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-2xl hover:border-emerald-500/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
-              <div className="w-16 h-16 mb-4 mx-auto">
-                <CloseIcon />
-              </div>
-              <div className="text-center mb-4">
+              <Link onClick={onClose} href="/features/closing" className="block text-center mb-4 group/header">
+                <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
+                  <CloseIcon />
+                </div>
                 <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">Step 3</span>
-                <h3 className="font-bold text-white text-lg">CLOSE</h3>
+                <h3 className="font-bold text-white text-lg group-hover/header:text-emerald-400 transition">CLOSE</h3>
                 <p className="text-gray-500 text-xs mt-1">Convert & get paid</p>
-              </div>
+              </Link>
               <div className="space-y-2">
                 <Link onClick={onClose} href="/features/crm" className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group/item">
                   <div className="w-7 h-7 rounded-lg bg-emerald-500/30 flex items-center justify-center">
@@ -325,6 +343,9 @@ function FeaturesDropdown({ onClose }) {
                   <span className="text-xs text-gray-400 group-hover/item:text-white">Payments & Invoicing</span>
                 </Link>
               </div>
+              <Link onClick={onClose} href="/features/closing" className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-emerald-500/20 text-[11px] font-semibold text-emerald-400 hover:text-white transition">
+                View 5 more <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
           </div>
         </div>
@@ -355,30 +376,30 @@ function FeaturesDropdown({ onClose }) {
         </div>
         
         <div className="grid grid-cols-4 gap-2 mb-5">
-          <div className="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center hover:bg-[#25D366]/30 transition cursor-pointer group" title="WhatsApp">
-            <WhatsAppIcon size={20} />
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#F77737]/20 flex items-center justify-center hover:from-[#833AB4]/30 hover:via-[#FD1D1D]/30 hover:to-[#F77737]/30 transition cursor-pointer" title="Instagram">
-            <InstagramIcon size={20} />
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-[#1877F2]/20 flex items-center justify-center hover:bg-[#1877F2]/30 transition cursor-pointer" title="Facebook">
-            <FacebookIcon size={20} />
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-[#0084FF]/20 flex items-center justify-center hover:bg-[#0084FF]/30 transition cursor-pointer" title="Messenger">
-            <MessengerIcon size={20} />
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition cursor-pointer" title="Google">
-            <GoogleIcon size={20} />
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-[#635BFF]/20 flex items-center justify-center hover:bg-[#635BFF]/30 transition cursor-pointer" title="Stripe">
-            <StripeIcon size={20} />
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-[#FF4F00]/20 flex items-center justify-center hover:bg-[#FF4F00]/30 transition cursor-pointer" title="Zapier">
-            <svg viewBox="0 0 24 24" fill="white" width={20} height={20}><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 14.08h-3.19c-.18.792-.508 1.524-.96 2.172l2.256 2.256-1.414 1.414-2.256-2.256a6.008 6.008 0 01-2.172.96v3.19h-2v-3.19a6.008 6.008 0 01-2.172-.96l-2.256 2.256-1.414-1.414 2.256-2.256a6.008 6.008 0 01-.96-2.172h-3.19v-2h3.19c.18-.792.508-1.524.96-2.172L4.316 7.652l1.414-1.414 2.256 2.256a6.008 6.008 0 012.172-.96v-3.19h2v3.19c.792.18 1.524.508 2.172.96l2.256-2.256 1.414 1.414-2.256 2.256c.452.648.78 1.38.96 2.172h3.19v2z"/></svg>
-          </div>
-          <div className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center hover:bg-[#214CE5]/30 transition cursor-pointer" title="More">
+          <Link onClick={onClose} href="/integrations/whatsapp" className="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center hover:bg-[#25D366]/30 transition" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="#25D366" width={20} height={20}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations/telegram" className="w-10 h-10 rounded-xl bg-[#0088cc]/20 flex items-center justify-center hover:bg-[#0088cc]/30 transition" title="Telegram">
+            <svg viewBox="0 0 24 24" fill="#0088cc" width={20} height={20}><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations/instagram" className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#F77737]/20 flex items-center justify-center hover:from-[#833AB4]/30 hover:via-[#FD1D1D]/30 hover:to-[#F77737]/30 transition" title="Instagram">
+            <svg viewBox="0 0 24 24" width={20} height={20}><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stopColor="#F77737"/><stop offset="50%" stopColor="#FD1D1D"/><stop offset="100%" stopColor="#833AB4"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations/facebook-messenger" className="w-10 h-10 rounded-xl bg-[#0084FF]/20 flex items-center justify-center hover:bg-[#0084FF]/30 transition" title="Messenger">
+            <svg viewBox="0 0 24 24" fill="#0084FF" width={20} height={20}><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations/google" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition" title="Google">
+            <svg viewBox="0 0 24 24" width={20} height={20}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations/stripe" className="w-10 h-10 rounded-xl bg-[#635BFF]/20 flex items-center justify-center hover:bg-[#635BFF]/30 transition" title="Stripe">
+            <svg viewBox="0 0 24 24" fill="#635BFF" width={20} height={20}><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations/zapier" className="w-10 h-10 rounded-xl bg-[#FF4F00]/20 flex items-center justify-center hover:bg-[#FF4F00]/30 transition" title="Zapier">
+            <svg viewBox="0 0 24 24" fill="#FF4F00" width={20} height={20}><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 14.08h-3.19c-.18.792-.508 1.524-.96 2.172l2.256 2.256-1.414 1.414-2.256-2.256a6.008 6.008 0 01-2.172.96v3.19h-2v-3.19a6.008 6.008 0 01-2.172-.96l-2.256 2.256-1.414-1.414 2.256-2.256a6.008 6.008 0 01-.96-2.172h-3.19v-2h3.19c.18-.792.508-1.524.96-2.172L4.316 7.652l1.414-1.414 2.256 2.256a6.008 6.008 0 012.172-.96v-3.19h2v3.19c.792.18 1.524.508 2.172.96l2.256-2.256 1.414 1.414-2.256 2.256c.452.648.78 1.38.96 2.172h3.19v2z"/></svg>
+          </Link>
+          <Link onClick={onClose} href="/integrations" className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center hover:bg-[#214CE5]/30 transition" title="More">
             <span className="text-white text-xs font-bold">50+</span>
-          </div>
+          </Link>
         </div>
 
         <Link onClick={onClose} href="/integrations" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mb-6">
@@ -391,7 +412,7 @@ function FeaturesDropdown({ onClose }) {
             <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
             <span className="text-[11px] font-bold text-white uppercase tracking-wider">Quick Links</span>
           </div>
-          <Link href="/features" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ All Features</Link>
+          <Link onClick={onClose} href="/features" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ All Features</Link>
           <Link onClick={onClose} href="/features/shared-inbox" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Shared Inbox</Link>
           <Link onClick={onClose} href="/features/analytics" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Analytics & Reports</Link>
           <Link onClick={onClose} href="/features/broadcasts" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Broadcast Campaigns</Link>
