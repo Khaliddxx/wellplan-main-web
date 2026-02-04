@@ -3,7 +3,6 @@
   "installCommand": "npm install",
   "devCommand": "npm run dev",
   "framework": "nextjs",
-  "nodejs": "18.x",
   "regions": ["sfo1"],
   "env": {
     "NEXT_PUBLIC_APP_URL": {
