@@ -157,11 +157,8 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-gradient-to-br from-[#214CE5] to-[#1a3db8] rounded-xl flex items-center justify-center shadow-lg shadow-[#214CE5]/30">
-              <Zap className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-lg font-bold text-white">wellplan<span className="text-[#214CE5]">®</span></span>
+          <Link href="/" className="flex items-center">
+            <img src="/logo-full-white.png" alt="WellPlan" className="h-8" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
