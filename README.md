@@ -88,3 +88,4 @@ NEXT_PUBLIC_SITE_URL=your-vercel-url
 
 For Next.js documentation: https://nextjs.org/docs
 For Tailwind CSS: https://tailwindcss.com/docs
+# Restored to last known good state
