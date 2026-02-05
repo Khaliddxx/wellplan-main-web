@@ -17,7 +17,7 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'system-ui, sans-serif',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
           position: 'relative',
         }}
       >
@@ -45,50 +45,26 @@ export default async function Image() {
           }}
         />
 
-        {/* Logo text */}
-        <div
+        {/* Logo from public folder */}
+        <img
+          src="https://wellplan-main-web.vercel.app/Frame%2069.png"
+          width={300}
+          height={85}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '20px',
+            marginBottom: '30px',
+            objectFit: 'contain',
           }}
-        >
-          <div
-            style={{
-              width: '80px',
-              height: '80px',
-              background: 'linear-gradient(135deg, #214CE5 0%, #1a3db8 100%)',
-              borderRadius: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginRight: '20px',
-              fontSize: '40px',
-              color: 'white',
-              fontWeight: 'bold',
-            }}
-          >
-            W
-          </div>
-          <span
-            style={{
-              fontSize: '56px',
-              fontWeight: '800',
-              color: 'white',
-            }}
-          >
-            WellPlan
-          </span>
-        </div>
+        />
 
-        {/* Tagline */}
+        {/* Tagline - extra bold */}
         <div
           style={{
-            fontSize: '72px',
+            fontSize: '76px',
             fontWeight: '900',
-            marginBottom: '20px',
+            marginBottom: '24px',
             display: 'flex',
-            gap: '16px',
+            gap: '20px',
+            letterSpacing: '-0.03em',
           }}
         >
           <span style={{ color: '#214CE5' }}>Capture.</span>
@@ -99,7 +75,8 @@ export default async function Image() {
         {/* Description */}
         <div
           style={{
-            fontSize: '28px',
+            fontSize: '32px',
+            fontWeight: '600',
             color: '#9ca3af',
             maxWidth: '800px',
             textAlign: 'center',
@@ -114,6 +91,7 @@ export default async function Image() {
             position: 'absolute',
             bottom: '40px',
             fontSize: '24px',
+            fontWeight: '700',
             color: '#6b7280',
           }}
         >
