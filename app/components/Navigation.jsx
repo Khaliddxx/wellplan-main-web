@@ -156,7 +156,7 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20 sm:h-16">
+        <div className="flex justify-between items-center h-20">
           <Link 
             href="/" 
             className="flex items-center"
