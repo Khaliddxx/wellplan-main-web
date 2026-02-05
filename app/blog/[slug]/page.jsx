@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, User, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 
 // Blog post content - this would typically come from a CMS
 const blogPosts = {
@@ -809,7 +810,7 @@ export default function BlogPost({ params }) {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <article className="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-[#6B8EFF] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:my-1 prose-table:text-sm prose-th:bg-white/5 prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border-white/10 prose-code:bg-white/10 prose-code:px-1 prose-code:rounded prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10">
-          <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>').replace(/<br\/><br\/>/g, '</p><p>').replace(/^## (.+)$/gm, '<h2>$1</h2>').replace(/^### (.+)$/gm, '<h3>$1</h3>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>').replace(/^- (.+)$/gm, '<li>$1</li>').replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>').replace(/❌/g, '<span class="text-red-400">❌</span>').replace(/✅/g, '<span class="text-green-400">✅</span>') }} />
+          <ReactMarkdown>{post.content}</ReactMarkdown>
         </article>
         
         {/* CTA */}
