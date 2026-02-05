@@ -237,7 +237,7 @@ function FeatureSection({ feature, index }) {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 1.05, 1.05, 0.85]);
 
   return (
-    <div ref={ref} className="min-h-[70vh] sm:min-h-screen flex items-center py-8 sm:py-32">
+    <div ref={ref} className="min-h-screen flex items-center pt-16 pb-8 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className={`grid lg:grid-cols-2 gap-8 sm:gap-16 items-center ${index % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
           {/* Content */}
