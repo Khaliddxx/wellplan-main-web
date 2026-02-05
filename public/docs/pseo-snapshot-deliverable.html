@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WellPlan Snapshot Deliverable | PSEO Partnership System</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #214CE5;
+      --primary-dark: #1a3db8;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --dark: #0a0a0a;
+      --gray: #6b7280;
+      --light: #f9fafb;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .header h1 span { color: var(--primary); }
+    .header p {
+      font-size: 18px;
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .header-meta {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .header-meta span { color: white; font-weight: 600; }
+    
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    /* Section */
+    .section {
+      margin-bottom: 50px;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+    .section-subtitle {
+      color: var(--gray);
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.2s;
+    }
+    .card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 20px rgba(33, 76, 229, 0.1);
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .card-icon.blue { background: #EEF2FF; color: var(--primary); }
+    .card-icon.green { background: #ECFDF5; color: var(--success); }
+    .card-icon.orange { background: #FEF3C7; color: var(--warning); }
+    .card-icon.purple { background: #F3E8FF; color: #8B5CF6; }
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .card-stat {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+    }
+    th {
+      background: var(--dark);
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      border-bottom: 1px solid #e5e7eb;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-blue { background: #EEF2FF; color: var(--primary); }
+    .badge-green { background: #ECFDF5; color: var(--success); }
+    .badge-orange { background: #FEF3C7; color: var(--warning); }
+    
+    /* Flow Diagram */
+    .flow-container {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 30px 0;
+    }
+    .flow-section {
+      margin-bottom: 30px;
+    }
+    .flow-section:last-child { margin-bottom: 0; }
+    .flow-label {
+      color: var(--gray);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+    }
+    .flow-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .flow-box {
+      background: #1a1a2e;
+      border: 1px solid #2d2d44;
+      border-radius: 10px;
+      padding: 16px 20px;
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      min-width: 140px;
+    }
+    .flow-box.highlight {
+      border-color: var(--primary);
+      background: rgba(33, 76, 229, 0.1);
+    }
+    .flow-box small {
+      display: block;
+      color: var(--gray);
+      font-size: 11px;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    .flow-arrow {
+      color: var(--gray);
+      font-size: 20px;
+    }
+    .flow-decision {
+      background: var(--warning);
+      color: var(--dark);
+      transform: rotate(45deg);
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .flow-decision span {
+      transform: rotate(-45deg);
+    }
+    .flow-connector {
+      width: 2px;
+      height: 30px;
+      background: #2d2d44;
+      margin: 0 auto;
+    }
+    
+    /* Checklist */
+    .checklist {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 30px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-box {
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .checklist-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .checklist-content p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    
+    /* Outcomes */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .outcome-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 12px;
+      padding: 30px;
+      color: white;
+      text-align: center;
+    }
+    .outcome-card .number {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .outcome-card .label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .footer-logo.wellplan { color: var(--primary); }
+    .footer-logo.pseo { color: var(--success); }
+    .footer p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+    
+    /* Print styles */
+    @media print {
+      .header { padding: 40px 20px; }
+      .flow-container { padding: 20px; }
+      .card:hover { box-shadow: none; border-color: #e5e7eb; }
+      body { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">Snapshot Deliverable</div>
+    <h1><span>WellPlan</span> × PSEO Partnership System</h1>
+    <p>Complete lead capture, nurturing, and retention automation built for your JV partner network.</p>
+    <div class="header-meta">
+      <div>Prepared for: <span>PSEO</span></div>
+      <div>Date: <span>February 2026</span></div>
+      <div>Version: <span>1.0</span></div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Overview Stats -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">📊</div>
+        Snapshot Overview
+      </div>
+      <p class="section-subtitle">What's included in your ready-to-deploy partnership system</p>
+      
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon blue">📅</div>
+          <div class="card-stat">3</div>
+          <h3>Booking Calendars</h3>
+          <p>Discovery, Strategy, and Follow-up calls pre-configured</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">🔄</div>
+          <div class="card-stat">5</div>
+          <h3>Automated Workflows</h3>
+          <p>End-to-end automation from lead to retention</p>
+        </div>
+        <div class="card">
+          <div class="card-icon orange">📝</div>
+          <div class="card-stat">12</div>
+          <h3>Custom Values</h3>
+          <p>Partner-specific branding placeholders</p>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">🏷️</div>
+          <div class="card-stat">11</div>
+          <h3>Pipeline Stages</h3>
+          <p>Complete sales pipeline from lead to client</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Flow -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">🔄</div>
+        System Flow
+      </div>
+      <p class="section-subtitle">How leads move through your partnership funnel</p>
+      
+      <div class="flow-container">
+        <!-- Discovery Loop -->
+        <div class="flow-section">
+          <div class="flow-label">Discovery Loop</div>
+          <div class="flow-row">
+            <div class="flow-box">
+              Discovery Page
+              <small>{{partner}}.com</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box highlight">
+              Agency Sends<br>Initial Audit
+              <small>PSEO</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">
+              Discovery<br>Call
+              <small>30 min</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-decision">
+              <span>Sale?</span>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">
+              Strategy<br>Call
+              <small>45 min</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flow-connector"></div>
+        
+        <!-- Onboarding -->
+        <div class="flow-section">
+          <div class="flow-label">Onboarding Engine</div>
+          <div class="flow-row">
+            <div class="flow-box highlight">
+              Onboarding<br>Form
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">
+              Verify &<br>CRM Update
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">
+              Onboarding<br>Checklist
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box" style="min-width: 200px;">
+              ✓ GSC/GA4 Setup<br>
+              ✓ CMS Credentials<br>
+              ✓ Verify Datasets
+            </div>
+          </div>
+        </div>
+        
+        <div class="flow-connector"></div>
+        
+        <!-- Retention -->
+        <div class="flow-section">
+          <div class="flow-label">Retention Loop</div>
+          <div class="flow-row">
+            <div class="flow-box">
+              Follow-up<br>Call
+              <small>30 min</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box highlight">
+              Report<br>Metrics
+              <small>CRM/Notion</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">
+              Schedule<br>Next Call
+            </div>
+            <div class="flow-arrow" style="transform: rotate(180deg);">↻</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendars -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">📅</div>
+        Booking Calendars
+      </div>
+      <p class="section-subtitle">Pre-configured scheduling for every stage of the client journey</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Calendar</th>
+            <th>Duration</th>
+            <th>Purpose</th>
+            <th>Schedule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PSEO - Discovery Call</strong></td>
+            <td><span class="badge badge-blue">30 min</span></td>
+            <td>Initial consultation to understand client needs</td>
+            <td>Mon-Fri, 9AM-5PM</td>
+          </tr>
+          <tr>
+            <td><strong>PSEO - Strategy Call</strong></td>
+            <td><span class="badge badge-green">45 min</span></td>
+            <td>Present audit findings and growth roadmap</td>
+            <td>Mon-Fri, 9AM-5PM</td>
+          </tr>
+          <tr>
+            <td><strong>PSEO - Follow-up Call</strong></td>
+            <td><span class="badge badge-orange">30 min</span></td>
+            <td>Monthly check-in and progress review</td>
+            <td>Mon-Fri, 9AM-5PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pipeline -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">📈</div>
+        Sales Pipeline
+      </div>
+      <p class="section-subtitle">Track every lead from first touch to retained client</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Stage</th>
+            <th>Description</th>
+            <th>Automation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>New Lead</strong></td>
+            <td>Lead entered the system</td>
+            <td><span class="badge badge-blue">Tag: pseo-new-lead</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Discovery Scheduled</strong></td>
+            <td>Discovery call booked</td>
+            <td><span class="badge badge-blue">Auto-move on booking</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Discovery Completed</strong></td>
+            <td>Call completed, showed up</td>
+            <td><span class="badge badge-blue">Trigger: Send audit</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Audit Sent</strong></td>
+            <td>SEO audit delivered</td>
+            <td><span class="badge badge-green">Email with strategy link</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Strategy Scheduled</strong></td>
+            <td>Strategy call booked</td>
+            <td><span class="badge badge-blue">Auto-move on booking</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Strategy Completed</strong></td>
+            <td>Strategy presented</td>
+            <td><span class="badge badge-blue">Ready for close</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Proposal Sent</strong></td>
+            <td>Quote/contract sent</td>
+            <td><span class="badge badge-orange">Follow-up sequence</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><strong>Onboarding</strong></td>
+            <td>Client signed up</td>
+            <td><span class="badge badge-green">Send onboarding form</span></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><strong>Active Client</strong></td>
+            <td>Fully onboarded</td>
+            <td><span class="badge badge-green">Monthly retention loop</span></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><strong>Retention / Follow-up</strong></td>
+            <td>Ongoing relationship</td>
+            <td><span class="badge badge-orange">Auto-schedule calls</span></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><strong>Lost / Not Interested</strong></td>
+            <td>Did not convert</td>
+            <td><span class="badge badge-blue">Nurture sequence</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Workflows -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">⚡</div>
+        Automated Workflows
+      </div>
+      <p class="section-subtitle">Set it and forget it — automation handles the heavy lifting</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Workflow</th>
+            <th>Trigger</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Discovery Call Booked</strong></td>
+            <td>Calendar booking received</td>
+            <td>Add tag → Move pipeline → Send confirmation email</td>
+          </tr>
+          <tr>
+            <td><strong>Post-Discovery Audit</strong></td>
+            <td>Appointment marked "Showed"</td>
+            <td>Wait 24h → Send audit → Update stage → Include strategy link</td>
+          </tr>
+          <tr>
+            <td><strong>Strategy Call Booked</strong></td>
+            <td>Strategy calendar booking</td>
+            <td>Add tag → Move pipeline → Send prep materials</td>
+          </tr>
+          <tr>
+            <td><strong>Onboarding Kickoff</strong></td>
+            <td>Tag: pseo-onboarding added</td>
+            <td>Send welcome email → Onboarding form → Create task</td>
+          </tr>
+          <tr>
+            <td><strong>Retention Reminder</strong></td>
+            <td>Next Follow-up date = today</td>
+            <td>Internal notification → Email client → Suggest booking</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Custom Fields -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">📋</div>
+        Client Data Fields
+      </div>
+      <p class="section-subtitle">Track everything you need for successful onboarding and retention</p>
+      
+      <div class="card-grid">
+        <div class="card">
+          <h3>🌐 Website URL</h3>
+          <p>Client's website for audit</p>
+        </div>
+        <div class="card">
+          <h3>📊 GSC Access</h3>
+          <p>Google Search Console status</p>
+        </div>
+        <div class="card">
+          <h3>📈 GA4 Access</h3>
+          <p>Google Analytics status</p>
+        </div>
+        <div class="card">
+          <h3>🛠️ CMS Platform</h3>
+          <p>WordPress, Shopify, etc.</p>
+        </div>
+        <div class="card">
+          <h3>🔑 CMS Credentials</h3>
+          <p>Login access status</p>
+        </div>
+        <div class="card">
+          <h3>📝 Onboarding Status</h3>
+          <p>Progress tracking</p>
+        </div>
+        <div class="card">
+          <h3>🔍 Audit Status</h3>
+          <p>Audit completion tracking</p>
+        </div>
+        <div class="card">
+          <h3>⭐ Service Tier</h3>
+          <p>Basic, Growth, Enterprise</p>
+        </div>
+        <div class="card">
+          <h3>💰 Monthly Retainer</h3>
+          <p>Contract value</p>
+        </div>
+        <div class="card">
+          <h3>📅 Contract Start</h3>
+          <p>Engagement begin date</p>
+        </div>
+        <div class="card">
+          <h3>🔔 Next Follow-up</h3>
+          <p>Triggers retention workflow</p>
+        </div>
+        <div class="card">
+          <h3>📝 Internal Notes</h3>
+          <p>Team-only comments</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner Customization -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">🎨</div>
+        Partner Branding
+      </div>
+      <p class="section-subtitle">Every partner gets their own branded experience</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Used In</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>{{ partner_domain }}</code></td>
+            <td>Landing pages, email links</td>
+            <td>acme-marketing.com</td>
+          </tr>
+          <tr>
+            <td><code>{{ partner_company_name }}</code></td>
+            <td>All emails, calendar events</td>
+            <td>Acme Marketing</td>
+          </tr>
+          <tr>
+            <td><code>{{ partner_logo }}</code></td>
+            <td>Email headers, forms</td>
+            <td>Logo image URL</td>
+          </tr>
+          <tr>
+            <td><code>{{ partner_email }}</code></td>
+            <td>Reply-to, notifications</td>
+            <td>team@acme.com</td>
+          </tr>
+          <tr>
+            <td><code>{{ partner_phone }}</code></td>
+            <td>Contact info</td>
+            <td>+1 (555) 123-4567</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Installation Checklist -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">✅</div>
+        Partner Installation Checklist
+      </div>
+      <p class="section-subtitle">Deploy to a new JV partner in under 30 minutes</p>
+      
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>1. Install Snapshot</h4>
+            <p>Load snapshot into new subaccount from agency dashboard</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>2. Update Partner Custom Values</h4>
+            <p>Set partner domain, company name, email, phone, and logo URL</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>3. Assign Team Members to Calendars</h4>
+            <p>Add partner's team to Discovery, Strategy, and Follow-up calendars</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>4. Set Calendar Availability</h4>
+            <p>Adjust hours and timezone to match partner's business hours</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>5. Customize Email Templates</h4>
+            <p>Update branding colors, logo placement, and messaging tone</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>6. Create Landing Pages</h4>
+            <p>Build Discovery and Strategy booking pages with partner branding</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>7. Test Full Flow</h4>
+            <p>Book test appointment, verify emails, check pipeline automation</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>8. Enable Workflows</h4>
+            <p>Turn on all 5 automation workflows</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>9. Train Partner</h4>
+            <p>Walk through CRM, pipeline stages, and reporting dashboards</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-box"></div>
+          <div class="checklist-content">
+            <h4>10. Go Live</h4>
+            <p>Connect domain, publish pages, start driving traffic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expected Outcomes -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">🎯</div>
+        Expected Outcomes
+      </div>
+      <p class="section-subtitle">What this system delivers for your partner network</p>
+      
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="number">80%</div>
+          <div class="label">Reduction in manual<br>follow-up tasks</div>
+        </div>
+        <div class="outcome-card" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+          <div class="number">3x</div>
+          <div class="label">Faster partner<br>onboarding</div>
+        </div>
+        <div class="outcome-card" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+          <div class="number">100%</div>
+          <div class="label">Lead tracking<br>visibility</div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 30px;">
+        <h3 style="margin-bottom: 15px;">Key Benefits</h3>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #10B981; font-size: 18px;">✓</span>
+            <span><strong>Consistent Experience</strong> — Every partner delivers the same professional client journey</span>
+          </li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #10B981; font-size: 18px;">✓</span>
+            <span><strong>Zero Leads Lost</strong> — Automated follow-ups ensure no opportunity falls through cracks</span>
+          </li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #10B981; font-size: 18px;">✓</span>
+            <span><strong>Scalable Onboarding</strong> — Structured checklist means faster time-to-value</span>
+          </li>
+          <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #10B981; font-size: 18px;">✓</span>
+            <span><strong>Retention Built-In</strong> — Automated monthly touchpoints reduce churn</span>
+          </li>
+          <li style="padding: 10px 0; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #10B981; font-size: 18px;">✓</span>
+            <span><strong>Partner Branding</strong> — White-labeled experience strengthens partner relationships</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-logos">
+      <div class="footer-logo wellplan">⚡ WellPlan</div>
+      <div style="color: #4b5563;">×</div>
+      <div class="footer-logo pseo">PSEO</div>
+    </div>
+    <p>Powered by WellPlan • Built for Scale</p>
+    <p style="margin-top: 10px;">wellplan.io • pseo.nl</p>
+  </div>
+
+</body>
+</html>
