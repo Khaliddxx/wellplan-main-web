@@ -21,7 +21,7 @@ export default function EnhancedHero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0a0a0a]">
+    <section className="relative min-h-screen flex items-center px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0a0a0a]">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         {/* Mouse follow gradient */}
