@@ -268,14 +268,14 @@ export default function EnhancedHero() {
           <p className="text-center text-sm text-gray-500 mb-8">
             Trusted by 450+ businesses worldwide
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-40">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap md:justify-center gap-6 md:gap-x-12 opacity-40">
             {['Logos Aura', 'Airzone', 'PSEO Agency', 'Gareebak', 'Kim Wellness', 'Jorge Perez'].map((company, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 + idx * 0.1 }}
-                className="text-xl font-bold text-gray-400 hover:text-gray-300 transition"
+                className="text-lg md:text-xl font-bold text-gray-400 hover:text-gray-300 transition text-center"
               >
                 {company}
               </motion.div>
