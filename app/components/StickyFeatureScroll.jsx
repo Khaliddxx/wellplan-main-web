@@ -232,7 +232,7 @@ function FeatureSection({ feature, index }) {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [150, -150]);
-  const yVisual = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const yVisual = useTransform(scrollYProgress, [0, 1], [-200, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 1.05, 1.05, 0.85]);
 
