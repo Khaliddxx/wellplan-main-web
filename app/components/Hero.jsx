@@ -59,7 +59,7 @@ export default function Hero() {
           <div className="mt-12 pt-8 border-t border-slate-200">
             <p className="text-xs text-slate-400 uppercase tracking-wide mb-4">Trusted by teams at</p>
             <div className="flex flex-wrap gap-6 items-center opacity-40 grayscale">
-              {['Aura', 'Airzone', 'PSEO Agency', 'Gareebak', 'Kim Wellness', 'Jorge Perez'].map((company) => (
+              {['Logos Aura', 'Airzone', 'PSEO Agency', 'Gareebak', 'Kim Wellness', 'Jorge Perez'].map((company) => (
                 <div key={company} className="px-4 py-2 bg-slate-100 rounded font-bold text-slate-700 text-sm">
                   {company}
                 </div>
