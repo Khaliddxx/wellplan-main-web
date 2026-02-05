@@ -67,11 +67,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Company</h4>
             <ul className="space-y-3">
+              <li><Link href="/about" className="text-gray-500 hover:text-white text-sm transition">About Us</Link></li>
               <li><Link href="/pricing" className="text-gray-500 hover:text-white text-sm transition">Pricing</Link></li>
               <li><Link href="/demo" className="text-gray-500 hover:text-white text-sm transition">Book a Demo</Link></li>
+              <li><Link href="/contact" className="text-gray-500 hover:text-white text-sm transition">Contact</Link></li>
               <li><a href="https://help.leadconnectorhq.com/support/home" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">Support</a></li>
-              <li><a href="https://marketplace.gohighlevel.com/docs/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">API Docs</a></li>
-              <li><Link href="#contact" className="text-gray-500 hover:text-white text-sm transition">Contact</Link></li>
             </ul>
           </div>
         </div>
