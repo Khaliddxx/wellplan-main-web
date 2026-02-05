@@ -29,6 +29,14 @@ export default function TestimonialCarousel() {
       company: '💪',
       color: 'from-green-500 to-emerald-500',
     },
+    {
+      quote: 'Wellplan.io has been a game changer for automating our business processes, especially in sales and marketing. It\'s saved us time and increased efficiency, making our workflows smoother and more effective. Highly recommended for teams looking to streamline operations!',
+      author: 'Amr ElSelimy',
+      title: 'CTO, Floki Systems',
+      metric: 'Efficiency Boost',
+      company: '⚡',
+      color: 'from-cyan-500 to-blue-500',
+    },
   ];
 
   const [current, setCurrent] = useState(0);
@@ -147,7 +155,7 @@ export default function TestimonialCarousel() {
           </div>
 
           {/* Testimonial Cards Grid (Below) */}
-          <div className="grid md:grid-cols-3 gap-4 mt-16">
+          <div className="grid md:grid-cols-4 gap-4 mt-16">
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
