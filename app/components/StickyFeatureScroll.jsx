@@ -231,9 +231,10 @@ function FeatureSection({ feature, index }) {
     offset: ['start end', 'end start']
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const yVisual = useTransform(scrollYProgress, [0, 1], [-80, 80]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 1.05, 1.05, 0.85]);
 
   return (
     <div ref={ref} className="min-h-screen flex items-center py-16 sm:py-32">
@@ -298,7 +299,7 @@ function FeatureSection({ feature, index }) {
 
           {/* Visual */}
           <motion.div 
-            style={{ opacity, scale }}
+            style={{ opacity, scale, y: yVisual }}
             className="lg:[direction:ltr] h-[280px] sm:h-[400px] lg:h-[500px] relative"
           >
             {feature.visual}
