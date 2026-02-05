@@ -64,7 +64,7 @@ export default function TestimonialCarousel() {
             Trusted by
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Enterprise Teams
+              Small-to-Medium Businesses
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
