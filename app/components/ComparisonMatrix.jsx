@@ -59,22 +59,22 @@ export default function ComparisonMatrix() {
           transition={{ delay: 0.2 }}
           className="overflow-x-auto"
         >
-          <div className="min-w-[700px] bg-[#111111] border border-white/10 rounded-2xl overflow-hidden">
+          <div className="min-w-[600px] bg-[#111111] border border-white/10 rounded-2xl overflow-hidden">
             {/* Header Row */}
-            <div className="grid grid-cols-5 border-b border-white/10">
-              <div className="p-6 bg-white/[0.02]">
+            <div className="grid border-b border-white/10" style={{ gridTemplateColumns: '1.5fr repeat(4, 1fr)' }}>
+              <div className="p-4 sm:p-6 bg-white/[0.02]">
                 <span className="text-sm font-medium text-gray-500">Feature</span>
               </div>
               {competitors.map((comp, idx) => (
                 <div 
                   key={idx}
-                  className={`p-3 sm:p-4 text-center ${comp.primary ? 'bg-[#214CE5]/10' : 'bg-white/[0.02]'}`}
+                  className={`p-2 sm:p-4 text-center ${comp.primary ? 'bg-[#214CE5]/10' : 'bg-white/[0.02]'}`}
                 >
-                  <span className={`font-bold ${comp.primary ? 'text-[#214CE5]' : 'text-gray-400'}`}>
+                  <span className={`font-bold text-xs sm:text-base ${comp.primary ? 'text-[#214CE5]' : 'text-gray-400'}`}>
                     {comp.name}
                   </span>
                   {comp.primary && (
-                    <div className="mt-1 text-xs text-[#6B8EFF]">Recommended</div>
+                    <div className="mt-1 text-[10px] sm:text-xs text-[#6B8EFF]">Recommended</div>
                   )}
                 </div>
               ))}
@@ -87,12 +87,13 @@ export default function ComparisonMatrix() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.1 + idx * 0.03 }}
-                className={`grid grid-cols-5 border-b border-white/5 hover:bg-white/[0.02] transition ${
+                className={`grid border-b border-white/5 hover:bg-white/[0.02] transition ${
                   idx === features.length - 1 ? 'border-b-0' : ''
                 }`}
+                style={{ gridTemplateColumns: '1.5fr repeat(4, 1fr)' }}
               >
-                <div className="p-4 flex items-center">
-                  <span className="text-sm text-gray-300">{feature.name}</span>
+                <div className="p-3 sm:p-4 flex items-center">
+                  <span className="text-xs sm:text-sm text-gray-300">{feature.name}</span>
                 </div>
                 {competitors.map((comp, compIdx) => {
                   const hasFeature = feature[comp.name.toLowerCase().replace('campaign', 'campaign')];
@@ -121,9 +122,9 @@ export default function ComparisonMatrix() {
             ))}
 
             {/* Pricing Row */}
-            <div className="grid grid-cols-5 bg-white/[0.02] border-t border-white/10">
-              <div className="p-4 sm:p-6 flex items-center">
-                <span className="text-sm font-semibold text-white">Starting Price</span>
+            <div className="grid bg-white/[0.02] border-t border-white/10" style={{ gridTemplateColumns: '1.5fr repeat(4, 1fr)' }}>
+              <div className="p-3 sm:p-6 flex items-center">
+                <span className="text-xs sm:text-sm font-semibold text-white">Starting Price</span>
               </div>
               <div className="p-3 sm:p-4 text-center bg-[#214CE5]/10">
                 <div className="text-xl sm:text-2xl font-black text-[#214CE5]">$97</div>

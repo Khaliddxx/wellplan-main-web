@@ -222,24 +222,40 @@ export default function Navigation() {
       )}
 
       {mobileOpen && (
-        <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
-          {/* Features */}
-          <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Features</div>
-          <Link href="/features/capturing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>
-            <span className="text-[#214CE5] mr-2">●</span> Capture Leads
-          </Link>
-          <Link href="/features/nurturing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>
-            <span className="text-purple-400 mr-2">●</span> Nurture Contacts
-          </Link>
-          <Link href="/features/closing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>
-            <span className="text-emerald-400 mr-2">●</span> Close Deals
-          </Link>
+        <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-4 max-h-[80vh] overflow-y-auto">
+          {/* Features - Pillar Cards */}
+          <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Features</div>
+          <div className="grid grid-cols-3 gap-2">
+            <Link href="/features/capturing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
+              <div className="w-10 h-10 mx-auto mb-2"><CaptureIcon /></div>
+              <span className="text-[10px] font-bold text-[#6B8EFF] uppercase">Capture</span>
+            </Link>
+            <Link href="/features/nurturing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
+              <div className="w-10 h-10 mx-auto mb-2"><NurtureIcon /></div>
+              <span className="text-[10px] font-bold text-purple-400 uppercase">Nurture</span>
+            </Link>
+            <Link href="/features/closing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
+              <div className="w-10 h-10 mx-auto mb-2"><CloseIcon /></div>
+              <span className="text-[10px] font-bold text-emerald-400 uppercase">Close</span>
+            </Link>
+          </div>
           
-          {/* Solutions */}
-          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Solutions</div>
-          <Link href="/solutions/agencies" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>For Agencies</Link>
-          <Link href="/solutions/coaches" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>For Coaches</Link>
-          <Link href="/solutions/sales-teams" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>For Sales Teams</Link>
+          {/* Solutions - Pillar Cards */}
+          <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Solutions</div>
+          <div className="grid grid-cols-3 gap-2">
+            <Link href="/solutions/agencies" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
+              <Building2 className="w-6 h-6 mx-auto mb-2 text-[#6B8EFF]" />
+              <span className="text-[10px] font-bold text-[#6B8EFF]">Agencies</span>
+            </Link>
+            <Link href="/solutions/coaches" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
+              <Target className="w-6 h-6 mx-auto mb-2 text-purple-400" />
+              <span className="text-[10px] font-bold text-purple-400">Coaches</span>
+            </Link>
+            <Link href="/solutions/sales-teams" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
+              <Briefcase className="w-6 h-6 mx-auto mb-2 text-emerald-400" />
+              <span className="text-[10px] font-bold text-emerald-400">Sales Teams</span>
+            </Link>
+          </div>
           
           {/* Resources */}
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Resources</div>
