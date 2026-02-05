@@ -727,14 +727,27 @@ export async function generateMetadata({ params }) {
   const post = blogPosts[params.slug];
   if (!post) return { title: 'Post Not Found' };
   
+  const url = `https://wellplan.io/blog/${params.slug}`;
+  
   return {
     title: `${post.title} | WellPlan Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      url: url,
+      siteName: 'WellPlan',
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
     },
   };
 }
@@ -746,61 +759,89 @@ export default function BlogPost({ params }) {
     notFound();
   }
 
+  // JSON-LD structured data for SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+    },
+    datePublished: post.date,
+    publisher: {
+      '@type': 'Organization',
+      name: 'WellPlan',
+      url: 'https://wellplan.io',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://wellplan.io/blog/${params.slug}`,
+    },
+  };
+
   return (
     <div className="bg-[#0a0a0a] text-white min-h-screen">
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       {/* Header */}
       <div className="border-b border-white/10">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <Link 
             href="/blog" 
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-6 sm:mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
           
-          <div className="flex items-center gap-3 mb-6">
-            <span className="px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-sm font-semibold">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <span className="px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-xs sm:text-sm font-semibold">
               {post.category}
             </span>
-            <span className="text-sm text-gray-500 flex items-center gap-1">
-              <Clock className="w-4 h-4" />
+            <span className="text-xs sm:text-sm text-gray-500 flex items-center gap-1">
+              <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
               {post.readTime}
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight">
             {post.title}
           </h1>
           
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-lg sm:text-xl text-gray-400 mb-6 sm:mb-8">
             {post.excerpt}
           </p>
           
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center font-bold">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center font-bold text-sm sm:text-base">
                 WP
               </div>
               <div>
-                <p className="font-semibold">{post.author}</p>
-                <p className="text-sm text-gray-500 flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
+                <p className="font-semibold text-sm sm:text-base">{post.author}</p>
+                <p className="text-xs sm:text-sm text-gray-500 flex items-center gap-1">
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                   {formatDate(post.date)}
                 </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-gray-500 mr-2">Share:</span>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition">
-                <Twitter className="w-4 h-4 text-gray-400" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <span className="text-xs sm:text-sm text-gray-500 mr-1 sm:mr-2">Share:</span>
+              <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition">
+                <Twitter className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition">
-                <Linkedin className="w-4 h-4 text-gray-400" />
+              <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition">
+                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition">
-                <Facebook className="w-4 h-4 text-gray-400" />
+              <a href="#" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition">
+                <Facebook className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
               </a>
             </div>
           </div>
@@ -808,20 +849,20 @@ export default function BlogPost({ params }) {
       </div>
       
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <article className="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-[#6B8EFF] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:my-1 prose-table:text-sm prose-th:bg-white/5 prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border-white/10 prose-code:bg-white/10 prose-code:px-1 prose-code:rounded prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <article className="prose prose-invert prose-base sm:prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-8 sm:prose-h2:mt-12 prose-h2:mb-4 sm:prose-h2:mb-6 prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-[#6B8EFF] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:my-1 prose-table:text-xs sm:prose-table:text-sm prose-th:bg-white/5 prose-th:px-2 sm:prose-th:px-4 prose-th:py-2 prose-td:px-2 sm:prose-td:px-4 prose-td:py-2 prose-td:border-white/10 prose-code:bg-white/10 prose-code:px-1 prose-code:rounded prose-code:text-sm prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10 prose-pre:text-xs sm:prose-pre:text-sm prose-pre:overflow-x-auto">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </article>
         
         {/* CTA */}
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-[#214CE5]/20 to-purple-500/20 border border-white/10 text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
-          <p className="text-gray-400 mb-6 max-w-xl mx-auto">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#214CE5]/20 to-purple-500/20 border border-white/10 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to Transform Your Business?</h3>
+          <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 max-w-xl mx-auto">
             See how WellPlan can help you capture more leads, nurture relationships, and close more deals.
           </p>
           <Link 
             href="/demo"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-semibold rounded-xl transition"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-semibold rounded-xl transition text-sm sm:text-base"
           >
             Book a Free Demo
           </Link>
