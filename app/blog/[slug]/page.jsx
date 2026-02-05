@@ -6,11 +6,11 @@ import ReactMarkdown from 'react-markdown';
 // Blog post content - this would typically come from a CMS
 const blogPosts = {
   'whatsapp-business-api-complete-guide': {
-    title: 'The Complete Guide to WhatsApp Business API in 2025',
+    title: 'The Complete Guide to WhatsApp Business API in 2026',
     excerpt: 'Everything you need to know about WhatsApp Business API: setup, pricing, templates, and best practices for business messaging.',
     category: 'WhatsApp',
     author: 'WellPlan Team',
-    date: '2025-02-01',
+    date: '2026-02-01',
     readTime: '12 min read',
     content: `
 ## What is WhatsApp Business API?
@@ -104,7 +104,7 @@ Ready to get started? [Book a demo](/demo) and see WhatsApp automation in action
     excerpt: 'Discover how businesses are using AI-powered chatbots to qualify leads 24/7, reduce response times, and close more deals.',
     category: 'AI & Automation',
     author: 'WellPlan Team',
-    date: '2025-01-28',
+    date: '2026-01-28',
     readTime: '8 min read',
     content: `
 ## The Lead Qualification Problem
@@ -207,7 +207,7 @@ Ready to put AI to work for your business? [Start your free trial](/demo).
     excerpt: 'How to create a unified messaging experience across WhatsApp, Instagram, Facebook, SMS, and email that drives real results.',
     category: 'Strategy',
     author: 'WellPlan Team',
-    date: '2025-01-25',
+    date: '2026-01-25',
     readTime: '10 min read',
     content: `
 ## What is Omnichannel Messaging?
@@ -327,10 +327,10 @@ Automatically remember and respect customer channel preferences.
     excerpt: 'Copy these proven automation workflows to streamline your sales process, follow-up sequences, and customer onboarding.',
     category: 'Automation',
     author: 'WellPlan Team',
-    date: '2025-01-22',
+    date: '2026-01-22',
     readTime: '15 min read',
     content: `
-## Why Automation is Non-Negotiable in 2025
+## Why Automation is Non-Negotiable in 2026
 
 The average sales rep spends only 36% of their time actually selling. The rest? Administrative tasks, data entry, and follow-up logistics.
 
@@ -451,11 +451,11 @@ WellPlan makes building these workflows easy with our visual workflow builder:
     `,
   },
   'instagram-dm-automation-playbook': {
-    title: 'Instagram DM Automation: The Complete 2025 Playbook',
+    title: 'Instagram DM Automation: The Complete 2026 Playbook',
     excerpt: 'How to automate your Instagram DMs to respond instantly, qualify leads, and book appointments—without losing the personal touch.',
     category: 'Instagram',
     author: 'WellPlan Team',
-    date: '2025-01-18',
+    date: '2026-01-18',
     readTime: '9 min read',
     content: `
 ## Why Instagram DMs Are a Goldmine
@@ -591,7 +591,7 @@ Ready to automate your Instagram DMs? [Get started free](/demo).
     excerpt: 'Learn how to implement lead scoring that helps your sales team prioritize the right prospects and close more deals.',
     category: 'Sales',
     author: 'WellPlan Team',
-    date: '2025-01-15',
+    date: '2026-01-15',
     readTime: '11 min read',
     content: `
 ## What is Lead Scoring?
