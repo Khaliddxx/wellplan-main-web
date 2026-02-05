@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSEO WellPlan Snapshot Documentation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #fff;
+    }
+    h1 {
+      font-size: 28px;
+      color: #214CE5;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #214CE5;
+    }
+    h2 {
+      font-size: 22px;
+      color: #333;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+    }
+    h3 {
+      font-size: 18px;
+      color: #214CE5;
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+    h4 {
+      font-size: 15px;
+      color: #444;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    p { margin-bottom: 12px; }
+    strong { color: #214CE5; }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #d63384;
+    }
+    pre {
+      background: #1a1a1a;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background: #214CE5;
+      color: white;
+      font-weight: 600;
+    }
+    tr:nth-child(even) { background: #f9f9f9; }
+    tr:hover { background: #f0f4ff; }
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 30px 0;
+    }
+    ul, ol {
+      margin: 10px 0 15px 25px;
+    }
+    li { margin-bottom: 6px; }
+    blockquote {
+      border-left: 4px solid #214CE5;
+      padding-left: 15px;
+      margin: 15px 0;
+      color: #555;
+      font-style: italic;
+    }
+    .checklist { list-style: none; margin-left: 0; }
+    .checklist li { 
+      padding: 8px 0 8px 30px;
+      position: relative;
+      border-bottom: 1px solid #eee;
+    }
+    .checklist li:before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: #214CE5;
+      font-size: 18px;
+    }
+    @media print {
+      body { padding: 20px; }
+      h1, h2, h3 { page-break-after: avoid; }
+      table, pre { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<h1>PSEO WellPlan Snapshot Documentation</h1>
+<p><strong>Location ID:</strong> <code>F10cu0x7H1aWCsp2VUkp</code><br><strong>Generated:</strong> February 5, 2026</p>
+<hr>
+<h2>What&#39;s Already Created (via API)</h2>
+<h3>✅ Custom Values (12 total)</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Field Key</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PARTNER - Domain</td>
+<td><code>{{ custom_values.partner__domain }}</code></td>
+<td><em>Set per partner</em></td>
+</tr>
+<tr>
+<td>PARTNER - Company Name</td>
+<td><code>{{ custom_values.partner__company_name }}</code></td>
+<td><em>Set per partner</em></td>
+</tr>
+<tr>
+<td>PARTNER - Email</td>
+<td><code>{{ custom_values.partner__email }}</code></td>
+<td><em>Set per partner</em></td>
+</tr>
+<tr>
+<td>PARTNER - Phone</td>
+<td><code>{{ custom_values.partner__phone }}</code></td>
+<td><em>Set per partner</em></td>
+</tr>
+<tr>
+<td>PARTNER - Logo URL</td>
+<td><code>{{ custom_values.partner__logo_url }}</code></td>
+<td><em>Set per partner</em></td>
+</tr>
+<tr>
+<td>AGENCY - Name</td>
+<td><code>{{ custom_values.agency__name }}</code></td>
+<td>PSEO</td>
+</tr>
+<tr>
+<td>AGENCY - Domain</td>
+<td><code>{{ custom_values.agency__domain }}</code></td>
+<td>pseo.nl</td>
+</tr>
+<tr>
+<td>AGENCY - Email</td>
+<td><code>{{ custom_values.agency__email }}</code></td>
+<td><em>Set per agency</em></td>
+</tr>
+<tr>
+<td>DISCOVERY - Calendar URL</td>
+<td><code>{{ custom_values.discovery__calendar_url }}</code></td>
+<td>Auto-linked</td>
+</tr>
+<tr>
+<td>STRATEGY - Calendar URL</td>
+<td><code>{{ custom_values.strategy__calendar_url }}</code></td>
+<td>Auto-linked</td>
+</tr>
+<tr>
+<td>FOLLOWUP - Calendar URL</td>
+<td><code>{{ custom_values.followup__calendar_url }}</code></td>
+<td>Auto-linked</td>
+</tr>
+<tr>
+<td>ONBOARDING - Form URL</td>
+<td><code>{{ custom_values.onboarding__form_url }}</code></td>
+<td><em>Link after creating form</em></td>
+</tr>
+</tbody></table>
+<h3>✅ Calendars (3 total)</h3>
+<table>
+<thead>
+<tr>
+<th>Calendar</th>
+<th>ID</th>
+<th>Slug</th>
+<th>Duration</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PSEO - Discovery Call</td>
+<td><code>dfhxk0s3meU3oP3Pe9TO</code></td>
+<td><code>/discovery-call</code></td>
+<td>30 min</td>
+<td>Blue #214CE5</td>
+</tr>
+<tr>
+<td>PSEO - Strategy Call</td>
+<td><code>yuSaIHueYHwmaxEvub2n</code></td>
+<td><code>/strategy-call</code></td>
+<td>45 min</td>
+<td>Green #10B981</td>
+</tr>
+<tr>
+<td>PSEO - Follow-up Call</td>
+<td><code>Tw5rNo4QlfZ2yusYbfNA</code></td>
+<td><code>/followup-call</code></td>
+<td>30 min</td>
+<td>Orange #F59E0B</td>
+</tr>
+</tbody></table>
+<p><strong>Calendar Settings:</strong></p>
+<ul>
+<li>Hours: Mon-Fri 9:00 AM - 5:00 PM</li>
+<li>Auto-confirm: Enabled</li>
+<li>Reschedule/Cancellation: Allowed</li>
+<li>Google calendar invites: Enabled</li>
+<li>Event titles use <code>{{ custom_values.partner__company_name }}</code></li>
+</ul>
+<h3>✅ Contact Custom Fields (5 total)</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Key</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PSEO - Website URL</td>
+<td><code>contact.pseo__website_url</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td>PSEO - Monthly Retainer</td>
+<td><code>contact.pseo__monthly_retainer</code></td>
+<td>Monetary</td>
+</tr>
+<tr>
+<td>PSEO - Contract Start Date</td>
+<td><code>contact.pseo__contract_start_date</code></td>
+<td>Date</td>
+</tr>
+<tr>
+<td>PSEO - Next Follow-up</td>
+<td><code>contact.pseo__next_followup</code></td>
+<td>Date</td>
+</tr>
+<tr>
+<td>PSEO - Internal Notes</td>
+<td><code>contact.pseo__internal_notes</code></td>
+<td>Large Text</td>
+</tr>
+</tbody></table>
+<h3>✅ Tags (11 total)</h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pseo-new-lead</code></td>
+<td>New lead entered system</td>
+</tr>
+<tr>
+<td><code>pseo-discovery-scheduled</code></td>
+<td>Discovery call booked</td>
+</tr>
+<tr>
+<td><code>pseo-discovery-completed</code></td>
+<td>Discovery call completed</td>
+</tr>
+<tr>
+<td><code>pseo-audit-sent</code></td>
+<td>Initial audit sent</td>
+</tr>
+<tr>
+<td><code>pseo-strategy-scheduled</code></td>
+<td>Strategy call booked</td>
+</tr>
+<tr>
+<td><code>pseo-strategy-completed</code></td>
+<td>Strategy call done</td>
+</tr>
+<tr>
+<td><code>pseo-proposal-sent</code></td>
+<td>Proposal/quote sent</td>
+</tr>
+<tr>
+<td><code>pseo-onboarding</code></td>
+<td>Client in onboarding</td>
+</tr>
+<tr>
+<td><code>pseo-active-client</code></td>
+<td>Active paying client</td>
+</tr>
+<tr>
+<td><code>pseo-retention</code></td>
+<td>In retention/follow-up loop</td>
+</tr>
+<tr>
+<td><code>pseo-lost</code></td>
+<td>Lost or not interested</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Manual Setup Checklist</h2>
+<h3>Step 1: Create the Pipeline (5 minutes)</h3>
+<ol>
+<li>Go to <strong>Settings</strong> → <strong>Pipelines</strong> (under CRM section)</li>
+<li>Click <strong>+ Create Pipeline</strong></li>
+<li>Name: <code>PSEO - Client Pipeline</code></li>
+<li>Add these stages in order:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage Name</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>New Lead</td>
+<td>Lead just came in</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Discovery Scheduled</td>
+<td>Discovery call booked</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Discovery Completed</td>
+<td>Discovery call done</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Audit Sent</td>
+<td>Initial SEO audit sent</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Strategy Scheduled</td>
+<td>Strategy call booked</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Strategy Completed</td>
+<td>Strategy call done</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Proposal Sent</td>
+<td>Quote/proposal sent</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Onboarding</td>
+<td>Signed up, onboarding</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Active Client</td>
+<td>Fully onboarded client</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Retention / Follow-up</td>
+<td>Monthly check-ins</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Lost / Not Interested</td>
+<td>Did not convert</td>
+</tr>
+</tbody></table>
+<ol start="5">
+<li>Click <strong>Save</strong></li>
+</ol>
+<hr>
+<h3>Step 2: Create Dropdown Custom Fields (10 minutes)</h3>
+<ol>
+<li>Go to <strong>Settings</strong> → <strong>Custom Fields</strong></li>
+<li>Click <strong>+ Add Field</strong> for each of the following:</li>
+</ol>
+<h4>Field 1: PSEO - GSC Access</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - GSC Access</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>Pending</li>
+<li>Granted</li>
+<li>Not Available</li>
+</ul>
+</li>
+</ul>
+<h4>Field 2: PSEO - GA4 Access</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - GA4 Access</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>Pending</li>
+<li>Granted</li>
+<li>Not Available</li>
+</ul>
+</li>
+</ul>
+<h4>Field 3: PSEO - CMS Platform</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - CMS Platform</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>WordPress</li>
+<li>Shopify</li>
+<li>Wix</li>
+<li>Squarespace</li>
+<li>Custom</li>
+<li>Other</li>
+</ul>
+</li>
+</ul>
+<h4>Field 4: PSEO - CMS Credentials</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - CMS Credentials</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>Pending</li>
+<li>Received</li>
+<li>Not Needed</li>
+</ul>
+</li>
+</ul>
+<h4>Field 5: PSEO - Onboarding Status</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - Onboarding Status</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>Not Started</li>
+<li>In Progress</li>
+<li>Completed</li>
+<li>On Hold</li>
+</ul>
+</li>
+</ul>
+<h4>Field 6: PSEO - Audit Status</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - Audit Status</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>Not Started</li>
+<li>In Progress</li>
+<li>Completed</li>
+<li>Sent</li>
+</ul>
+</li>
+</ul>
+<h4>Field 7: PSEO - Service Tier</h4>
+<ul>
+<li><strong>Name:</strong> PSEO - Service Tier</li>
+<li><strong>Type:</strong> Dropdown (Single Option)</li>
+<li><strong>Object:</strong> Contact</li>
+<li><strong>Options:</strong><ul>
+<li>Basic</li>
+<li>Growth</li>
+<li>Enterprise</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>Step 3: Create Onboarding Form (10 minutes)</h3>
+<ol>
+<li>Go to <strong>Sites</strong> → <strong>Forms</strong></li>
+<li>Click <strong>+ New Form</strong></li>
+<li>Name: <code>PSEO - Client Onboarding Form</code></li>
+<li>Add these fields:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field Label</th>
+<th>Type</th>
+<th>Required</th>
+<th>Maps To</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Full Name</td>
+<td>Full Name</td>
+<td>✅</td>
+<td>contact.name</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Email</td>
+<td>✅</td>
+<td>contact.email</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>Phone</td>
+<td>❌</td>
+<td>contact.phone</td>
+</tr>
+<tr>
+<td>Website URL</td>
+<td>Text</td>
+<td>✅</td>
+<td>contact.pseo__website_url</td>
+</tr>
+<tr>
+<td>What CMS does your site use?</td>
+<td>Dropdown</td>
+<td>✅</td>
+<td>contact.pseo__cms_platform</td>
+</tr>
+<tr>
+<td>Can you grant GSC access?</td>
+<td>Dropdown</td>
+<td>❌</td>
+<td>contact.pseo__gsc_access</td>
+</tr>
+<tr>
+<td>Can you grant GA4 access?</td>
+<td>Dropdown</td>
+<td>❌</td>
+<td>contact.pseo__ga4_access</td>
+</tr>
+<tr>
+<td>Any specific goals or concerns?</td>
+<td>Paragraph</td>
+<td>❌</td>
+<td>contact.pseo__internal_notes</td>
+</tr>
+</tbody></table>
+<ol start="5">
+<li><p><strong>Form Settings:</strong></p>
+<ul>
+<li>Redirect URL: Thank you page or back to partner site</li>
+<li>Notifications: Enable email to team</li>
+</ul>
+</li>
+<li><p>Click <strong>Save</strong></p>
+</li>
+<li><p><strong>Copy the form URL</strong> and update the custom value:</p>
+<ul>
+<li>Go to <strong>Settings</strong> → <strong>Custom Values</strong></li>
+<li>Find <code>ONBOARDING - Form URL</code></li>
+<li>Paste the form link</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>Step 4: Create Workflows (15 minutes)</h3>
+<p>Go to <strong>Automation</strong> → <strong>Workflows</strong> and create these:</p>
+<h4>Workflow 1: Discovery Call Booked</h4>
+<p><strong>Trigger:</strong> Appointment Booked → Calendar = &quot;PSEO - Discovery Call&quot;</p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Add Tag → <code>pseo-discovery-scheduled</code></li>
+<li>Create/Update Opportunity → Pipeline: PSEO - Client Pipeline, Stage: Discovery Scheduled</li>
+<li>Send Email → Confirmation with meeting details<ul>
+<li>Subject: <code>Your Discovery Call is Confirmed | {{ custom_values.partner__company_name }}</code></li>
+<li>Include calendar link and what to prepare</li>
+</ul>
+</li>
+</ol>
+<h4>Workflow 2: Post-Discovery → Send Audit</h4>
+<p><strong>Trigger:</strong> Appointment Status → Status = Showed, Calendar = &quot;PSEO - Discovery Call&quot;</p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Remove Tag → <code>pseo-discovery-scheduled</code></li>
+<li>Add Tag → <code>pseo-discovery-completed</code></li>
+<li>Update Opportunity → Stage: Discovery Completed</li>
+<li>Wait → 24 hours</li>
+<li>Add Tag → <code>pseo-audit-sent</code></li>
+<li>Update Opportunity → Stage: Audit Sent</li>
+<li>Send Email → SEO Audit + Strategy Call link<ul>
+<li>Subject: <code>Your SEO Audit is Ready | {{ custom_values.partner__company_name }}</code></li>
+<li>Include: <code>{{ custom_values.strategy__calendar_url }}</code></li>
+</ul>
+</li>
+</ol>
+<h4>Workflow 3: Strategy Call Booked</h4>
+<p><strong>Trigger:</strong> Appointment Booked → Calendar = &quot;PSEO - Strategy Call&quot;</p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Add Tag → <code>pseo-strategy-scheduled</code></li>
+<li>Update Opportunity → Stage: Strategy Scheduled</li>
+<li>Send Email → Strategy call confirmation<ul>
+<li>Include prep materials, what to expect</li>
+</ul>
+</li>
+</ol>
+<h4>Workflow 4: Onboarding Kickoff</h4>
+<p><strong>Trigger:</strong> Tag Added → <code>pseo-onboarding</code></p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Update Opportunity → Stage: Onboarding</li>
+<li>Update Field → PSEO - Onboarding Status = &quot;In Progress&quot;</li>
+<li>Send Email → Onboarding welcome + form link<ul>
+<li>Subject: <code>Welcome to {{ custom_values.partner__company_name }}! Let&#39;s Get Started</code></li>
+<li>Include: <code>{{ custom_values.onboarding__form_url }}</code></li>
+</ul>
+</li>
+<li>Create Task → &quot;Review onboarding submission&quot; (due in 3 days)</li>
+</ol>
+<h4>Workflow 5: Retention Follow-up Reminder</h4>
+<p><strong>Trigger:</strong> Custom Date Reminder → Field = &quot;PSEO - Next Follow-up&quot;, When = On the day</p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Add Tag → <code>pseo-retention</code></li>
+<li>Send Internal Notification → &quot;Time for follow-up call with {{contact.name}}&quot;</li>
+<li>Send Email to Contact → Monthly check-in + scheduling link<ul>
+<li>Include: <code>{{ custom_values.followup__calendar_url }}</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>Flow Architecture Reference</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│                        DISCOVERY LOOP                               │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
+│   │  Discovery   │───▶│   Agency     │───▶│  Discovery   │         │
+│   │  Call Page   │    │ Sends Audit  │    │    Call      │         │
+│   │{{partner}}.com    │    (PSEO)      │    │              │         │
+│   └──────────────┘    └──────────────┘    └──────┬───────┘         │
+│                                                   │                 │
+│                                           ┌──────▼───────┐         │
+│                                           │    Sale      │         │
+│                                           │   Closed?    │         │
+│                                           └──────┬───────┘         │
+│                                                  │ YES              │
+│   ┌──────────────┐                       ┌──────▼───────┐         │
+│   │  Strategy    │◀──────────────────────│  Strategy    │         │
+│   │  Call Page   │                       │    Call      │         │
+│   │{{partner}}.com                       └──────────────┘         │
+│   └──────────────┘                                                 │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                      ONBOARDING ENGINE                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
+│   │  Onboarding  │───▶│   Manual     │───▶│  Onboarding  │         │
+│   │    Form      │    │ Verify &amp; CRM │    │  Checklist   │         │
+│   │              │    │   Update     │    │              │         │
+│   └──────────────┘    └──────────────┘    └──────────────┘         │
+│                                                   │                 │
+│                                           ┌───────┴────────┐       │
+│                                           │ • Setup GSC/GA4│       │
+│                                           │ • CMS Creds    │       │
+│                                           │ • Verify Data  │       │
+│                                           │ • Set Expect.  │       │
+│                                           └────────────────┘       │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                       RETENTION LOOP                                │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
+│   │  Follow-up   │───▶│   Report     │───▶│  Schedule    │         │
+│   │    Call      │    │   Metrics    │    │  Next Call   │─────┐   │
+│   │              │    │(CRM/Notion)  │    │              │     │   │
+│   └──────────────┘    └──────────────┘    └──────────────┘     │   │
+│         ▲                                                       │   │
+│         └───────────────────────────────────────────────────────┘   │
+│                          (Monthly Loop)                             │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2>Snapshot Installation Checklist (For New Partners)</h2>
+<p>When installing this snapshot for a new JV partner:</p>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Custom Values</strong> — Update with partner info:</p>
+<ul>
+<li>Partner Domain</li>
+<li>Partner Company Name</li>
+<li>Partner Email</li>
+<li>Partner Phone</li>
+<li>Partner Logo URL</li>
+</ul>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Calendars</strong> — Assign team members and set availability</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Landing Pages</strong> — Create/customize with partner branding</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Email Templates</strong> — Update branding, logos, colors</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Test</strong> — Book a test appointment through each calendar</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Workflows</strong> — Review and enable all 5 workflows</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Train Partner</strong> — Walk through CRM, pipeline stages, contact fields</p>
+</li>
+</ul>
+<hr>
+<h2>Quick Reference: API Token</h2>
+<pre><code>pit-afc24dcf-e1ba-41c8-bd24-4f808bac1219
+</code></pre>
+<p><strong>Scopes Available:</strong> Calendars, Custom Values, Custom Fields, Tags, Forms (read), Contacts<br><strong>Scopes NOT Available:</strong> Pipelines (create), Workflows (create)</p>
+<hr>
+<h2>Support</h2>
+<ul>
+<li><strong>WellPlan:</strong> wellplan.io</li>
+<li><strong>PSEO:</strong> pseo.nl</li>
+<li><strong>GHL API Docs:</strong> marketplace.gohighlevel.com/docs</li>
+</ul>
+</body></html>
