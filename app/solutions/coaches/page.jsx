@@ -487,25 +487,25 @@ function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote: "WellPlan gave me my life back. I went from 60-hour weeks to 30 hours while doubling my income.",
-      author: "Sarah Mitchell",
-      title: "Business Coach",
-      result: "2x revenue in 3 months",
-      avatar: "SM"
+      quote: "This software has been a game-changer for my business. It's made managing everything so much easier and quicker.",
+      author: "Dr. Sami Osman",
+      title: "Physiotherapist & Fitness Coach",
+      result: "Business transformed",
+      avatar: "SO"
     },
     {
-      quote: "The AI booking system is a game-changer. I wake up to qualified leads already on my calendar.",
-      author: "Marcus Chen",
-      title: "Executive Coach",
-      result: "40+ qualified leads/month",
-      avatar: "MC"
+      quote: "This is beyond Awesome! I cannot believe how it addressed my frustrations about having to learn and juggle SO MANY OTHER TOOLS.",
+      author: "Dr. Federico Georga",
+      title: "Psychotherapist",
+      result: "All tools consolidated",
+      avatar: "FG"
     },
     {
-      quote: "I tried 5 different platforms before WellPlan. Nothing else comes close for coaching businesses.",
-      author: "Elena Rodriguez",
-      title: "Life Coach",
-      result: "$150k → $400k annual revenue",
-      avatar: "ER"
+      quote: "I was always not sure to implement an appointment booking system. It always seemed like an unnecessary expense. This changes Everything!",
+      author: "Omar El Alfy",
+      title: "Airzone Egypt",
+      result: "5 branches automated",
+      avatar: "OA"
     }
   ];
 

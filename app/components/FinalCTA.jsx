@@ -107,10 +107,10 @@ export default function FinalCTA() {
             }}
           >
             <p className="text-sm text-gray-300 mb-3">
-              "We replaced 7 tools with WellPlan and saved $50K/year. The support is incredible."
+              "This is beyond Awesome! I cannot believe how it addressed my frustrations about having to juggle SO MANY OTHER TOOLS."
             </p>
             <p className="text-sm font-bold text-gray-200">
-              — Sarah Chen, CEO GrowthCo Digital
+              — Dr. Federico Georga, Psychotherapist
             </p>
           </div>
         </div>

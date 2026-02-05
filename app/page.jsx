@@ -116,25 +116,25 @@ function CaseStudiesSection() {
 
   const cases = [
     { 
-      title: '3x Lead Growth', 
-      company: 'GrowthCo Digital Agency', 
-      metric: '50 → 200 leads/month', 
+      title: 'Multi-Branch Booking', 
+      company: 'Airzone Egypt', 
+      metric: '5 branches automated', 
       color: '#214CE5',
-      quote: 'WellPlan transformed how we capture and nurture leads.'
+      quote: 'This changes Everything!'
     },
     { 
-      title: '40% Faster Sales', 
-      company: 'CloudTech Inc', 
-      metric: '60 → 36 days cycle', 
+      title: 'All-in-One Solution', 
+      company: 'Dr. Federico Georga', 
+      metric: 'Replaced 7+ tools', 
       color: '#a855f7',
-      quote: 'Our sales cycle has never been shorter.'
+      quote: 'This is beyond Awesome!'
     },
     { 
-      title: '10x Revenue', 
-      company: 'Elite Coaching', 
-      metric: '$50k → $500k/year', 
+      title: 'Game-Changer', 
+      company: 'Dr. Sami Osman', 
+      metric: 'Fitness coaching simplified', 
       color: '#10b981',
-      quote: 'The automation paid for itself in week one.'
+      quote: 'If you run an online business, you need this!'
     }
   ];
 
