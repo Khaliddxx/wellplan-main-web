@@ -51,7 +51,7 @@ export default function EnhancedHero() {
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
-          <div>
+          <div className="text-center lg:text-left">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-7xl font-black mb-6 leading-[1] md:leading-tight"
+              className="text-6xl md:text-7xl font-black mb-6 leading-[1] md:leading-tight text-center lg:text-left"
             >
               <span className="text-white">Capture. Nurture.</span>
               <br />
@@ -83,7 +83,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg"
+              className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg text-center lg:text-left mx-auto lg:mx-0"
             >
               The all-in-one platform that turns visitors into leads, 
               leads into customers, and customers into raving fans.
@@ -94,7 +94,7 @@ export default function EnhancedHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 mb-8"
+              className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start"
             >
               <Link 
                 href="/demo"

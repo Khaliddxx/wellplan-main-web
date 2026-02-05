@@ -59,7 +59,7 @@ export default function ComparisonMatrix() {
           transition={{ delay: 0.2 }}
           className="overflow-x-auto"
         >
-          <div className="min-w-[800px] bg-[#111111] border border-white/10 rounded-2xl overflow-hidden">
+          <div className="min-w-[700px] bg-[#111111] border border-white/10 rounded-2xl overflow-hidden">
             {/* Header Row */}
             <div className="grid grid-cols-5 border-b border-white/10">
               <div className="p-6 bg-white/[0.02]">
@@ -68,7 +68,7 @@ export default function ComparisonMatrix() {
               {competitors.map((comp, idx) => (
                 <div 
                   key={idx}
-                  className={`p-6 text-center ${comp.primary ? 'bg-[#214CE5]/10' : 'bg-white/[0.02]'}`}
+                  className={`p-3 sm:p-4 text-center ${comp.primary ? 'bg-[#214CE5]/10' : 'bg-white/[0.02]'}`}
                 >
                   <span className={`font-bold ${comp.primary ? 'text-[#214CE5]' : 'text-gray-400'}`}>
                     {comp.name}
@@ -122,23 +122,23 @@ export default function ComparisonMatrix() {
 
             {/* Pricing Row */}
             <div className="grid grid-cols-5 bg-white/[0.02] border-t border-white/10">
-              <div className="p-6 flex items-center">
+              <div className="p-4 sm:p-6 flex items-center">
                 <span className="text-sm font-semibold text-white">Starting Price</span>
               </div>
-              <div className="p-6 text-center bg-[#214CE5]/10">
-                <div className="text-2xl font-black text-[#214CE5]">$97</div>
+              <div className="p-3 sm:p-4 text-center bg-[#214CE5]/10">
+                <div className="text-xl sm:text-2xl font-black text-[#214CE5]">$97</div>
                 <div className="text-xs text-gray-500">/month</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-2xl font-bold text-gray-400">$800</div>
+              <div className="p-3 sm:p-4 text-center">
+                <div className="text-xl sm:text-2xl font-bold text-gray-400">$800</div>
                 <div className="text-xs text-gray-500">/month</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-2xl font-bold text-gray-400">$1,500</div>
+              <div className="p-3 sm:p-4 text-center">
+                <div className="text-xl sm:text-2xl font-bold text-gray-400">$1,500</div>
                 <div className="text-xs text-gray-500">/month</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-2xl font-bold text-gray-400">$149</div>
+              <div className="p-3 sm:p-4 text-center">
+                <div className="text-xl sm:text-2xl font-bold text-gray-400">$149</div>
                 <div className="text-xs text-gray-500">/month</div>
               </div>
             </div>
