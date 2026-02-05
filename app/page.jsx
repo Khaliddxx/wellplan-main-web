@@ -53,8 +53,8 @@ function StatsSection() {
   const isInView = useInView(ref, { once: false, margin: '-100px' });
 
   const stats = [
-    { value: 50000, label: 'Active Users', suffix: '+' },
-    { value: 500, label: 'Million Messages', suffix: 'M+' },
+    { value: 450, label: 'Active Users', suffix: '+' },
+    { value: 1.74, label: 'Million Messages', suffix: 'M+' },
     { value: 200, label: 'Integrations', suffix: '+' },
     { value: 99.9, label: 'Uptime', suffix: '%' }
   ];

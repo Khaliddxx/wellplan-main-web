@@ -266,7 +266,7 @@ export default function EnhancedHero() {
           className="mt-20 pt-12 border-t border-white/5"
         >
           <p className="text-center text-sm text-gray-500 mb-8">
-            Trusted by 10,000+ businesses worldwide
+            Trusted by 450+ businesses worldwide
           </p>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-40">
             {['Shopify', 'HubSpot', 'Stripe', 'Zapier', 'Salesforce', 'Slack'].map((company, idx) => (

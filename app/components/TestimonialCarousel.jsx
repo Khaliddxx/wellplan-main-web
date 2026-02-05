@@ -6,35 +6,27 @@ import { useInView } from 'framer-motion';
 export default function TestimonialCarousel() {
   const testimonials = [
     {
-      quote: 'WellPlan replaced 7 different tools we were using. The ROI was immediate - we cut our tech stack costs by 60%.',
-      author: 'Sarah Chen',
-      title: 'CEO, GrowthCo Digital',
-      metric: '3x Lead Growth',
-      company: '🏢',
-      color: 'from-blue-500 to-cyan-500',
+      quote: 'I was always not sure to implement an appointment booking system into our branches because it always seemed like an unnecessary high-expense. This changes Everything!',
+      author: 'Omar El Alfy',
+      title: 'Airzone Egypt',
+      metric: '5 Branches',
+      company: '🎢',
+      color: 'from-orange-500 to-blue-500',
     },
     {
-      quote: 'Best decision we made this year. Our sales cycle dropped from 60 days to 36 days with intelligent lead scoring.',
-      author: 'Marcus Johnson',
-      title: 'VP Sales, CloudTech Inc',
-      metric: '40% Faster Closing',
-      company: '☁️',
-      color: 'from-purple-500 to-pink-500',
+      quote: 'This is beyond Awesome! I cannot believe how it addressed my frustrations about having to learn and juggle SO MANY OTHER TOOLS.',
+      author: 'Dr. Federico Georga',
+      title: 'Psychotherapist',
+      metric: 'All-in-One',
+      company: '🧠',
+      color: 'from-blue-500 to-purple-500',
     },
     {
-      quote: 'The WhatsApp integration alone is worth it. We\'re now engaging leads on the platform they already use.',
-      author: 'Emma Rodriguez',
-      title: 'Founder, Elite Coaching',
-      metric: '10x Revenue',
-      company: '💼',
-      color: 'from-orange-500 to-red-500',
-    },
-    {
-      quote: 'Enterprise-grade platform at startup pricing. Our customers love the seamless experience.',
-      author: 'Alex Kim',
-      title: 'Director, Digital Agency Pro',
-      metric: 'NPS: 72',
-      company: '🎨',
+      quote: 'This software has been a game-changer for my business. It\'s made managing everything so much easier and quicker. Honestly, if you run an online business, you need this!',
+      author: 'Dr. Sami Osman',
+      title: 'Physiotherapist & Fitness Coach',
+      metric: 'Game-Changer',
+      company: '💪',
       color: 'from-green-500 to-emerald-500',
     },
   ];
@@ -155,7 +147,7 @@ export default function TestimonialCarousel() {
           </div>
 
           {/* Testimonial Cards Grid (Below) */}
-          <div className="grid md:grid-cols-4 gap-4 mt-16">
+          <div className="grid md:grid-cols-3 gap-4 mt-16">
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
