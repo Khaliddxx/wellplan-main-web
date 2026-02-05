@@ -196,7 +196,7 @@ export default function Navigation() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="https://app.wellplan.io" target="_blank" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] hover:from-[#1a3db8] hover:to-[#14308f] text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-[#214CE5]/30">
+            <Link href="/demo" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] hover:from-[#1a3db8] hover:to-[#14308f] text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-[#214CE5]/30">
               <Zap className="w-4 h-4" />
               Try WellPlan - It's Free
             </Link>
@@ -254,7 +254,7 @@ export default function Navigation() {
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
-            <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
+            <Link href="/demo" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
               <Zap className="w-4 h-4" />Start Free Trial
             </Link>
             <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-white/10 text-gray-300 font-medium rounded-lg" onClick={() => setMobileOpen(false)}>

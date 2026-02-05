@@ -58,7 +58,7 @@ function HeroSection() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link 
-              href="https://app.wellplan.io"
+              href="/demo"
               target="_blank"
               className="px-8 py-4 border border-white/20 rounded-xl font-bold text-lg hover:bg-white/5 transition flex items-center gap-2"
             >
@@ -392,7 +392,7 @@ function CTASection() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="https://app.wellplan.io"
+                href="/demo"
                 target="_blank"
                 className="px-8 py-4 border-2 border-white rounded-xl font-bold text-lg hover:bg-white/10 transition"
               >

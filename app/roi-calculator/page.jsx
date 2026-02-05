@@ -352,7 +352,7 @@ export default function ROICalculatorPage() {
               
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link 
-                  href="https://app.wellplan.io"
+                  href="/demo"
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-semibold rounded-xl transition"
                 >
                   Start Free Trial

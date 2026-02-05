@@ -73,7 +73,7 @@ export default function CapturingPage() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="https://app.wellplan.io" className="inline-flex items-center gap-2 px-8 py-4 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-bold rounded-xl transition shadow-lg shadow-[#214CE5]/30">
+              <Link href="/demo" className="inline-flex items-center gap-2 px-8 py-4 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-bold rounded-xl transition shadow-lg shadow-[#214CE5]/30">
                 Start Capturing Leads
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -189,7 +189,7 @@ export default function CapturingPage() {
           <div className="p-12 rounded-3xl bg-gradient-to-r from-[#214CE5] to-cyan-600 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to capture more leads?</h2>
             <p className="text-white/80 mb-8">Start your free trial and see results in days, not months.</p>
-            <Link href="https://app.wellplan.io" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#214CE5] font-bold rounded-xl hover:bg-gray-100 transition">
+            <Link href="/demo" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#214CE5] font-bold rounded-xl hover:bg-gray-100 transition">
               <Zap className="w-5 h-5" />
               Start Free Trial
             </Link>

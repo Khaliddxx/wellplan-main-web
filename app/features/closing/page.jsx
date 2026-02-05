@@ -71,7 +71,7 @@ export default function ClosingPage() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="https://app.wellplan.io" className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition shadow-lg shadow-emerald-500/30">
+              <Link href="/demo" className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition shadow-lg shadow-emerald-500/30">
                 Start Closing Deals
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -208,7 +208,7 @@ export default function ClosingPage() {
           <div className="p-12 rounded-3xl bg-gradient-to-r from-emerald-500 to-teal-600 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to close more deals?</h2>
             <p className="text-white/80 mb-8">Start your free trial and see your revenue grow.</p>
-            <Link href="https://app.wellplan.io" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-emerald-600 font-bold rounded-xl hover:bg-gray-100 transition">
+            <Link href="/demo" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-emerald-600 font-bold rounded-xl hover:bg-gray-100 transition">
               <Zap className="w-5 h-5" />
               Start Free Trial
             </Link>

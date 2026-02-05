@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Calendar, Clock, Video, Check, Star, Users, Zap, ArrowRight, MessageSquare, Globe } from 'lucide-react';
+import CalendarWidget from '../components/CalendarWidget';
 
 export const metadata = {
   title: 'Book a Demo | WellPlan - See the Platform in Action',
@@ -15,7 +16,7 @@ export default function DemoPage() {
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-[#214CE5]/20 rounded-full blur-[120px]" />
         
         <div className="relative max-w-7xl mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left: Content */}
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#214CE5]/20 border border-[#214CE5]/30 mb-6">
@@ -93,54 +94,17 @@ export default function DemoPage() {
               </div>
             </div>
 
-            {/* Right: Calendar Widget Placeholder */}
+            {/* Right: Calendar Widget */}
             <div className="lg:pl-8">
-              <div className="p-8 rounded-3xl bg-[#111111] border border-white/10 shadow-2xl">
+              <div className="p-6 rounded-3xl bg-[#111111] border border-white/10 shadow-2xl">
                 <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-[#214CE5]" />
                   Schedule Your Demo
                 </h2>
                 
-                {/* Calendar Widget Placeholder */}
-                <div className="bg-[#0a0a0a] rounded-2xl p-8 mb-6 border border-white/5 min-h-[400px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-2xl bg-[#214CE5]/20 flex items-center justify-center mb-4">
-                    <Calendar className="w-8 h-8 text-[#214CE5]" />
-                  </div>
-                  <p className="text-gray-400 text-center mb-4">
-                    Calendar widget will be embedded here
-                  </p>
-                  <p className="text-sm text-gray-600 text-center">
-                    Provide your calendar widget code to enable booking
-                  </p>
-                  
-                  {/* Placeholder slots */}
-                  <div className="w-full mt-8 space-y-2">
-                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 text-center text-sm text-gray-500">
-                      Loading available times...
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Alternative contact */}
-                <div className="text-center pt-4 border-t border-white/10">
-                  <p className="text-sm text-gray-500 mb-3">Prefer to chat first?</p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Link 
-                      href="https://wa.me/message/XXXXX" 
-                      target="_blank"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] text-sm font-medium rounded-lg transition"
-                    >
-                      <MessageSquare className="w-4 h-4" />
-                      WhatsApp
-                    </Link>
-                    <Link 
-                      href="mailto:hello@wellplan.io"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition"
-                    >
-                      <Globe className="w-4 h-4" />
-                      Email Us
-                    </Link>
-                  </div>
+                {/* Calendar Widget */}
+                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5">
+                  <CalendarWidget />
                 </div>
               </div>
             </div>

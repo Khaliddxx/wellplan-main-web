@@ -71,7 +71,7 @@ export default function NurturingPage() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="https://app.wellplan.io" className="inline-flex items-center gap-2 px-8 py-4 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded-xl transition shadow-lg shadow-purple-500/30">
+              <Link href="/demo" className="inline-flex items-center gap-2 px-8 py-4 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded-xl transition shadow-lg shadow-purple-500/30">
                 Start Nurturing Leads
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -187,7 +187,7 @@ export default function NurturingPage() {
           <div className="p-12 rounded-3xl bg-gradient-to-r from-purple-500 to-pink-600 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to nurture your leads?</h2>
             <p className="text-white/80 mb-8">Start your free trial and automate your follow-up today.</p>
-            <Link href="https://app.wellplan.io" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition">
+            <Link href="/demo" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition">
               <Zap className="w-5 h-5" />
               Start Free Trial
             </Link>

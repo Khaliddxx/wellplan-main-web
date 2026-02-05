@@ -154,7 +154,7 @@ export default function ComparisonMatrix() {
         >
           <p className="text-gray-500 mb-6">Get all features at a fraction of the cost</p>
           <Link
-            href="https://app.wellplan.io"
+            href="/demo"
             target="_blank"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] rounded-xl font-bold text-white hover:shadow-lg hover:shadow-[#214CE5]/30 transition group"
           >

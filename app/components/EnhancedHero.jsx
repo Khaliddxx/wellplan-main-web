@@ -97,7 +97,7 @@ export default function EnhancedHero() {
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
               <Link 
-                href="https://app.wellplan.io"
+                href="/demo"
                 target="_blank"
                 className="px-8 py-4 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#214CE5]/30 transition flex items-center justify-center gap-2 group"
               >

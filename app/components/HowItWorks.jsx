@@ -79,7 +79,7 @@ export default function HowItWorks() {
           className="text-center mt-16"
         >
           <Link
-            href="https://app.wellplan.io"
+            href="/demo"
             target="_blank"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#214CE5] to-purple-600 rounded-xl font-bold text-white hover:shadow-lg hover:shadow-[#214CE5]/30 transition group"
           >
