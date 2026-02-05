@@ -245,12 +245,17 @@ export default function Navigation() {
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Resources</div>
           <Link href="/integrations" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Integrations</Link>
           <Link href="/blog" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Blog</Link>
-          <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Book a Demo</Link>
+          <Link href="/case-studies" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Case Studies</Link>
+          <Link href="/roi-calculator" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>ROI Calculator</Link>
+          <a href="https://knowledge.wellplan.io/kb" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Documentation</a>
+          <a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Video Tutorials</a>
           
           {/* Main Links */}
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Company</div>
           <Link href="/pricing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
+          <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Book a Demo</Link>
           <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Support</a>
+          <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>API Reference</a>
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
