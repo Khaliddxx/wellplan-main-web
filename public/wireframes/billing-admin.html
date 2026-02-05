@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #222;
+      margin-bottom: 24px;
+    }
+    .logo { font-size: 20px; font-weight: 700; color: #214CE5; }
+    .nav { display: flex; gap: 24px; }
+    .nav a { color: #888; text-decoration: none; font-size: 14px; }
+    .nav a.active { color: #fff; }
+    
+    /* Stats Row */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-label { font-size: 12px; color: #666; margin-bottom: 8px; }
+    .stat-value { font-size: 28px; font-weight: 600; }
+    .stat-value.blue { color: #214CE5; }
+    .stat-value.green { color: #10b981; }
+    .stat-value.yellow { color: #f59e0b; }
+    
+    /* Main Content */
+    .main { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+    
+    /* Hierarchy Section */
+    .section {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .section-title { font-size: 16px; font-weight: 600; }
+    .btn {
+      background: #214CE5;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #333;
+      color: #888;
+    }
+    
+    /* Tree View */
+    .tree { padding-left: 0; }
+    .tree-node {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      cursor: grab;
+      position: relative;
+    }
+    .tree-node:hover { border-color: #214CE5; }
+    .tree-node.parent { border-left: 3px solid #214CE5; }
+    .tree-node.child { 
+      margin-left: 32px;
+      border-left: 3px solid #10b981;
+    }
+    .tree-node.child::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 16px;
+      height: 1px;
+      background: #333;
+    }
+    .node-header { display: flex; justify-content: space-between; align-items: center; }
+    .node-name { font-weight: 500; font-size: 14px; }
+    .node-tier { 
+      font-size: 11px; 
+      padding: 3px 8px; 
+      background: #214CE5; 
+      border-radius: 4px;
+    }
+    .node-tier.dwy { background: #7c3aed; }
+    .node-tier.dfy { background: #10b981; }
+    .node-meta { display: flex; gap: 16px; margin-top: 10px; }
+    .meta-item { font-size: 12px; color: #666; display: flex; align-items: center; gap: 4px; }
+    .meta-item .dot { width: 6px; height: 6px; border-radius: 50%; }
+    .meta-item .dot.green { background: #10b981; }
+    .meta-item .dot.blue { background: #214CE5; }
+    
+    /* Staff Avatars */
+    .staff-avatars { display: flex; margin-left: auto; }
+    .avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #333;
+      border: 2px solid #1a1a1a;
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #888;
+    }
+    .avatar:first-child { margin-left: 0; }
+    .avatar.blue { background: #214CE5; color: #fff; }
+    .avatar.purple { background: #7c3aed; color: #fff; }
+    .avatar.green { background: #10b981; color: #fff; }
+    
+    /* Drop Zone */
+    .drop-zone {
+      border: 2px dashed #333;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #444;
+      font-size: 13px;
+      margin-left: 32px;
+      margin-bottom: 12px;
+    }
+    
+    /* Sidebar */
+    .sidebar-section { margin-bottom: 20px; }
+    .sidebar-title { font-size: 13px; color: #666; margin-bottom: 12px; }
+    
+    /* Payment Processors */
+    .processor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .processor-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .processor-icon.stripe { background: #635BFF; }
+    .processor-icon.paypal { background: #003087; }
+    .processor-icon.fanbasis { background: #ff6b35; }
+    .processor-name { font-size: 13px; flex: 1; }
+    .processor-status { width: 8px; height: 8px; border-radius: 50%; }
+    .processor-status.connected { background: #10b981; }
+    .processor-status.pending { background: #f59e0b; }
+    
+    /* Activity Feed */
+    .activity-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #222;
+      font-size: 12px;
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-text { color: #888; margin-bottom: 4px; }
+    .activity-text strong { color: #fff; }
+    .activity-time { color: #444; font-size: 11px; }
+    
+    /* Legend */
+    .legend {
+      display: flex;
+      gap: 16px;
+      padding: 12px 16px;
+      background: #0d0d0d;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #666; }
+    .legend-color { width: 12px; height: 3px; border-radius: 2px; }
+    .legend-color.parent { background: #214CE5; }
+    .legend-color.child { background: #10b981; }
+    
+    /* Drag Indicator */
+    .drag-hint {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #333;
+      font-size: 16px;
+    }
+    
+    /* Title Bar */
+    .page-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .page-subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">⚡ WellPlan Admin</div>
+      <div class="nav">
+        <a href="#">Dashboard</a>
+        <a href="#" class="active">Subaccounts</a>
+        <a href="#">Subscriptions</a>
+        <a href="#">Staff</a>
+        <a href="#">Settings</a>
+      </div>
+    </div>
+    
+    <div class="page-title">Subaccount Hierarchy</div>
+    <div class="page-subtitle">Drag subaccounts to organize access. Staff inherit permissions from parent accounts.</div>
+    
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">Monthly Revenue</div>
+        <div class="stat-value blue">$12,847</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active Subaccounts</div>
+        <div class="stat-value">24</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Staff</div>
+        <div class="stat-value">18</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pending Payments</div>
+        <div class="stat-value yellow">3</div>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main">
+      <!-- Hierarchy Tree -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">📂 Account Structure</div>
+          <button class="btn">+ Add Subaccount</button>
+        </div>
+        
+        <!-- Parent Node 1 -->
+        <div class="tree">
+          <div class="tree-node parent">
+            <div class="drag-hint">⋮⋮</div>
+            <div class="node-header">
+              <div class="node-name">Acme Marketing Agency</div>
+              <div class="staff-avatars">
+                <div class="avatar blue">JD</div>
+                <div class="avatar purple">SK</div>
+                <div class="avatar green">MR</div>
+              </div>
+              <div class="node-tier dfy">DFY</div>
+            </div>
+            <div class="node-meta">
+              <div class="meta-item"><span class="dot green"></span> Active</div>
+              <div class="meta-item">3 staff</div>
+              <div class="meta-item">4 children</div>
+              <div class="meta-item">$197/mo</div>
+            </div>
+          </div>
+          
+          <!-- Children of Parent 1 -->
+          <div class="tree-node child">
+            <div class="drag-hint">⋮⋮</div>
+            <div class="node-header">
+              <div class="node-name">Client: Fresh Dental</div>
+              <div class="node-tier">DIY</div>
+            </div>
+            <div class="node-meta">
+              <div class="meta-item"><span class="dot green"></span> Active</div>
+              <div class="meta-item">↑ inherits 3 staff</div>
+              <div class="meta-item">$97/mo</div>
+            </div>
+          </div>
+          
+          <div class="tree-node child">
+            <div class="drag-hint">⋮⋮</div>
+            <div class="node-header">
+              <div class="node-name">Client: Peak Fitness</div>
+              <div class="node-tier">DIY</div>
+            </div>
+            <div class="node-meta">
+              <div class="meta-item"><span class="dot green"></span> Active</div>
+              <div class="meta-item">↑ inherits 3 staff</div>
+              <div class="meta-item">$97/mo</div>
+            </div>
+          </div>
+          
+          <div class="tree-node child">
+            <div class="drag-hint">⋮⋮</div>
+            <div class="node-header">
+              <div class="node-name">Client: Urban Realty</div>
+              <div class="node-tier dwy">DWY</div>
+            </div>
+            <div class="node-meta">
+              <div class="meta-item"><span class="dot green"></span> Active</div>
+              <div class="meta-item">↑ inherits 3 staff</div>
+              <div class="meta-item">$147/mo</div>
+            </div>
+          </div>
+          
+          <div class="drop-zone">
+            ⬇ Drop subaccount here to add as child
+          </div>
+          
+          <!-- Parent Node 2 -->
+          <div class="tree-node parent" style="margin-top: 24px;">
+            <div class="drag-hint">⋮⋮</div>
+            <div class="node-header">
+              <div class="node-name">Solo Coach - Mike Chen</div>
+              <div class="staff-avatars">
+                <div class="avatar blue">MC</div>
+              </div>
+              <div class="node-tier dwy">DWY</div>
+            </div>
+            <div class="node-meta">
+              <div class="meta-item"><span class="dot green"></span> Active</div>
+              <div class="meta-item">1 staff</div>
+              <div class="meta-item">No children</div>
+              <div class="meta-item">$147/mo</div>
+            </div>
+          </div>
+          
+          <!-- Standalone Node -->
+          <div class="tree-node parent" style="margin-top: 12px; opacity: 0.7;">
+            <div class="drag-hint">⋮⋮</div>
+            <div class="node-header">
+              <div class="node-name">New Lead: Sarah's Boutique</div>
+              <div class="node-tier" style="background: #444;">Trial</div>
+            </div>
+            <div class="node-meta">
+              <div class="meta-item"><span class="dot" style="background: #f59e0b;"></span> Trial (5 days left)</div>
+              <div class="meta-item">0 staff</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="legend">
+          <div class="legend-item"><span class="legend-color parent"></span> Parent (can have children)</div>
+          <div class="legend-item"><span class="legend-color child"></span> Child (inherits staff access)</div>
+        </div>
+      </div>
+      
+      <!-- Sidebar -->
+      <div>
+        <div class="section sidebar-section">
+          <div class="section-title" style="margin-bottom: 16px;">💳 Payment Processors</div>
+          <div class="processor">
+            <div class="processor-icon stripe">S</div>
+            <div class="processor-name">Stripe</div>
+            <div class="processor-status connected"></div>
+          </div>
+          <div class="processor">
+            <div class="processor-icon paypal">P</div>
+            <div class="processor-name">PayPal</div>
+            <div class="processor-status connected"></div>
+          </div>
+          <div class="processor">
+            <div class="processor-icon fanbasis">F</div>
+            <div class="processor-name">Fanbasis</div>
+            <div class="processor-status pending"></div>
+          </div>
+          <button class="btn btn-ghost" style="width: 100%; margin-top: 8px;">+ Connect Processor</button>
+        </div>
+        
+        <div class="section">
+          <div class="section-title" style="margin-bottom: 16px;">📋 Recent Activity</div>
+          <div class="activity-item">
+            <div class="activity-text"><strong>Fresh Dental</strong> moved under Acme Marketing</div>
+            <div class="activity-time">2 minutes ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-text"><strong>Sarah K.</strong> added as staff to Acme</div>
+            <div class="activity-time">15 minutes ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-text"><strong>Peak Fitness</strong> subscription renewed</div>
+            <div class="activity-time">1 hour ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-text"><strong>Urban Realty</strong> upgraded to DWY</div>
+            <div class="activity-time">3 hours ago</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-text">Fanbasis webhook received</div>
+            <div class="activity-time">5 hours ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
