@@ -157,7 +157,15 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center">
+          <Link 
+            href="/" 
+            className="flex items-center"
+            onClick={() => {
+              setActiveDropdown(null);
+              setMobileOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
             <img src="/Frame 69.png" alt="WellPlan" className="h-8" />
           </Link>
 
