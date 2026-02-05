@@ -269,7 +269,7 @@ export default function EnhancedHero() {
             Trusted by 450+ businesses worldwide
           </p>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-40">
-            {['Shopify', 'HubSpot', 'Stripe', 'Zapier', 'Salesforce', 'Slack'].map((company, idx) => (
+            {['Aura', 'Airzone', 'PSEO Agency', 'Gareebak', 'Kim Wellness', 'Jorge Perez'].map((company, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0 }}

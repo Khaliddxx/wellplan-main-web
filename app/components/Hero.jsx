@@ -15,7 +15,7 @@ export default function Hero() {
         >
           <div className="mb-4">
             <span className="inline-block px-4 py-2 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full">
-              Trusted by 10,000+ businesses
+              Trusted by 450+ businesses
             </span>
           </div>
 
@@ -59,7 +59,7 @@ export default function Hero() {
           <div className="mt-12 pt-8 border-t border-slate-200">
             <p className="text-xs text-slate-400 uppercase tracking-wide mb-4">Trusted by teams at</p>
             <div className="flex flex-wrap gap-6 items-center opacity-40 grayscale">
-              {['Shopify', 'Stripe', 'Salesforce', 'HubSpot', 'Zapier'].map((company) => (
+              {['Aura', 'Airzone', 'PSEO Agency', 'Gareebak', 'Kim Wellness', 'Jorge Perez'].map((company) => (
                 <div key={company} className="px-4 py-2 bg-slate-100 rounded font-bold text-slate-700 text-sm">
                   {company}
                 </div>
