@@ -156,7 +156,7 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-[72px] sm:h-16">
+        <div className="flex justify-between items-center h-20 sm:h-16">
           <Link 
             href="/" 
             className="flex items-center"
@@ -166,7 +166,7 @@ export default function Navigation() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <img src="/Frame 69.png" alt="WellPlan" className="h-9 sm:h-8" />
+            <img src="/Frame 69.png" alt="WellPlan" className="h-10 sm:h-8" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
