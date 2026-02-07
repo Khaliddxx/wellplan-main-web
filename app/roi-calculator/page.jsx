@@ -47,15 +47,15 @@ export default function ROICalculatorPage() {
     
     // Tool consolidation savings
     const currentToolCost = currentTools * avgToolCost;
-    const wellplanCost = 397; // Unlimited AI plan
-    const toolSavings = Math.max(0, currentToolCost - wellplanCost);
+    const wellplanAvgCost = 197; // Mid-range estimate ($97-$397)
+    const toolSavings = Math.max(0, currentToolCost - wellplanAvgCost);
     
     // Total monthly savings (only count positive values)
     const totalSavings = Math.max(0, revenueIncrease) + laborSavings + Math.max(0, toolSavings);
     
     // ROI calculation (annual net benefit vs annual cost)
     const annualSavings = totalSavings * 12;
-    const annualCost = wellplanCost * 12;
+    const annualCost = wellplanAvgCost * 12;
     const roi = annualCost > 0 ? ((annualSavings - annualCost) / annualCost) * 100 : 0;
 
     setResults({
