@@ -1,16 +1,28 @@
-import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-export default createMiddleware({
-  locales: ['en', 'nl'],
-  defaultLocale: 'en'
-});
+const locales = ['en', 'nl'];
+const defaultLocale = 'en';
+
+export function middleware(request) {
+  const pathname = request.nextUrl.pathname;
+  
+  // Check if pathname already has locale
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
+  
+  if (pathnameHasLocale) {
+    // Already has locale, continue
+    return NextResponse.next();
+  }
+  
+  // Redirect to default locale
+  const locale = defaultLocale;
+  return NextResponse.redirect(
+    new URL(`/${locale}${pathname}`, request.url)
+  );
+}
 
 export const config = {
-  matcher: [
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    '/((?!api|_next|_vercel|.*\\..*).*)'
-  ]
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
