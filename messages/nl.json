@@ -927,7 +927,6 @@
     "faq": {
       "setup": { "q": "Wat is inbegrepen bij de setup-kosten?", "a": "De €497 setup-kosten dekken je dedicated snapshot-configuratie, aangepaste velden, pipelines, automatiseringen en een 1-op-1 onboardingsessie om ervoor te zorgen dat alles is ingesteld voor je specifieke behoeften." },
       "onboarding": { "q": "Hoe lang duurt onboarding?", "a": "De meeste partners zijn binnen 48-72 uur volledig ingesteld. We plannen je onboarding-gesprek direct na betaling, en je hebt meteen toegang tot je account." },
-      "whitelabel": { "q": "Kan ik WellPlan white-labelen voor mijn klanten?", "a": "Ja! WellPlan ondersteunt aangepaste domeinen en branding. Je kunt WellPlan aanbieden als je eigen platform aan je SEO-klanten." },
       "cancel": { "q": "Is er een contract of kan ik op elk moment opzeggen?", "a": "Geen langetermijncontracten. Je kunt op elk moment opzeggen. We bieden ook een 14 dagen geld-terug-garantie als je niet tevreden bent." }
     },
     "finalCta": { "title": "Klaar om Je Bureau te Schalen?", "subtitle": "Sluit je aan bij andere PSEO-partners die WellPlan al gebruiken om hun SEO-verkeer te converteren.", "button": "Boek Je Setup Call" }

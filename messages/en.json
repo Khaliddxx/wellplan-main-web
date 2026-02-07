@@ -926,7 +926,6 @@
     "faq": {
       "setup": { "q": "What's included in the setup fee?", "a": "The $497 setup fee covers your dedicated snapshot configuration, custom fields, pipelines, automations, and a 1-on-1 onboarding session to ensure everything is set up for your specific needs." },
       "onboarding": { "q": "How long does onboarding take?", "a": "Most partners are fully set up within 48-72 hours. We'll schedule your onboarding call right after payment, and you'll have access to your account immediately." },
-      "whitelabel": { "q": "Can I white-label WellPlan for my clients?", "a": "Yes! WellPlan supports custom domains and branding. You can offer WellPlan as your own platform to your SEO clients." },
       "cancel": { "q": "Is there a contract or can I cancel anytime?", "a": "No long-term contracts. You can cancel anytime. We also offer a 14-day money-back guarantee if you're not satisfied." }
     },
     "finalCta": { "title": "Ready to Scale Your Agency?", "subtitle": "Join other PSEO partners already using WellPlan to convert their SEO traffic.", "button": "Book Your Setup Call" }

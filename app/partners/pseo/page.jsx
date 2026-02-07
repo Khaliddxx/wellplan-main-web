@@ -20,7 +20,7 @@ const benefitIcons = {
 };
 
 const benefitKeys = ['inbox', 'ai', 'marketing', 'funnels', 'crm', 'analytics'];
-const faqKeys = ['setup', 'onboarding', 'whitelabel', 'cancel'];
+const faqKeys = ['setup', 'onboarding', 'cancel'];
 
 export default function PSEOPartnerPage() {
   const t = useTranslations('pseoPartnerPage');
