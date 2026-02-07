@@ -218,7 +218,7 @@ export default function Navigation() {
             </div>
 
             <Link href={localePath('/pricing')} className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('pricing')}</Link>
-            <Link href="#contact" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('contact')}</Link>
+            <Link href={localePath('/contact')} className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('contact')}</Link>
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
