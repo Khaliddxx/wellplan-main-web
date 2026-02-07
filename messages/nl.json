@@ -602,6 +602,98 @@
       "rest-api": { "description": "Volledige API toegang", "features": "" }
     }
   },
+  "aiBotPage": {
+    "badge": "AI Medewerker Suite",
+    "headline": "AI Die Afspraken",
+    "headlineHighlight": "24/7 Boekt",
+    "subtitle": "Zet AI in je WhatsApp & Telegram die leads kwalificeert en afspraken boekt — gesynchroniseerd met je agenda in real-time. Mis nooit meer een boeking.",
+    "ctaButton": "Bekijk AI Bot Demo",
+    "viewPricing": "Bekijk Prijzen",
+    "stats": {
+      "responseTime": "Reactietijd",
+      "bookingRate": "Boekingspercentage",
+      "availability": "Beschikbaarheid"
+    },
+    "benefits": {
+      "whatsapp": { "title": "WhatsApp & Telegram", "desc": "AI is waar je klanten zijn" },
+      "calendar": { "title": "Agenda Sync", "desc": "Real-time beschikbaarheid, geen dubbele boekingen" },
+      "booking": { "title": "24/7 Boeken", "desc": "Mis nooit een lead, zelfs om 3 uur 's nachts" },
+      "instant": { "title": "Direct Antwoord", "desc": "Reageer in seconden, niet uren" }
+    },
+    "channelsTitle": "Zet AI in op je favoriete messaging apps",
+    "featuresTitle": "Conversatie AI",
+    "featuresHighlight": "Functies",
+    "featuresSubtitle": "Enterprise-grade AI die complexe problemen oplost met veiligere, nauwkeurigere antwoorden dan elke chatbot op de markt.",
+    "features": {
+      "calendar": { "title": "Real-Time Agenda Sync", "description": "AI controleert je live agenda beschikbaarheid voordat tijdslots worden aangeboden. Geen dubbele boekingen, geen handmatig heen-en-weer. Synchroniseert met Google Calendar, Outlook en meer." },
+      "qualification": { "title": "Slimme Lead Kwalificatie", "description": "AI stelt kwalificerende vragen voor het boeken. Filter tijdverspillers eruit en boek alleen meetings met gekwalificeerde prospects die klaar zijn om te kopen." },
+      "conversations": { "title": "Natuurlijke Gesprekken", "description": "Menselijke chat die formuleringen varieert, toon aanpast op basis van context, en off-topic antwoorden zachtjes bijstuurt. Klanten weten niet dat het een bot is." },
+      "timezone": { "title": "Tijdzone Intelligentie", "description": "Detecteert automatisch de tijdzone van de klant en toont beschikbaarheid in hun lokale tijd. Perfect voor bedrijven met internationale klanten." },
+      "confirmations": { "title": "Directe Bevestigingen", "description": "Verstuur automatisch boekingsbevestigingen, herinneringen en follow-ups. Verminder no-shows met slimme herinneringsreeksen." },
+      "team": { "title": "Team Agenda's", "description": "Route boekingen naar het juiste teamlid op basis van servicetype, beschikbaarheid of round-robin. Perfect voor teams en bureaus." }
+    },
+    "training": {
+      "badge": "GRATIS TRAINEN",
+      "title": "Train Je AI in",
+      "titleHighlight": "Minuten",
+      "subtitle": "Geen code nodig. Meerdere manieren om je AI over je bedrijf te leren.",
+      "urls": { "title": "Website URLs", "description": "Wijs AI naar je website, FAQs of elke publieke URL. Het leert je bedrijf direct." },
+      "qa": { "title": "V&A Paren", "description": "Voeg aangepaste vraag-antwoord paren toe voor specifieke scenario's en randgevallen." },
+      "feedback": { "title": "Feedback Loop", "description": "Gebruik duim omhoog/omlaag op reacties om AI-gedrag in de loop der tijd te verfijnen." },
+      "trial": { "title": "Gratis Bot Proefversie", "description": "Test je AI in een sandbox voordat je live gaat. Geen kosten." },
+      "tryCta": "Probeer Gratis"
+    },
+    "steps": {
+      "title": "Instellen in",
+      "titleHighlight": "3 Simpele Stappen",
+      "step1": { "title": "Verbind Kanalen", "desc": "Koppel SMS, WhatsApp, Instagram, Facebook of website chat. Selecteer op welke kanalen AI reageert." },
+      "step2": { "title": "Train Je AI", "desc": "Voeg je website URLs, FAQs en V&A paren toe. AI leert je bedrijf direct. Training is gratis!" },
+      "step3": { "title": "Kies Je Modus", "desc": "Begin met Suggestieve modus om reacties goed te keuren, schakel dan over naar Auto-Pilot voor volledige automatisering." }
+    },
+    "example": {
+      "badge": "LIVE VOORBEELD",
+      "title": "Zie Hoe Het Afspraken Boekt",
+      "subtitle": "Je AI-assistent leeft in WhatsApp of Telegram. Wanneer een lead een bericht stuurt, kwalificeert AI hen, controleert je real-time agenda beschikbaarheid en boekt de afspraak — allemaal automatisch.",
+      "features": "Kwalificeert leads met aangepaste vragen|Toont alleen beschikbare tijdslots|Handelt herplanningen & annuleringen af|Stuurt bevestiging + agenda-uitnodiging|Volgt op met herinneringen om no-shows te verminderen",
+      "chat": {
+        "user1": "Hoi! Ik wil graag een consult boeken",
+        "bot1": "Super! Ik kan je daarbij helpen. Eerst, welke dienst heb je interesse in? 🗓️",
+        "user2": "Strategie sessie",
+        "bot2": "Perfect! Ik heb deze slots beschikbaar deze week:",
+        "slots": "• Di 10:00|• Wo 14:00|• Do 11:00",
+        "bot2end": "Welke past het beste?",
+        "user3": "Woensdag 14u graag",
+        "bot3": "✅ Geboekt! Wo 14:00. Je ontvangt zo een agenda-uitnodiging. Tot dan!"
+      }
+    },
+    "useCases": {
+      "title": "Perfect voor",
+      "titleHighlight": "Elk Bedrijf",
+      "subtitle": "Als je afspraken boekt, is deze AI voor jou.",
+      "consultants": { "title": "Consultants & Coaches", "description": "Boek kennismakingsgesprekken 24/7 terwijl je slaapt", "metrics": "3x meer boekingen" },
+      "salons": { "title": "Salons & Spa's", "description": "Laat klanten afspraken boeken via WhatsApp", "metrics": "80% boekingspercentage" },
+      "realestate": { "title": "Vastgoed", "description": "Kwalificeer kopers en plan bezichtigingen", "metrics": "2x meer bezichtigingen" },
+      "healthcare": { "title": "Gezondheidszorg", "description": "Patiënt afspraakplanning", "metrics": "50% minder no-shows" }
+    },
+    "workflow": {
+      "badge": "WORKFLOW INTEGRATIE",
+      "title": "AI-Aangedreven Automatiseringen",
+      "subtitle": "Integreer Conversatie AI direct in je workflows. Pas prompts aan, maak conditionele vertakkingen op basis van AI-reacties en automatiseer complexe meerstaps processen.",
+      "features": "Aangepaste AI prompts per workflow stap|Conditionele logica op basis van AI-analyse|Stel specifieke vragen, vertakkingen op antwoorden|Combineer met email, SMS en CRM acties"
+    },
+    "trust": {
+      "gdpr": { "title": "AVG Conform", "desc": "Enterprise-grade gegevensbescherming" },
+      "support": { "title": "24/7 Support", "desc": "Menselijke hulp wanneer je het nodig hebt" },
+      "analytics": { "title": "Real-time Analytics", "desc": "Volg elk gesprek" },
+      "uptime": { "title": "99.9% Uptime", "desc": "Altijd beschikbaar voor leads" }
+    },
+    "cta": {
+      "title": "Klaar om Je AI Medewerker in te Huren?",
+      "subtitle": "Start met een gratis proefperiode. Train je AI in minuten. Converteer leads 24/7.",
+      "demo": "Boek een Demo",
+      "pricing": "Bekijk Prijzen"
+    }
+  },
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
     "description": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans."

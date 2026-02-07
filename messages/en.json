@@ -602,6 +602,98 @@
       "rest-api": { "description": "Full API access", "features": "" }
     }
   },
+  "aiBotPage": {
+    "badge": "AI Employee Suite",
+    "headline": "AI That Books",
+    "headlineHighlight": "Appointments 24/7",
+    "subtitle": "Put AI in your WhatsApp & Telegram that qualifies leads and books appointments — synced with your calendar in real-time. Never miss a booking again.",
+    "ctaButton": "See AI Bot Demo",
+    "viewPricing": "View Pricing",
+    "stats": {
+      "responseTime": "Response Time",
+      "bookingRate": "Booking Rate",
+      "availability": "Availability"
+    },
+    "benefits": {
+      "whatsapp": { "title": "WhatsApp & Telegram", "desc": "AI lives where your customers are" },
+      "calendar": { "title": "Calendar Sync", "desc": "Real-time availability, no double bookings" },
+      "booking": { "title": "24/7 Booking", "desc": "Never miss a lead, even at 3am" },
+      "instant": { "title": "Instant Response", "desc": "Reply in seconds, not hours" }
+    },
+    "channelsTitle": "Deploy AI on your favorite messaging apps",
+    "featuresTitle": "Conversation AI",
+    "featuresHighlight": "Features",
+    "featuresSubtitle": "Enterprise-grade AI that solves complex problems with safer, more accurate answers than any chatbot on the market.",
+    "features": {
+      "calendar": { "title": "Real-Time Calendar Sync", "description": "AI checks your live calendar availability before offering time slots. No double bookings, no manual back-and-forth. Syncs with Google Calendar, Outlook, and more." },
+      "qualification": { "title": "Smart Lead Qualification", "description": "AI asks qualifying questions before booking. Filter out tire-kickers and only book meetings with qualified prospects who are ready to buy." },
+      "conversations": { "title": "Natural Conversations", "description": "Human-like chat that varies phrasing, adjusts tone based on context, and gently refocuses off-topic replies. Customers won't know it's a bot." },
+      "timezone": { "title": "Timezone Intelligence", "description": "Automatically detects customer timezone and shows availability in their local time. Perfect for businesses with international clients." },
+      "confirmations": { "title": "Instant Confirmations", "description": "Send booking confirmations, reminders, and follow-ups automatically. Reduce no-shows with smart reminder sequences." },
+      "team": { "title": "Team Calendars", "description": "Route bookings to the right team member based on service type, availability, or round-robin. Perfect for teams and agencies." }
+    },
+    "training": {
+      "badge": "FREE TO TRAIN",
+      "title": "Train Your AI in",
+      "titleHighlight": "Minutes",
+      "subtitle": "No coding required. Multiple ways to teach your AI about your business.",
+      "urls": { "title": "Website URLs", "description": "Point AI to your website, FAQs, or any public URL. It learns your business instantly." },
+      "qa": { "title": "Q&A Pairs", "description": "Add custom question-answer pairs for specific scenarios and edge cases." },
+      "feedback": { "title": "Feedback Loop", "description": "Use thumbs up/down on responses to fine-tune AI behavior over time." },
+      "trial": { "title": "Free Bot Trial", "description": "Test your AI in a sandbox before going live. No charges." },
+      "tryCta": "Try It Free"
+    },
+    "steps": {
+      "title": "Set Up in",
+      "titleHighlight": "3 Simple Steps",
+      "step1": { "title": "Connect Channels", "desc": "Link SMS, WhatsApp, Instagram, Facebook, or website chat. Select which channels AI responds on." },
+      "step2": { "title": "Train Your AI", "desc": "Add your website URLs, FAQs, and Q&A pairs. AI learns your business instantly. Training is free!" },
+      "step3": { "title": "Choose Your Mode", "desc": "Start with Suggestive mode to approve responses, then switch to Auto-Pilot for full automation." }
+    },
+    "example": {
+      "badge": "LIVE EXAMPLE",
+      "title": "See How It Books Appointments",
+      "subtitle": "Your AI assistant lives in WhatsApp or Telegram. When a lead messages, AI qualifies them, checks your real-time calendar availability, and books the appointment — all automatically.",
+      "features": "Qualifies leads with custom questions|Shows only available time slots|Handles rescheduling & cancellations|Sends confirmation + calendar invite|Follows up with reminders to reduce no-shows",
+      "chat": {
+        "user1": "Hi! I'd like to book a consultation",
+        "bot1": "Great! I can help with that. First, what service are you interested in? 🗓️",
+        "user2": "Strategy session",
+        "bot2": "Perfect! I have these slots available this week:",
+        "slots": "• Tue 10:00 AM|• Wed 2:00 PM|• Thu 11:00 AM",
+        "bot2end": "Which works best?",
+        "user3": "Wednesday 2pm please",
+        "bot3": "✅ Booked! Wed 2:00 PM. You'll receive a calendar invite shortly. See you then!"
+      }
+    },
+    "useCases": {
+      "title": "Perfect for",
+      "titleHighlight": "Any Business",
+      "subtitle": "If you book appointments, this AI is for you.",
+      "consultants": { "title": "Consultants & Coaches", "description": "Book discovery calls 24/7 while you sleep", "metrics": "3x more bookings" },
+      "salons": { "title": "Salons & Spas", "description": "Let clients book appointments via WhatsApp", "metrics": "80% booking rate" },
+      "realestate": { "title": "Real Estate", "description": "Qualify buyers and schedule viewings", "metrics": "2x more viewings" },
+      "healthcare": { "title": "Healthcare", "description": "Patient appointment scheduling", "metrics": "50% less no-shows" }
+    },
+    "workflow": {
+      "badge": "WORKFLOW INTEGRATION",
+      "title": "AI-Powered Automations",
+      "subtitle": "Integrate Conversation AI directly into your workflows. Customize prompts, create conditional branches based on AI responses, and automate complex multi-step processes.",
+      "features": "Custom AI prompts per workflow step|Conditional logic based on AI analysis|Ask specific questions, branch on responses|Combine with email, SMS, and CRM actions"
+    },
+    "trust": {
+      "gdpr": { "title": "GDPR Compliant", "desc": "Enterprise-grade data protection" },
+      "support": { "title": "24/7 Support", "desc": "Human help when you need it" },
+      "analytics": { "title": "Real-time Analytics", "desc": "Track every conversation" },
+      "uptime": { "title": "99.9% Uptime", "desc": "Always available for leads" }
+    },
+    "cta": {
+      "title": "Ready to Hire Your AI Employee?",
+      "subtitle": "Start with a free trial. Train your AI in minutes. Convert leads 24/7.",
+      "demo": "Book a Demo",
+      "pricing": "View Pricing"
+    }
+  },
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",
     "description": "The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans."
