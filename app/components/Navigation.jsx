@@ -324,6 +324,7 @@ export default function Navigation() {
           <Link href={localePath('/roi-calculator')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('roiCalculator')}</Link>
           <a href="https://knowledge.wellplan.io/kb" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('documentation')}</a>
           <a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('videoTutorials')}</a>
+          <Link href={localePath('/partners')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('partners')}</Link>
           
           {/* Main Links */}
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('company')}</div>
@@ -483,7 +484,7 @@ function SolutionsDropdown({ onClose, localePath }) {
   const t = useTranslations('nav');
   const lp = localePath || ((p) => p);
   return (
-    <div className="flex" style={{ width: '920px' }}>
+    <div className="flex" style={{ width: '680px' }}>
       {/* 3 Main Pillars - Agencies, Coaches, Sales Teams */}
       <div className="flex-1 p-6">
         <div className="grid grid-cols-3 gap-4">
@@ -589,78 +590,6 @@ function SolutionsDropdown({ onClose, localePath }) {
         </Link>
       </div>
 
-      {/* Industries Sidebar */}
-      <div className="w-[240px] border-l border-white/[0.08] p-5 bg-gradient-to-b from-white/[0.02] to-transparent">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-          <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('industries')}</span>
-        </div>
-        
-        <div className="space-y-1 max-h-[280px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-          <Link onClick={onClose} href={lp("/industries/ecommerce")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-[#214CE5]/20 flex items-center justify-center">
-              <ShoppingCart className="w-4 h-4 text-[#6B8EFF]" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('ecommerce')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/real-estate")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-              <Home className="w-4 h-4 text-emerald-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('realEstate')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/healthcare")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
-              <Stethoscope className="w-4 h-4 text-red-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('healthcare')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/education")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
-              <GraduationCap className="w-4 h-4 text-purple-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('education')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/restaurants")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
-              <Utensils className="w-4 h-4 text-orange-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('restaurants')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/fitness")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-pink-500/20 flex items-center justify-center">
-              <Dumbbell className="w-4 h-4 text-pink-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('fitness')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/automotive")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-              <Car className="w-4 h-4 text-cyan-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('automotive')}</span>
-          </Link>
-          <Link onClick={onClose} href={lp("/industries/professional-services")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
-            <div className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center">
-              <Briefcase className="w-4 h-4 text-violet-400" />
-            </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('professionalServices')}</span>
-          </Link>
-        </div>
-
-        <Link onClick={onClose} href={lp("/industries")} className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mt-4 pt-4 border-t border-white/10">
-          {t('viewAllIndustries')}
-          <ArrowRight className="w-3 h-3" />
-        </Link>
-
-        <div className="border-t border-white/10 mt-4 pt-4">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-            <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('businessType')}</span>
-          </div>
-          <Link onClick={onClose} href={lp("/solutions/b2b")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2bSales')}</Link>
-          <Link onClick={onClose} href={lp("/solutions/b2c")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2cEngagement')}</Link>
-        </div>
-      </div>
     </div>
   );
 }
@@ -751,6 +680,15 @@ function ResourcesDropdown({ onClose, localePath }) {
           <div>
             <p className="font-semibold text-[13px] text-white group-hover:text-green-400">{t('bookDemo')}</p>
             <p className="text-[11px] text-gray-500">{t('bookDemoDesc')}</p>
+          </div>
+        </Link>
+        <Link onClick={onClose} href={lp("/partners")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+          <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:scale-110 transition">
+            <Handshake className="w-5 h-5 text-amber-400" />
+          </div>
+          <div>
+            <p className="font-semibold text-[13px] text-white group-hover:text-amber-400">{t('partners')}</p>
+            <p className="text-[11px] text-gray-500">{t('partnersDesc')}</p>
           </div>
         </Link>
       </div>

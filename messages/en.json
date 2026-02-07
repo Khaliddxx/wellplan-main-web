@@ -105,7 +105,9 @@
     "apiReferenceDesc": "Developer docs",
     "company": "Company",
     "bookDemo": "Book a Demo",
-    "bookDemoDesc": "Schedule walkthrough"
+    "bookDemoDesc": "Schedule walkthrough",
+    "partners": "Partners",
+    "partnersDesc": "Become a reseller partner"
   },
   "hero": {
     "badge": "The #1 Lead Generation Platform",
@@ -694,6 +696,180 @@
       "demo": "Book a Demo",
       "pricing": "View Pricing"
     }
+  },
+  "aiSuitePage": {
+    "badge": "AI Employee Suite",
+    "headline": "Meet Your",
+    "headlineHighlight": "AI Team",
+    "subtitle": "6 powerful AI tools that work 24/7 to capture leads, engage customers, and grow your business on autopilot.",
+    "stats": { "tools": "AI Tools", "availability": "Availability", "price": "/mo Unlimited" },
+    "cta": "See AI Demo",
+    "gridTitle": "Choose Your",
+    "gridHighlight": "AI Employee",
+    "gridSubtitle": "Each AI tool is specialized for a specific task. Use them individually or combine for maximum impact.",
+    "tools": {
+      "conversation": { "name": "Conversation AI", "tagline": "Chat that books appointments", "description": "AI assistant in WhatsApp & Telegram that qualifies leads and books appointments 24/7, synced with your calendar.", "features": "WhatsApp & Telegram|Calendar sync|24/7 booking|Lead qualification" },
+      "voice": { "name": "Voice AI", "tagline": "AI phone agents", "description": "Deploy AI agents that handle inbound and outbound calls with natural voice conversations.", "features": "Inbound & outbound|Natural voice|Call transcription|Smart routing" },
+      "reviews": { "name": "Reviews AI", "tagline": "Automated review responses", "description": "Respond to Google and Facebook reviews automatically with personalized, on-brand replies.", "features": "Google reviews|Facebook reviews|Auto-responses|Sentiment analysis" },
+      "content": { "name": "Content AI", "tagline": "Generate marketing content", "description": "Create emails, SMS, social posts, and blog content in seconds with AI-powered writing.", "features": "Email copy|SMS templates|Social posts|Blog articles" },
+      "funnel": { "name": "Funnel AI", "tagline": "Build pages with AI", "description": "Generate high-converting landing pages and funnels with AI. Just describe what you need.", "features": "Landing pages|Sales funnels|A/B variants|Mobile-optimized" },
+      "workflow": { "name": "Workflow AI", "tagline": "Smart automations", "description": "Build intelligent automation flows with AI-powered decision making and branching.", "features": "AI decisions|Smart branching|Auto-triggers|CRM integration" }
+    },
+    "mostPopular": "MOST POPULAR",
+    "learnMore": "Learn more",
+    "pricing": {
+      "title": "Simple",
+      "titleHighlight": "Pricing",
+      "subtitle": "Pay per use or go unlimited for one flat monthly fee.",
+      "payPerUse": { "title": "Pay Per Use", "subtitle": "Only pay for what you use", "items": "Conversation AI: $0.02/message|Voice AI: $0.15/minute|Reviews AI: $0.05/response|Content AI: $0.01/generation", "cta": "View Full Pricing" },
+      "unlimited": { "title": "Unlimited AI", "price": "$397", "period": "/month", "subtitle": "All AI tools, unlimited usage", "items": "Unlimited Conversation AI|Unlimited Voice AI|Unlimited Reviews AI|Unlimited Content AI|Unlimited Funnel AI|Unlimited Workflow AI", "badge": "BEST VALUE", "cta": "Start Free Trial" }
+    },
+    "finalCta": { "title": "Ready to Build Your AI Team?", "subtitle": "Start with a free trial. No credit card required.", "demo": "Book a Demo", "pricing": "View Pricing" }
+  },
+  "aiVoicePage": {
+    "backLink": "Back to AI Suite",
+    "badge": "Voice AI",
+    "headline": "AI Phone Agents That",
+    "headlineHighlight": "Sound Human",
+    "subtitle": "Deploy AI agents that handle inbound and outbound calls with natural voice conversations. Qualify leads, book appointments, and provide support — 24/7.",
+    "cta": "Hear Voice AI Demo",
+    "viewPricing": "View Pricing",
+    "stats": { "price": "/minute", "languages": "Languages", "availability": "Availability" },
+    "featuresTitle": "Voice AI",
+    "featuresHighlight": "Features",
+    "features": {
+      "inbound": { "title": "Inbound Calls", "description": "AI answers calls instantly, qualifies callers, and routes to the right team or books appointments automatically." },
+      "outbound": { "title": "Outbound Calls", "description": "AI makes calls for appointment reminders, follow-ups, and lead qualification at scale." },
+      "conversations": { "title": "Natural Conversations", "description": "Human-like voice with natural pauses, interruption handling, and context awareness." },
+      "transcription": { "title": "Call Transcription", "description": "Every call is transcribed and summarized. Search through call history instantly." },
+      "routing": { "title": "Smart Routing", "description": "Route calls based on caller intent, availability, or custom rules. Seamless handoff to humans." },
+      "multilang": { "title": "Multi-Language", "description": "Support callers in 20+ languages with natural accents and regional dialects." }
+    },
+    "demoTitle": "Hear It In",
+    "demoHighlight": "Action",
+    "demo": {
+      "agentName": "Voice AI Agent",
+      "status": "Incoming call • 0:45",
+      "agent1": "Hi! Thanks for calling WellPlan. I'm here to help you schedule a consultation. What type of service are you interested in?",
+      "caller1": "I'd like to book a strategy session for next week.",
+      "agent2": "Perfect! I have availability on Tuesday at 2pm or Thursday at 10am. Which works better for you?"
+    },
+    "useCasesTitle": "Perfect For",
+    "useCasesHighlight": "Every Use Case",
+    "useCases": {
+      "reminders": { "title": "Appointment Reminders", "description": "Reduce no-shows by 50% with automated reminder calls", "metrics": "50% less no-shows" },
+      "qualification": { "title": "Lead Qualification", "description": "Call and qualify leads instantly after form submission", "metrics": "3x faster response" },
+      "afterHours": { "title": "After-Hours Support", "description": "Handle calls 24/7 without hiring night staff", "metrics": "24/7 coverage" },
+      "outbound": { "title": "Outbound Campaigns", "description": "Scale outreach with personalized AI calls", "metrics": "10x more calls" }
+    },
+    "cta2": { "title": "Ready to Deploy Voice AI?", "subtitle": "Start with a free trial. Set up in minutes.", "button": "Book a Demo" }
+  },
+  "aiReviewsPage": {
+    "backLink": "Back to AI Suite",
+    "badge": "Reviews AI",
+    "headline": "Never Miss a",
+    "headlineHighlight": "Review Again",
+    "subtitle": "AI monitors and responds to your Google and Facebook reviews automatically. Protect your reputation 24/7.",
+    "cta": "See Reviews AI Demo",
+    "stats": { "responseTime": "Response Time", "responseRate": "Response Rate", "ratingLift": "Avg Rating Lift" },
+    "features": {
+      "google": { "title": "Google Reviews", "description": "Automatically respond to Google Business reviews within minutes of posting." },
+      "facebook": { "title": "Facebook Reviews", "description": "Monitor and respond to Facebook page reviews and recommendations." },
+      "positive": { "title": "Positive Response AI", "description": "Thank happy customers with personalized, on-brand responses that encourage loyalty." },
+      "negative": { "title": "Negative Review Handling", "description": "Address complaints professionally with empathetic responses that protect your reputation." },
+      "sentiment": { "title": "Sentiment Analysis", "description": "AI analyzes review sentiment and trends to help you improve your business." },
+      "analytics": { "title": "Review Analytics", "description": "Track review volume, ratings over time, and response rates in one dashboard." }
+    },
+    "exampleTitle": "See It In",
+    "exampleHighlight": "Action",
+    "example": {
+      "positive": { "rating": "5.0", "text": "Amazing service! The team was incredibly helpful and the results exceeded my expectations.", "author": "Sarah M.", "response": "Thank you so much, Sarah! We're thrilled to hear you had such a great experience. Your satisfaction means everything to us. We look forward to serving you again!" },
+      "negative": { "rating": "2.0", "text": "Had to wait too long for my appointment. Not happy with the scheduling.", "author": "Mike T.", "response": "Hi Mike, we sincerely apologize for the wait time. This isn't the experience we want for our customers. We'd love to make it right — please reach out to us directly so we can address this." }
+    },
+    "cta2": { "title": "Protect Your Reputation", "subtitle": "Start responding to reviews automatically today.", "button": "Book a Demo" }
+  },
+  "aiContentPage": {
+    "backLink": "Back to AI Suite",
+    "badge": "Content AI",
+    "headline": "Write Anything in",
+    "headlineHighlight": "Seconds",
+    "subtitle": "Generate emails, SMS, social posts, and blog content with AI. Train it on your brand voice for consistent messaging.",
+    "cta": "Try Content AI",
+    "stats": { "speed": "Faster Writing", "types": "Content Types", "variations": "Variations" },
+    "features": {
+      "email": { "title": "Email Copy", "description": "Generate high-converting email campaigns, sequences, and newsletters in seconds." },
+      "sms": { "title": "SMS Templates", "description": "Create compelling SMS messages that get responses. Perfect for follow-ups and reminders." },
+      "social": { "title": "Social Posts", "description": "Write engaging social media content for Facebook, Instagram, LinkedIn, and Twitter." },
+      "blog": { "title": "Blog Articles", "description": "Generate SEO-optimized blog posts, guides, and articles for your website." },
+      "ads": { "title": "Ad Copy", "description": "Create high-performing ad copy for Google, Facebook, and Instagram campaigns." },
+      "brand": { "title": "Brand Voice", "description": "Train AI on your brand voice to maintain consistency across all content." }
+    },
+    "examplesTitle": "AI-Generated",
+    "examplesHighlight": "Examples",
+    "examples": {
+      "subject": { "type": "Email Subject Lines", "text": "\"Don't miss out — your exclusive offer expires tonight\"" },
+      "sms": { "type": "SMS Follow-up", "text": "\"Hi {name}, just checking in! Ready to schedule your free consultation?\"" },
+      "social": { "type": "Social Caption", "text": "\"3 secrets to doubling your leads (without spending more on ads) 🚀\"" },
+      "blog": { "type": "Blog Intro", "text": "\"If you're struggling to convert website visitors into paying customers...\"" }
+    },
+    "cta2": { "title": "Stop Staring at Blank Pages", "subtitle": "Generate content in seconds, not hours.", "button": "Book a Demo" }
+  },
+  "aiFunnelPage": {
+    "backLink": "Back to AI Suite",
+    "badge": "Funnel AI",
+    "headline": "Build Pages with",
+    "headlineHighlight": "Just Words",
+    "subtitle": "Describe what you need and AI builds your landing page or funnel. No design skills required.",
+    "cta": "Try Funnel AI",
+    "stats": { "speed": "Page Generation", "templates": "Templates", "code": "Code Required" },
+    "features": {
+      "builder": { "title": "AI Page Builder", "description": "Describe your page and AI generates a complete, conversion-optimized layout instantly." },
+      "landing": { "title": "Landing Pages", "description": "Create stunning landing pages for campaigns, products, and lead magnets in seconds." },
+      "funnels": { "title": "Sales Funnels", "description": "Build complete multi-step funnels with upsells, downsells, and order bumps." },
+      "variants": { "title": "A/B Variants", "description": "Generate multiple design variants to test which converts best." },
+      "mobile": { "title": "Mobile-First", "description": "Every page is automatically optimized for mobile devices." },
+      "brand": { "title": "Brand Matching", "description": "AI matches your brand colors, fonts, and style automatically." }
+    },
+    "demoTitle": "See The",
+    "demoHighlight": "Magic",
+    "demo": {
+      "promptLabel": "Your prompt:",
+      "prompt": "Create a landing page for a fitness coaching business offering a free consultation. Include testimonials, pricing section, and a booking form.",
+      "generating": "AI generates in 60 seconds...",
+      "result": "Complete landing page with all sections"
+    },
+    "cta2": { "title": "Build Your First Page in 60 Seconds", "subtitle": "No design skills. No coding. Just describe what you need.", "button": "Book a Demo" }
+  },
+  "aiWorkflowPage": {
+    "backLink": "Back to AI Suite",
+    "badge": "Workflow AI",
+    "headline": "Automations That",
+    "headlineHighlight": "Think",
+    "subtitle": "Build intelligent automation flows with AI-powered decision making. Your workflows get smarter over time.",
+    "cta": "See Workflow AI",
+    "featuresTitle": "AI-Powered",
+    "featuresHighlight": "Workflow",
+    "features": {
+      "decisions": { "title": "AI Decision Making", "description": "Let AI analyze data and make smart decisions within your workflows automatically." },
+      "branching": { "title": "Smart Branching", "description": "Create conditional paths based on AI analysis of customer intent, sentiment, and behavior." },
+      "conversations": { "title": "AI Conversations", "description": "Add AI-powered chat steps that can ask questions and act on responses." },
+      "intent": { "title": "Intent Detection", "description": "AI understands what customers want and routes them accordingly." },
+      "triggers": { "title": "Auto-Triggers", "description": "Automatically trigger workflows based on AI-detected events and patterns." },
+      "crm": { "title": "CRM Integration", "description": "AI updates contact records, scores leads, and enriches data automatically." }
+    },
+    "demo": {
+      "title": "Workflow Builder",
+      "trigger": "Trigger: New lead from web form",
+      "aiStep": "AI Step: Analyze & Score Lead",
+      "aiDesc": "AI evaluates lead quality based on form data",
+      "branch1": "If score > 80 →",
+      "branch1Action": "Send to Sales",
+      "branch2": "If score 50-80 →",
+      "branch2Action": "Nurture Sequence",
+      "branch3": "If score < 50 →",
+      "branch3Action": "Add to Newsletter"
+    },
+    "cta2": { "title": "Build Smarter Automations", "subtitle": "Let AI make decisions in your workflows.", "button": "Book a Demo" }
   },
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",

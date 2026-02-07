@@ -105,7 +105,9 @@
     "apiReferenceDesc": "Developer docs",
     "company": "Bedrijf",
     "bookDemo": "Demo Aanvragen",
-    "bookDemoDesc": "Walkthrough plannen"
+    "bookDemoDesc": "Walkthrough plannen",
+    "partners": "Partners",
+    "partnersDesc": "Word een reseller partner"
   },
   "hero": {
     "badge": "Het #1 Lead Generatie Platform",
@@ -694,6 +696,181 @@
       "demo": "Boek een Demo",
       "pricing": "Bekijk Prijzen"
     }
+  },
+  "aiSuitePage": {
+    "badge": "AI Medewerker Suite",
+    "headline": "Ontmoet Je",
+    "headlineHighlight": "AI Team",
+    "subtitle": "6 krachtige AI-tools die 24/7 werken om leads te vangen, klanten te betrekken en je bedrijf op autopilot te laten groeien.",
+    "stats": { "tools": "AI Tools", "availability": "Beschikbaarheid", "price": "/ma Onbeperkt" },
+    "meta": { "title": "AI Medewerker Suite | WellPlan", "description": "6 krachtige AI-tools: Conversatie AI, Voice AI, Reviews AI, Content AI, Funnel AI en Workflow AI. Automatiseer je bedrijf 24/7." },
+    "cta": "Bekijk AI Demo",
+    "gridTitle": "Kies Je",
+    "gridHighlight": "AI Medewerker",
+    "gridSubtitle": "Elke AI-tool is gespecialiseerd voor een specifieke taak. Gebruik ze individueel of combineer voor maximaal effect.",
+    "tools": {
+      "conversation": { "name": "Conversatie AI", "tagline": "Chat die afspraken boekt", "description": "AI-assistent in WhatsApp & Telegram die leads kwalificeert en 24/7 afspraken boekt, gesynchroniseerd met je agenda.", "features": "WhatsApp & Telegram|Agenda sync|24/7 boeken|Lead kwalificatie" },
+      "voice": { "name": "Voice AI", "tagline": "AI telefoon agenten", "description": "Zet AI-agenten in die inkomende en uitgaande gesprekken afhandelen met natuurlijke spraakconversaties.", "features": "Inkomend & uitgaand|Natuurlijke stem|Gesprek transcriptie|Slimme routing" },
+      "reviews": { "name": "Reviews AI", "tagline": "Automatische review reacties", "description": "Reageer automatisch op Google en Facebook reviews met gepersonaliseerde, merkconforme antwoorden.", "features": "Google reviews|Facebook reviews|Auto-reacties|Sentiment analyse" },
+      "content": { "name": "Content AI", "tagline": "Genereer marketing content", "description": "Maak e-mails, SMS, social posts en blogcontent in seconden met AI-schrijven.", "features": "E-mail tekst|SMS sjablonen|Social posts|Blog artikelen" },
+      "funnel": { "name": "Funnel AI", "tagline": "Bouw pagina's met AI", "description": "Genereer hoogconverterende landingspagina's en funnels met AI. Beschrijf gewoon wat je nodig hebt.", "features": "Landingspagina's|Sales funnels|A/B varianten|Mobiel-geoptimaliseerd" },
+      "workflow": { "name": "Workflow AI", "tagline": "Slimme automatiseringen", "description": "Bouw intelligente automatiseringsflows met AI-aangestuurde besluitvorming en vertakkingen.", "features": "AI beslissingen|Slimme vertakkingen|Auto-triggers|CRM integratie" }
+    },
+    "mostPopular": "MEEST POPULAIR",
+    "learnMore": "Meer informatie",
+    "pricing": {
+      "title": "Eenvoudige",
+      "titleHighlight": "Prijzen",
+      "subtitle": "Betaal per gebruik of ga onbeperkt voor één vast maandbedrag.",
+      "payPerUse": { "title": "Betaal Per Gebruik", "subtitle": "Betaal alleen wat je gebruikt", "items": "Conversatie AI: €0,02/bericht|Voice AI: €0,15/minuut|Reviews AI: €0,05/reactie|Content AI: €0,01/generatie", "cta": "Bekijk Volledige Prijzen" },
+      "unlimited": { "title": "Onbeperkt AI", "price": "€397", "period": "/maand", "subtitle": "Alle AI-tools, onbeperkt gebruik", "items": "Onbeperkt Conversatie AI|Onbeperkt Voice AI|Onbeperkt Reviews AI|Onbeperkt Content AI|Onbeperkt Funnel AI|Onbeperkt Workflow AI", "badge": "BESTE WAARDE", "cta": "Start Gratis Proefperiode" }
+    },
+    "finalCta": { "title": "Klaar om Je AI Team te Bouwen?", "subtitle": "Start met een gratis proefperiode. Geen creditcard nodig.", "demo": "Boek een Demo", "pricing": "Bekijk Prijzen" }
+  },
+  "aiVoicePage": {
+    "backLink": "Terug naar AI Suite",
+    "badge": "Voice AI",
+    "headline": "AI Telefoon Agenten Die",
+    "headlineHighlight": "Menselijk Klinken",
+    "subtitle": "Zet AI-agenten in die inkomende en uitgaande gesprekken afhandelen met natuurlijke spraakconversaties. Kwalificeer leads, boek afspraken en bied ondersteuning — 24/7.",
+    "cta": "Beluister Voice AI Demo",
+    "viewPricing": "Bekijk Prijzen",
+    "stats": { "price": "/minuut", "languages": "Talen", "availability": "Beschikbaarheid" },
+    "featuresTitle": "Voice AI",
+    "featuresHighlight": "Functies",
+    "features": {
+      "inbound": { "title": "Inkomende Gesprekken", "description": "AI beantwoordt gesprekken direct, kwalificeert bellers en routeert naar het juiste team of boekt automatisch afspraken." },
+      "outbound": { "title": "Uitgaande Gesprekken", "description": "AI belt voor afspraakherinneringen, follow-ups en lead kwalificatie op schaal." },
+      "conversations": { "title": "Natuurlijke Gesprekken", "description": "Menselijke stem met natuurlijke pauzes, onderbrekingsafhandeling en contextbewustzijn." },
+      "transcription": { "title": "Gesprek Transcriptie", "description": "Elk gesprek wordt getranscribeerd en samengevat. Doorzoek gespreksgeschiedenis direct." },
+      "routing": { "title": "Slimme Routing", "description": "Route gesprekken op basis van bellerintentie, beschikbaarheid of aangepaste regels. Naadloze overdracht naar mensen." },
+      "multilang": { "title": "Meertalig", "description": "Ondersteun bellers in 20+ talen met natuurlijke accenten en regionale dialecten." }
+    },
+    "demoTitle": "Beluister Het In",
+    "demoHighlight": "Actie",
+    "demo": {
+      "agentName": "Voice AI Agent",
+      "status": "Inkomend gesprek • 0:45",
+      "agent1": "Hoi! Bedankt voor het bellen met WellPlan. Ik help je graag met het plannen van een consultatie. In welk type dienst ben je geïnteresseerd?",
+      "caller1": "Ik wil graag een strategiesessie boeken voor volgende week.",
+      "agent2": "Perfect! Ik heb beschikbaarheid op dinsdag om 14:00 of donderdag om 10:00. Welke past beter voor je?"
+    },
+    "useCasesTitle": "Perfect Voor",
+    "useCasesHighlight": "Elke Toepassing",
+    "useCases": {
+      "reminders": { "title": "Afspraakherinneringen", "description": "Verminder no-shows met 50% door geautomatiseerde herinneringsgesprekken", "metrics": "50% minder no-shows" },
+      "qualification": { "title": "Lead Kwalificatie", "description": "Bel en kwalificeer leads direct na formulierinzending", "metrics": "3x snellere respons" },
+      "afterHours": { "title": "Buiten Kantooruren", "description": "Handel gesprekken 24/7 af zonder nachtpersoneel", "metrics": "24/7 dekking" },
+      "outbound": { "title": "Uitgaande Campagnes", "description": "Schaal outreach met gepersonaliseerde AI-gesprekken", "metrics": "10x meer gesprekken" }
+    },
+    "cta2": { "title": "Klaar om Voice AI in te Zetten?", "subtitle": "Start met een gratis proefperiode. Instellen in minuten.", "button": "Boek een Demo" }
+  },
+  "aiReviewsPage": {
+    "backLink": "Terug naar AI Suite",
+    "badge": "Reviews AI",
+    "headline": "Mis Nooit Meer Een",
+    "headlineHighlight": "Review",
+    "subtitle": "AI monitort en reageert automatisch op je Google en Facebook reviews. Bescherm je reputatie 24/7.",
+    "cta": "Bekijk Reviews AI Demo",
+    "stats": { "responseTime": "Reactietijd", "responseRate": "Reactiepercentage", "ratingLift": "Gem. Beoordeling Stijging" },
+    "features": {
+      "google": { "title": "Google Reviews", "description": "Reageer automatisch op Google Business reviews binnen minuten na plaatsing." },
+      "facebook": { "title": "Facebook Reviews", "description": "Monitor en reageer op Facebook pagina reviews en aanbevelingen." },
+      "positive": { "title": "Positieve Reactie AI", "description": "Bedank tevreden klanten met gepersonaliseerde, merkconforme antwoorden die loyaliteit aanmoedigen." },
+      "negative": { "title": "Negatieve Review Afhandeling", "description": "Behandel klachten professioneel met empathische reacties die je reputatie beschermen." },
+      "sentiment": { "title": "Sentiment Analyse", "description": "AI analyseert reviewsentiment en trends om je bedrijf te verbeteren." },
+      "analytics": { "title": "Review Analytics", "description": "Volg reviewvolume, beoordelingen over tijd en reactiepercentages in één dashboard." }
+    },
+    "exampleTitle": "Zie Het In",
+    "exampleHighlight": "Actie",
+    "example": {
+      "positive": { "rating": "5.0", "text": "Geweldige service! Het team was ongelooflijk behulpzaam en de resultaten overtroffen mijn verwachtingen.", "author": "Sarah M.", "response": "Heel erg bedankt, Sarah! We zijn blij te horen dat je zo'n geweldige ervaring had. Je tevredenheid betekent alles voor ons. We kijken ernaar uit je weer te mogen helpen!" },
+      "negative": { "rating": "2.0", "text": "Moest te lang wachten op mijn afspraak. Niet blij met de planning.", "author": "Mike T.", "response": "Hoi Mike, we bieden onze oprechte excuses aan voor de wachttijd. Dit is niet de ervaring die we voor onze klanten willen. We willen dit graag goedmaken — neem direct contact met ons op zodat we dit kunnen oplossen." }
+    },
+    "cta2": { "title": "Bescherm Je Reputatie", "subtitle": "Begin vandaag automatisch te reageren op reviews.", "button": "Boek een Demo" }
+  },
+  "aiContentPage": {
+    "backLink": "Terug naar AI Suite",
+    "badge": "Content AI",
+    "headline": "Schrijf Alles in",
+    "headlineHighlight": "Seconden",
+    "subtitle": "Genereer e-mails, SMS, social posts en blogcontent met AI. Train het op je merkstem voor consistente berichten.",
+    "cta": "Probeer Content AI",
+    "stats": { "speed": "Sneller Schrijven", "types": "Content Types", "variations": "Variaties" },
+    "features": {
+      "email": { "title": "E-mail Tekst", "description": "Genereer hoogconverterende e-mailcampagnes, sequenties en nieuwsbrieven in seconden." },
+      "sms": { "title": "SMS Sjablonen", "description": "Maak overtuigende SMS-berichten die reacties krijgen. Perfect voor follow-ups en herinneringen." },
+      "social": { "title": "Social Posts", "description": "Schrijf boeiende social media content voor Facebook, Instagram, LinkedIn en Twitter." },
+      "blog": { "title": "Blog Artikelen", "description": "Genereer SEO-geoptimaliseerde blogposts, handleidingen en artikelen voor je website." },
+      "ads": { "title": "Advertentie Tekst", "description": "Maak goed presterende advertentieteksten voor Google, Facebook en Instagram campagnes." },
+      "brand": { "title": "Merkstem", "description": "Train AI op je merkstem om consistentie over alle content te behouden." }
+    },
+    "examplesTitle": "AI-Gegenereerde",
+    "examplesHighlight": "Voorbeelden",
+    "examples": {
+      "subject": { "type": "E-mail Onderwerpregels", "text": "\"Mis het niet — je exclusieve aanbieding verloopt vanavond\"" },
+      "sms": { "type": "SMS Follow-up", "text": "\"Hoi {naam}, even checken! Klaar om je gratis consultatie te plannen?\"" },
+      "social": { "type": "Social Caption", "text": "\"3 geheimen om je leads te verdubbelen (zonder meer uit te geven aan advertenties) 🚀\"" },
+      "blog": { "type": "Blog Intro", "text": "\"Als je moeite hebt om websitebezoekers om te zetten in betalende klanten...\"" }
+    },
+    "cta2": { "title": "Stop Met Staren Naar Lege Pagina's", "subtitle": "Genereer content in seconden, niet uren.", "button": "Boek een Demo" }
+  },
+  "aiFunnelPage": {
+    "backLink": "Terug naar AI Suite",
+    "badge": "Funnel AI",
+    "headline": "Bouw Pagina's met",
+    "headlineHighlight": "Alleen Woorden",
+    "subtitle": "Beschrijf wat je nodig hebt en AI bouwt je landingspagina of funnel. Geen ontwerpvaardigheden nodig.",
+    "cta": "Probeer Funnel AI",
+    "stats": { "speed": "Pagina Generatie", "templates": "Sjablonen", "code": "Code Nodig" },
+    "features": {
+      "builder": { "title": "AI Pagina Bouwer", "description": "Beschrijf je pagina en AI genereert direct een complete, conversie-geoptimaliseerde layout." },
+      "landing": { "title": "Landingspagina's", "description": "Maak prachtige landingspagina's voor campagnes, producten en leadmagneten in seconden." },
+      "funnels": { "title": "Sales Funnels", "description": "Bouw complete meerstaps funnels met upsells, downsells en order bumps." },
+      "variants": { "title": "A/B Varianten", "description": "Genereer meerdere ontwerpvarianten om te testen welke het beste converteert." },
+      "mobile": { "title": "Mobiel-Eerst", "description": "Elke pagina is automatisch geoptimaliseerd voor mobiele apparaten." },
+      "brand": { "title": "Merk Matching", "description": "AI matcht automatisch je merkkleuren, lettertypen en stijl." }
+    },
+    "demoTitle": "Zie De",
+    "demoHighlight": "Magie",
+    "demo": {
+      "promptLabel": "Je prompt:",
+      "prompt": "Maak een landingspagina voor een fitness coaching bedrijf dat een gratis consultatie aanbiedt. Inclusief testimonials, prijssectie en boekingsformulier.",
+      "generating": "AI genereert in 60 seconden...",
+      "result": "Complete landingspagina met alle secties"
+    },
+    "cta2": { "title": "Bouw Je Eerste Pagina in 60 Seconden", "subtitle": "Geen ontwerpvaardigheden. Geen code. Beschrijf gewoon wat je nodig hebt.", "button": "Boek een Demo" }
+  },
+  "aiWorkflowPage": {
+    "backLink": "Terug naar AI Suite",
+    "badge": "Workflow AI",
+    "headline": "Automatiseringen Die",
+    "headlineHighlight": "Denken",
+    "subtitle": "Bouw intelligente automatiseringsflows met AI-aangestuurde besluitvorming. Je workflows worden slimmer over tijd.",
+    "cta": "Bekijk Workflow AI",
+    "featuresTitle": "AI-Aangedreven",
+    "featuresHighlight": "Workflow",
+    "features": {
+      "decisions": { "title": "AI Besluitvorming", "description": "Laat AI data analyseren en slimme beslissingen nemen binnen je workflows automatisch." },
+      "branching": { "title": "Slimme Vertakkingen", "description": "Maak conditionele paden op basis van AI-analyse van klantintentie, sentiment en gedrag." },
+      "conversations": { "title": "AI Gesprekken", "description": "Voeg AI-aangestuurde chatstappen toe die vragen kunnen stellen en handelen op antwoorden." },
+      "intent": { "title": "Intentie Detectie", "description": "AI begrijpt wat klanten willen en routeert ze dienovereenkomstig." },
+      "triggers": { "title": "Auto-Triggers", "description": "Trigger automatisch workflows op basis van AI-gedetecteerde gebeurtenissen en patronen." },
+      "crm": { "title": "CRM Integratie", "description": "AI werkt contactrecords bij, scoort leads en verrijkt data automatisch." }
+    },
+    "demo": {
+      "title": "Workflow Bouwer",
+      "trigger": "Trigger: Nieuwe lead van webformulier",
+      "aiStep": "AI Stap: Analyseer & Score Lead",
+      "aiDesc": "AI evalueert leadkwaliteit op basis van formulierdata",
+      "branch1": "Als score > 80 →",
+      "branch1Action": "Stuur naar Sales",
+      "branch2": "Als score 50-80 →",
+      "branch2Action": "Nurture Sequentie",
+      "branch3": "Als score < 50 →",
+      "branch3Action": "Voeg toe aan Nieuwsbrief"
+    },
+    "cta2": { "title": "Bouw Slimmere Automatiseringen", "subtitle": "Laat AI beslissingen nemen in je workflows.", "button": "Boek een Demo" }
   },
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
