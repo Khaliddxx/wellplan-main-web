@@ -7,6 +7,13 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function IntegrationDetailClient({ integration, relatedIntegrations }) {
   const t = useTranslations('integrationsPage');
+  
+  // Get translated description and features (fallback to original if not translated)
+  const translatedDescription = t(`items.${integration.slug}.description`) || integration.description;
+  const translatedFeaturesStr = t(`items.${integration.slug}.features`) || '';
+  const translatedFeatures = translatedFeaturesStr 
+    ? translatedFeaturesStr.split('|').filter(f => f.trim())
+    : (integration.features || []);
 
   return (
     <div className="bg-[#0a0a0a] text-white min-h-screen">
@@ -40,7 +47,7 @@ export default function IntegrationDetailClient({ integration, relatedIntegratio
             
             <div className="flex-1">
               <h1 className="text-4xl sm:text-5xl font-black mb-3 sm:mb-4">{integration.name}</h1>
-              <p className="text-lg sm:text-xl text-gray-400 mb-6 max-w-2xl">{integration.description}</p>
+              <p className="text-lg sm:text-xl text-gray-400 mb-6 max-w-2xl">{translatedDescription}</p>
               
               {/* Buttons - Stack on mobile */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -67,11 +74,11 @@ export default function IntegrationDetailClient({ integration, relatedIntegratio
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Features */}
-        {integration.features && integration.features.length > 0 && (
+        {translatedFeatures && translatedFeatures.length > 0 && (
           <div className="mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">{t('detail.features')}</h2>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
-              {integration.features.map((feature, idx) => (
+              {translatedFeatures.map((feature, idx) => (
                 <div
                   key={idx}
                   className="flex items-start gap-3 p-4 bg-[#111111] border border-white/10 rounded-xl"
@@ -119,24 +126,27 @@ export default function IntegrationDetailClient({ integration, relatedIntegratio
           <div className="mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">{t('detail.related')}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {relatedIntegrations.map((related) => (
-                <Link
-                  key={related.slug}
-                  href={`/integrations/${related.slug}`}
-                  className="p-5 sm:p-6 bg-[#111111] border border-white/10 rounded-xl hover:border-white/20 transition group"
-                >
-                  <div 
-                    className="w-12 h-12 rounded-xl bg-[#0a0a0a] border flex items-center justify-center mb-4"
-                    style={{ borderColor: `${related.brandColor}50` }}
+              {relatedIntegrations.map((related) => {
+                const relatedDesc = t(`items.${related.slug}.description`) || related.description;
+                return (
+                  <Link
+                    key={related.slug}
+                    href={`/integrations/${related.slug}`}
+                    className="p-5 sm:p-6 bg-[#111111] border border-white/10 rounded-xl hover:border-white/20 transition group"
                   >
-                    <IntegrationBrandIcon slug={related.slug} size={24} />
-                  </div>
-                  <h3 className="font-bold mb-2 group-hover:text-[#6B8EFF] transition">
-                    {related.name}
-                  </h3>
-                  <p className="text-sm text-gray-500">{related.description}</p>
-                </Link>
-              ))}
+                    <div 
+                      className="w-12 h-12 rounded-xl bg-[#0a0a0a] border flex items-center justify-center mb-4"
+                      style={{ borderColor: `${related.brandColor}50` }}
+                    >
+                      <IntegrationBrandIcon slug={related.slug} size={24} />
+                    </div>
+                    <h3 className="font-bold mb-2 group-hover:text-[#6B8EFF] transition">
+                      {related.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">{relatedDesc}</p>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
