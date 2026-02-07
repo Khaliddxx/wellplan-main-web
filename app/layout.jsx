@@ -2,6 +2,7 @@ import './globals.css';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ClientProviders from './components/ClientProviders';
+import LocaleWrapper from './components/LocaleWrapper';
 
 export const metadata = {
   metadataBase: new URL('https://wellplan.io'),
@@ -14,9 +15,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#0a0a0a]">
         <ClientProviders>
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
+          <LocaleWrapper>
+            <Navigation />
+            <main>{children}</main>
+            <Footer />
+          </LocaleWrapper>
         </ClientProviders>
       </body>
     </html>
