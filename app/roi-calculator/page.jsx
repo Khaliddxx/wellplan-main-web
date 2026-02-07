@@ -8,14 +8,14 @@ import { useTranslations } from '../lib/translations';
 export default function ROICalculatorPage() {
   const t = useTranslations('roiPage');
   
-  // Input states
-  const [monthlyLeads, setMonthlyLeads] = useState(500);
-  const [avgDealValue, setAvgDealValue] = useState(1000);
-  const [closeRate, setCloseRate] = useState(10);
-  const [hoursOnManualTasks, setHoursOnManualTasks] = useState(20);
-  const [hourlyRate, setHourlyRate] = useState(50);
-  const [currentTools, setCurrentTools] = useState(5);
-  const [avgToolCost, setAvgToolCost] = useState(100);
+  // Input states - realistic defaults for a small/medium business
+  const [monthlyLeads, setMonthlyLeads] = useState(200);
+  const [avgDealValue, setAvgDealValue] = useState(500);
+  const [closeRate, setCloseRate] = useState(15);
+  const [hoursOnManualTasks, setHoursOnManualTasks] = useState(25);
+  const [hourlyRate, setHourlyRate] = useState(40);
+  const [currentTools, setCurrentTools] = useState(4);
+  const [avgToolCost, setAvgToolCost] = useState(75);
 
   // Calculated results
   const [results, setResults] = useState({
@@ -33,25 +33,27 @@ export default function ROICalculatorPage() {
     // Calculate current metrics
     const currentMonthlyRevenue = monthlyLeads * (closeRate / 100) * avgDealValue;
     
-    // Projected improvements with WellPlan
-    const improvedCloseRate = closeRate * 1.25; // 25% improvement in close rate
-    const improvedLeadCapture = monthlyLeads * 1.15; // 15% more leads captured
+    // Projected improvements with WellPlan (conservative, industry-backed estimates)
+    // - 10-15% close rate improvement through better follow-up automation
+    // - 8-12% more leads captured through multi-channel capture
+    const improvedCloseRate = closeRate * 1.12; // 12% improvement in close rate
+    const improvedLeadCapture = monthlyLeads * 1.10; // 10% more leads captured
     const projectedRevenue = improvedLeadCapture * (improvedCloseRate / 100) * avgDealValue;
     const revenueIncrease = projectedRevenue - currentMonthlyRevenue;
     
-    // Time savings (60% reduction in manual tasks)
-    const timeSavedHours = hoursOnManualTasks * 0.6;
-    const laborSavings = timeSavedHours * hourlyRate * 4; // Monthly
+    // Time savings (40% reduction in manual tasks through automation)
+    const timeSavedHours = hoursOnManualTasks * 0.40;
+    const laborSavings = timeSavedHours * hourlyRate * 4; // Monthly (4 weeks)
     
     // Tool consolidation savings
     const currentToolCost = currentTools * avgToolCost;
-    const wellplanCost = 97; // Base plan
+    const wellplanCost = 397; // Unlimited AI plan
     const toolSavings = Math.max(0, currentToolCost - wellplanCost);
     
-    // Total monthly savings
-    const totalSavings = revenueIncrease + laborSavings + toolSavings;
+    // Total monthly savings (only count positive values)
+    const totalSavings = Math.max(0, revenueIncrease) + laborSavings + Math.max(0, toolSavings);
     
-    // ROI calculation (annual savings vs annual cost)
+    // ROI calculation (annual net benefit vs annual cost)
     const annualSavings = totalSavings * 12;
     const annualCost = wellplanCost * 12;
     const roi = annualCost > 0 ? ((annualSavings - annualCost) / annualCost) * 100 : 0;
@@ -120,16 +122,16 @@ export default function ROICalculatorPage() {
                   </div>
                   <input
                     type="range"
-                    min="50"
-                    max="5000"
-                    step="50"
+                    min="25"
+                    max="2000"
+                    step="25"
                     value={monthlyLeads}
                     onChange={(e) => setMonthlyLeads(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#214CE5]"
                   />
                   <div className="flex justify-between text-xs text-gray-600 mt-1">
-                    <span>50</span>
-                    <span>5,000</span>
+                    <span>25</span>
+                    <span>2,000</span>
                   </div>
                 </div>
 
@@ -140,16 +142,16 @@ export default function ROICalculatorPage() {
                   </div>
                   <input
                     type="range"
-                    min="100"
-                    max="50000"
-                    step="100"
+                    min="50"
+                    max="10000"
+                    step="50"
                     value={avgDealValue}
                     onChange={(e) => setAvgDealValue(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#214CE5]"
                   />
                   <div className="flex justify-between text-xs text-gray-600 mt-1">
-                    <span>$100</span>
-                    <span>$50,000</span>
+                    <span>$50</span>
+                    <span>$10,000</span>
                   </div>
                 </div>
 
@@ -160,16 +162,16 @@ export default function ROICalculatorPage() {
                   </div>
                   <input
                     type="range"
-                    min="1"
-                    max="50"
+                    min="2"
+                    max="40"
                     step="1"
                     value={closeRate}
                     onChange={(e) => setCloseRate(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#214CE5]"
                   />
                   <div className="flex justify-between text-xs text-gray-600 mt-1">
-                    <span>1%</span>
-                    <span>50%</span>
+                    <span>2%</span>
+                    <span>40%</span>
                   </div>
                 </div>
               </div>
@@ -185,17 +187,21 @@ export default function ROICalculatorPage() {
                 <div>
                   <div className="flex justify-between mb-2">
                     <label className="text-sm text-gray-400">{t('hoursManualTasks')}</label>
-                    <span className="text-sm font-semibold text-white">{hoursOnManualTasks} {t('hours')}</span>
+                    <span className="text-sm font-semibold text-white">{hoursOnManualTasks} {t('hours')}/week</span>
                   </div>
                   <input
                     type="range"
                     min="5"
-                    max="60"
+                    max="50"
                     step="5"
                     value={hoursOnManualTasks}
                     onChange={(e) => setHoursOnManualTasks(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-purple-500"
                   />
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
+                    <span>5 hrs</span>
+                    <span>50 hrs</span>
+                  </div>
                 </div>
 
                 <div>
@@ -205,13 +211,17 @@ export default function ROICalculatorPage() {
                   </div>
                   <input
                     type="range"
-                    min="25"
-                    max="250"
+                    min="15"
+                    max="150"
                     step="5"
                     value={hourlyRate}
                     onChange={(e) => setHourlyRate(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-purple-500"
                   />
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
+                    <span>$15</span>
+                    <span>$150</span>
+                  </div>
                 </div>
 
                 <div>
@@ -222,12 +232,16 @@ export default function ROICalculatorPage() {
                   <input
                     type="range"
                     min="1"
-                    max="15"
+                    max="12"
                     step="1"
                     value={currentTools}
                     onChange={(e) => setCurrentTools(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-purple-500"
                   />
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
+                    <span>1</span>
+                    <span>12</span>
+                  </div>
                 </div>
 
                 <div>
@@ -237,13 +251,17 @@ export default function ROICalculatorPage() {
                   </div>
                   <input
                     type="range"
-                    min="20"
-                    max="500"
-                    step="10"
+                    min="25"
+                    max="300"
+                    step="25"
                     value={avgToolCost}
                     onChange={(e) => setAvgToolCost(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-purple-500"
                   />
+                  <div className="flex justify-between text-xs text-gray-600 mt-1">
+                    <span>$25</span>
+                    <span>$300</span>
+                  </div>
                 </div>
               </div>
             </div>
