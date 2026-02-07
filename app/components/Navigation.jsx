@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { ChevronDown, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from '../lib/translations';
 
 // Brand colors: white (#FFFFFF) and blue (#214CE5)
 const BRAND_BLUE = '#214CE5';
@@ -142,6 +143,10 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const closeTimeoutRef = useRef(null);
+  
+  // Get translations with fallbacks
+  const t = useTranslations('nav');
+  const tc = useTranslations('common');
 
   const handleMouseEnter = (menu) => {
     clearTimeout(closeTimeoutRef.current);
@@ -173,36 +178,36 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-0.5">
             <div className="relative" onMouseEnter={() => handleMouseEnter('features')} onMouseLeave={handleMouseLeave}>
               <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'features' ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}>
-                Features
+                {t('features')}
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'features' ? 'rotate-180' : ''}`} />
               </button>
             </div>
 
             <div className="relative" onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={handleMouseLeave}>
               <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'solutions' ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}>
-                Solutions
+                {t('solutions')}
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
               </button>
             </div>
 
             <div className="relative" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
               <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition rounded-lg ${activeDropdown === 'resources' ? 'text-white bg-white/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}>
-                Resources
+                {t('resources')}
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
               </button>
             </div>
 
-            <Link href="/pricing" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">Pricing</Link>
-            <Link href="#contact" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">Contact</Link>
+            <Link href="/pricing" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('pricing')}</Link>
+            <Link href="#contact" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('contact')}</Link>
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher />
             <Link href="/demo" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] hover:from-[#1a3db8] hover:to-[#14308f] text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-[#214CE5]/30">
               <Zap className="w-4 h-4" />
-              Try WellPlan - It's Free
+              {tc('tryFree')}
             </Link>
-            <Link href="https://app.wellplan.io" target="_blank" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">Login</Link>
+            <Link href="https://app.wellplan.io" target="_blank" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">{tc('login')}</Link>
           </div>
 
           {/* Mobile: Language Switcher + Burger */}
@@ -230,62 +235,62 @@ export default function Navigation() {
       {mobileOpen && (
         <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5 px-4 py-4 space-y-4 max-h-[80vh] overflow-y-auto">
           {/* Features - Pillar Cards */}
-          <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Features</div>
+          <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('features')}</div>
           <div className="grid grid-cols-3 gap-2">
             <Link href="/features/capturing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
               <div className="w-10 h-10 mx-auto mb-2"><CaptureIcon /></div>
-              <span className="text-[10px] font-bold text-[#6B8EFF] uppercase">Capture</span>
+              <span className="text-[10px] font-bold text-[#6B8EFF] uppercase">{t('capture')}</span>
             </Link>
             <Link href="/features/nurturing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
               <div className="w-10 h-10 mx-auto mb-2"><NurtureIcon /></div>
-              <span className="text-[10px] font-bold text-purple-400 uppercase">Nurture</span>
+              <span className="text-[10px] font-bold text-purple-400 uppercase">{t('nurture')}</span>
             </Link>
             <Link href="/features/closing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
               <div className="w-10 h-10 mx-auto mb-2"><CloseIcon /></div>
-              <span className="text-[10px] font-bold text-emerald-400 uppercase">Close</span>
+              <span className="text-[10px] font-bold text-emerald-400 uppercase">{t('close')}</span>
             </Link>
           </div>
           
           {/* Solutions - Pillar Cards */}
-          <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Solutions</div>
+          <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('solutions')}</div>
           <div className="grid grid-cols-3 gap-2">
             <Link href="/solutions/agencies" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
               <Building2 className="w-6 h-6 mx-auto mb-2 text-[#6B8EFF]" />
-              <span className="text-[10px] font-bold text-[#6B8EFF]">Agencies</span>
+              <span className="text-[10px] font-bold text-[#6B8EFF]">{t('forAgencies').replace('For ', '')}</span>
             </Link>
             <Link href="/solutions/coaches" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
               <Target className="w-6 h-6 mx-auto mb-2 text-purple-400" />
-              <span className="text-[10px] font-bold text-purple-400">Coaches</span>
+              <span className="text-[10px] font-bold text-purple-400">{t('forCoaches').replace('For ', '')}</span>
             </Link>
             <Link href="/solutions/sales-teams" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
               <Briefcase className="w-6 h-6 mx-auto mb-2 text-emerald-400" />
-              <span className="text-[10px] font-bold text-emerald-400">Sales Teams</span>
+              <span className="text-[10px] font-bold text-emerald-400">{t('forSalesTeams').replace('For ', '')}</span>
             </Link>
           </div>
           
           {/* Resources */}
-          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Resources</div>
-          <Link href="/integrations" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Integrations</Link>
-          <Link href="/blog" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Blog</Link>
-          <Link href="/case-studies" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Case Studies</Link>
-          <Link href="/roi-calculator" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>ROI Calculator</Link>
-          <a href="https://knowledge.wellplan.io/kb" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Documentation</a>
-          <a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Video Tutorials</a>
+          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('resources')}</div>
+          <Link href="/integrations" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('integrations')}</Link>
+          <Link href="/blog" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('blog')}</Link>
+          <Link href="/case-studies" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('caseStudies')}</Link>
+          <Link href="/roi-calculator" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('roiCalculator')}</Link>
+          <a href="https://knowledge.wellplan.io/kb" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('documentation')}</a>
+          <a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('videoTutorials')}</a>
           
           {/* Main Links */}
-          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Company</div>
-          <Link href="/pricing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Pricing</Link>
-          <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Book a Demo</Link>
-          <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Support</a>
-          <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>API Reference</a>
+          <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('company')}</div>
+          <Link href="/pricing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('pricing')}</Link>
+          <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('bookDemo')}</Link>
+          <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('support')}</a>
+          <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('apiReference')}</a>
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
             <Link href="/demo" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
-              <Zap className="w-4 h-4" />Start Free Trial
+              <Zap className="w-4 h-4" />{tc('startFreeTrial')}
             </Link>
             <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-white/10 text-gray-300 font-medium rounded-lg" onClick={() => setMobileOpen(false)}>
-              Login
+              {tc('login')}
             </Link>
           </div>
         </div>
