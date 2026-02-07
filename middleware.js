@@ -6,20 +6,24 @@ const defaultLocale = 'en';
 export function middleware(request) {
   const pathname = request.nextUrl.pathname;
   
+  // Skip static files and api
+  if (pathname.includes('.') || pathname.startsWith('/api')) {
+    return NextResponse.next();
+  }
+  
   // Check if pathname already has locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
   
   if (pathnameHasLocale) {
-    // Already has locale, continue
+    // Has locale - continue (let Next.js handle [locale] route)
     return NextResponse.next();
   }
   
-  // Redirect to default locale
-  const locale = defaultLocale;
-  return NextResponse.redirect(
-    new URL(`/${locale}${pathname}`, request.url)
+  // No locale - rewrite to default locale (don't redirect, keep URL clean)
+  return NextResponse.rewrite(
+    new URL(`/${defaultLocale}${pathname}`, request.url)
   );
 }
 
