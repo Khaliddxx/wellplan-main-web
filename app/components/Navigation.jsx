@@ -380,7 +380,7 @@ function FeaturesDropdown({ onClose, localePath }) {
         </div>
 
         {/* AI Bot Banner */}
-        <Link onClick={onClose} href={lp('/features/ai-bot')} className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
+        <Link onClick={onClose} href={lp('/features/ai')} className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center shadow-lg shadow-[#214CE5]/30">
               <BotIcon size={24} />
