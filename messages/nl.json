@@ -352,6 +352,133 @@
     "methodologyTitle": "Hoe we deze schattingen berekenen:",
     "methodologyText": "Onze ROI calculator gebruikt gemiddelde verbeteringspercentages gebaseerd op data van duizenden WellPlan klanten. Werkelijke resultaten kunnen variëren op basis van je branche, huidige processen en implementatie. De schattingen gaan uit van: 25% verbetering in conversieratio's door betere lead nurturing en follow-up, 15% stijging in vastgelegde leads door omnichannel engagement, en 60% reductie in handmatige taken door automatisering."
   },
+  "privacyPage": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: februari 2026",
+    "sections": {
+      "intro": {
+        "title": "1. Inleiding",
+        "content": "WellPlan (\"wij\", \"ons\" of \"onze\") zet zich in voor de bescherming van uw privacy. Dit Privacybeleid legt uit hoe wij uw informatie verzamelen, gebruiken, openbaar maken en beschermen wanneer u ons platform en onze diensten gebruikt."
+      },
+      "collect": {
+        "title": "2. Informatie die Wij Verzamelen",
+        "content": "Wij verzamelen informatie die u rechtstreeks aan ons verstrekt, waaronder:",
+        "items": "Accountinformatie (naam, e-mail, wachtwoord)|Factuurinformatie (betaalmethode, factuuradres)|Bedrijfsinformatie (bedrijfsnaam, sector)|Communicatie die u naar ons stuurt|Content die u maakt met ons platform"
+      },
+      "use": {
+        "title": "3. Hoe Wij Uw Informatie Gebruiken",
+        "content": "Wij gebruiken de verzamelde informatie om:",
+        "items": "Onze diensten te leveren, onderhouden en verbeteren|Transacties te verwerken en gerelateerde informatie te sturen|Technische meldingen, updates en supportberichten te sturen|Te reageren op uw opmerkingen, vragen en verzoeken|Trends, gebruik en activiteiten te monitoren en analyseren|Frauduleuze transacties te detecteren, onderzoeken en voorkomen"
+      },
+      "sharing": {
+        "title": "4. Informatie Delen",
+        "content": "Wij verkopen, verhandelen of dragen uw persoonlijke informatie niet over aan derden zonder uw toestemming, behalve zoals beschreven in dit beleid. Wij kunnen informatie delen met dienstverleners die ons helpen bij het exploiteren van ons platform, het uitvoeren van onze activiteiten of het bedienen van onze gebruikers."
+      },
+      "security": {
+        "title": "5. Gegevensbeveiliging",
+        "content": "Wij implementeren passende technische en organisatorische beveiligingsmaatregelen om uw persoonlijke informatie te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging. Echter, geen enkele methode van verzending via het internet is 100% veilig."
+      },
+      "rights": {
+        "title": "6. Uw Rechten",
+        "content": "U heeft het recht om:",
+        "items": "Toegang te krijgen tot de persoonlijke informatie die wij over u bewaren|Correctie van onjuiste informatie te verzoeken|Verwijdering van uw informatie te verzoeken|Bezwaar te maken tegen verwerking van uw informatie|Gegevensoverdraagbaarheid te verzoeken"
+      },
+      "cookies": {
+        "title": "7. Cookies",
+        "content": "Wij gebruiken cookies en vergelijkbare trackingtechnologieën om activiteit op ons platform te volgen en bepaalde informatie vast te houden. U kunt uw browser instrueren om alle cookies te weigeren of om aan te geven wanneer een cookie wordt verzonden."
+      },
+      "changes": {
+        "title": "8. Wijzigingen in Dit Beleid",
+        "content": "Wij kunnen ons Privacybeleid van tijd tot tijd bijwerken. Wij zullen u op de hoogte stellen van eventuele wijzigingen door het nieuwe Privacybeleid op deze pagina te plaatsen en de datum \"Laatst bijgewerkt\" bij te werken."
+      },
+      "contact": {
+        "title": "9. Contact",
+        "content": "Als u vragen heeft over dit Privacybeleid, neem dan contact met ons op via"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Algemene Voorwaarden",
+    "lastUpdated": "Laatst bijgewerkt: februari 2026",
+    "sections": {
+      "acceptance": {
+        "title": "1. Aanvaarding van Voorwaarden",
+        "content": "Door toegang te krijgen tot of gebruik te maken van de diensten van WellPlan, gaat u akkoord met deze Algemene Voorwaarden en alle toepasselijke wet- en regelgeving. Als u niet akkoord gaat met een van deze voorwaarden, is het u verboden onze diensten te gebruiken of te openen."
+      },
+      "description": {
+        "title": "2. Beschrijving van de Dienst",
+        "content": "WellPlan biedt een marketing automatisering en CRM platform waarmee bedrijven leads kunnen vastleggen, relaties kunnen onderhouden en deals kunnen sluiten. Onze diensten omvatten, maar zijn niet beperkt tot, e-mailmarketing, SMS-berichten, landingspagina's, formulieren en integraties met diensten van derden."
+      },
+      "registration": {
+        "title": "3. Accountregistratie",
+        "content": "Om onze diensten te gebruiken, moet u:",
+        "items": "Minimaal 18 jaar oud zijn|Nauwkeurige en volledige registratie-informatie verstrekken|De beveiliging van uw accountgegevens handhaven|Wijzigingen in uw informatie direct bijwerken|Verantwoordelijkheid accepteren voor alle activiteiten onder uw account"
+      },
+      "acceptable": {
+        "title": "4. Aanvaardbaar Gebruik",
+        "content": "U gaat ermee akkoord onze diensten niet te gebruiken om:",
+        "items": "Ongevraagde of ongeautoriseerde reclame (spam) te versturen|Toepasselijke wet- en regelgeving te schenden|Inbreuk te maken op intellectuele eigendomsrechten|Kwaadaardige code te verzenden of onze systemen te verstoren|Anderen te intimideren, misbruiken of schaden|Gebruikersinformatie te verzamelen zonder toestemming"
+      },
+      "payment": {
+        "title": "5. Betalingsvoorwaarden",
+        "content": "Betaalde diensten worden vooraf gefactureerd op maandelijkse of jaarlijkse basis. Alle kosten zijn niet-restitueerbaar, behalve zoals vereist door de wet of zoals expliciet vermeld in deze voorwaarden. Wij behouden ons het recht voor om onze prijzen te wijzigen met 30 dagen opzegtermijn."
+      },
+      "ip": {
+        "title": "6. Intellectueel Eigendom",
+        "content": "Het WellPlan platform, inclusief de originele content, functies en functionaliteit, is eigendom van KLABS Ventures LLC en wordt beschermd door internationale auteursrechten, handelsmerken en andere intellectuele eigendomswetten. U behoudt het eigendom van content die u maakt met ons platform."
+      },
+      "liability": {
+        "title": "7. Beperking van Aansprakelijkheid",
+        "content": "Voor zover maximaal toegestaan door de wet, is WellPlan niet aansprakelijk voor enige indirecte, incidentele, speciale, gevolg- of punitieve schade, of enig verlies van winst of inkomsten, hetzij direct of indirect geleden, of enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen."
+      },
+      "termination": {
+        "title": "8. Beëindiging",
+        "content": "Wij kunnen uw account onmiddellijk beëindigen of opschorten, zonder voorafgaande kennisgeving of aansprakelijkheid, om welke reden dan ook, inclusief schending van deze Voorwaarden. Bij beëindiging vervalt uw recht om de dienst te gebruiken onmiddellijk."
+      },
+      "changes": {
+        "title": "9. Wijzigingen in Voorwaarden",
+        "content": "Wij behouden ons het recht voor om deze Voorwaarden op elk moment te wijzigen of te vervangen. Als een herziening materieel is, zullen wij ten minste 30 dagen van tevoren kennisgeving doen voordat nieuwe voorwaarden van kracht worden."
+      },
+      "contact": {
+        "title": "10. Contact",
+        "content": "Als u vragen heeft over deze Voorwaarden, neem dan contact met ons op via"
+      }
+    }
+  },
+  "integrationsPage": {
+    "badge": "50+ Native Integraties",
+    "title": "Verbind",
+    "titleHighlight": "Alles",
+    "subtitle": "Integreer WellPlan met je volledige tech stack. Automatiseer workflows, synchroniseer data en beheer al je kanalen vanuit één platform.",
+    "searchPlaceholder": "Zoek integraties...",
+    "nativeApps": "Native Apps",
+    "categories": "Categorieën",
+    "apiWebhooks": "API & Webhooks",
+    "categoryAll": "Alles",
+    "viewIntegration": "Bekijk Integratie",
+    "cta": {
+      "title": "Niet gevonden wat je zoekt?",
+      "subtitle": "Gebruik onze API, webhooks of Zapier om te verbinden met duizenden andere apps.",
+      "button": "Bekijk API Docs"
+    },
+    "detail": {
+      "breadcrumb": "Integraties",
+      "connect": "Verbinden",
+      "viewDocs": "Bekijk Documentatie",
+      "features": "Functies",
+      "useCases": "Toepassingen",
+      "salesTitle": "Sales & Leadgeneratie",
+      "salesDesc": "Vang leads van {name} en synchroniseer ze automatisch naar je CRM. Reageer direct met AI-gestuurde chatbots.",
+      "supportTitle": "Klantenservice",
+      "supportDesc": "Bied 24/7 support via {name}. Route gesprekken naar de juiste teamleden en volg responstijden.",
+      "marketingTitle": "Marketing Campagnes",
+      "marketingDesc": "Verstuur gerichte broadcasts, automatiseer follow-ups en meet campagneprestaties direct vanuit {name}.",
+      "related": "Gerelateerde Integraties",
+      "readyToConnect": "Klaar om {name} te verbinden?",
+      "getStarted": "Begin in minuten. Geen creditcard nodig.",
+      "startTrial": "Start Gratis Proefperiode"
+    }
+  },
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
     "description": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans."

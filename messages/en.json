@@ -352,6 +352,133 @@
     "methodologyTitle": "How we calculate these estimates:",
     "methodologyText": "Our ROI calculator uses industry-average improvement rates based on data from thousands of WellPlan customers. Actual results may vary based on your industry, current processes, and implementation. The estimates assume: 25% improvement in close rates through better lead nurturing and follow-up, 15% increase in captured leads through omnichannel engagement, and 60% reduction in manual tasks through automation."
   },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 2026",
+    "sections": {
+      "intro": {
+        "title": "1. Introduction",
+        "content": "WellPlan (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform and services."
+      },
+      "collect": {
+        "title": "2. Information We Collect",
+        "content": "We collect information you provide directly to us, including:",
+        "items": "Account information (name, email, password)|Billing information (payment method, billing address)|Business information (company name, industry)|Communications you send to us|Content you create using our platform"
+      },
+      "use": {
+        "title": "3. How We Use Your Information",
+        "content": "We use the information we collect to:",
+        "items": "Provide, maintain, and improve our services|Process transactions and send related information|Send technical notices, updates, and support messages|Respond to your comments, questions, and requests|Monitor and analyze trends, usage, and activities|Detect, investigate, and prevent fraudulent transactions"
+      },
+      "sharing": {
+        "title": "4. Information Sharing",
+        "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy. We may share information with service providers who assist us in operating our platform, conducting our business, or serving our users."
+      },
+      "security": {
+        "title": "5. Data Security",
+        "content": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure."
+      },
+      "rights": {
+        "title": "6. Your Rights",
+        "content": "You have the right to:",
+        "items": "Access the personal information we hold about you|Request correction of inaccurate information|Request deletion of your information|Object to processing of your information|Request data portability"
+      },
+      "cookies": {
+        "title": "7. Cookies",
+        "content": "We use cookies and similar tracking technologies to track activity on our platform and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent."
+      },
+      "changes": {
+        "title": "8. Changes to This Policy",
+        "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+      },
+      "contact": {
+        "title": "9. Contact Us",
+        "content": "If you have any questions about this Privacy Policy, please contact us at"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 2026",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing or using WellPlan's services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services."
+      },
+      "description": {
+        "title": "2. Description of Service",
+        "content": "WellPlan provides a marketing automation and CRM platform that enables businesses to capture leads, nurture relationships, and close deals. Our services include but are not limited to email marketing, SMS messaging, landing pages, forms, and integrations with third-party services."
+      },
+      "registration": {
+        "title": "3. Account Registration",
+        "content": "To use our services, you must:",
+        "items": "Be at least 18 years old|Provide accurate and complete registration information|Maintain the security of your account credentials|Promptly update any changes to your information|Accept responsibility for all activities under your account"
+      },
+      "acceptable": {
+        "title": "4. Acceptable Use",
+        "content": "You agree not to use our services to:",
+        "items": "Send unsolicited or unauthorized advertising (spam)|Violate any applicable laws or regulations|Infringe on intellectual property rights|Transmit malicious code or interfere with our systems|Harass, abuse, or harm others|Collect user information without consent"
+      },
+      "payment": {
+        "title": "5. Payment Terms",
+        "content": "Paid services are billed in advance on a monthly or annual basis. All fees are non-refundable except as required by law or as explicitly stated in these terms. We reserve the right to change our prices with 30 days notice."
+      },
+      "ip": {
+        "title": "6. Intellectual Property",
+        "content": "The WellPlan platform, including its original content, features, and functionality, is owned by KLABS Ventures LLC and is protected by international copyright, trademark, and other intellectual property laws. You retain ownership of content you create using our platform."
+      },
+      "liability": {
+        "title": "7. Limitation of Liability",
+        "content": "To the maximum extent permitted by law, WellPlan shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses."
+      },
+      "termination": {
+        "title": "8. Termination",
+        "content": "We may terminate or suspend your account immediately, without prior notice or liability, for any reason, including breach of these Terms. Upon termination, your right to use the service will immediately cease."
+      },
+      "changes": {
+        "title": "9. Changes to Terms",
+        "content": "We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect."
+      },
+      "contact": {
+        "title": "10. Contact Us",
+        "content": "If you have any questions about these Terms, please contact us at"
+      }
+    }
+  },
+  "integrationsPage": {
+    "badge": "50+ Native Integrations",
+    "title": "Connect",
+    "titleHighlight": "Everything",
+    "subtitle": "Integrate WellPlan with your entire tech stack. Automate workflows, sync data, and manage all your channels from one platform.",
+    "searchPlaceholder": "Search integrations...",
+    "nativeApps": "Native Apps",
+    "categories": "Categories",
+    "apiWebhooks": "API & Webhooks",
+    "categoryAll": "All",
+    "viewIntegration": "View Integration",
+    "cta": {
+      "title": "Don't see what you need?",
+      "subtitle": "Use our API, webhooks, or Zapier to connect with thousands of other apps.",
+      "button": "View API Docs"
+    },
+    "detail": {
+      "breadcrumb": "Integrations",
+      "connect": "Connect",
+      "viewDocs": "View Documentation",
+      "features": "Features",
+      "useCases": "Use Cases",
+      "salesTitle": "Sales & Lead Generation",
+      "salesDesc": "Capture leads from {name} and automatically sync them to your CRM. Respond instantly with AI-powered chatbots.",
+      "supportTitle": "Customer Support",
+      "supportDesc": "Provide 24/7 support through {name}. Route conversations to the right team members and track response times.",
+      "marketingTitle": "Marketing Campaigns",
+      "marketingDesc": "Send targeted broadcasts, automate follow-ups, and measure campaign performance directly from {name}.",
+      "related": "Related Integrations",
+      "readyToConnect": "Ready to connect {name}?",
+      "getStarted": "Get started in minutes. No credit card required.",
+      "startTrial": "Start Free Trial"
+    }
+  },
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",
     "description": "The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans."
