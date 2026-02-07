@@ -65,17 +65,17 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section ref={ref} className="py-32 px-4 bg-slate-950">
+    <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 bg-slate-950">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-black mb-6">
+        <div className="text-center mb-10 sm:mb-16 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
             Trusted by
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Small-to-Medium Businesses
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             See real results from companies using WellPlan
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function TestimonialCarousel() {
         <div className="relative">
           {/* Main Testimonial */}
           <div
-            className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl p-12 border border-slate-700/50 backdrop-blur-xl min-h-96 flex flex-col justify-between"
+            className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-slate-700/50 backdrop-blur-xl min-h-[280px] sm:min-h-[320px] md:min-h-96 flex flex-col justify-between"
             style={{
               opacity: isInView ? 1 : 0,
               transform: isInView ? 'scale(1)' : 'scale(0.95)',
@@ -92,38 +92,38 @@ export default function TestimonialCarousel() {
             }}
           >
             {/* Quote */}
-            <div className="mb-8">
-              <div className="text-5xl mb-4 text-yellow-400">&#10077;</div>
-              <p className="text-2xl font-semibold text-gray-100 leading-relaxed">
+            <div className="mb-6 sm:mb-8">
+              <div className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 text-yellow-400">&#10077;</div>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-100 leading-relaxed">
                 {testimonials[current].quote}
               </p>
             </div>
 
-            {/* Author Info */}
-            <div className="flex items-center justify-between border-t border-slate-700/50 pt-8">
-              <div className="flex items-center gap-4">
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${testimonials[current].color} flex items-center justify-center text-3xl`}>
+            {/* Author Info - Stacks on mobile */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 border-t border-slate-700/50 pt-6 sm:pt-8">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${testimonials[current].color} flex items-center justify-center text-2xl sm:text-3xl`}>
                   {testimonials[current].company}
                 </div>
                 <div>
-                  <p className="font-bold text-white text-lg">{testimonials[current].author}</p>
-                  <p className="text-gray-400 text-sm">{testimonials[current].title}</p>
+                  <p className="font-bold text-white text-base sm:text-lg">{testimonials[current].author}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">{testimonials[current].title}</p>
                 </div>
               </div>
-              <div className="text-right">
-                <p className="text-4xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <div className="text-left sm:text-right pl-14 sm:pl-0">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   {testimonials[current].metric}
                 </p>
-                <p className="text-gray-400 text-sm">Achieved</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Achieved</p>
               </div>
             </div>
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex gap-4 justify-center mt-8">
+          <div className="flex gap-3 sm:gap-4 justify-center mt-6 sm:mt-8">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-blue-500 transition flex items-center justify-center text-gray-300 hover:text-blue-400 font-bold text-xl"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-blue-500 transition flex items-center justify-center text-gray-300 hover:text-blue-400 font-bold text-lg sm:text-xl"
             >
               ←
             </button>
@@ -137,10 +137,10 @@ export default function TestimonialCarousel() {
                     setAutoplay(false);
                     setTimeout(() => setAutoplay(true), 5000);
                   }}
-                  className={`w-2 h-2 rounded-full transition ${
+                  className={`h-2 rounded-full transition ${
                     idx === current
-                      ? 'bg-blue-500 w-8'
-                      : 'bg-slate-700 hover:bg-slate-600'
+                      ? 'bg-blue-500 w-6 sm:w-8'
+                      : 'bg-slate-700 hover:bg-slate-600 w-2'
                   }`}
                 />
               ))}
@@ -148,14 +148,14 @@ export default function TestimonialCarousel() {
 
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-blue-500 transition flex items-center justify-center text-gray-300 hover:text-blue-400 font-bold text-xl"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-blue-500 transition flex items-center justify-center text-gray-300 hover:text-blue-400 font-bold text-lg sm:text-xl"
             >
               →
             </button>
           </div>
 
-          {/* Testimonial Cards Grid (Below) */}
-          <div className="grid md:grid-cols-4 gap-4 mt-16">
+          {/* Testimonial Cards Grid - Hidden on mobile, show 2 cols on sm */}
+          <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-10 sm:mt-12 md:mt-16">
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
@@ -164,15 +164,15 @@ export default function TestimonialCarousel() {
                   setAutoplay(false);
                   setTimeout(() => setAutoplay(true), 5000);
                 }}
-                className={`p-6 rounded-xl border cursor-pointer transition ${
+                className={`p-4 sm:p-5 md:p-6 rounded-xl border cursor-pointer transition ${
                   idx === current
                     ? 'bg-gradient-to-br from-blue-500/20 to-purple-500/20 border-blue-500/50'
                     : 'bg-slate-800/30 border-slate-700/50 hover:border-slate-600/50'
                 }`}
               >
-                <p className="text-gray-300 text-sm mb-3 line-clamp-3">{testimonial.quote}</p>
-                <p className="font-bold text-sm text-white">{testimonial.author}</p>
-                <p className="text-xs text-gray-400">{testimonial.title}</p>
+                <p className="text-gray-300 text-xs sm:text-sm mb-2 sm:mb-3 line-clamp-3">{testimonial.quote}</p>
+                <p className="font-bold text-xs sm:text-sm text-white">{testimonial.author}</p>
+                <p className="text-[10px] sm:text-xs text-gray-400">{testimonial.title}</p>
               </div>
             ))}
           </div>
