@@ -76,6 +76,7 @@ export default function Footer() {
               <li><Link href="/about" className="text-gray-500 hover:text-white text-sm transition">{t('aboutUs')}</Link></li>
               <li><Link href="/pricing" className="text-gray-500 hover:text-white text-sm transition">{t('pricing')}</Link></li>
               <li><Link href="/demo" className="text-gray-500 hover:text-white text-sm transition">{t('bookDemo')}</Link></li>
+              <li><Link href="/partners" className="text-gray-500 hover:text-white text-sm transition">{t('partners')}</Link></li>
               <li><Link href="/contact" className="text-gray-500 hover:text-white text-sm transition">{t('contact')}</Link></li>
               <li><a href="https://help.leadconnectorhq.com/support/home" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('support')}</a></li>
             </ul>

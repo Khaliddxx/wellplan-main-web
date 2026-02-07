@@ -111,7 +111,7 @@ export default function AIOverviewPage() {
                 <div className="text-xs sm:text-sm text-gray-500">Availability</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-black text-white mb-1">$97</div>
+                <div className="text-3xl sm:text-4xl font-black text-white mb-1">$397</div>
                 <div className="text-xs sm:text-sm text-gray-500">/mo Unlimited</div>
               </div>
             </div>
@@ -241,7 +241,7 @@ export default function AIOverviewPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Unlimited AI</h3>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-black">$97</span>
+                <span className="text-4xl font-black">$397</span>
                 <span className="text-gray-400">/month</span>
               </div>
               <p className="text-gray-400 mb-6">All AI tools, unlimited usage</p>
