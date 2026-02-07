@@ -1,6 +1,4 @@
 import EnhancedHero from '../components/EnhancedHero';
-import StatsSection from '../components/StatsSection';
-import TrustedBy from '../components/TrustedBy';
 import StickyFeatureScroll from '../components/StickyFeatureScroll';
 import ComparisonMatrix from '../components/ComparisonMatrix';
 import TestimonialCarousel from '../components/TestimonialCarousel';
@@ -16,8 +14,6 @@ export default function HomePage() {
   return (
     <>
       <EnhancedHero />
-      <TrustedBy />
-      <StatsSection />
       <StickyFeatureScroll />
       <IntegrationLogoCarousel />
       <ComparisonMatrix />

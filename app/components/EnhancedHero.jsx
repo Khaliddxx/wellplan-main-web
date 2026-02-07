@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Play, Zap, MessageSquare, Mail, Phone } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '../lib/translations';
 
 export default function EnhancedHero() {
   const t = useTranslations('hero');

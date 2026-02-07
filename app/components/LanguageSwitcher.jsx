@@ -1,7 +1,7 @@
 'use client';
 
-import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { useLocale } from '../lib/translations';
+import { useRouter, usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 
@@ -13,6 +13,7 @@ const languages = [
 export default function LanguageSwitcher({ variant = 'default' }) {
   const locale = useLocale();
   const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -29,11 +30,21 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   }, []);
 
   const switchLocale = (newLocale) => {
-    // Set cookie
-    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
     setIsOpen(false);
-    // Full page reload to apply new locale (router.refresh doesn't re-read cookies)
-    window.location.reload();
+    // Navigate to the new locale path
+    // Current pathname is like /en, /nl, /en/about, /nl/about, etc.
+    const segments = pathname.split('/').filter(Boolean);
+    
+    // Check if first segment is a locale
+    if (segments[0] === 'en' || segments[0] === 'nl') {
+      segments[0] = newLocale;
+    } else {
+      // No locale prefix, add it
+      segments.unshift(newLocale);
+    }
+    
+    const newPath = '/' + segments.join('/');
+    router.push(newPath);
   };
 
   if (variant === 'footer') {
