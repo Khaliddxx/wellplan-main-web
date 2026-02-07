@@ -31,9 +31,9 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   const switchLocale = (newLocale) => {
     // Set cookie
     document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
-    // Refresh to apply new locale
-    router.refresh();
     setIsOpen(false);
+    // Full page reload to apply new locale (router.refresh doesn't re-read cookies)
+    window.location.reload();
   };
 
   if (variant === 'footer') {

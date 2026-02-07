@@ -5,6 +5,9 @@ import ClientProviders from './components/ClientProviders';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 
+// Force dynamic rendering to read cookies on each request
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   metadataBase: new URL('https://wellplan.io'),
   title: {
