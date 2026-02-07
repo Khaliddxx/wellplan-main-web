@@ -103,7 +103,9 @@
     "helpCenterDesc": "Get instant support",
     "apiReference": "API Reference",
     "apiReferenceDesc": "Developer docs",
-    "company": "Company"
+    "company": "Company",
+    "bookDemo": "Book a Demo",
+    "bookDemoDesc": "Schedule walkthrough"
   },
   "hero": {
     "badge": "The #1 Lead Generation Platform",

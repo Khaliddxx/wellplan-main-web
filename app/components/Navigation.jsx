@@ -300,6 +300,7 @@ export default function Navigation() {
 }
 
 function FeaturesDropdown({ onClose }) {
+  const t = useTranslations('nav');
   return (
     <div className="flex" style={{ width: '920px' }}>
       {/* 3 Pillars */}
@@ -312,12 +313,12 @@ function FeaturesDropdown({ onClose }) {
                 <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
                   <CaptureIcon />
                 </div>
-                <span className="inline-block px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold uppercase tracking-wider mb-2">Step 1</span>
-                <h3 className="font-bold text-white text-lg group-hover:text-[#6B8EFF] transition">CAPTURE</h3>
-                <p className="text-gray-500 text-xs mt-1">Attract & collect leads</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold uppercase tracking-wider mb-2">{t('step1')}</span>
+                <h3 className="font-bold text-white text-lg group-hover:text-[#6B8EFF] transition">{t('capture').toUpperCase()}</h3>
+                <p className="text-gray-500 text-xs mt-1">{t('captureDesc')}</p>
               </div>
               <div className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-[#214CE5]/20 text-[11px] font-semibold text-[#6B8EFF] group-hover:text-white transition">
-                Explore Capture <ArrowRight className="w-3 h-3" />
+                {t('exploreCapture')} <ArrowRight className="w-3 h-3" />
               </div>
             </div>
           </Link>
@@ -329,12 +330,12 @@ function FeaturesDropdown({ onClose }) {
                 <div className="w-16 h-16 mb-4 mx-auto group-hover:scale-110 transition">
                   <NurtureIcon />
                 </div>
-                <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2">Step 2</span>
-                <h3 className="font-bold text-white text-lg group-hover:text-purple-400 transition">NURTURE</h3>
-                <p className="text-gray-500 text-xs mt-1">Engage & build trust</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2">{t('step2')}</span>
+                <h3 className="font-bold text-white text-lg group-hover:text-purple-400 transition">{t('nurture').toUpperCase()}</h3>
+                <p className="text-gray-500 text-xs mt-1">{t('nurtureDesc')}</p>
               </div>
               <div className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-purple-500/20 text-[11px] font-semibold text-purple-400 group-hover:text-white transition">
-                Explore Nurture <ArrowRight className="w-3 h-3" />
+                {t('exploreNurture')} <ArrowRight className="w-3 h-3" />
               </div>
             </div>
           </Link>
@@ -346,12 +347,12 @@ function FeaturesDropdown({ onClose }) {
                 <div className="w-16 h-16 mb-4 mx-auto group-hover:scale-110 transition">
                   <CloseIcon />
                 </div>
-                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">Step 3</span>
-                <h3 className="font-bold text-white text-lg group-hover:text-emerald-400 transition">CLOSE</h3>
-                <p className="text-gray-500 text-xs mt-1">Convert & get paid</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">{t('step3')}</span>
+                <h3 className="font-bold text-white text-lg group-hover:text-emerald-400 transition">{t('close').toUpperCase()}</h3>
+                <p className="text-gray-500 text-xs mt-1">{t('closeDesc')}</p>
               </div>
               <div className="flex items-center justify-center gap-1 mt-4 pt-3 border-t border-emerald-500/20 text-[11px] font-semibold text-emerald-400 group-hover:text-white transition">
-                Explore Close <ArrowRight className="w-3 h-3" />
+                {t('exploreClose')} <ArrowRight className="w-3 h-3" />
               </div>
             </div>
           </Link>
@@ -365,10 +366,10 @@ function FeaturesDropdown({ onClose }) {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h4 className="font-bold text-white">AI Lead Bot</h4>
-                <span className="px-2 py-0.5 rounded bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold">NEW</span>
+                <h4 className="font-bold text-white">{t('aiLeadBot')}</h4>
+                <span className="px-2 py-0.5 rounded bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold">{t('new')}</span>
               </div>
-              <p className="text-xs text-gray-500">24/7 AI that qualifies leads, books appointments, and closes deals</p>
+              <p className="text-xs text-gray-500">{t('aiLeadBotDesc')}</p>
             </div>
           </div>
           <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-[#214CE5] group-hover:translate-x-1 transition-all" />
@@ -379,7 +380,7 @@ function FeaturesDropdown({ onClose }) {
       <div className="w-[240px] border-l border-white/[0.08] p-5 bg-gradient-to-b from-white/[0.02] to-transparent">
         <div className="flex items-center gap-2 mb-5">
           <div className="w-2 h-2 rounded-full bg-[#214CE5]"></div>
-          <span className="text-[11px] font-bold text-white uppercase tracking-wider">Integrations</span>
+          <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('integrations')}</span>
         </div>
         
         <div className="grid grid-cols-4 gap-2 mb-5">
@@ -410,19 +411,19 @@ function FeaturesDropdown({ onClose }) {
         </div>
 
         <Link onClick={onClose} href="/integrations" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mb-6">
-          View all integrations
+          {t('viewAllIntegrations')}
           <ArrowRight className="w-3 h-3" />
         </Link>
 
         <div className="border-t border-white/10 pt-5">
           <div className="flex items-center gap-2 mb-3">
             <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-            <span className="text-[11px] font-bold text-white uppercase tracking-wider">Quick Links</span>
+            <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('quickLinks')}</span>
           </div>
-          <Link onClick={onClose} href="/features" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ All Features</Link>
-          <Link onClick={onClose} href="/features/shared-inbox" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Shared Inbox</Link>
-          <Link onClick={onClose} href="/features/analytics" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Analytics & Reports</Link>
-          <Link onClick={onClose} href="/features/broadcasts" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ Broadcast Campaigns</Link>
+          <Link onClick={onClose} href="/features" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('allFeatures')}</Link>
+          <Link onClick={onClose} href="/features/shared-inbox" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('sharedInbox')}</Link>
+          <Link onClick={onClose} href="/features/analytics" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('analytics')}</Link>
+          <Link onClick={onClose} href="/features/broadcasts" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('broadcasts')}</Link>
         </div>
       </div>
     </div>
@@ -430,6 +431,7 @@ function FeaturesDropdown({ onClose }) {
 }
 
 function SolutionsDropdown({ onClose }) {
+  const t = useTranslations('nav');
   return (
     <div className="flex" style={{ width: '920px' }}>
       {/* 3 Main Pillars - Agencies, Coaches, Sales Teams */}
@@ -442,22 +444,22 @@ function SolutionsDropdown({ onClose }) {
                 <Building2 className="w-7 h-7 text-[#6B8EFF]" />
               </div>
               <div className="text-center mb-4">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold uppercase tracking-wider mb-2">Most Popular</span>
-                <h3 className="font-bold text-white text-lg">For Agencies</h3>
-                <p className="text-gray-500 text-xs mt-1">White-label for your clients</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-[#214CE5]/20 text-[#6B8EFF] text-[10px] font-bold uppercase tracking-wider mb-2">{t('mostPopular')}</span>
+                <h3 className="font-bold text-white text-lg">{t('forAgencies')}</h3>
+                <p className="text-gray-500 text-xs mt-1">{t('agenciesDesc')}</p>
               </div>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li className="flex items-center gap-2">
-                  <span className="text-[#6B8EFF]">✓</span> Unlimited sub-accounts
+                  <span className="text-[#6B8EFF]">✓</span> {t('unlimitedSubaccounts')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#6B8EFF]">✓</span> Custom branding
+                  <span className="text-[#6B8EFF]">✓</span> {t('customBranding')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#6B8EFF]">✓</span> Reseller pricing
+                  <span className="text-[#6B8EFF]">✓</span> {t('resellerPricing')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#6B8EFF]">✓</span> Client dashboards
+                  <span className="text-[#6B8EFF]">✓</span> {t('clientDashboards')}
                 </li>
               </ul>
             </div>
@@ -470,22 +472,22 @@ function SolutionsDropdown({ onClose }) {
                 <Target className="w-7 h-7 text-purple-400" />
               </div>
               <div className="text-center mb-4">
-                <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2">Scale Fast</span>
-                <h3 className="font-bold text-white text-lg">For Coaches</h3>
-                <p className="text-gray-500 text-xs mt-1">Scale 1:1 relationships</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2">{t('scaleFast')}</span>
+                <h3 className="font-bold text-white text-lg">{t('forCoaches')}</h3>
+                <p className="text-gray-500 text-xs mt-1">{t('coachesDesc')}</p>
               </div>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li className="flex items-center gap-2">
-                  <span className="text-purple-400">✓</span> Automated follow-ups
+                  <span className="text-purple-400">✓</span> {t('automatedFollowups')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-purple-400">✓</span> Course & membership
+                  <span className="text-purple-400">✓</span> {t('courseMembership')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-purple-400">✓</span> Calendar booking
+                  <span className="text-purple-400">✓</span> {t('calendarBooking')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-purple-400">✓</span> Community features
+                  <span className="text-purple-400">✓</span> {t('communityFeatures')}
                 </li>
               </ul>
             </div>
@@ -498,22 +500,22 @@ function SolutionsDropdown({ onClose }) {
                 <Briefcase className="w-7 h-7 text-emerald-400" />
               </div>
               <div className="text-center mb-4">
-                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">Close Faster</span>
-                <h3 className="font-bold text-white text-lg">For Sales Teams</h3>
-                <p className="text-gray-500 text-xs mt-1">Close more deals faster</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">{t('closeFaster')}</span>
+                <h3 className="font-bold text-white text-lg">{t('forSalesTeams')}</h3>
+                <p className="text-gray-500 text-xs mt-1">{t('salesTeamsDesc')}</p>
               </div>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">✓</span> Pipeline management
+                  <span className="text-emerald-400">✓</span> {t('pipelineManagement')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">✓</span> Team collaboration
+                  <span className="text-emerald-400">✓</span> {t('teamCollaboration')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">✓</span> Lead scoring
+                  <span className="text-emerald-400">✓</span> {t('leadScoring')}
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-emerald-400">✓</span> Performance analytics
+                  <span className="text-emerald-400">✓</span> {t('performanceAnalytics')}
                 </li>
               </ul>
             </div>
@@ -528,9 +530,9 @@ function SolutionsDropdown({ onClose }) {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h4 className="font-bold text-white">Not sure which is right for you?</h4>
+                <h4 className="font-bold text-white">{t('notSureWhich')}</h4>
               </div>
-              <p className="text-xs text-gray-500">Book a free consultation — we'll help you choose</p>
+              <p className="text-xs text-gray-500">{t('bookFreeConsult')}</p>
             </div>
           </div>
           <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-[#214CE5] group-hover:translate-x-1 transition-all" />
@@ -541,7 +543,7 @@ function SolutionsDropdown({ onClose }) {
       <div className="w-[240px] border-l border-white/[0.08] p-5 bg-gradient-to-b from-white/[0.02] to-transparent">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-          <span className="text-[11px] font-bold text-white uppercase tracking-wider">Industries</span>
+          <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('industries')}</span>
         </div>
         
         <div className="space-y-1 max-h-[280px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
@@ -549,64 +551,64 @@ function SolutionsDropdown({ onClose }) {
             <div className="w-8 h-8 rounded-lg bg-[#214CE5]/20 flex items-center justify-center">
               <ShoppingCart className="w-4 h-4 text-[#6B8EFF]" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">E-Commerce</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('ecommerce')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/real-estate" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
               <Home className="w-4 h-4 text-emerald-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Real Estate</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('realEstate')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/healthcare" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
               <Stethoscope className="w-4 h-4 text-red-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Healthcare</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('healthcare')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/education" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
               <GraduationCap className="w-4 h-4 text-purple-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Education</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('education')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/restaurants" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
               <Utensils className="w-4 h-4 text-orange-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Restaurants</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('restaurants')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/fitness" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-pink-500/20 flex items-center justify-center">
               <Dumbbell className="w-4 h-4 text-pink-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Fitness</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('fitness')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/automotive" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
               <Car className="w-4 h-4 text-cyan-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Automotive</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('automotive')}</span>
           </Link>
           <Link onClick={onClose} href="/industries/professional-services" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center">
               <Briefcase className="w-4 h-4 text-violet-400" />
             </div>
-            <span className="text-[12px] text-gray-400 group-hover:text-white">Professional Services</span>
+            <span className="text-[12px] text-gray-400 group-hover:text-white">{t('professionalServices')}</span>
           </Link>
         </div>
 
         <Link onClick={onClose} href="/industries" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mt-4 pt-4 border-t border-white/10">
-          View all industries
+          {t('viewAllIndustries')}
           <ArrowRight className="w-3 h-3" />
         </Link>
 
         <div className="border-t border-white/10 mt-4 pt-4">
           <div className="flex items-center gap-2 mb-3">
             <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-            <span className="text-[11px] font-bold text-white uppercase tracking-wider">Business Type</span>
+            <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('businessType')}</span>
           </div>
-          <Link onClick={onClose} href="/solutions/b2b" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ B2B Sales</Link>
-          <Link onClick={onClose} href="/solutions/b2c" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ B2C Engagement</Link>
+          <Link onClick={onClose} href="/solutions/b2b" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2bSales')}</Link>
+          <Link onClick={onClose} href="/solutions/b2c" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2cEngagement')}</Link>
         </div>
       </div>
     </div>
@@ -614,20 +616,21 @@ function SolutionsDropdown({ onClose }) {
 }
 
 function ResourcesDropdown({ onClose }) {
+  const t = useTranslations('nav');
   return (
     <div className="flex p-6 gap-6" style={{ width: '640px' }}>
       <div className="flex-1 space-y-1">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-2 h-2 rounded-full bg-[#214CE5]"></div>
-          <span className="text-[11px] font-bold text-white uppercase tracking-wider">Learn</span>
+          <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('learn')}</span>
         </div>
         <Link onClick={onClose} href="/case-studies" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <BarChart3 className="w-5 h-5 text-emerald-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-[#6B8EFF]">Case Studies</p>
-            <p className="text-[11px] text-gray-500">Real customer results</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-[#6B8EFF]">{t('caseStudies')}</p>
+            <p className="text-[11px] text-gray-500">{t('caseStudiesDesc')}</p>
           </div>
         </Link>
         <Link href="https://knowledge.wellplan.io/kb" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
@@ -635,8 +638,8 @@ function ResourcesDropdown({ onClose }) {
             <BookOpen className="w-5 h-5 text-[#6B8EFF]" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-[#6B8EFF]">Documentation</p>
-            <p className="text-[11px] text-gray-500">Guides and references</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-[#6B8EFF]">{t('documentation')}</p>
+            <p className="text-[11px] text-gray-500">{t('documentationDesc')}</p>
           </div>
         </Link>
         <Link onClick={onClose} href="/blog" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
@@ -644,8 +647,8 @@ function ResourcesDropdown({ onClose }) {
             <Newspaper className="w-5 h-5 text-purple-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-purple-400">Blog</p>
-            <p className="text-[11px] text-gray-500">Latest updates & tips</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-purple-400">{t('blog')}</p>
+            <p className="text-[11px] text-gray-500">{t('blogDesc')}</p>
           </div>
         </Link>
         <Link onClick={onClose} href="/roi-calculator" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
@@ -653,23 +656,23 @@ function ResourcesDropdown({ onClose }) {
             <Calculator className="w-5 h-5 text-pink-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-pink-400">ROI Calculator</p>
-            <p className="text-[11px] text-gray-500">Calculate your savings</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-pink-400">{t('roiCalculator')}</p>
+            <p className="text-[11px] text-gray-500">{t('roiCalculatorDesc')}</p>
           </div>
         </Link>
       </div>
       <div className="flex-1 space-y-1">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-          <span className="text-[11px] font-bold text-white uppercase tracking-wider">Support</span>
+          <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('supportSection')}</span>
         </div>
         <Link href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Play className="w-5 h-5 text-red-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-red-400">Video Tutorials</p>
-            <p className="text-[11px] text-gray-500">Learn WellPlan</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-red-400">{t('videoTutorials')}</p>
+            <p className="text-[11px] text-gray-500">{t('videoTutorialsDesc')}</p>
           </div>
         </Link>
         <Link href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
@@ -677,8 +680,8 @@ function ResourcesDropdown({ onClose }) {
             <FileText className="w-5 h-5 text-orange-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-orange-400">API Reference</p>
-            <p className="text-[11px] text-gray-500">Build integrations</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-orange-400">{t('apiReference')}</p>
+            <p className="text-[11px] text-gray-500">{t('apiReferenceDesc')}</p>
           </div>
         </Link>
         <Link href="https://help.leadconnectorhq.com/support/home" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
@@ -686,8 +689,8 @@ function ResourcesDropdown({ onClose }) {
             <HelpCircle className="w-5 h-5 text-cyan-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-cyan-400">Help Center</p>
-            <p className="text-[11px] text-gray-500">FAQs and support</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-cyan-400">{t('helpCenter')}</p>
+            <p className="text-[11px] text-gray-500">{t('helpCenterDesc')}</p>
           </div>
         </Link>
         <Link onClick={onClose} href="/demo" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
@@ -695,8 +698,8 @@ function ResourcesDropdown({ onClose }) {
             <Calendar className="w-5 h-5 text-green-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-green-400">Book a Demo</p>
-            <p className="text-[11px] text-gray-500">Schedule walkthrough</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-green-400">{t('bookDemo')}</p>
+            <p className="text-[11px] text-gray-500">{t('bookDemoDesc')}</p>
           </div>
         </Link>
       </div>

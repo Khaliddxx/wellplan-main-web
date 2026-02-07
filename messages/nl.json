@@ -103,7 +103,9 @@
     "helpCenterDesc": "Direct ondersteuning",
     "apiReference": "API Referentie",
     "apiReferenceDesc": "Developer docs",
-    "company": "Bedrijf"
+    "company": "Bedrijf",
+    "bookDemo": "Demo Aanvragen",
+    "bookDemoDesc": "Walkthrough plannen"
   },
   "hero": {
     "badge": "Het #1 Lead Generatie Platform",
