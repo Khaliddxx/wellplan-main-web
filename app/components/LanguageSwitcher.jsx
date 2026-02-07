@@ -17,7 +17,13 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  // Only show on locale routes (/en, /nl) for now
+  const isLocaleRoute = pathname?.startsWith('/en') || pathname?.startsWith('/nl');
+  
   const currentLang = languages.find(l => l.code === locale) || languages[0];
+  
+  // Hide on non-locale pages
+  if (!isLocaleRoute) return null;
 
   useEffect(() => {
     function handleClickOutside(event) {
