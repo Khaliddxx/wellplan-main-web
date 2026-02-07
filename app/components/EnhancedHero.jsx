@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Play, Zap, MessageSquare, Mail, Phone } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function EnhancedHero() {
+  const t = useTranslations('hero');
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export default function EnhancedHero() {
             >
               <Zap className="w-4 h-4 text-[#214CE5]" />
               <span className="text-sm font-semibold text-[#6B8EFF]">
-                The #1 Lead Generation Platform
+                {t('badge')}
               </span>
             </motion.div>
 
@@ -71,10 +73,10 @@ export default function EnhancedHero() {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-7xl font-black mb-6 leading-[1] md:leading-tight text-center lg:text-left"
             >
-              <span className="text-white">Capture. Nurture.</span>
+              <span className="text-white">{t('headline1')}</span>
               <br />
               <span className="bg-gradient-to-r from-[#214CE5] via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Close.
+                {t('headline2')}
               </span>
             </motion.h1>
 
@@ -85,8 +87,7 @@ export default function EnhancedHero() {
               transition={{ delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg text-center lg:text-left mx-auto lg:mx-0"
             >
-              The all-in-one platform that turns visitors into leads, 
-              leads into customers, and customers into raving fans.
+              {t('subheadline')}
             </motion.p>
 
             {/* CTA Buttons */}
