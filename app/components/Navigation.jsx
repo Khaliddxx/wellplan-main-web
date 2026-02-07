@@ -2,9 +2,28 @@
 
 import Link from 'next/link';
 import { useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { ChevronDown, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
-import { useTranslations } from '../lib/translations';
+import { useTranslations, useLocale } from '../lib/translations';
+
+// Helper to create locale-aware links
+function useLocalePath() {
+  const pathname = usePathname();
+  const locale = useLocale();
+  
+  // Check if we're on a locale route
+  const isLocaleRoute = pathname?.startsWith('/en') || pathname?.startsWith('/nl');
+  const currentLocale = isLocaleRoute ? (pathname?.startsWith('/nl') ? 'nl' : 'en') : null;
+  
+  return (path) => {
+    // If we're on a locale route, prepend the locale
+    if (currentLocale && path.startsWith('/') && !path.startsWith('/http')) {
+      return `/${currentLocale}${path}`;
+    }
+    return path;
+  };
+}
 
 // Brand colors: white (#FFFFFF) and blue (#214CE5)
 const BRAND_BLUE = '#214CE5';
@@ -147,6 +166,7 @@ export default function Navigation() {
   // Get translations with fallbacks
   const t = useTranslations('nav');
   const tc = useTranslations('common');
+  const localePath = useLocalePath();
 
   const handleMouseEnter = (menu) => {
     clearTimeout(closeTimeoutRef.current);
@@ -197,13 +217,13 @@ export default function Navigation() {
               </button>
             </div>
 
-            <Link href="/pricing" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('pricing')}</Link>
+            <Link href={localePath('/pricing')} className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('pricing')}</Link>
             <Link href="#contact" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition">{t('contact')}</Link>
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher />
-            <Link href="/demo" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] hover:from-[#1a3db8] hover:to-[#14308f] text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-[#214CE5]/30">
+            <Link href={localePath('/demo')} className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] hover:from-[#1a3db8] hover:to-[#14308f] text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-[#214CE5]/30">
               <Zap className="w-4 h-4" />
               {tc('tryFree')}
             </Link>
@@ -225,9 +245,9 @@ export default function Navigation() {
       {activeDropdown && (
         <div className="absolute left-1/2 -translate-x-1/2 top-16 pt-2" onMouseEnter={() => handleMouseEnter(activeDropdown)} onMouseLeave={handleMouseLeave}>
           <div className="bg-[#0f1115] border border-white/10 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden">
-            {activeDropdown === 'features' && <FeaturesDropdown onClose={() => setActiveDropdown(null)} />}
-            {activeDropdown === 'solutions' && <SolutionsDropdown onClose={() => setActiveDropdown(null)} />}
-            {activeDropdown === 'resources' && <ResourcesDropdown onClose={() => setActiveDropdown(null)} />}
+            {activeDropdown === 'features' && <FeaturesDropdown onClose={() => setActiveDropdown(null)} localePath={localePath} />}
+            {activeDropdown === 'solutions' && <SolutionsDropdown onClose={() => setActiveDropdown(null)} localePath={localePath} />}
+            {activeDropdown === 'resources' && <ResourcesDropdown onClose={() => setActiveDropdown(null)} localePath={localePath} />}
           </div>
         </div>
       )}
@@ -237,15 +257,15 @@ export default function Navigation() {
           {/* Features - Pillar Cards */}
           <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('features')}</div>
           <div className="grid grid-cols-3 gap-2">
-            <Link href="/features/capturing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
+            <Link href={localePath('/features/capturing')} onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
               <div className="w-10 h-10 mx-auto mb-2"><CaptureIcon /></div>
               <span className="text-[10px] font-bold text-[#6B8EFF] uppercase">{t('capture')}</span>
             </Link>
-            <Link href="/features/nurturing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
+            <Link href={localePath('/features/nurturing')} onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
               <div className="w-10 h-10 mx-auto mb-2"><NurtureIcon /></div>
               <span className="text-[10px] font-bold text-purple-400 uppercase">{t('nurture')}</span>
             </Link>
-            <Link href="/features/closing" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
+            <Link href={localePath('/features/closing')} onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
               <div className="w-10 h-10 mx-auto mb-2"><CloseIcon /></div>
               <span className="text-[10px] font-bold text-emerald-400 uppercase">{t('close')}</span>
             </Link>
@@ -254,15 +274,15 @@ export default function Navigation() {
           {/* Solutions - Pillar Cards */}
           <div className="px-2 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('solutions')}</div>
           <div className="grid grid-cols-3 gap-2">
-            <Link href="/solutions/agencies" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
+            <Link href={localePath('/solutions/agencies')} onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-xl text-center">
               <Building2 className="w-6 h-6 mx-auto mb-2 text-[#6B8EFF]" />
               <span className="text-[10px] font-bold text-[#6B8EFF]">{t('forAgencies').replace('For ', '')}</span>
             </Link>
-            <Link href="/solutions/coaches" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
+            <Link href={localePath('/solutions/coaches')} onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-xl text-center">
               <Target className="w-6 h-6 mx-auto mb-2 text-purple-400" />
               <span className="text-[10px] font-bold text-purple-400">{t('forCoaches').replace('For ', '')}</span>
             </Link>
-            <Link href="/solutions/sales-teams" onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
+            <Link href={localePath('/solutions/sales-teams')} onClick={() => setMobileOpen(false)} className="p-3 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-xl text-center">
               <Briefcase className="w-6 h-6 mx-auto mb-2 text-emerald-400" />
               <span className="text-[10px] font-bold text-emerald-400">{t('forSalesTeams').replace('For ', '')}</span>
             </Link>
@@ -270,23 +290,23 @@ export default function Navigation() {
           
           {/* Resources */}
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('resources')}</div>
-          <Link href="/integrations" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('integrations')}</Link>
-          <Link href="/blog" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('blog')}</Link>
-          <Link href="/case-studies" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('caseStudies')}</Link>
-          <Link href="/roi-calculator" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('roiCalculator')}</Link>
+          <Link href={localePath('/integrations')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('integrations')}</Link>
+          <Link href={localePath('/blog')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('blog')}</Link>
+          <Link href={localePath('/case-studies')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('caseStudies')}</Link>
+          <Link href={localePath('/roi-calculator')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('roiCalculator')}</Link>
           <a href="https://knowledge.wellplan.io/kb" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('documentation')}</a>
           <a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('videoTutorials')}</a>
           
           {/* Main Links */}
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('company')}</div>
-          <Link href="/pricing" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('pricing')}</Link>
-          <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('bookDemo')}</Link>
+          <Link href={localePath('/pricing')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('pricing')}</Link>
+          <Link href={localePath('/demo')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('bookDemo')}</Link>
           <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('support')}</a>
           <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('apiReference')}</a>
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
-            <Link href="/demo" className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
+            <Link href={localePath('/demo')} className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#214CE5] text-white font-semibold rounded-lg" onClick={() => setMobileOpen(false)}>
               <Zap className="w-4 h-4" />{tc('startFreeTrial')}
             </Link>
             <Link href="https://app.wellplan.io" target="_blank" className="flex items-center justify-center gap-2 w-full px-4 py-3 border border-white/10 text-gray-300 font-medium rounded-lg" onClick={() => setMobileOpen(false)}>
@@ -299,15 +319,16 @@ export default function Navigation() {
   );
 }
 
-function FeaturesDropdown({ onClose }) {
+function FeaturesDropdown({ onClose, localePath }) {
   const t = useTranslations('nav');
+  const lp = localePath || ((p) => p);
   return (
     <div className="flex" style={{ width: '920px' }}>
       {/* 3 Pillars */}
       <div className="flex-1 p-6">
         <div className="grid grid-cols-3 gap-4">
           {/* CAPTURE */}
-          <Link href="/features/capturing" onClick={onClose} className="group block">
+          <Link href={lp('/features/capturing')} onClick={onClose} className="group block">
             <div className="p-5 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-2xl hover:border-[#214CE5]/60 transition-all hover:shadow-lg hover:shadow-[#214CE5]/20">
               <div className="block text-center mb-4 group/header">
                 <div className="w-16 h-16 mb-4 mx-auto group-hover/header:scale-110 transition">
@@ -324,7 +345,7 @@ function FeaturesDropdown({ onClose }) {
           </Link>
 
           {/* NURTURE */}
-          <Link href="/features/nurturing" onClick={onClose} className="group block">
+          <Link href={lp('/features/nurturing')} onClick={onClose} className="group block">
             <div className="p-5 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-2xl hover:border-purple-500/60 transition-all hover:shadow-lg hover:shadow-purple-500/20">
               <div className="block text-center mb-4">
                 <div className="w-16 h-16 mb-4 mx-auto group-hover:scale-110 transition">
@@ -341,7 +362,7 @@ function FeaturesDropdown({ onClose }) {
           </Link>
 
           {/* CLOSE */}
-          <Link href="/features/closing" onClick={onClose} className="group block">
+          <Link href={lp('/features/closing')} onClick={onClose} className="group block">
             <div className="p-5 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-2xl hover:border-emerald-500/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
               <div className="block text-center mb-4">
                 <div className="w-16 h-16 mb-4 mx-auto group-hover:scale-110 transition">
@@ -359,7 +380,7 @@ function FeaturesDropdown({ onClose }) {
         </div>
 
         {/* AI Bot Banner */}
-        <Link onClick={onClose} href="/features/ai-bot" className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
+        <Link onClick={onClose} href={lp('/features/ai-bot')} className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center shadow-lg shadow-[#214CE5]/30">
               <BotIcon size={24} />
@@ -384,33 +405,33 @@ function FeaturesDropdown({ onClose }) {
         </div>
         
         <div className="grid grid-cols-4 gap-2 mb-5">
-          <Link onClick={onClose} href="/integrations/whatsapp" className="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center hover:bg-[#25D366]/30 transition" title="WhatsApp">
+          <Link onClick={onClose} href={lp("/integrations/whatsapp")} className="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center hover:bg-[#25D366]/30 transition" title="WhatsApp">
             <svg viewBox="0 0 24 24" fill="#25D366" width={20} height={20}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations/telegram" className="w-10 h-10 rounded-xl bg-[#0088cc]/20 flex items-center justify-center hover:bg-[#0088cc]/30 transition" title="Telegram">
+          <Link onClick={onClose} href={lp("/integrations/telegram")} className="w-10 h-10 rounded-xl bg-[#0088cc]/20 flex items-center justify-center hover:bg-[#0088cc]/30 transition" title="Telegram">
             <svg viewBox="0 0 24 24" fill="#0088cc" width={20} height={20}><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations/instagram" className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#F77737]/20 flex items-center justify-center hover:from-[#833AB4]/30 hover:via-[#FD1D1D]/30 hover:to-[#F77737]/30 transition" title="Instagram">
+          <Link onClick={onClose} href={lp("/integrations/instagram")} className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#F77737]/20 flex items-center justify-center hover:from-[#833AB4]/30 hover:via-[#FD1D1D]/30 hover:to-[#F77737]/30 transition" title="Instagram">
             <svg viewBox="0 0 24 24" width={20} height={20}><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stopColor="#F77737"/><stop offset="50%" stopColor="#FD1D1D"/><stop offset="100%" stopColor="#833AB4"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations/facebook-messenger" className="w-10 h-10 rounded-xl bg-[#0084FF]/20 flex items-center justify-center hover:bg-[#0084FF]/30 transition" title="Messenger">
+          <Link onClick={onClose} href={lp("/integrations/facebook-messenger")} className="w-10 h-10 rounded-xl bg-[#0084FF]/20 flex items-center justify-center hover:bg-[#0084FF]/30 transition" title="Messenger">
             <svg viewBox="0 0 24 24" fill="#0084FF" width={20} height={20}><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations/google" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition" title="Google">
+          <Link onClick={onClose} href={lp("/integrations/google")} className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition" title="Google">
             <svg viewBox="0 0 24 24" width={20} height={20}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations/stripe" className="w-10 h-10 rounded-xl bg-[#635BFF]/20 flex items-center justify-center hover:bg-[#635BFF]/30 transition" title="Stripe">
+          <Link onClick={onClose} href={lp("/integrations/stripe")} className="w-10 h-10 rounded-xl bg-[#635BFF]/20 flex items-center justify-center hover:bg-[#635BFF]/30 transition" title="Stripe">
             <svg viewBox="0 0 24 24" fill="#635BFF" width={20} height={20}><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations/zapier" className="w-10 h-10 rounded-xl bg-[#FF4F00]/20 flex items-center justify-center hover:bg-[#FF4F00]/30 transition" title="Zapier">
+          <Link onClick={onClose} href={lp("/integrations/zapier")} className="w-10 h-10 rounded-xl bg-[#FF4F00]/20 flex items-center justify-center hover:bg-[#FF4F00]/30 transition" title="Zapier">
             <svg viewBox="0 0 24 24" fill="#FF4F00" width={20} height={20}><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 14.08h-3.19c-.18.792-.508 1.524-.96 2.172l2.256 2.256-1.414 1.414-2.256-2.256a6.008 6.008 0 01-2.172.96v3.19h-2v-3.19a6.008 6.008 0 01-2.172-.96l-2.256 2.256-1.414-1.414 2.256-2.256a6.008 6.008 0 01-.96-2.172h-3.19v-2h3.19c.18-.792.508-1.524.96-2.172L4.316 7.652l1.414-1.414 2.256 2.256a6.008 6.008 0 012.172-.96v-3.19h2v3.19c.792.18 1.524.508 2.172.96l2.256-2.256 1.414 1.414-2.256 2.256c.452.648.78 1.38.96 2.172h3.19v2z"/></svg>
           </Link>
-          <Link onClick={onClose} href="/integrations" className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center hover:bg-[#214CE5]/30 transition" title="More">
+          <Link onClick={onClose} href={lp("/integrations")} className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center hover:bg-[#214CE5]/30 transition" title="More">
             <span className="text-white text-xs font-bold">50+</span>
           </Link>
         </div>
 
-        <Link onClick={onClose} href="/integrations" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mb-6">
+        <Link onClick={onClose} href={lp("/integrations")} className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mb-6">
           {t('viewAllIntegrations')}
           <ArrowRight className="w-3 h-3" />
         </Link>
@@ -420,25 +441,26 @@ function FeaturesDropdown({ onClose }) {
             <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
             <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('quickLinks')}</span>
           </div>
-          <Link onClick={onClose} href="/features" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('allFeatures')}</Link>
-          <Link onClick={onClose} href="/features/shared-inbox" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('sharedInbox')}</Link>
-          <Link onClick={onClose} href="/features/analytics" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('analytics')}</Link>
-          <Link onClick={onClose} href="/features/broadcasts" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('broadcasts')}</Link>
+          <Link onClick={onClose} href={lp("/features")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('allFeatures')}</Link>
+          <Link onClick={onClose} href={lp("/features/shared-inbox")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('sharedInbox')}</Link>
+          <Link onClick={onClose} href={lp("/features/analytics")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('analytics')}</Link>
+          <Link onClick={onClose} href={lp("/features/broadcasts")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('broadcasts')}</Link>
         </div>
       </div>
     </div>
   );
 }
 
-function SolutionsDropdown({ onClose }) {
+function SolutionsDropdown({ onClose, localePath }) {
   const t = useTranslations('nav');
+  const lp = localePath || ((p) => p);
   return (
     <div className="flex" style={{ width: '920px' }}>
       {/* 3 Main Pillars - Agencies, Coaches, Sales Teams */}
       <div className="flex-1 p-6">
         <div className="grid grid-cols-3 gap-4">
           {/* FOR AGENCIES */}
-          <Link onClick={onClose} href="/solutions/agencies" className="group">
+          <Link onClick={onClose} href={lp("/solutions/agencies")} className="group">
             <div className="p-5 bg-gradient-to-br from-[#214CE5]/20 to-[#214CE5]/5 border border-[#214CE5]/30 rounded-2xl hover:border-[#214CE5]/60 transition-all hover:shadow-lg hover:shadow-[#214CE5]/20 h-full">
               <div className="w-14 h-14 mb-4 mx-auto rounded-2xl bg-[#214CE5]/30 flex items-center justify-center group-hover:scale-110 transition">
                 <Building2 className="w-7 h-7 text-[#6B8EFF]" />
@@ -466,7 +488,7 @@ function SolutionsDropdown({ onClose }) {
           </Link>
 
           {/* FOR COACHES */}
-          <Link onClick={onClose} href="/solutions/coaches" className="group">
+          <Link onClick={onClose} href={lp("/solutions/coaches")} className="group">
             <div className="p-5 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 rounded-2xl hover:border-purple-500/60 transition-all hover:shadow-lg hover:shadow-purple-500/20 h-full">
               <div className="w-14 h-14 mb-4 mx-auto rounded-2xl bg-purple-500/30 flex items-center justify-center group-hover:scale-110 transition">
                 <Target className="w-7 h-7 text-purple-400" />
@@ -494,7 +516,7 @@ function SolutionsDropdown({ onClose }) {
           </Link>
 
           {/* FOR SALES TEAMS */}
-          <Link onClick={onClose} href="/solutions/sales-teams" className="group">
+          <Link onClick={onClose} href={lp("/solutions/sales-teams")} className="group">
             <div className="p-5 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 rounded-2xl hover:border-emerald-500/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20 h-full">
               <div className="w-14 h-14 mb-4 mx-auto rounded-2xl bg-emerald-500/30 flex items-center justify-center group-hover:scale-110 transition">
                 <Briefcase className="w-7 h-7 text-emerald-400" />
@@ -523,7 +545,7 @@ function SolutionsDropdown({ onClose }) {
         </div>
 
         {/* CTA Banner */}
-        <Link onClick={onClose} href="/demo" className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
+        <Link onClick={onClose} href={lp("/demo")} className="mt-4 flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl hover:border-[#214CE5]/40 transition group">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center shadow-lg shadow-[#214CE5]/30">
               <span className="text-xl">🎯</span>
@@ -547,49 +569,49 @@ function SolutionsDropdown({ onClose }) {
         </div>
         
         <div className="space-y-1 max-h-[280px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-          <Link onClick={onClose} href="/industries/ecommerce" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/ecommerce")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-[#214CE5]/20 flex items-center justify-center">
               <ShoppingCart className="w-4 h-4 text-[#6B8EFF]" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('ecommerce')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/real-estate" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/real-estate")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
               <Home className="w-4 h-4 text-emerald-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('realEstate')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/healthcare" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/healthcare")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
               <Stethoscope className="w-4 h-4 text-red-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('healthcare')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/education" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/education")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
               <GraduationCap className="w-4 h-4 text-purple-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('education')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/restaurants" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/restaurants")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
               <Utensils className="w-4 h-4 text-orange-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('restaurants')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/fitness" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/fitness")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-pink-500/20 flex items-center justify-center">
               <Dumbbell className="w-4 h-4 text-pink-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('fitness')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/automotive" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/automotive")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
               <Car className="w-4 h-4 text-cyan-400" />
             </div>
             <span className="text-[12px] text-gray-400 group-hover:text-white">{t('automotive')}</span>
           </Link>
-          <Link onClick={onClose} href="/industries/professional-services" className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
+          <Link onClick={onClose} href={lp("/industries/professional-services")} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/[0.04] transition group">
             <div className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center">
               <Briefcase className="w-4 h-4 text-violet-400" />
             </div>
@@ -597,7 +619,7 @@ function SolutionsDropdown({ onClose }) {
           </Link>
         </div>
 
-        <Link onClick={onClose} href="/industries" className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mt-4 pt-4 border-t border-white/10">
+        <Link onClick={onClose} href={lp("/industries")} className="flex items-center gap-2 text-[11px] font-semibold text-[#214CE5] hover:text-[#6B8EFF] transition mt-4 pt-4 border-t border-white/10">
           {t('viewAllIndustries')}
           <ArrowRight className="w-3 h-3" />
         </Link>
@@ -607,16 +629,17 @@ function SolutionsDropdown({ onClose }) {
             <div className="w-2 h-2 rounded-full bg-orange-400"></div>
             <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('businessType')}</span>
           </div>
-          <Link onClick={onClose} href="/solutions/b2b" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2bSales')}</Link>
-          <Link onClick={onClose} href="/solutions/b2c" className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2cEngagement')}</Link>
+          <Link onClick={onClose} href={lp("/solutions/b2b")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2bSales')}</Link>
+          <Link onClick={onClose} href={lp("/solutions/b2c")} className="block py-2 text-[12px] text-gray-400 hover:text-white hover:translate-x-1 transition-all">→ {t('b2cEngagement')}</Link>
         </div>
       </div>
     </div>
   );
 }
 
-function ResourcesDropdown({ onClose }) {
+function ResourcesDropdown({ onClose, localePath }) {
   const t = useTranslations('nav');
+  const lp = localePath || ((p) => p);
   return (
     <div className="flex p-6 gap-6" style={{ width: '640px' }}>
       <div className="flex-1 space-y-1">
@@ -624,7 +647,7 @@ function ResourcesDropdown({ onClose }) {
           <div className="w-2 h-2 rounded-full bg-[#214CE5]"></div>
           <span className="text-[11px] font-bold text-white uppercase tracking-wider">{t('learn')}</span>
         </div>
-        <Link onClick={onClose} href="/case-studies" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href={lp("/case-studies")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <BarChart3 className="w-5 h-5 text-emerald-400" />
           </div>
@@ -642,7 +665,7 @@ function ResourcesDropdown({ onClose }) {
             <p className="text-[11px] text-gray-500">{t('documentationDesc')}</p>
           </div>
         </Link>
-        <Link onClick={onClose} href="/blog" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href={lp("/blog")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Newspaper className="w-5 h-5 text-purple-400" />
           </div>
@@ -651,7 +674,7 @@ function ResourcesDropdown({ onClose }) {
             <p className="text-[11px] text-gray-500">{t('blogDesc')}</p>
           </div>
         </Link>
-        <Link onClick={onClose} href="/roi-calculator" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href={lp("/roi-calculator")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Calculator className="w-5 h-5 text-pink-400" />
           </div>
@@ -693,7 +716,7 @@ function ResourcesDropdown({ onClose }) {
             <p className="text-[11px] text-gray-500">{t('helpCenterDesc')}</p>
           </div>
         </Link>
-        <Link onClick={onClose} href="/demo" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link onClick={onClose} href={lp("/demo")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <Calendar className="w-5 h-5 text-green-400" />
           </div>
