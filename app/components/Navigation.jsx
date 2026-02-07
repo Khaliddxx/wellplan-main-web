@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, ChevronRight, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users, Bot } from 'lucide-react';
+import { ChevronDown, ChevronRight, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users, Bot, Handshake } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslations, useLocale } from '../lib/translations';
 
