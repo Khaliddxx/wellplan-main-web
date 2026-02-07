@@ -4,8 +4,16 @@ export default function sitemap() {
   const baseUrl = 'https://wellplan.io';
   const locales = ['en', 'nl'];
 
-  // Homepage with locales
-  const homepages = locales.map((locale) => ({
+  // Root homepage
+  const rootHomepage = {
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1,
+  };
+
+  // Localized homepages with alternates
+  const localizedHomepages = locales.map((locale) => ({
     url: `${baseUrl}/${locale}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
@@ -18,7 +26,8 @@ export default function sitemap() {
     },
   }));
 
-  const staticPages = [
+  // Static pages - will generate both root and localized versions
+  const staticPageRoutes = [
     { route: '/pricing', priority: 0.9, changeFreq: 'weekly' },
     { route: '/integrations', priority: 0.9, changeFreq: 'weekly' },
     { route: '/demo', priority: 0.9, changeFreq: 'monthly' },
@@ -30,17 +39,35 @@ export default function sitemap() {
     { route: '/solutions/agencies', priority: 0.8, changeFreq: 'monthly' },
     { route: '/solutions/coaches', priority: 0.8, changeFreq: 'monthly' },
     { route: '/solutions/sales-teams', priority: 0.8, changeFreq: 'monthly' },
-    { route: '/about', priority: 0.7, changeFreq: 'monthly' },
-    { route: '/contact', priority: 0.7, changeFreq: 'monthly' },
     { route: '/privacy', priority: 0.3, changeFreq: 'yearly' },
     { route: '/terms', priority: 0.3, changeFreq: 'yearly' },
-  ].map((page) => ({
+  ];
+
+  // Generate root static pages
+  const rootStaticPages = staticPageRoutes.map((page) => ({
     url: `${baseUrl}${page.route}`,
     lastModified: new Date(),
     changeFrequency: page.changeFreq,
     priority: page.priority,
   }));
 
+  // Generate localized static pages with alternates
+  const localizedStaticPages = staticPageRoutes.flatMap((page) =>
+    locales.map((locale) => ({
+      url: `${baseUrl}/${locale}${page.route}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFreq,
+      priority: page.priority,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/en${page.route}`,
+          nl: `${baseUrl}/nl${page.route}`,
+        },
+      },
+    }))
+  );
+
+  // Integration pages (root only - these aren't translated)
   const integrationPages = integrations.map((integration) => ({
     url: `${baseUrl}/integrations/${integration.slug}`,
     lastModified: new Date(),
@@ -48,5 +75,11 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
-  return [...homepages, ...staticPages, ...integrationPages];
+  return [
+    rootHomepage,
+    ...localizedHomepages,
+    ...rootStaticPages,
+    ...localizedStaticPages,
+    ...integrationPages,
+  ];
 }
