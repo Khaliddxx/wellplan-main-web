@@ -73,14 +73,9 @@ function FeaturesSection({ t }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const features = [
-    { icon: Calendar, title: 'Calendar & Booking', description: 'Let clients book sessions directly. Sync with Google, Outlook, and more.', color: '#a855f7' },
-    { icon: MessageSquare, title: 'Client Messaging', description: 'WhatsApp, SMS, email - all in one inbox. Never miss a client message.', color: '#ec4899' },
-    { icon: Users, title: 'Community & Courses', description: 'Host group programs, courses, and communities. Scale your impact.', color: '#06b6d4' },
-    { icon: Bot, title: 'AI Assistant', description: 'AI handles FAQs, qualifies leads, and books sessions 24/7.', color: '#8b5cf6' },
-    { icon: TrendingUp, title: 'Progress Tracking', description: 'Track client progress, set goals, and celebrate wins together.', color: '#10b981' },
-    { icon: Clock, title: 'Automated Follow-ups', description: 'Never lose a client. Automated sequences keep engagement high.', color: '#f59e0b' },
-  ];
+  const featureKeys = ['calendar', 'messaging', 'community', 'ai', 'progress', 'followups'];
+  const featureIcons = { calendar: Calendar, messaging: MessageSquare, community: Users, ai: Bot, progress: TrendingUp, followups: Clock };
+  const featureColors = { calendar: '#a855f7', messaging: '#ec4899', community: '#06b6d4', ai: '#8b5cf6', progress: '#10b981', followups: '#f59e0b' };
 
   return (
     <section ref={ref} className="py-24 px-6 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f15]">
@@ -99,21 +94,27 @@ function FeaturesSection({ t }) {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: idx * 0.1 }}
-              className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-purple-500/30 transition group"
-            >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition" style={{ backgroundColor: `${feature.color}20` }}>
-                <feature.icon className="w-6 h-6" style={{ color: feature.color }} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
-            </motion.div>
-          ))}
+          {featureKeys.map((key, idx) => {
+            const Icon = featureIcons[key];
+            const color = featureColors[key];
+            const feature = t(`features.${key}`);
+            
+            return (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: idx * 0.1 }}
+                className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-purple-500/30 transition group"
+              >
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition" style={{ backgroundColor: `${color}20` }}>
+                  <Icon className="w-6 h-6" style={{ color }} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{typeof feature === 'object' ? feature.title : feature}</h3>
+                <p className="text-gray-400">{typeof feature === 'object' ? feature.description : ''}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

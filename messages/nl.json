@@ -396,7 +396,15 @@
     "featuresTitle": "Alles wat Coaches Nodig Hebben",
     "featuresSubtitle": "Gebouwd voor 1:1 relaties op schaal",
     "ctaTitle": "Klaar om Je Coaching te Schalen?",
-    "ctaSubtitle": "Sluit je aan bij 1.000+ coaches die al groeien met WellPlan"
+    "ctaSubtitle": "Sluit je aan bij 1.000+ coaches die al groeien met WellPlan",
+    "features": {
+      "calendar": { "title": "Agenda & Boekingen", "description": "Laat klanten direct sessies boeken. Sync met Google, Outlook en meer." },
+      "messaging": { "title": "Klant Berichten", "description": "WhatsApp, SMS, e-mail - alles in één inbox. Mis nooit een klantbericht." },
+      "community": { "title": "Community & Cursussen", "description": "Host groepsprogramma's, cursussen en communities. Vergroot je impact." },
+      "ai": { "title": "AI Assistent", "description": "AI beantwoordt FAQ's, kwalificeert leads en boekt sessies 24/7." },
+      "progress": { "title": "Voortgang Bijhouden", "description": "Volg klantvoortgang, stel doelen en vier successen samen." },
+      "followups": { "title": "Geautomatiseerde Follow-ups", "description": "Verlies nooit een klant. Geautomatiseerde sequenties houden engagement hoog." }
+    }
   },
   "salesPage": {
     "badge": "Gebouwd voor Sales Teams",
@@ -408,6 +416,14 @@
     "featuresTitle": "Alles wat Sales Teams Nodig Hebben",
     "featuresSubtitle": "Gebouwd voor high-velocity sales",
     "ctaTitle": "Klaar om Meer Deals te Sluiten?",
-    "ctaSubtitle": "Sluit je aan bij 2.000+ sales teams die al winnen met WellPlan"
+    "ctaSubtitle": "Sluit je aan bij 2.000+ sales teams die al winnen met WellPlan",
+    "features": {
+      "pipeline": { "title": "Visuele Pipeline", "description": "Drag-and-drop deal beheer. Zie je volledige pipeline in één oogopslag." },
+      "scoring": { "title": "AI Lead Scoring", "description": "AI prioriteert je heetste leads zodat je focust op deals die sluiten." },
+      "assistant": { "title": "AI Sales Assistent", "description": "AI kwalificeert leads, boekt meetings en volgt automatisch op." },
+      "calling": { "title": "Ingebouwd Bellen", "description": "Bel prospects direct vanuit het CRM. Alle gesprekken automatisch gelogd." },
+      "email": { "title": "E-mail Sequenties", "description": "Geautomatiseerde follow-up sequenties die leads naar afsluiting brengen." },
+      "analytics": { "title": "Sales Analytics", "description": "Volg team prestaties, deal snelheid en voorspel omzet." }
+    }
   }
 }

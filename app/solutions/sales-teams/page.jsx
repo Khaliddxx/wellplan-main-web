@@ -73,14 +73,9 @@ function FeaturesSection({ t }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const features = [
-    { icon: Users, title: 'Visual Pipeline', description: 'Drag-and-drop deal management. See your entire pipeline at a glance.', color: '#10b981' },
-    { icon: Target, title: 'AI Lead Scoring', description: 'AI prioritizes your hottest leads so you focus on deals that close.', color: '#06b6d4' },
-    { icon: Bot, title: 'AI Sales Assistant', description: 'AI qualifies leads, books meetings, and follows up automatically.', color: '#8b5cf6' },
-    { icon: Phone, title: 'Built-in Calling', description: 'Call prospects directly from the CRM. All calls logged automatically.', color: '#f59e0b' },
-    { icon: Mail, title: 'Email Sequences', description: 'Automated follow-up sequences that nurture leads to close.', color: '#ef4444' },
-    { icon: BarChart3, title: 'Sales Analytics', description: 'Track team performance, deal velocity, and forecast revenue.', color: '#ec4899' },
-  ];
+  const featureKeys = ['pipeline', 'scoring', 'assistant', 'calling', 'email', 'analytics'];
+  const featureIcons = { pipeline: Users, scoring: Target, assistant: Bot, calling: Phone, email: Mail, analytics: BarChart3 };
+  const featureColors = { pipeline: '#10b981', scoring: '#06b6d4', assistant: '#8b5cf6', calling: '#f59e0b', email: '#ef4444', analytics: '#ec4899' };
 
   return (
     <section ref={ref} className="py-24 px-6 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f15]">
@@ -99,21 +94,27 @@ function FeaturesSection({ t }) {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: idx * 0.1 }}
-              className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-emerald-500/30 transition group"
-            >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition" style={{ backgroundColor: `${feature.color}20` }}>
-                <feature.icon className="w-6 h-6" style={{ color: feature.color }} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
-            </motion.div>
-          ))}
+          {featureKeys.map((key, idx) => {
+            const Icon = featureIcons[key];
+            const color = featureColors[key];
+            const feature = t(`features.${key}`);
+            
+            return (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: idx * 0.1 }}
+                className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-emerald-500/30 transition group"
+              >
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition" style={{ backgroundColor: `${color}20` }}>
+                  <Icon className="w-6 h-6" style={{ color }} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{typeof feature === 'object' ? feature.title : feature}</h3>
+                <p className="text-gray-400">{typeof feature === 'object' ? feature.description : ''}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

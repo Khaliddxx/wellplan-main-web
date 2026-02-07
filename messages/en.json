@@ -396,7 +396,15 @@
     "featuresTitle": "Everything Coaches Need",
     "featuresSubtitle": "Built for 1:1 relationships at scale",
     "ctaTitle": "Ready to Scale Your Coaching?",
-    "ctaSubtitle": "Join 1,000+ coaches already growing with WellPlan"
+    "ctaSubtitle": "Join 1,000+ coaches already growing with WellPlan",
+    "features": {
+      "calendar": { "title": "Calendar & Booking", "description": "Let clients book sessions directly. Sync with Google, Outlook, and more." },
+      "messaging": { "title": "Client Messaging", "description": "WhatsApp, SMS, email - all in one inbox. Never miss a client message." },
+      "community": { "title": "Community & Courses", "description": "Host group programs, courses, and communities. Scale your impact." },
+      "ai": { "title": "AI Assistant", "description": "AI handles FAQs, qualifies leads, and books sessions 24/7." },
+      "progress": { "title": "Progress Tracking", "description": "Track client progress, set goals, and celebrate wins together." },
+      "followups": { "title": "Automated Follow-ups", "description": "Never lose a client. Automated sequences keep engagement high." }
+    }
   },
   "salesPage": {
     "badge": "Built for Sales Teams",
@@ -408,6 +416,14 @@
     "featuresTitle": "Everything Sales Teams Need",
     "featuresSubtitle": "Built for high-velocity sales",
     "ctaTitle": "Ready to Close More Deals?",
-    "ctaSubtitle": "Join 2,000+ sales teams already winning with WellPlan"
+    "ctaSubtitle": "Join 2,000+ sales teams already winning with WellPlan",
+    "features": {
+      "pipeline": { "title": "Visual Pipeline", "description": "Drag-and-drop deal management. See your entire pipeline at a glance." },
+      "scoring": { "title": "AI Lead Scoring", "description": "AI prioritizes your hottest leads so you focus on deals that close." },
+      "assistant": { "title": "AI Sales Assistant", "description": "AI qualifies leads, books meetings, and follows up automatically." },
+      "calling": { "title": "Built-in Calling", "description": "Call prospects directly from the CRM. All calls logged automatically." },
+      "email": { "title": "Email Sequences", "description": "Automated follow-up sequences that nurture leads to close." },
+      "analytics": { "title": "Sales Analytics", "description": "Track team performance, deal velocity, and forecast revenue." }
+    }
   }
 }
