@@ -3,64 +3,61 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Bot, MessageSquare, Calendar, Clock, Brain, Zap, 
+  MessageSquare, Calendar, Clock, Brain, Zap, 
   Globe, Users, TrendingUp, CheckCircle, ArrowRight,
   Sparkles, Shield, BarChart3, Headphones, Settings,
-  Phone, Star, FileText, Workflow, PlayCircle, Mic,
-  PenTool, ThumbsUp, MessageCircle, Target
+  Workflow, PlayCircle, ThumbsUp, MessageCircle
 } from 'lucide-react';
 import { useTranslations } from '@/app/lib/translations';
 
-// GHL AI Employee Suite
-const aiSuite = [
-  { icon: MessageCircle, name: 'Conversation AI', desc: 'Text-based chat automation' },
-  { icon: Mic, name: 'Voice AI', desc: 'AI phone agents' },
-  { icon: Star, name: 'Reviews AI', desc: 'Automated review responses' },
-  { icon: FileText, name: 'Content AI', desc: 'Generate marketing content' },
-  { icon: PenTool, name: 'Funnel AI', desc: 'Build pages with AI' },
-  { icon: Workflow, name: 'Workflow AI', desc: 'Smart automations' },
+// Key benefits for messaging AI
+const keyBenefits = [
+  { icon: MessageCircle, title: 'WhatsApp & Telegram', desc: 'AI lives where your customers are' },
+  { icon: Calendar, title: 'Calendar Sync', desc: 'Real-time availability, no double bookings' },
+  { icon: Clock, title: '24/7 Booking', desc: 'Never miss a lead, even at 3am' },
+  { icon: Zap, title: 'Instant Response', desc: 'Reply in seconds, not hours' },
 ];
 
 const features = [
   {
-    icon: Brain,
-    title: '24/7 Lead Qualification',
-    description: 'AI instantly engages every lead, asks qualifying questions, and scores them based on intent and fit. Uses conversation history to maintain context across replies.',
+    icon: Calendar,
+    title: 'Real-Time Calendar Sync',
+    description: 'AI checks your live calendar availability before offering time slots. No double bookings, no manual back-and-forth. Syncs with Google Calendar, Outlook, and more.',
   },
   {
-    icon: Calendar,
-    title: 'Smart Appointment Booking',
-    description: 'Automatically checks your calendar availability and books meetings. AI pauses after booking to ensure smooth handoff to follow-up processes.',
+    icon: Brain,
+    title: 'Smart Lead Qualification',
+    description: 'AI asks qualifying questions before booking. Filter out tire-kickers and only book meetings with qualified prospects who are ready to buy.',
   },
   {
     icon: MessageSquare,
     title: 'Natural Conversations',
-    description: 'Guided form conversations with varied phrasing to avoid repetition. Adjusts tone based on user inputs and gently refocuses off-topic replies.',
+    description: 'Human-like chat that varies phrasing, adjusts tone based on context, and gently refocuses off-topic replies. Customers won\'t know it\'s a bot.',
   },
   {
-    icon: Target,
-    title: 'Intent Detection',
-    description: 'Two modes: General Support for Q&A queries, and Appointment Booking for scheduling. Dynamically switches intent based on contact state.',
+    icon: Clock,
+    title: 'Timezone Intelligence',
+    description: 'Automatically detects customer timezone and shows availability in their local time. Perfect for businesses with international clients.',
   },
   {
     icon: Zap,
-    title: 'Three Operating Modes',
-    description: 'OFF for testing, SUGGESTIVE for human-approved responses, or AUTO-PILOT for fully automated conversations. Full control over your AI.',
+    title: 'Instant Confirmations',
+    description: 'Send booking confirmations, reminders, and follow-ups automatically. Reduce no-shows with smart reminder sequences.',
   },
   {
     icon: Users,
-    title: 'Seamless Handoff',
-    description: 'Set maximum message count before handoff. Transfer to human agents or another AI bot with full conversation context.',
+    title: 'Team Calendars',
+    description: 'Route bookings to the right team member based on service type, availability, or round-robin. Perfect for teams and agencies.',
   },
 ];
 
 const channels = [
-  { name: 'SMS', color: '#F22F46' },
-  { name: 'WhatsApp', color: '#25D366' },
-  { name: 'Facebook', color: '#1877F2' },
+  { name: 'WhatsApp', color: '#25D366', primary: true },
+  { name: 'Telegram', color: '#0088CC', primary: true },
   { name: 'Instagram', color: '#E4405F' },
+  { name: 'Facebook', color: '#1877F2' },
+  { name: 'SMS', color: '#F22F46' },
   { name: 'Web Chat', color: '#214CE5' },
-  { name: 'Live Chat', color: '#10B981' },
   { name: 'Google Business', color: '#4285F4' },
 ];
 
@@ -83,10 +80,10 @@ const trainingMethods = [
 ];
 
 const useCases = [
-  { title: 'Lead Generation', description: 'Capture and qualify visitors 24/7', metrics: '3x more qualified leads' },
-  { title: 'Appointment Setting', description: 'Let AI handle scheduling', metrics: '80% booking rate' },
-  { title: 'Customer Support', description: 'Answer FAQs instantly', metrics: '90% auto-resolved' },
-  { title: 'E-commerce', description: 'Product recommendations', metrics: '25% higher AOV' },
+  { title: 'Consultants & Coaches', description: 'Book discovery calls 24/7 while you sleep', metrics: '3x more bookings' },
+  { title: 'Salons & Spas', description: 'Let clients book appointments via WhatsApp', metrics: '80% booking rate' },
+  { title: 'Real Estate', description: 'Qualify buyers and schedule viewings', metrics: '2x more viewings' },
+  { title: 'Healthcare', description: 'Patient appointment scheduling', metrics: '50% less no-shows' },
 ];
 
 export default function AIBotPage() {
@@ -113,15 +110,14 @@ export default function AIBotPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight">
-              Your AI Employee That{' '}
-              <span className="bg-gradient-to-r from-[#214CE5] via-purple-400 to-emerald-400 bg-clip-text text-transparent">
-                Never Sleeps
+              AI That Books{' '}
+              <span className="bg-gradient-to-r from-[#25D366] via-[#214CE5] to-purple-400 bg-clip-text text-transparent">
+                Appointments 24/7
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Deploy Conversation AI that qualifies leads, books appointments, and handles support 24/7. 
-              Works across SMS, WhatsApp, Instagram, Facebook, and web chat.
+              Put AI in your WhatsApp & Telegram that qualifies leads and books appointments — synced with your calendar in real-time. Never miss a booking again.
             </p>
 
             {/* CTA Buttons */}
@@ -148,31 +144,30 @@ export default function AIBotPage() {
                 <div className="text-xs sm:text-sm text-gray-500">Response Time</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-black text-white mb-1">24/7</div>
-                <div className="text-xs sm:text-sm text-gray-500">Availability</div>
+                <div className="text-3xl sm:text-4xl font-black text-white mb-1">80%</div>
+                <div className="text-xs sm:text-sm text-gray-500">Booking Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-black text-white mb-1">6+</div>
-                <div className="text-xs sm:text-sm text-gray-500">AI Tools</div>
+                <div className="text-3xl sm:text-4xl font-black text-white mb-1">24/7</div>
+                <div className="text-xs sm:text-sm text-gray-500">Availability</div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* AI Suite Section */}
+      {/* Key Benefits */}
       <section className="py-12 border-y border-white/5 bg-gradient-to-r from-[#0a0a0a] via-[#0f0f1a] to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-center text-gray-500 mb-8">Complete AI Employee Suite</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {aiSuite.map((ai) => (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {keyBenefits.map((benefit) => (
               <div 
-                key={ai.name}
-                className="flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/5 hover:border-[#214CE5]/30 transition"
+                key={benefit.title}
+                className="flex flex-col items-center gap-2 p-6 bg-white/5 rounded-xl border border-white/5"
               >
-                <ai.icon className="w-6 h-6 text-[#6B8EFF]" />
-                <span className="text-sm font-semibold text-white">{ai.name}</span>
-                <span className="text-xs text-gray-500 text-center">{ai.desc}</span>
+                <benefit.icon className="w-8 h-8 text-[#6B8EFF]" />
+                <span className="font-bold text-white">{benefit.title}</span>
+                <span className="text-sm text-gray-500 text-center">{benefit.desc}</span>
               </div>
             ))}
           </div>
@@ -182,18 +177,24 @@ export default function AIBotPage() {
       {/* Channels Section */}
       <section className="py-12 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-center text-gray-500 mb-6">Works on all your channels</p>
+          <p className="text-center text-gray-500 mb-6">Deploy AI on your favorite messaging apps</p>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {channels.map((channel) => (
               <div 
                 key={channel.name}
-                className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+                  channel.primary 
+                    ? 'bg-white/10 border border-white/20' 
+                    : 'bg-white/5'
+                }`}
               >
                 <span 
-                  className="w-2 h-2 rounded-full"
+                  className="w-2.5 h-2.5 rounded-full"
                   style={{ backgroundColor: channel.color }}
                 />
-                <span className="text-sm text-gray-300">{channel.name}</span>
+                <span className={`text-sm ${channel.primary ? 'text-white font-semibold' : 'text-gray-400'}`}>
+                  {channel.name}
+                </span>
               </div>
             ))}
           </div>
@@ -317,28 +318,28 @@ export default function AIBotPage() {
         </div>
       </section>
 
-      {/* Voice AI Section */}
+      {/* How Booking Works */}
       <section className="py-16 sm:py-24 border-y border-white/5 bg-gradient-to-r from-[#0a0a0a] via-[#0f0f1a] to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
-                <Phone className="w-3 h-3 text-purple-400" />
-                <span className="text-xs font-semibold text-purple-400">VOICE AI</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/10 border border-[#25D366]/20 mb-4">
+                <MessageCircle className="w-3 h-3 text-[#25D366]" />
+                <span className="text-xs font-semibold text-[#25D366]">LIVE EXAMPLE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black mb-4">
-                AI Phone Agents
+                See How It Books Appointments
               </h2>
               <p className="text-lg text-gray-400 mb-6">
-                Deploy AI agents that handle inbound and outbound calls. Natural voice conversations that qualify leads, book appointments, and provide support — all without human intervention.
+                Your AI assistant lives in WhatsApp or Telegram. When a lead messages, AI qualifies them, checks your real-time calendar availability, and books the appointment — all automatically.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'Natural-sounding voice conversations',
-                  'Inbound & outbound call handling',
-                  'Call transcription & summaries',
-                  'Seamless transfer to human agents',
-                  'Works with your existing phone numbers',
+                  'Qualifies leads with custom questions',
+                  'Shows only available time slots',
+                  'Handles rescheduling & cancellations',
+                  'Sends confirmation + calendar invite',
+                  'Follows up with reminders to reduce no-shows',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
@@ -346,34 +347,43 @@ export default function AIBotPage() {
                   </li>
                 ))}
               </ul>
-              <Link 
-                href="/demo"
-                className="inline-flex items-center gap-2 text-[#6B8EFF] font-semibold hover:underline"
-              >
-                Learn more about Voice AI
-                <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-[#214CE5]/20 rounded-3xl blur-3xl" />
-              <div className="relative bg-[#111111] border border-white/10 rounded-2xl p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-[#214CE5] flex items-center justify-center">
-                    <Mic className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#25D366]/20 to-[#214CE5]/20 rounded-3xl blur-3xl" />
+              <div className="relative bg-[#111111] border border-white/10 rounded-2xl p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">AI Voice Agent</p>
-                    <p className="text-sm text-gray-500">Active • Handling calls</p>
+                    <p className="font-semibold">WhatsApp</p>
+                    <p className="text-xs text-gray-500">Your Business</p>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div className="p-3 bg-white/5 rounded-lg">
-                    <p className="text-xs text-gray-500 mb-1">Incoming call</p>
-                    <p className="text-sm">"Hi, I'd like to schedule an appointment..."</p>
+                  <div className="flex justify-end">
+                    <div className="p-3 bg-[#25D366]/20 rounded-2xl rounded-tr-sm max-w-[80%]">
+                      <p className="text-sm">Hi! I'd like to book a consultation</p>
+                    </div>
                   </div>
-                  <div className="p-3 bg-[#214CE5]/10 rounded-lg border border-[#214CE5]/20">
-                    <p className="text-xs text-[#6B8EFF] mb-1">AI Response</p>
-                    <p className="text-sm">"Of course! I can help you with that. What day works best for you?"</p>
+                  <div className="p-3 bg-white/5 rounded-2xl rounded-tl-sm max-w-[80%]">
+                    <p className="text-sm">Great! I can help with that. First, what service are you interested in? 🗓️</p>
+                  </div>
+                  <div className="flex justify-end">
+                    <div className="p-3 bg-[#25D366]/20 rounded-2xl rounded-tr-sm max-w-[80%]">
+                      <p className="text-sm">Strategy session</p>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white/5 rounded-2xl rounded-tl-sm max-w-[80%]">
+                    <p className="text-sm">Perfect! I have these slots available this week:<br/><br/>• Tue 10:00 AM<br/>• Wed 2:00 PM<br/>• Thu 11:00 AM<br/><br/>Which works best?</p>
+                  </div>
+                  <div className="flex justify-end">
+                    <div className="p-3 bg-[#25D366]/20 rounded-2xl rounded-tr-sm max-w-[80%]">
+                      <p className="text-sm">Wednesday 2pm please</p>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white/5 rounded-2xl rounded-tl-sm max-w-[80%]">
+                    <p className="text-sm">✅ Booked! Wed 2:00 PM. You'll receive a calendar invite shortly. See you then!</p>
                   </div>
                 </div>
               </div>
@@ -387,8 +397,9 @@ export default function AIBotPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
-              Built for <span className="text-[#6B8EFF]">Every Industry</span>
+              Perfect for <span className="text-[#6B8EFF]">Any Business</span>
             </h2>
+            <p className="text-lg text-gray-400">If you book appointments, this AI is for you.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
