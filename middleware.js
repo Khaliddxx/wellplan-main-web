@@ -1,32 +1,13 @@
 import { NextResponse } from 'next/server';
 
-const locales = ['en', 'nl'];
-const defaultLocale = 'en';
-
 export function middleware(request) {
-  const pathname = request.nextUrl.pathname;
-  
-  // Skip static files and api
-  if (pathname.includes('.') || pathname.startsWith('/api')) {
-    return NextResponse.next();
+  // Rewrite root to /en
+  if (request.nextUrl.pathname === '/') {
+    return NextResponse.rewrite(new URL('/en', request.url));
   }
-  
-  // Check if pathname already has locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
-  
-  if (pathnameHasLocale) {
-    // Has locale - continue (let Next.js handle [locale] route)
-    return NextResponse.next();
-  }
-  
-  // No locale - rewrite to default locale (don't redirect, keep URL clean)
-  return NextResponse.rewrite(
-    new URL(`/${defaultLocale}${pathname}`, request.url)
-  );
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
+  matcher: ['/']
 };

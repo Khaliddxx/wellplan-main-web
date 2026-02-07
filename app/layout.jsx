@@ -2,16 +2,13 @@ import './globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://wellplan.io'),
-  title: {
-    default: 'WellPlan | Capture. Nurture. Close.',
-    template: '%s | WellPlan'
-  },
-  description: 'The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans.',
+  title: 'WellPlan | Capture. Nurture. Close.',
+  description: 'The all-in-one platform for lead generation.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className="bg-[#0a0a0a]">{children}</body>
     </html>
   );
