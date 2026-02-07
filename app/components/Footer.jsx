@@ -3,8 +3,51 @@
 import Link from 'next/link';
 import { Zap } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations, useLocale } from '../lib/translations';
 
 export default function Footer() {
+  // Try to get translations, fallback to English defaults if not in a locale context
+  let t, locale;
+  try {
+    t = useTranslations('footer');
+    locale = useLocale();
+  } catch {
+    // Not in translation context, use defaults
+    t = (key) => {
+      const defaults = {
+        description: "The all-in-one platform to capture leads, nurture relationships, and close deals faster.",
+        features: "Features",
+        captureLeads: "Capture Leads",
+        nurtureContacts: "Nurture Contacts",
+        closeDeals: "Close Deals",
+        aiLeadBot: "AI Lead Bot",
+        integrations: "Integrations",
+        solutions: "Solutions",
+        forAgencies: "For Agencies",
+        forCoaches: "For Coaches",
+        forSalesTeams: "For Sales Teams",
+        allIndustries: "All Industries",
+        resources: "Resources",
+        blog: "Blog",
+        caseStudies: "Case Studies",
+        roiCalculator: "ROI Calculator",
+        documentation: "Documentation",
+        videoTutorials: "Video Tutorials",
+        company: "Company",
+        aboutUs: "About Us",
+        pricing: "Pricing",
+        bookDemo: "Book a Demo",
+        contact: "Contact",
+        support: "Support",
+        privacyPolicy: "Privacy Policy",
+        termsOfService: "Terms of Service",
+        security: "Security"
+      };
+      return defaults[key] || key;
+    };
+    locale = 'en';
+  }
+
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/5">
       {/* Main Footer */}
@@ -16,7 +59,7 @@ export default function Footer() {
               <img src="/Frame 69.png" alt="WellPlan" className="h-8" />
             </Link>
             <p className="text-gray-500 text-sm mb-6 max-w-xs">
-              The all-in-one platform to capture leads, nurture relationships, and close deals faster.
+              {t('description')}
             </p>
             <div className="flex gap-3">
               <a href="https://twitter.com/wellplan" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#214CE5]/20 flex items-center justify-center transition group">
@@ -33,48 +76,48 @@ export default function Footer() {
 
           {/* Features */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Features</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">{t('features')}</h4>
             <ul className="space-y-3">
-              <li><Link href="/features/capturing" className="text-gray-500 hover:text-white text-sm transition">Capture Leads</Link></li>
-              <li><Link href="/features/nurturing" className="text-gray-500 hover:text-white text-sm transition">Nurture Contacts</Link></li>
-              <li><Link href="/features/closing" className="text-gray-500 hover:text-white text-sm transition">Close Deals</Link></li>
-              <li><Link href="/features/ai-bot" className="text-gray-500 hover:text-white text-sm transition">AI Lead Bot</Link></li>
-              <li><Link href="/integrations" className="text-gray-500 hover:text-white text-sm transition">Integrations</Link></li>
+              <li><Link href="/features/capturing" className="text-gray-500 hover:text-white text-sm transition">{t('captureLeads')}</Link></li>
+              <li><Link href="/features/nurturing" className="text-gray-500 hover:text-white text-sm transition">{t('nurtureContacts')}</Link></li>
+              <li><Link href="/features/closing" className="text-gray-500 hover:text-white text-sm transition">{t('closeDeals')}</Link></li>
+              <li><Link href="/features/ai-bot" className="text-gray-500 hover:text-white text-sm transition">{t('aiLeadBot')}</Link></li>
+              <li><Link href="/integrations" className="text-gray-500 hover:text-white text-sm transition">{t('integrations')}</Link></li>
             </ul>
           </div>
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Solutions</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">{t('solutions')}</h4>
             <ul className="space-y-3">
-              <li><Link href="/solutions/agencies" className="text-gray-500 hover:text-white text-sm transition">For Agencies</Link></li>
-              <li><Link href="/solutions/coaches" className="text-gray-500 hover:text-white text-sm transition">For Coaches</Link></li>
-              <li><Link href="/solutions/sales-teams" className="text-gray-500 hover:text-white text-sm transition">For Sales Teams</Link></li>
-              <li><Link href="/industries" className="text-gray-500 hover:text-white text-sm transition">All Industries</Link></li>
+              <li><Link href="/solutions/agencies" className="text-gray-500 hover:text-white text-sm transition">{t('forAgencies')}</Link></li>
+              <li><Link href="/solutions/coaches" className="text-gray-500 hover:text-white text-sm transition">{t('forCoaches')}</Link></li>
+              <li><Link href="/solutions/sales-teams" className="text-gray-500 hover:text-white text-sm transition">{t('forSalesTeams')}</Link></li>
+              <li><Link href="/industries" className="text-gray-500 hover:text-white text-sm transition">{t('allIndustries')}</Link></li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Resources</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">{t('resources')}</h4>
             <ul className="space-y-3">
-              <li><Link href="/blog" className="text-gray-500 hover:text-white text-sm transition">Blog</Link></li>
-              <li><Link href="/case-studies" className="text-gray-500 hover:text-white text-sm transition">Case Studies</Link></li>
-              <li><Link href="/roi-calculator" className="text-gray-500 hover:text-white text-sm transition">ROI Calculator</Link></li>
-              <li><a href="https://knowledge.wellplan.io/kb" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">Documentation</a></li>
-              <li><a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">Video Tutorials</a></li>
+              <li><Link href="/blog" className="text-gray-500 hover:text-white text-sm transition">{t('blog')}</Link></li>
+              <li><Link href="/case-studies" className="text-gray-500 hover:text-white text-sm transition">{t('caseStudies')}</Link></li>
+              <li><Link href="/roi-calculator" className="text-gray-500 hover:text-white text-sm transition">{t('roiCalculator')}</Link></li>
+              <li><a href="https://knowledge.wellplan.io/kb" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('documentation')}</a></li>
+              <li><a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('videoTutorials')}</a></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Company</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">{t('company')}</h4>
             <ul className="space-y-3">
-              <li><Link href="/about" className="text-gray-500 hover:text-white text-sm transition">About Us</Link></li>
-              <li><Link href="/pricing" className="text-gray-500 hover:text-white text-sm transition">Pricing</Link></li>
-              <li><Link href="/demo" className="text-gray-500 hover:text-white text-sm transition">Book a Demo</Link></li>
-              <li><Link href="/contact" className="text-gray-500 hover:text-white text-sm transition">Contact</Link></li>
-              <li><a href="https://help.leadconnectorhq.com/support/home" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">Support</a></li>
+              <li><Link href="/about" className="text-gray-500 hover:text-white text-sm transition">{t('aboutUs')}</Link></li>
+              <li><Link href="/pricing" className="text-gray-500 hover:text-white text-sm transition">{t('pricing')}</Link></li>
+              <li><Link href="/demo" className="text-gray-500 hover:text-white text-sm transition">{t('bookDemo')}</Link></li>
+              <li><Link href="/contact" className="text-gray-500 hover:text-white text-sm transition">{t('contact')}</Link></li>
+              <li><a href="https://help.leadconnectorhq.com/support/home" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('support')}</a></li>
             </ul>
           </div>
         </div>
@@ -89,9 +132,9 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-6">
               <LanguageSwitcher variant="footer" />
-              <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-sm transition">Privacy Policy</Link>
-              <Link href="/terms" className="text-gray-600 hover:text-gray-400 text-sm transition">Terms of Service</Link>
-              <Link href="/security" className="text-gray-600 hover:text-gray-400 text-sm transition">Security</Link>
+              <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-sm transition">{t('privacyPolicy')}</Link>
+              <Link href="/terms" className="text-gray-600 hover:text-gray-400 text-sm transition">{t('termsOfService')}</Link>
+              <Link href="/security" className="text-gray-600 hover:text-gray-400 text-sm transition">{t('security')}</Link>
             </div>
           </div>
         </div>

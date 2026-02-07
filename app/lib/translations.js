@@ -2,7 +2,7 @@
 
 import { createContext, useContext } from 'react';
 
-const TranslationContext = createContext({ locale: 'en', messages: {} });
+const TranslationContext = createContext(null);
 
 export function TranslationProvider({ locale, messages, children }) {
   return (
@@ -13,7 +13,14 @@ export function TranslationProvider({ locale, messages, children }) {
 }
 
 export function useTranslations(namespace) {
-  const { messages } = useContext(TranslationContext);
+  const context = useContext(TranslationContext);
+  
+  // If no context, return a function that returns the key (fallback)
+  if (!context) {
+    return (key) => key;
+  }
+  
+  const { messages } = context;
   
   // Get the namespace object from messages
   const namespaceMessages = namespace ? messages[namespace] || {} : messages;
@@ -32,6 +39,12 @@ export function useTranslations(namespace) {
 }
 
 export function useLocale() {
-  const { locale } = useContext(TranslationContext);
-  return locale;
+  const context = useContext(TranslationContext);
+  return context?.locale || 'en';
+}
+
+// Helper to check if we're in a translation context
+export function useHasTranslations() {
+  const context = useContext(TranslationContext);
+  return context !== null;
 }
