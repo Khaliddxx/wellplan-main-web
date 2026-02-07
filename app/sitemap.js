@@ -39,6 +39,7 @@ export default function sitemap() {
     { route: '/solutions/agencies', priority: 0.8, changeFreq: 'monthly' },
     { route: '/solutions/coaches', priority: 0.8, changeFreq: 'monthly' },
     { route: '/solutions/sales-teams', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/contact', priority: 0.8, changeFreq: 'monthly' },
     { route: '/privacy', priority: 0.3, changeFreq: 'yearly' },
     { route: '/terms', priority: 0.3, changeFreq: 'yearly' },
   ];

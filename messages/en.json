@@ -445,6 +445,74 @@
       }
     }
   },
+  "contactPage": {
+    "badge": "Get in Touch",
+    "title": "Let's",
+    "titleHighlight": "Talk",
+    "subtitle": "Have questions about WellPlan? Want to see a demo? We'd love to hear from you.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "John Smith",
+      "email": "Email Address",
+      "emailPlaceholder": "john@company.com",
+      "company": "Company Name",
+      "companyPlaceholder": "Your Company",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project or questions...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll get back to you within 24 hours.",
+      "error": "Something went wrong. Please try again or email us directly."
+    },
+    "subjects": {
+      "demo": "Book a Demo",
+      "sales": "Sales Inquiry",
+      "support": "Technical Support",
+      "partnership": "Partnership Opportunity",
+      "other": "Other"
+    },
+    "info": {
+      "title": "Other Ways to Reach Us",
+      "email": {
+        "title": "Email Us",
+        "description": "For general inquiries",
+        "value": "hello@wellplan.io"
+      },
+      "sales": {
+        "title": "Sales",
+        "description": "For pricing and demos",
+        "value": "sales@wellplan.io"
+      },
+      "support": {
+        "title": "Support",
+        "description": "For technical help",
+        "value": "support@wellplan.io"
+      }
+    },
+    "social": {
+      "title": "Follow Us",
+      "description": "Stay updated with the latest news"
+    },
+    "faq": {
+      "title": "Frequently Asked",
+      "response": {
+        "question": "How quickly will I get a response?",
+        "answer": "We typically respond within 24 hours on business days. For urgent matters, book a demo call for immediate assistance."
+      },
+      "demo": {
+        "question": "Can I schedule a live demo?",
+        "answer": "Absolutely! Select 'Book a Demo' as your subject or visit our demo page to schedule a personalized walkthrough."
+      },
+      "trial": {
+        "question": "Is there a free trial?",
+        "answer": "Yes! We offer a 14-day free trial with full access to all features. No credit card required."
+      }
+    }
+  },
   "integrationsPage": {
     "badge": "50+ Native Integrations",
     "title": "Connect",

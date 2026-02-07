@@ -445,6 +445,74 @@
       }
     }
   },
+  "contactPage": {
+    "badge": "Neem Contact Op",
+    "title": "Laten We",
+    "titleHighlight": "Praten",
+    "subtitle": "Vragen over WellPlan? Een demo willen zien? We horen graag van je.",
+    "form": {
+      "name": "Volledige Naam",
+      "namePlaceholder": "Jan Jansen",
+      "email": "E-mailadres",
+      "emailPlaceholder": "jan@bedrijf.nl",
+      "company": "Bedrijfsnaam",
+      "companyPlaceholder": "Jouw Bedrijf",
+      "phone": "Telefoonnummer",
+      "phonePlaceholder": "+31 6 12345678",
+      "subject": "Onderwerp",
+      "subjectPlaceholder": "Hoe kunnen we helpen?",
+      "message": "Bericht",
+      "messagePlaceholder": "Vertel ons over je project of vragen...",
+      "submit": "Verstuur Bericht",
+      "sending": "Versturen...",
+      "success": "Bericht verzonden! We nemen binnen 24 uur contact met je op.",
+      "error": "Er ging iets mis. Probeer het opnieuw of mail ons direct."
+    },
+    "subjects": {
+      "demo": "Demo Aanvragen",
+      "sales": "Sales Vraag",
+      "support": "Technische Ondersteuning",
+      "partnership": "Samenwerkingsmogelijkheid",
+      "other": "Anders"
+    },
+    "info": {
+      "title": "Andere Manieren om Ons te Bereiken",
+      "email": {
+        "title": "E-mail Ons",
+        "description": "Voor algemene vragen",
+        "value": "hello@wellplan.io"
+      },
+      "sales": {
+        "title": "Sales",
+        "description": "Voor prijzen en demo's",
+        "value": "sales@wellplan.io"
+      },
+      "support": {
+        "title": "Support",
+        "description": "Voor technische hulp",
+        "value": "support@wellplan.io"
+      }
+    },
+    "social": {
+      "title": "Volg Ons",
+      "description": "Blijf op de hoogte van het laatste nieuws"
+    },
+    "faq": {
+      "title": "Veelgestelde Vragen",
+      "response": {
+        "question": "Hoe snel krijg ik een reactie?",
+        "answer": "We reageren meestal binnen 24 uur op werkdagen. Voor dringende zaken, boek een demo call voor directe hulp."
+      },
+      "demo": {
+        "question": "Kan ik een live demo inplannen?",
+        "answer": "Absoluut! Selecteer 'Demo Aanvragen' als onderwerp of bezoek onze demo pagina om een persoonlijke walkthrough in te plannen."
+      },
+      "trial": {
+        "question": "Is er een gratis proefperiode?",
+        "answer": "Ja! We bieden een 14-daagse gratis proefperiode met volledige toegang tot alle functies. Geen creditcard nodig."
+      }
+    }
+  },
   "integrationsPage": {
     "badge": "50+ Native Integraties",
     "title": "Verbind",
