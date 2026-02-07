@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users } from 'lucide-react';
+import { ChevronDown, ChevronRight, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users, Bot } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslations, useLocale } from '../lib/translations';
 
@@ -269,6 +269,34 @@ export default function Navigation() {
               <div className="w-10 h-10 mx-auto mb-2"><CloseIcon /></div>
               <span className="text-[10px] font-bold text-emerald-400 uppercase">{t('close')}</span>
             </Link>
+          </div>
+          
+          {/* AI Lead Bot - Full Width Card */}
+          <Link href={localePath('/features/ai')} onClick={() => setMobileOpen(false)} className="flex items-center justify-between p-4 bg-gradient-to-r from-[#214CE5]/10 via-purple-500/10 to-emerald-500/10 border border-white/10 rounded-xl">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#214CE5] to-purple-500 flex items-center justify-center">
+                <Bot className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white text-sm">{t('aiLeadBot')}</span>
+                  <span className="px-1.5 py-0.5 text-[9px] font-bold bg-emerald-500/20 text-emerald-400 rounded">{t('new')}</span>
+                </div>
+                <p className="text-[11px] text-gray-500">{t('aiLeadBotDesc')}</p>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-gray-500" />
+          </Link>
+          
+          {/* Popular Integrations */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-2">
+            <Link href={localePath("/integrations/whatsapp")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-[#25D366]/20 flex items-center justify-center flex-shrink-0"><WhatsAppIcon size={18} /></Link>
+            <Link href={localePath("/integrations/telegram")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-[#0088cc]/20 flex items-center justify-center flex-shrink-0"><TelegramIcon size={18} /></Link>
+            <Link href={localePath("/integrations/instagram")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#F77737]/20 flex items-center justify-center flex-shrink-0"><InstagramIcon size={18} /></Link>
+            <Link href={localePath("/integrations/facebook-messenger")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-[#0084FF]/20 flex items-center justify-center flex-shrink-0"><MessengerIcon size={18} /></Link>
+            <Link href={localePath("/integrations/stripe")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-[#635BFF]/20 flex items-center justify-center flex-shrink-0"><StripeIcon size={18} /></Link>
+            <Link href={localePath("/integrations/zapier")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-[#FF4F00]/20 flex items-center justify-center flex-shrink-0"><ZapierIcon size={18} /></Link>
+            <Link href={localePath("/integrations")} onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 text-xs text-gray-400">+</Link>
           </div>
           
           {/* Solutions - Pillar Cards */}
