@@ -930,6 +930,37 @@
     },
     "finalCta": { "title": "Ready to Scale Your Agency?", "subtitle": "Join other PSEO partners already using WellPlan to convert their SEO traffic.", "button": "Book Your Setup Call" }
   },
+  "aboutPage": {
+    "headline": "About",
+    "subtitle": "We're on a mission to help businesses grow by making powerful marketing automation accessible to everyone.",
+    "missionTitle": "Our Mission",
+    "missionP1": "We believe every business deserves access to enterprise-grade marketing tools. WellPlan combines CRM, automation, and AI into one platform that's powerful enough for agencies yet simple enough for solopreneurs.",
+    "missionP2": "Founded in 2024, we've helped thousands of businesses capture more leads, nurture relationships at scale, and close deals faster than ever before.",
+    "stats": { "activeUsers": "Active Users", "integrations": "Integrations", "uptime": "Uptime", "support": "Support" },
+    "valuesTitle": "Our Values",
+    "valuesSubtitle": "What drives everything we do",
+    "values": {
+      "customerFirst": { "title": "Customer First", "description": "Every feature we build starts with a real customer need. Your success is our success." },
+      "simplicity": { "title": "Simplicity", "description": "Powerful doesn't have to mean complicated. We make complex things feel easy." },
+      "accessibility": { "title": "Accessibility", "description": "Enterprise tools at startup prices. Great marketing shouldn't be a luxury." }
+    },
+    "cta": { "title": "Ready to Grow?", "subtitle": "Join thousands of businesses already using WellPlan", "button": "Get Started Free" }
+  },
+  "caseStudiesPage": {
+    "headline": "Case Studies",
+    "subtitle": "See how companies across industries achieved extraordinary results with WellPlan",
+    "readCaseStudy": "Read case study"
+  },
+  "featuresPage": {
+    "headline": "Powerful Features",
+    "subtitle": "Everything you need to capture, nurture, and close leads at scale",
+    "learnMore": "Learn more"
+  },
+  "industriesPage": {
+    "headline": "Industry Solutions",
+    "subtitle": "WellPlan is built for every industry. See how your peers are winning.",
+    "explore": "Explore"
+  },
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",
     "description": "The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans."

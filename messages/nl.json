@@ -931,6 +931,37 @@
     },
     "finalCta": { "title": "Klaar om Je Bureau te Schalen?", "subtitle": "Sluit je aan bij andere PSEO-partners die WellPlan al gebruiken om hun SEO-verkeer te converteren.", "button": "Boek Je Setup Call" }
   },
+  "aboutPage": {
+    "headline": "Over",
+    "subtitle": "Onze missie is om bedrijven te helpen groeien door krachtige marketingautomatisering toegankelijk te maken voor iedereen.",
+    "missionTitle": "Onze Missie",
+    "missionP1": "Wij geloven dat elk bedrijf toegang verdient tot enterprise-grade marketingtools. WellPlan combineert CRM, automatisering en AI in één platform dat krachtig genoeg is voor bureaus en toch eenvoudig genoeg voor solopreneurs.",
+    "missionP2": "Opgericht in 2024 hebben we duizenden bedrijven geholpen om meer leads te vangen, relaties op schaal te onderhouden en deals sneller dan ooit te sluiten.",
+    "stats": { "activeUsers": "Actieve Gebruikers", "integrations": "Integraties", "uptime": "Uptime", "support": "Support" },
+    "valuesTitle": "Onze Waarden",
+    "valuesSubtitle": "Wat alles aandrijft wat we doen",
+    "values": {
+      "customerFirst": { "title": "Klant Eerst", "description": "Elke functie die we bouwen begint met een echte klantbehoefte. Jouw succes is ons succes." },
+      "simplicity": { "title": "Eenvoud", "description": "Krachtig hoeft niet ingewikkeld te betekenen. Wij maken complexe dingen eenvoudig." },
+      "accessibility": { "title": "Toegankelijkheid", "description": "Enterprise-tools tegen startup-prijzen. Geweldige marketing zou geen luxe moeten zijn." }
+    },
+    "cta": { "title": "Klaar om te Groeien?", "subtitle": "Sluit je aan bij duizenden bedrijven die WellPlan al gebruiken", "button": "Start Gratis" }
+  },
+  "caseStudiesPage": {
+    "headline": "Case Studies",
+    "subtitle": "Zie hoe bedrijven in verschillende sectoren buitengewone resultaten behaalden met WellPlan",
+    "readCaseStudy": "Lees case study"
+  },
+  "featuresPage": {
+    "headline": "Krachtige Functies",
+    "subtitle": "Alles wat je nodig hebt om leads vast te leggen, te nurturen en te converteren op schaal",
+    "learnMore": "Meer informatie"
+  },
+  "industriesPage": {
+    "headline": "Branche Oplossingen",
+    "subtitle": "WellPlan is gebouwd voor elke branche. Zie hoe jouw vakgenoten winnen.",
+    "explore": "Ontdek"
+  },
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
     "description": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans."
