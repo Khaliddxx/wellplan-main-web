@@ -2,10 +2,13 @@
 
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useTranslations } from '../lib/translations';
 
 export default function FinalCTA() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: '-100px' });
+  const t = useTranslations('cta');
+  const tc = useTranslations('common');
 
   return (
     <section ref={ref} className="relative py-32 px-4 bg-slate-950 overflow-hidden">
@@ -56,16 +59,14 @@ export default function FinalCTA() {
             transition: 'all 0.8s ease-out',
           }}
         >
-          <h2 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Ready to Dominate
+              {t('title')}
             </span>
-            <br />
-            Your Market?
           </h2>
 
-          <p className="text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of businesses already capturing, nurturing, and closing leads with WellPlan.
+          <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            {t('subtitle')}
           </p>
 
           {/* CTA Buttons */}
@@ -78,7 +79,7 @@ export default function FinalCTA() {
                 transition: 'all 0.8s ease-out 0.2s',
               }}
             >
-              Start 14-Day Free Trial
+              {tc('startFreeTrial')}
             </button>
             <button
               className="px-8 py-4 border-2 border-gray-600 text-white font-bold text-lg rounded-lg hover:border-blue-500 hover:text-blue-400 transition"
@@ -88,13 +89,13 @@ export default function FinalCTA() {
                 transition: 'all 0.8s ease-out 0.3s',
               }}
             >
-              Schedule Demo
+              {tc('bookDemo')}
             </button>
           </div>
 
           {/* Trust line */}
           <p className="text-gray-400 text-sm mb-12">
-            ✓ No credit card required • ✓ Setup in minutes • ✓ Cancel anytime
+            {t('trustLine')}
           </p>
 
           {/* Social proof */}
@@ -107,10 +108,10 @@ export default function FinalCTA() {
             }}
           >
             <p className="text-sm text-gray-300 mb-3">
-              "This is beyond Awesome! I cannot believe how it addressed my frustrations about having to juggle SO MANY OTHER TOOLS."
+              "{t('quote')}"
             </p>
             <p className="text-sm font-bold text-gray-200">
-              — Dr. Federico Georga, Psychotherapist
+              — {t('quoteAuthor')}
             </p>
           </div>
         </div>

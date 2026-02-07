@@ -3,9 +3,9 @@
     "getStarted": "Aan de slag",
     "tryFree": "Probeer WellPlan - Gratis",
     "startFreeTrial": "Start Gratis Proefperiode",
-    "bookDemo": "Boek een Demo",
+    "bookDemo": "Demo Aanvragen",
     "login": "Inloggen",
-    "learnMore": "Meer informatie",
+    "learnMore": "Meer info",
     "viewAll": "Bekijk alles",
     "readMore": "Lees meer",
     "backToBlog": "Terug naar Blog",
@@ -18,60 +18,19 @@
     "english": "English",
     "dutch": "Nederlands"
   },
-  "nav": {
-    "features": "Functies",
-    "solutions": "Oplossingen",
-    "resources": "Bronnen",
-    "pricing": "Prijzen",
-    "contact": "Contact",
-    "capture": "Vastleggen",
-    "nurture": "Nurture",
-    "close": "Afsluiten",
-    "captureDesc": "Leads aantrekken & verzamelen",
-    "nurtureDesc": "Betrokkenheid & vertrouwen opbouwen",
-    "closeDesc": "Converteren & betaald worden",
-    "forAgencies": "Voor Bureaus",
-    "forCoaches": "Voor Coaches",
-    "forSalesTeams": "Voor Salesteams",
-    "integrations": "Integraties",
-    "blog": "Blog",
-    "caseStudies": "Casestudies",
-    "roiCalculator": "ROI Calculator",
-    "documentation": "Documentatie",
-    "videoTutorials": "Video Tutorials",
-    "apiReference": "API Referentie",
-    "step1": "Stap 1",
-    "step2": "Stap 2",
-    "step3": "Stap 3",
-    "recommended": "Aanbevolen",
-    "mostPopular": "Meest Populair",
-    "scaleFast": "Snel Schalen",
-    "closeFaster": "Sneller Afsluiten",
-    "industries": "Industrieën",
-    "quickLinks": "Snelle Links",
-    "allFeatures": "Alle Functies",
-    "sharedInbox": "Gedeelde Inbox",
-    "analytics": "Analytics & Rapporten",
-    "broadcasts": "Broadcast Campagnes",
-    "aiLeadBot": "AI Lead Bot",
-    "aiLeadBotDesc": "24/7 AI die leads kwalificeert, afspraken boekt en deals sluit",
-    "new": "NIEUW",
-    "viewAllIntegrations": "Bekijk alle integraties",
-    "viewAllIndustries": "Bekijk alle industrieën"
-  },
   "hero": {
     "badge": "Het #1 Lead Generatie Platform",
     "headline1": "Vastleggen. Nurture.",
     "headline2": "Afsluiten.",
     "subheadline": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans.",
-    "trustedBy": "Vertrouwd door {count}+ bedrijven wereldwijd",
+    "trustedBy": "Vertrouwd door 450+ bedrijven wereldwijd",
     "watchDemo": "Bekijk Demo"
   },
   "features": {
     "capture": {
       "title": "Vastleggen",
-      "headline": "Maak van bezoekers leads",
-      "description": "Hoog-converterende landingspagina's, slimme formulieren en AI-chatbots die 24/7 leads vastleggen via alle kanalen.",
+      "headline": "Zet bezoekers om in leads",
+      "description": "Hoogconverterende landingspagina's, slimme formulieren en AI-chatbots die 24/7 leads vastleggen via alle kanalen.",
       "stat1Value": "3x",
       "stat1Label": "Hogere conversie",
       "stat2Value": "50+",
@@ -93,29 +52,20 @@
     "close": {
       "title": "Afsluiten",
       "headline": "Zet leads om in omzet",
-      "description": "Slimme CRM, AI-gestuurde lead scoring en naadloze betalingsverwerking om deals sneller dan ooit te sluiten.",
+      "description": "Slim CRM, AI-gestuurde lead scoring en naadloze betalingsverwerking om deals sneller dan ooit af te sluiten.",
       "stat1Value": "40%",
-      "stat1Label": "Sneller sluiten",
+      "stat1Label": "Sneller afsluiten",
       "stat2Value": "€2M+",
       "stat2Label": "Omzet gevolgd",
       "stat3Value": "99%",
       "stat3Label": "Nauwkeurigheid"
     }
   },
-  "stats": {
-    "activeUsers": "Actieve Gebruikers",
-    "millionMessages": "Miljoen Berichten",
-    "integrations": "Integraties",
-    "uptime": "Uptime"
-  },
-  "results": {
-    "title": "Echte Resultaten",
-    "subtitle": "Bekijk hoe bedrijven groeien met WellPlan"
-  },
   "comparison": {
-    "title": "Waarom Teams Kiezen voor",
+    "title": "Waarom teams kiezen voor",
     "subtitle": "Meer functies, betere waarde, eenvoudigere prijzen",
     "feature": "Functie",
+    "recommended": "Aanbevolen",
     "startingPrice": "Startprijs",
     "perMonth": "/maand",
     "allInOne": "Alles-in-één Platform",
@@ -132,23 +82,25 @@
   },
   "testimonials": {
     "title": "Vertrouwd door",
-    "subtitle": "Kleine tot Middelgrote Bedrijven",
+    "subtitle": "Kleine en Middelgrote Bedrijven",
     "description": "Bekijk echte resultaten van bedrijven die WellPlan gebruiken",
     "achieved": "Behaald"
   },
   "integrations": {
-    "title": "Verbind Uw Favoriete Tools",
-    "subtitle": "WellPlan integreert met 50+ tools die u al gebruikt",
-    "viewAll": "Bekijk alle {count}+ integraties"
+    "title": "Verbindt met je",
+    "titleHighlight": "favoriete tools",
+    "subtitle": "Integreer naadloos met 200+ apps en services die je al gebruikt",
+    "viewAll": "Bekijk alle 200+ integraties"
   },
   "cta": {
-    "title": "Klaar om Uw Bedrijf te Transformeren?",
-    "subtitle": "Ontdek hoe WellPlan u kan helpen meer leads vast te leggen, relaties te onderhouden en meer deals te sluiten.",
-    "quote": "Dit is geweldig! Ik kan niet geloven hoe het mijn frustraties heeft aangepakt over het moeten jongleren met ZOVEEL ANDERE TOOLS.",
+    "title": "Klaar om je bedrijf te transformeren?",
+    "subtitle": "Sluit je aan bij duizenden bedrijven die al leads vastleggen, nurturen en afsluiten met WellPlan.",
+    "trustLine": "✓ Geen creditcard nodig • ✓ Setup in minuten • ✓ Altijd opzegbaar",
+    "quote": "Dit is gewoon geweldig! Ik kan niet geloven hoe het mijn frustraties aanpakte over het jongleren met ZO VEEL ANDERE TOOLS.",
     "quoteAuthor": "Dr. Federico Georga, Psychotherapeut"
   },
   "footer": {
-    "description": "Het alles-in-één platform voor het vastleggen, nurture en afsluiten van leads.",
+    "description": "Het alles-in-één platform voor het vastleggen, nurturen en afsluiten van leads.",
     "features": "Functies",
     "solutions": "Oplossingen",
     "resources": "Bronnen",
@@ -158,60 +110,8 @@
     "termsOfService": "Algemene Voorwaarden",
     "copyright": "© {year} WellPlan. Alle rechten voorbehouden."
   },
-  "blog": {
-    "title": "De WellPlan Blog",
-    "subtitle": "Inzichten, strategieën en best practices voor marketingautomatisering, AI-chatbots en omnichannel-berichten.",
-    "searchPlaceholder": "Zoek artikelen...",
-    "featuredArticles": "Uitgelichte Artikelen",
-    "recentArticles": "Recente Artikelen",
-    "newsletter": {
-      "title": "Blijf op de Hoogte",
-      "subtitle": "Ontvang de laatste tips over marketingautomatisering, productupdates en branche-inzichten in uw inbox.",
-      "placeholder": "Voer uw e-mail in",
-      "noSpam": "Geen spam. Afmelden wanneer u wilt."
-    },
-    "continueReading": "Lees Verder",
-    "minRead": "min lezen"
-  },
-  "pricing": {
-    "title": "Eenvoudige, Transparante Prijzen",
-    "subtitle": "Kies het plan dat bij uw bedrijf past",
-    "monthly": "Maandelijks",
-    "annually": "Jaarlijks",
-    "savePercent": "Bespaar {percent}%",
-    "perMonth": "/maand",
-    "mostPopular": "Meest Populair",
-    "features": "Functies",
-    "getStarted": "Aan de Slag"
-  },
-  "demo": {
-    "title": "Boek een Demo",
-    "subtitle": "Ontdek hoe WellPlan uw bedrijf kan transformeren in een persoonlijke rondleiding."
-  },
-  "solutions": {
-    "agencies": {
-      "title": "Voor Bureaus",
-      "subtitle": "White-label voor uw klanten",
-      "feature1": "Onbeperkte sub-accounts",
-      "feature2": "Eigen branding",
-      "feature3": "Reseller prijzen",
-      "feature4": "Klant dashboards"
-    },
-    "coaches": {
-      "title": "Voor Coaches",
-      "subtitle": "Schaal 1:1 relaties",
-      "feature1": "Geautomatiseerde follow-ups",
-      "feature2": "Cursus & lidmaatschap",
-      "feature3": "Agenda boekingen",
-      "feature4": "Community functies"
-    },
-    "salesTeams": {
-      "title": "Voor Salesteams",
-      "subtitle": "Sluit sneller meer deals",
-      "feature1": "Pipeline beheer",
-      "feature2": "Team samenwerking",
-      "feature3": "Lead scoring",
-      "feature4": "Prestatie analytics"
-    }
+  "meta": {
+    "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
+    "description": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans."
   }
 }

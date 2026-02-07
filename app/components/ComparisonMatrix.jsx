@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Check, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from '../lib/translations';
 
 const competitors = [
   { name: 'WellPlan', primary: true },
@@ -28,10 +29,26 @@ const features = [
 export default function ComparisonMatrix() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: '-100px' });
+  const t = useTranslations('comparison');
+  const tc = useTranslations('common');
 
   const getFeatureValue = (feature, competitor) => {
     const key = competitor.toLowerCase().replace('campaign', 'campaign');
     return feature[key];
+  };
+
+  // Translate feature names
+  const featureNameMap = {
+    'All-in-one Platform': t('allInOne'),
+    'WhatsApp Business API': t('whatsappApi'),
+    'AI Lead Qualification': t('aiLeadQualification'),
+    'Automated Nurturing': t('automatedNurturing'),
+    'Built-in CRM': t('builtInCrm'),
+    'Landing Page Builder': t('landingPageBuilder'),
+    'AI Chatbots': t('aiChatbots'),
+    'SMS Marketing': t('smsMarketing'),
+    'Pipeline Management': t('pipelineManagement'),
+    'Affordable Pricing': t('affordablePricing'),
   };
 
   return (
@@ -44,11 +61,11 @@ export default function ComparisonMatrix() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
-            <span className="text-white">Why Teams Choose</span>{' '}
+            <span className="text-white">{t('title')}</span>{' '}
             <span className="bg-gradient-to-r from-[#214CE5] to-purple-400 bg-clip-text text-transparent">WellPlan</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            More features, better value, simpler pricing
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -63,7 +80,7 @@ export default function ComparisonMatrix() {
             {/* Header Row */}
             <div className="grid border-b border-white/10" style={{ gridTemplateColumns: '1.5fr repeat(4, 1fr)' }}>
               <div className="p-4 sm:p-6 bg-white/[0.02]">
-                <span className="text-sm font-medium text-gray-500">Feature</span>
+                <span className="text-sm font-medium text-gray-500">{t('feature')}</span>
               </div>
               {competitors.map((comp, idx) => (
                 <div 
@@ -74,7 +91,7 @@ export default function ComparisonMatrix() {
                     {comp.name}
                   </span>
                   {comp.primary && (
-                    <div className="mt-1 text-[10px] sm:text-xs text-[#6B8EFF]">Recommended</div>
+                    <div className="mt-1 text-[10px] sm:text-xs text-[#6B8EFF]">{t('recommended')}</div>
                   )}
                 </div>
               ))}
@@ -93,7 +110,7 @@ export default function ComparisonMatrix() {
                 style={{ gridTemplateColumns: '1.5fr repeat(4, 1fr)' }}
               >
                 <div className="p-3 sm:p-4 flex items-center">
-                  <span className="text-xs sm:text-sm text-gray-300">{feature.name}</span>
+                  <span className="text-xs sm:text-sm text-gray-300">{featureNameMap[feature.name] || feature.name}</span>
                 </div>
                 {competitors.map((comp, compIdx) => {
                   const hasFeature = feature[comp.name.toLowerCase().replace('campaign', 'campaign')];
@@ -124,23 +141,23 @@ export default function ComparisonMatrix() {
             {/* Pricing Row */}
             <div className="grid bg-white/[0.02] border-t border-white/10" style={{ gridTemplateColumns: '1.5fr repeat(4, 1fr)' }}>
               <div className="p-3 sm:p-6 flex items-center">
-                <span className="text-xs sm:text-sm font-semibold text-white">Starting Price</span>
+                <span className="text-xs sm:text-sm font-semibold text-white">{t('startingPrice')}</span>
               </div>
               <div className="p-3 sm:p-4 text-center bg-[#214CE5]/10">
                 <div className="text-xl sm:text-2xl font-black text-[#214CE5]">$97</div>
-                <div className="text-xs text-gray-500">/month</div>
+                <div className="text-xs text-gray-500">{t('perMonth')}</div>
               </div>
               <div className="p-3 sm:p-4 text-center">
                 <div className="text-xl sm:text-2xl font-bold text-gray-400">$800</div>
-                <div className="text-xs text-gray-500">/month</div>
+                <div className="text-xs text-gray-500">{t('perMonth')}</div>
               </div>
               <div className="p-3 sm:p-4 text-center">
                 <div className="text-xl sm:text-2xl font-bold text-gray-400">$1,500</div>
-                <div className="text-xs text-gray-500">/month</div>
+                <div className="text-xs text-gray-500">{t('perMonth')}</div>
               </div>
               <div className="p-3 sm:p-4 text-center">
                 <div className="text-xl sm:text-2xl font-bold text-gray-400">$149</div>
-                <div className="text-xs text-gray-500">/month</div>
+                <div className="text-xs text-gray-500">{t('perMonth')}</div>
               </div>
             </div>
           </div>
@@ -153,13 +170,13 @@ export default function ComparisonMatrix() {
           transition={{ delay: 0.5 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-500 mb-6">Get all features at a fraction of the cost</p>
+          <p className="text-gray-500 mb-6">{t('getFeatures')}</p>
           <Link
             href="/demo"
             target="_blank"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] rounded-xl font-bold text-white hover:shadow-lg hover:shadow-[#214CE5]/30 transition group"
           >
-            Start Free Trial
+            {tc('startFreeTrial')}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

@@ -2,9 +2,23 @@ import { integrations } from './lib/integrations';
 
 export default function sitemap() {
   const baseUrl = 'https://wellplan.io';
+  const locales = ['en', 'nl'];
+
+  // Homepage with locales
+  const homepages = locales.map((locale) => ({
+    url: `${baseUrl}/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1,
+    alternates: {
+      languages: {
+        en: `${baseUrl}/en`,
+        nl: `${baseUrl}/nl`,
+      },
+    },
+  }));
 
   const staticPages = [
-    { route: '', priority: 1, changeFreq: 'weekly' },
     { route: '/pricing', priority: 0.9, changeFreq: 'weekly' },
     { route: '/integrations', priority: 0.9, changeFreq: 'weekly' },
     { route: '/demo', priority: 0.9, changeFreq: 'monthly' },
@@ -34,5 +48,5 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...integrationPages];
+  return [...homepages, ...staticPages, ...integrationPages];
 }

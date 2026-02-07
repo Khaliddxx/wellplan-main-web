@@ -8,6 +8,20 @@ import IntegrationLogoCarousel from '../components/IntegrationLogoCarousel';
 export const metadata = {
   title: 'WellPlan | Vastleggen. Nurture. Afsluiten.',
   description: 'Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans.',
+  alternates: {
+    canonical: 'https://wellplan.io/nl',
+    languages: {
+      'en': 'https://wellplan.io/en',
+      'nl': 'https://wellplan.io/nl',
+    },
+  },
+  openGraph: {
+    title: 'WellPlan | Vastleggen. Nurture. Afsluiten.',
+    description: 'Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans.',
+    url: 'https://wellplan.io/nl',
+    locale: 'nl_NL',
+    alternateLocale: 'en_US',
+  },
 };
 
 export default function HomePage() {

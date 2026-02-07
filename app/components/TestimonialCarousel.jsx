@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useTranslations } from '../lib/translations';
 
 export default function TestimonialCarousel() {
+  const t = useTranslations('testimonials');
   const testimonials = [
     {
       quote: 'I was always not sure to implement an appointment booking system into our branches because it always seemed like an unnecessary high-expense. This changes Everything!',
@@ -69,14 +71,14 @@ export default function TestimonialCarousel() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 sm:mb-16 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
-            Trusted by
+            {t('title')}
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Small-to-Medium Businesses
+              {t('subtitle')}
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            See real results from companies using WellPlan
+            {t('description')}
           </p>
         </div>
 

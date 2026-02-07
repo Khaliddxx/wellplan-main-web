@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { useTranslations } from '../lib/translations';
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
@@ -228,16 +229,32 @@ const features = [
 ];
 
 export default function StickyFeatureScroll() {
+  const t = useTranslations('features');
+  const tc = useTranslations('common');
+  
+  // Merge translations with feature config
+  const translatedFeatures = features.map(f => ({
+    ...f,
+    title: t(`${f.id}.title`),
+    headline: t(`${f.id}.headline`),
+    description: t(`${f.id}.description`),
+    stats: [
+      { value: t(`${f.id}.stat1Value`), label: t(`${f.id}.stat1Label`) },
+      { value: t(`${f.id}.stat2Value`), label: t(`${f.id}.stat2Label`) },
+      { value: t(`${f.id}.stat3Value`), label: t(`${f.id}.stat3Label`) },
+    ],
+  }));
+
   return (
     <section className="bg-[#0a0a0a]">
-      {features.map((feature, index) => (
-        <FeatureSection key={feature.id} feature={feature} index={index} />
+      {translatedFeatures.map((feature, index) => (
+        <FeatureSection key={feature.id} feature={feature} index={index} learnMore={tc('learnMore')} />
       ))}
     </section>
   );
 }
 
-function FeatureSection({ feature, index }) {
+function FeatureSection({ feature, index, learnMore }) {
   const ref = useRef(null);
   const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
@@ -305,7 +322,7 @@ function FeatureSection({ feature, index }) {
                 color: feature.color
               }}
             >
-              Learn more
+              {learnMore}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
