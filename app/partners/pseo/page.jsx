@@ -203,7 +203,7 @@ export default function PSEOPartnerPage() {
 
       {/* Book a Call Section */}
       <section id="book-call" className="py-16 sm:py-24 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black mb-4">
               {t('calendarTitle')} <span className="text-[#6B8EFF]">{t('calendarHighlight')}</span>
