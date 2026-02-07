@@ -1,9 +1,4 @@
 import './globals.css';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import ClientProviders from './components/ClientProviders';
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
 
 export const metadata = {
   metadataBase: new URL('https://wellplan.io'),
@@ -17,7 +12,6 @@ export const metadata = {
   creator: 'WellPlan',
   publisher: 'KLABS Ventures LLC',
   
-  // Open Graph
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -25,17 +19,9 @@ export const metadata = {
     siteName: 'WellPlan',
     title: 'WellPlan | Capture. Nurture. Close.',
     description: 'The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'WellPlan - Capture. Nurture. Close.',
-      },
-    ],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'WellPlan - Capture. Nurture. Close.' }],
   },
   
-  // Twitter
   twitter: {
     card: 'summary_large_image',
     title: 'WellPlan | Capture. Nurture. Close.',
@@ -44,35 +30,20 @@ export const metadata = {
     creator: '@wellplan',
   },
   
-  // Favicon & Icons
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/icon.png', type: 'image/png', sizes: '32x32' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   
-  // Manifest
   manifest: '/manifest.json',
   
-  // Robots
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
 };
 
-// JSON-LD Structured Data
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -82,45 +53,18 @@ const jsonLd = {
   description: 'All-in-one lead generation and CRM platform to capture leads, nurture relationships, and close deals.',
   url: 'https://wellplan.io',
   logo: 'https://wellplan.io/icon.png',
-  offers: {
-    '@type': 'Offer',
-    price: '97',
-    priceCurrency: 'USD',
-    priceValidUntil: '2027-12-31',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    ratingCount: '500',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'KLABS Ventures LLC',
-    url: 'https://wellplan.io',
-  },
+  offers: { '@type': 'Offer', price: '97', priceCurrency: 'USD', priceValidUntil: '2027-12-31' },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '500' },
+  publisher: { '@type': 'Organization', name: 'KLABS Ventures LLC', url: 'https://wellplan.io' },
 };
 
-export default async function RootLayout({ children }) {
-  const locale = await getLocale();
-  const messages = await getMessages();
-
+export default function RootLayout({ children }) {
   return (
-    <html lang={locale}>
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="bg-[#0a0a0a]">
-        <NextIntlClientProvider messages={messages}>
-          <ClientProviders>
-            <Navigation />
-            <main>{children}</main>
-            <Footer />
-          </ClientProviders>
-        </NextIntlClientProvider>
-      </body>
+      <body className="bg-[#0a0a0a]">{children}</body>
     </html>
   );
 }

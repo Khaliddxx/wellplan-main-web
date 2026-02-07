@@ -2,9 +2,9 @@ import { integrations } from './lib/integrations';
 
 export default function sitemap() {
   const baseUrl = 'https://wellplan.io';
+  const locales = ['en', 'nl'];
 
-  // Static pages
-  const staticPages = [
+  const staticRoutes = [
     { route: '', priority: 1, changeFreq: 'weekly' },
     { route: '/pricing', priority: 0.9, changeFreq: 'weekly' },
     { route: '/integrations', priority: 0.9, changeFreq: 'weekly' },
@@ -21,20 +21,29 @@ export default function sitemap() {
     { route: '/contact', priority: 0.7, changeFreq: 'monthly' },
     { route: '/privacy', priority: 0.3, changeFreq: 'yearly' },
     { route: '/terms', priority: 0.3, changeFreq: 'yearly' },
-  ].map((page) => ({
-    url: `${baseUrl}${page.route}`,
-    lastModified: new Date(),
-    changeFrequency: page.changeFreq,
-    priority: page.priority,
-  }));
+  ];
 
-  // Integration pages
-  const integrationPages = integrations.map((integration) => ({
-    url: `${baseUrl}/integrations/${integration.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
+  // Generate pages for each locale
+  const staticPages = staticRoutes.flatMap((page) =>
+    locales.map((locale) => ({
+      url: locale === 'en' ? `${baseUrl}${page.route}` : `${baseUrl}/${locale}${page.route}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFreq,
+      priority: locale === 'en' ? page.priority : page.priority * 0.9,
+    }))
+  );
+
+  // Integration pages for each locale
+  const integrationPages = integrations.flatMap((integration) =>
+    locales.map((locale) => ({
+      url: locale === 'en' 
+        ? `${baseUrl}/integrations/${integration.slug}`
+        : `${baseUrl}/${locale}/integrations/${integration.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: locale === 'en' ? 0.6 : 0.5,
+    }))
+  );
 
   return [...staticPages, ...integrationPages];
 }
