@@ -17,13 +17,7 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Only show on locale routes (/en, /nl) for now
-  const isLocaleRoute = pathname?.startsWith('/en') || pathname?.startsWith('/nl');
-  
   const currentLang = languages.find(l => l.code === locale) || languages[0];
-  
-  // Hide on non-locale pages
-  if (!isLocaleRoute) return null;
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -37,15 +31,17 @@ export default function LanguageSwitcher({ variant = 'default' }) {
 
   const switchLocale = (newLocale) => {
     setIsOpen(false);
-    // Navigate to the new locale path
-    // Current pathname is like /en, /nl, /en/about, /nl/about, etc.
+    
+    // Parse current pathname
     const segments = pathname.split('/').filter(Boolean);
     
     // Check if first segment is a locale
     if (segments[0] === 'en' || segments[0] === 'nl') {
+      // Replace existing locale
       segments[0] = newLocale;
     } else {
-      // No locale prefix, add it
+      // No locale prefix - we're on root routes like / or /pricing
+      // Navigate to the locale version
       segments.unshift(newLocale);
     }
     

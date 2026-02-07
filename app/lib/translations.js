@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
+import enMessages from '../../messages/en.json';
 
 const TranslationContext = createContext(null);
 
@@ -15,12 +16,8 @@ export function TranslationProvider({ locale, messages, children }) {
 export function useTranslations(namespace) {
   const context = useContext(TranslationContext);
   
-  // If no context, return a function that returns the key (fallback)
-  if (!context) {
-    return (key) => key;
-  }
-  
-  const { messages } = context;
+  // Use context messages if available, otherwise fall back to English
+  const messages = context?.messages || enMessages;
   
   // Get the namespace object from messages
   const namespaceMessages = namespace ? messages[namespace] || {} : messages;

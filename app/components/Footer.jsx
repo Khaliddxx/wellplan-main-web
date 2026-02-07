@@ -3,50 +3,10 @@
 import Link from 'next/link';
 import { Zap } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
-import { useTranslations, useLocale } from '../lib/translations';
+import { useTranslations } from '../lib/translations';
 
 export default function Footer() {
-  // Try to get translations, fallback to English defaults if not in a locale context
-  let t, locale;
-  try {
-    t = useTranslations('footer');
-    locale = useLocale();
-  } catch {
-    // Not in translation context, use defaults
-    t = (key) => {
-      const defaults = {
-        description: "The all-in-one platform to capture leads, nurture relationships, and close deals faster.",
-        features: "Features",
-        captureLeads: "Capture Leads",
-        nurtureContacts: "Nurture Contacts",
-        closeDeals: "Close Deals",
-        aiLeadBot: "AI Lead Bot",
-        integrations: "Integrations",
-        solutions: "Solutions",
-        forAgencies: "For Agencies",
-        forCoaches: "For Coaches",
-        forSalesTeams: "For Sales Teams",
-        allIndustries: "All Industries",
-        resources: "Resources",
-        blog: "Blog",
-        caseStudies: "Case Studies",
-        roiCalculator: "ROI Calculator",
-        documentation: "Documentation",
-        videoTutorials: "Video Tutorials",
-        company: "Company",
-        aboutUs: "About Us",
-        pricing: "Pricing",
-        bookDemo: "Book a Demo",
-        contact: "Contact",
-        support: "Support",
-        privacyPolicy: "Privacy Policy",
-        termsOfService: "Terms of Service",
-        security: "Security"
-      };
-      return defaults[key] || key;
-    };
-    locale = 'en';
-  }
+  const t = useTranslations('footer');
 
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/5">
