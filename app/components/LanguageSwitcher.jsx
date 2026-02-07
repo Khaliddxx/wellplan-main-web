@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
@@ -14,7 +14,6 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const t = useTranslations('common');
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -31,30 +30,20 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   }, []);
 
   const switchLocale = (newLocale) => {
-    // Set cookie for persistence
-    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000`;
-    
-    // Remove current locale prefix if exists and add new one
-    let newPath = pathname;
-    
-    // Remove existing locale prefix
-    for (const lang of languages) {
-      if (pathname.startsWith(`/${lang.code}/`)) {
-        newPath = pathname.substring(lang.code.length + 1);
-        break;
-      } else if (pathname === `/${lang.code}`) {
-        newPath = '/';
-        break;
-      }
+    // Remove current locale prefix if exists
+    let pathWithoutLocale = pathname;
+    if (pathname.startsWith('/nl/')) {
+      pathWithoutLocale = pathname.substring(3);
+    } else if (pathname === '/nl') {
+      pathWithoutLocale = '/';
     }
     
-    // Add new locale prefix (only if not default)
-    if (newLocale !== 'en') {
-      newPath = `/${newLocale}${newPath}`;
-    }
+    // Build new path
+    const newPath = newLocale === 'en' 
+      ? pathWithoutLocale 
+      : `/nl${pathWithoutLocale}`;
     
     router.push(newPath);
-    router.refresh();
     setIsOpen(false);
   };
 
