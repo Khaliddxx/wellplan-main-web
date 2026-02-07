@@ -1,4 +1,7 @@
 import './globals.css';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import ClientProviders from './components/ClientProviders';
 
 export const metadata = {
   metadataBase: new URL('https://wellplan.io'),
@@ -9,7 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#0a0a0a]">{children}</body>
+      <body className="bg-[#0a0a0a]">
+        <ClientProviders>
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </ClientProviders>
+      </body>
     </html>
   );
 }
