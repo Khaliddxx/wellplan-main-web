@@ -1,9 +1,10 @@
 export const metadata = {
-  title: 'WellPlan for Coaches',
-  description: 'The complete platform for coaches and consultants. Capture leads, automate bookings, and scale your coaching business.',
+  title: 'For Coaches | WellPlan',
+  description: 'Scale your coaching business without scaling your team. Automated follow-ups, calendar booking, course memberships, and community features.',
   openGraph: {
-    title: 'WellPlan for Coaches',
-    description: 'Capture leads, automate bookings & scale your coaching business.',
+    title: 'For Coaches | WellPlan',
+    description: 'Scale your coaching business with automation.',
+    url: 'https://wellplan.io/solutions/coaches',
   },
 };
 

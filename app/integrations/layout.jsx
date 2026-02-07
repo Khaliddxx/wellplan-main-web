@@ -1,9 +1,10 @@
 export const metadata = {
-  title: 'Integrations',
-  description: 'Connect WellPlan with 50+ native integrations including WhatsApp, Stripe, HubSpot, Zapier & more. Plus 5000+ apps via Zapier.',
+  title: 'Integrations | WellPlan',
+  description: '50+ integrations with your favorite tools. WhatsApp, Instagram, Facebook, Google, Stripe, Zapier, and more.',
   openGraph: {
     title: 'Integrations | WellPlan',
-    description: 'Connect with WhatsApp, Stripe, HubSpot, Zapier & 50+ more tools.',
+    description: '50+ integrations with your favorite tools.',
+    url: 'https://wellplan.io/integrations',
   },
 };
 

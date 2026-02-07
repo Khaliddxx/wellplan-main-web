@@ -1,9 +1,10 @@
 export const metadata = {
-  title: 'WellPlan for Agencies',
-  description: 'Scale your marketing agency with white-label solutions, unlimited sub-accounts, and automated fulfillment. Built for agency growth.',
+  title: 'For Agencies | WellPlan',
+  description: 'White-label marketing automation for agencies. Unlimited sub-accounts, custom branding, client dashboards, and reseller pricing.',
   openGraph: {
-    title: 'WellPlan for Agencies',
-    description: 'Scale your agency without more overhead. White-label everything.',
+    title: 'For Agencies | WellPlan',
+    description: 'White-label marketing automation with unlimited sub-accounts.',
+    url: 'https://wellplan.io/solutions/agencies',
   },
 };
 
