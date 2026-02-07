@@ -4,6 +4,9 @@ const PUBLIC_FILE = /\.(.*)$/;
 const LOCALES = ['en', 'nl'];
 const DEFAULT_LOCALE = 'en';
 
+// Countries that should default to Dutch
+const DUTCH_COUNTRIES = ['NL', 'BE']; // Netherlands, Belgium (partial Dutch)
+
 export function middleware(request) {
   const { pathname } = request.nextUrl;
   
@@ -39,22 +42,40 @@ export function middleware(request) {
     return response;
   }
 
-  // For non-locale routes, check cookie and redirect
+  // For non-locale routes, determine preferred locale
+  // Priority: 1) Cookie, 2) Geo, 3) Default (en)
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
-  const preferredLocale = cookieLocale && LOCALES.includes(cookieLocale) 
-    ? cookieLocale 
-    : DEFAULT_LOCALE;
+  
+  let preferredLocale = DEFAULT_LOCALE;
+  
+  if (cookieLocale && LOCALES.includes(cookieLocale)) {
+    // User has explicit preference from cookie
+    preferredLocale = cookieLocale;
+  } else {
+    // No cookie - check geo
+    const country = request.geo?.country || '';
+    if (DUTCH_COUNTRIES.includes(country)) {
+      preferredLocale = 'nl';
+    }
+  }
 
-  // If user has a non-default locale preference, redirect to locale version
+  // Only redirect if preferred locale is NOT the default
+  // Default (en) stays on root paths without /en prefix
   if (preferredLocale !== DEFAULT_LOCALE) {
     const url = request.nextUrl.clone();
     url.pathname = `/${preferredLocale}${pathname}`;
     
     const response = NextResponse.redirect(url);
+    // Set cookie so subsequent requests don't need geo lookup
+    response.cookies.set('NEXT_LOCALE', preferredLocale, {
+      maxAge: 60 * 60 * 24 * 365,
+      path: '/',
+      sameSite: 'lax',
+    });
     return response;
   }
 
-  // Default locale - no redirect needed, just continue
+  // Default locale (en) - no redirect, just continue
   return NextResponse.next();
 }
 
