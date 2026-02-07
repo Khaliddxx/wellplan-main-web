@@ -1,8 +1,21 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  
+  return isMobile;
+}
 
 const features = [
   {
@@ -226,24 +239,26 @@ export default function StickyFeatureScroll() {
 
 function FeatureSection({ feature, index }) {
   const ref = useRef(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start']
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [150, -150]);
-  const yVisual = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+  // Reduced parallax on mobile
+  const y = useTransform(scrollYProgress, [0, 1], isMobile ? [40, -40] : [100, -100]);
+  const yVisual = useTransform(scrollYProgress, [0, 1], isMobile ? [-30, 30] : [-80, 80]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 1.05, 1.05, 0.85]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
 
   return (
-    <div ref={ref} className="min-h-[80vh] flex items-center pt-16 pb-8 sm:py-[88px]">
+    <div ref={ref} className="min-h-[70vh] sm:min-h-[80vh] flex items-center py-10 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className={`grid lg:grid-cols-2 gap-8 sm:gap-16 items-center ${index % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}>
           {/* Content */}
           <motion.div 
             style={{ opacity, y }}
-            className="lg:[direction:ltr]"
+            className="lg:[direction:ltr] relative z-10"
           >
             <div className="flex items-center gap-3 mb-6">
               <span className={`text-sm font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
@@ -300,7 +315,7 @@ function FeatureSection({ feature, index }) {
           {/* Visual */}
           <motion.div 
             style={{ opacity, scale, y: yVisual }}
-            className="lg:[direction:ltr] h-[280px] sm:h-[400px] lg:h-[500px] relative"
+            className="lg:[direction:ltr] h-[200px] sm:h-[400px] lg:h-[500px] relative"
           >
             {feature.visual}
           </motion.div>
