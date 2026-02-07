@@ -86,16 +86,16 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm text-center md:text-left">
               © {new Date().getFullYear()} WellPlan. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <LanguageSwitcher variant="footer" />
-              <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-sm transition">{t('privacyPolicy')}</Link>
-              <Link href="/terms" className="text-gray-600 hover:text-gray-400 text-sm transition">{t('termsOfService')}</Link>
-              <Link href="/security" className="text-gray-600 hover:text-gray-400 text-sm transition">{t('security')}</Link>
+              <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-sm transition whitespace-nowrap">{t('privacyPolicy')}</Link>
+              <Link href="/terms" className="text-gray-600 hover:text-gray-400 text-sm transition whitespace-nowrap">{t('termsOfService')}</Link>
+              <Link href="/security" className="text-gray-600 hover:text-gray-400 text-sm transition whitespace-nowrap">{t('security')}</Link>
             </div>
           </div>
         </div>
