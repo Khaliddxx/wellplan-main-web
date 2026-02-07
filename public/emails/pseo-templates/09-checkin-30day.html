@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30-Day Check-in</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f4f4f5;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f5;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 40px 40px 30px; text-align: center;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">
+                📊 30-Day Check-in
+              </h1>
+              <p style="margin: 10px 0 0; color: rgba(255,255,255,0.9); font-size: 16px;">
+                Your first month progress report
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                Hi {{contact.first_name}},
+              </p>
+              
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                It's been 30 days since we kicked off your SEO campaign! 🎉 Here's a quick check-in on what we've accomplished and what's coming next.
+              </p>
+              
+              <!-- Progress Box -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin: 30px 0;">
+                <tr>
+                  <td style="background-color: #eff6ff; border: 2px solid #3b82f6; border-radius: 8px; padding: 24px;">
+                    <p style="margin: 0 0 15px; color: #1e40af; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                      ✅ Month 1 Accomplishments
+                    </p>
+                    <ul style="margin: 0; padding-left: 20px; color: #374151; font-size: 15px; line-height: 1.8;">
+                      <li>Technical SEO fixes implemented</li>
+                      <li>Baseline metrics established</li>
+                      <li>Initial content optimizations</li>
+                      <li>Competitor analysis complete</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                <strong>Coming up in Month 2:</strong>
+              </p>
+              
+              <ul style="margin: 0 0 25px; padding-left: 20px; color: #374151; font-size: 16px; line-height: 1.8;">
+                <li>Content creation & publishing</li>
+                <li>Link building outreach</li>
+                <li>Further technical optimizations</li>
+                <li>First ranking improvements expected</li>
+              </ul>
+              
+              <p style="margin: 0 0 25px; color: #374151; font-size: 16px; line-height: 1.6;">
+                <strong>Quick question:</strong> How are you feeling about the progress so far? Any concerns or questions? Just hit reply — we'd love to hear from you.
+              </p>
+              
+              <!-- CTA Button -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center">
+                    <a href="{{dashboard_link}}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 600; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);">
+                      View Full Report 📈
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 30px 0 0; color: #6b7280; font-size: 14px; line-height: 1.6; text-align: center;">
+                Here's to continued growth! 🚀
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f9fafb; padding: 24px 40px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0; color: #9ca3af; font-size: 13px;">
+                Sent by {{location.name}}<br>
+                {{location.address}}
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

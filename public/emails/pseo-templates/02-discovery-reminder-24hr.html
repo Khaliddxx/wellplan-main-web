@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Call Tomorrow</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f4f4f5;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f5;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 40px 40px 30px; text-align: center;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">
+                ⏰ Reminder: Call Tomorrow
+              </h1>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                Hi {{contact.first_name}},
+              </p>
+              
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                Just a friendly reminder — your SEO discovery call is <strong>tomorrow</strong>!
+              </p>
+              
+              <!-- Appointment Details Box -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin: 30px 0;">
+                <tr>
+                  <td style="background-color: #fffbeb; border: 2px solid #f59e0b; border-radius: 8px; padding: 24px; text-align: center;">
+                    <p style="margin: 0 0 8px; color: #92400e; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                      📅 Tomorrow
+                    </p>
+                    <p style="margin: 0; color: #374151; font-size: 24px; font-weight: 700;">
+                      {{appointment.time}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 0 0 15px; color: #374151; font-size: 16px; line-height: 1.6;">
+                <strong>Quick prep checklist:</strong>
+              </p>
+              
+              <ul style="margin: 0 0 25px; padding-left: 20px; color: #374151; font-size: 16px; line-height: 1.8;">
+                <li>☐ Have your website URL ready</li>
+                <li>☐ Think about your top 3 SEO goals</li>
+                <li>☐ Note any specific challenges you're facing</li>
+                <li>☐ Check your calendar is clear</li>
+              </ul>
+              
+              <!-- CTA Button -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center">
+                    <a href="{{appointment.meeting_link}}" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 600; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);">
+                      Join Meeting Link 🔗
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 30px 0 0; color: #6b7280; font-size: 14px; line-height: 1.6; text-align: center;">
+                Can't make it? Reply to reschedule — no worries at all.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f9fafb; padding: 24px 40px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0; color: #9ca3af; font-size: 13px;">
+                Sent by {{location.name}}<br>
+                {{location.address}}
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
