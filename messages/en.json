@@ -369,5 +369,45 @@
         "benefits": ["Stripe integration", "Invoicing", "Subscriptions", "Payment links"]
       }
     }
+  },
+  "agenciesPage": {
+    "badge": "Built for Marketing Agencies",
+    "headline1": "Scale Your Agency",
+    "headline2": "Without More Overhead",
+    "description": "Manage unlimited clients, automate fulfillment, and grow your MRR with white-label solutions your clients will love. One platform, infinite scale.",
+    "cta": "Book Agency Demo",
+    "ctaTrial": "Start Free Trial",
+    "painTitle": "Sound Familiar?",
+    "painSubtitle": "Agency owners tell us these are their biggest headaches",
+    "featuresTitle": "Everything Agencies Need",
+    "featuresSubtitle": "Built specifically for agency scale and profitability",
+    "pricingTitle": "Simple Agency Pricing",
+    "pricingSubtitle": "One plan, unlimited clients, maximum profit",
+    "ctaTitle": "Ready to Scale Your Agency?",
+    "ctaSubtitle": "Join 500+ agencies already growing with WellPlan"
+  },
+  "coachesPage": {
+    "badge": "Built for Coaches & Consultants",
+    "headline1": "Scale Your Coaching",
+    "headline2": "Without Burnout",
+    "description": "Automate client management, deliver courses at scale, and build a thriving community. More impact, less hustle.",
+    "cta": "Book Coach Demo",
+    "ctaTrial": "Start Free Trial",
+    "featuresTitle": "Everything Coaches Need",
+    "featuresSubtitle": "Built for 1:1 relationships at scale",
+    "ctaTitle": "Ready to Scale Your Coaching?",
+    "ctaSubtitle": "Join 1,000+ coaches already growing with WellPlan"
+  },
+  "salesPage": {
+    "badge": "Built for Sales Teams",
+    "headline1": "Close More Deals",
+    "headline2": "In Less Time",
+    "description": "Streamline your sales process with AI-powered lead scoring, automated follow-ups, and a CRM that works for you.",
+    "cta": "Book Sales Demo",
+    "ctaTrial": "Start Free Trial",
+    "featuresTitle": "Everything Sales Teams Need",
+    "featuresSubtitle": "Built for high-velocity sales",
+    "ctaTitle": "Ready to Close More Deals?",
+    "ctaSubtitle": "Join 2,000+ sales teams already winning with WellPlan"
   }
 }

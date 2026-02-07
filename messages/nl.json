@@ -369,5 +369,45 @@
         "benefits": ["Stripe integratie", "Facturering", "Abonnementen", "Betaallinks"]
       }
     }
+  },
+  "agenciesPage": {
+    "badge": "Gebouwd voor Marketing Bureaus",
+    "headline1": "Schaal Je Bureau",
+    "headline2": "Zonder Meer Overhead",
+    "description": "Beheer onbeperkt klanten, automatiseer uitvoering en groei je MRR met white-label oplossingen waar je klanten van houden. Eén platform, oneindige schaal.",
+    "cta": "Boek Bureau Demo",
+    "ctaTrial": "Start Gratis Proefperiode",
+    "painTitle": "Herkenbaar?",
+    "painSubtitle": "Bureau-eigenaren vertellen ons dat dit hun grootste hoofdpijn is",
+    "featuresTitle": "Alles wat Bureaus Nodig Hebben",
+    "featuresSubtitle": "Specifiek gebouwd voor bureau-schaal en winstgevendheid",
+    "pricingTitle": "Eenvoudige Bureau Prijzen",
+    "pricingSubtitle": "Eén plan, onbeperkte klanten, maximale winst",
+    "ctaTitle": "Klaar om Je Bureau te Schalen?",
+    "ctaSubtitle": "Sluit je aan bij 500+ bureaus die al groeien met WellPlan"
+  },
+  "coachesPage": {
+    "badge": "Gebouwd voor Coaches & Consultants",
+    "headline1": "Schaal Je Coaching",
+    "headline2": "Zonder Burn-out",
+    "description": "Automatiseer klantbeheer, lever cursussen op schaal en bouw een bloeiende community. Meer impact, minder gesjouw.",
+    "cta": "Boek Coach Demo",
+    "ctaTrial": "Start Gratis Proefperiode",
+    "featuresTitle": "Alles wat Coaches Nodig Hebben",
+    "featuresSubtitle": "Gebouwd voor 1:1 relaties op schaal",
+    "ctaTitle": "Klaar om Je Coaching te Schalen?",
+    "ctaSubtitle": "Sluit je aan bij 1.000+ coaches die al groeien met WellPlan"
+  },
+  "salesPage": {
+    "badge": "Gebouwd voor Sales Teams",
+    "headline1": "Sluit Meer Deals",
+    "headline2": "In Minder Tijd",
+    "description": "Stroomlijn je salesproces met AI-gestuurde lead scoring, geautomatiseerde follow-ups en een CRM dat voor je werkt.",
+    "cta": "Boek Sales Demo",
+    "ctaTrial": "Start Gratis Proefperiode",
+    "featuresTitle": "Alles wat Sales Teams Nodig Hebben",
+    "featuresSubtitle": "Gebouwd voor high-velocity sales",
+    "ctaTitle": "Klaar om Meer Deals te Sluiten?",
+    "ctaSubtitle": "Sluit je aan bij 2.000+ sales teams die al winnen met WellPlan"
   }
 }
