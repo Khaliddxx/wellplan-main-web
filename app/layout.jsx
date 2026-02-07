@@ -2,6 +2,8 @@ import './globals.css';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ClientProviders from './components/ClientProviders';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 
 export const metadata = {
   metadataBase: new URL('https://wellplan.io'),
@@ -68,11 +70,6 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  
-  // Verification (add your codes when ready)
-  // verification: {
-  //   google: 'your-google-verification-code',
-  // },
 };
 
 // JSON-LD Structured Data
@@ -103,9 +100,12 @@ const jsonLd = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <script
           type="application/ld+json"
@@ -113,11 +113,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-[#0a0a0a]">
-        <ClientProviders>
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
-        </ClientProviders>
+        <NextIntlClientProvider messages={messages}>
+          <ClientProviders>
+            <Navigation />
+            <main>{children}</main>
+            <Footer />
+          </ClientProviders>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { ChevronDown, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 // Brand colors: white (#FFFFFF) and blue (#214CE5)
 const BRAND_BLUE = '#214CE5';
@@ -196,6 +197,7 @@ export default function Navigation() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
             <Link href="/demo" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#214CE5] to-[#1a3db8] hover:from-[#1a3db8] hover:to-[#14308f] text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-[#214CE5]/30">
               <Zap className="w-4 h-4" />
               Try WellPlan - It's Free
@@ -272,6 +274,14 @@ export default function Navigation() {
           <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Book a Demo</Link>
           <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Support</a>
           <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>API Reference</a>
+          
+          {/* Language Switcher */}
+          <div className="pt-4 mt-4 border-t border-white/10">
+            <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Language</div>
+            <div className="px-4">
+              <LanguageSwitcher variant="footer" />
+            </div>
+          </div>
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">

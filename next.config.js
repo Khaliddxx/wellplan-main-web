@@ -1,3 +1,7 @@
+const createNextIntlPlugin = require('next-intl/plugin');
+
+const withNextIntl = createNextIntlPlugin('./i18n.js');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,6 +9,6 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@/components'],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = withNextIntl(nextConfig);

@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { Zap } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
   return (
@@ -85,6 +88,7 @@ export default function Footer() {
               © {new Date().getFullYear()} WellPlan. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
+              <LanguageSwitcher variant="footer" />
               <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-sm transition">Privacy Policy</Link>
               <Link href="/terms" className="text-gray-600 hover:text-gray-400 text-sm transition">Terms of Service</Link>
               <Link href="/security" className="text-gray-600 hover:text-gray-400 text-sm transition">Security</Link>

@@ -1,0 +1,217 @@
+{
+  "common": {
+    "getStarted": "Get Started",
+    "tryFree": "Try WellPlan - It's Free",
+    "startFreeTrial": "Start Free Trial",
+    "bookDemo": "Book a Demo",
+    "login": "Login",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "share": "Share",
+    "subscribe": "Subscribe",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "support": "Support",
+    "language": "Language",
+    "english": "English",
+    "dutch": "Nederlands"
+  },
+  "nav": {
+    "features": "Features",
+    "solutions": "Solutions",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "capture": "Capture",
+    "nurture": "Nurture",
+    "close": "Close",
+    "captureDesc": "Attract & collect leads",
+    "nurtureDesc": "Engage & build trust",
+    "closeDesc": "Convert & get paid",
+    "forAgencies": "For Agencies",
+    "forCoaches": "For Coaches",
+    "forSalesTeams": "For Sales Teams",
+    "integrations": "Integrations",
+    "blog": "Blog",
+    "caseStudies": "Case Studies",
+    "roiCalculator": "ROI Calculator",
+    "documentation": "Documentation",
+    "videoTutorials": "Video Tutorials",
+    "apiReference": "API Reference",
+    "step1": "Step 1",
+    "step2": "Step 2",
+    "step3": "Step 3",
+    "recommended": "Recommended",
+    "mostPopular": "Most Popular",
+    "scaleFast": "Scale Fast",
+    "closeFaster": "Close Faster",
+    "industries": "Industries",
+    "quickLinks": "Quick Links",
+    "allFeatures": "All Features",
+    "sharedInbox": "Shared Inbox",
+    "analytics": "Analytics & Reports",
+    "broadcasts": "Broadcast Campaigns",
+    "aiLeadBot": "AI Lead Bot",
+    "aiLeadBotDesc": "24/7 AI that qualifies leads, books appointments, and closes deals",
+    "new": "NEW",
+    "viewAllIntegrations": "View all integrations",
+    "viewAllIndustries": "View all industries"
+  },
+  "hero": {
+    "badge": "The #1 Lead Generation Platform",
+    "headline1": "Capture. Nurture.",
+    "headline2": "Close.",
+    "subheadline": "The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans.",
+    "trustedBy": "Trusted by {count}+ businesses worldwide",
+    "watchDemo": "Watch Demo"
+  },
+  "features": {
+    "capture": {
+      "title": "Capture",
+      "headline": "Turn visitors into leads",
+      "description": "High-converting landing pages, smart forms, and AI chatbots that capture leads 24/7 across all channels.",
+      "stat1Value": "3x",
+      "stat1Label": "Higher conversion",
+      "stat2Value": "50+",
+      "stat2Label": "Form templates",
+      "stat3Value": "24/7",
+      "stat3Label": "AI chat support"
+    },
+    "nurture": {
+      "title": "Nurture",
+      "headline": "Build lasting relationships",
+      "description": "Automated email, SMS, and WhatsApp sequences that engage leads with personalized content at the perfect time.",
+      "stat1Value": "85%",
+      "stat1Label": "Open rate",
+      "stat2Value": "10x",
+      "stat2Label": "Engagement",
+      "stat3Value": "AI",
+      "stat3Label": "Powered"
+    },
+    "close": {
+      "title": "Close",
+      "headline": "Convert leads into revenue",
+      "description": "Smart CRM, AI-powered lead scoring, and seamless payment processing to close deals faster than ever.",
+      "stat1Value": "40%",
+      "stat1Label": "Faster closes",
+      "stat2Value": "$2M+",
+      "stat2Label": "Revenue tracked",
+      "stat3Value": "99%",
+      "stat3Label": "Accuracy"
+    }
+  },
+  "stats": {
+    "activeUsers": "Active Users",
+    "millionMessages": "Million Messages",
+    "integrations": "Integrations",
+    "uptime": "Uptime"
+  },
+  "results": {
+    "title": "Real Results",
+    "subtitle": "See how businesses are growing with WellPlan"
+  },
+  "comparison": {
+    "title": "Why Teams Choose",
+    "subtitle": "More features, better value, simpler pricing",
+    "feature": "Feature",
+    "startingPrice": "Starting Price",
+    "perMonth": "/month",
+    "allInOne": "All-in-one Platform",
+    "whatsappApi": "WhatsApp Business API",
+    "aiLeadQualification": "AI Lead Qualification",
+    "automatedNurturing": "Automated Nurturing",
+    "builtInCrm": "Built-in CRM",
+    "landingPageBuilder": "Landing Page Builder",
+    "aiChatbots": "AI Chatbots",
+    "smsMarketing": "SMS Marketing",
+    "pipelineManagement": "Pipeline Management",
+    "affordablePricing": "Affordable Pricing",
+    "getFeatures": "Get all features at a fraction of the cost"
+  },
+  "testimonials": {
+    "title": "Trusted by",
+    "subtitle": "Small-to-Medium Businesses",
+    "description": "See real results from companies using WellPlan",
+    "achieved": "Achieved"
+  },
+  "integrations": {
+    "title": "Connect Your Favorite Tools",
+    "subtitle": "WellPlan integrates with 50+ tools you already use",
+    "viewAll": "View all {count}+ integrations"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "See how WellPlan can help you capture more leads, nurture relationships, and close more deals.",
+    "quote": "This is beyond Awesome! I cannot believe how it addressed my frustrations about having to juggle SO MANY OTHER TOOLS.",
+    "quoteAuthor": "Dr. Federico Georga, Psychotherapist"
+  },
+  "footer": {
+    "description": "The all-in-one platform for capturing, nurturing, and closing leads.",
+    "features": "Features",
+    "solutions": "Solutions",
+    "resources": "Resources",
+    "company": "Company",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© {year} WellPlan. All rights reserved."
+  },
+  "blog": {
+    "title": "The WellPlan Blog",
+    "subtitle": "Insights, strategies, and best practices for marketing automation, AI chatbots, and omnichannel messaging.",
+    "searchPlaceholder": "Search articles...",
+    "featuredArticles": "Featured Articles",
+    "recentArticles": "Recent Articles",
+    "newsletter": {
+      "title": "Stay in the Loop",
+      "subtitle": "Get the latest marketing automation tips, product updates, and industry insights delivered to your inbox.",
+      "placeholder": "Enter your email",
+      "noSpam": "No spam. Unsubscribe anytime."
+    },
+    "continueReading": "Continue Reading",
+    "minRead": "min read"
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that's right for your business",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "savePercent": "Save {percent}%",
+    "perMonth": "/month",
+    "mostPopular": "Most Popular",
+    "features": "Features",
+    "getStarted": "Get Started"
+  },
+  "demo": {
+    "title": "Book a Demo",
+    "subtitle": "See how WellPlan can transform your business in a personalized walkthrough."
+  },
+  "solutions": {
+    "agencies": {
+      "title": "For Agencies",
+      "subtitle": "White-label for your clients",
+      "feature1": "Unlimited sub-accounts",
+      "feature2": "Custom branding",
+      "feature3": "Reseller pricing",
+      "feature4": "Client dashboards"
+    },
+    "coaches": {
+      "title": "For Coaches",
+      "subtitle": "Scale 1:1 relationships",
+      "feature1": "Automated follow-ups",
+      "feature2": "Course & membership",
+      "feature3": "Calendar booking",
+      "feature4": "Community features"
+    },
+    "salesTeams": {
+      "title": "For Sales Teams",
+      "subtitle": "Close more deals faster",
+      "feature1": "Pipeline management",
+      "feature2": "Team collaboration",
+      "feature3": "Lead scoring",
+      "feature4": "Performance analytics"
+    }
+  }
+}
