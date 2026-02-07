@@ -1,10 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight, Calendar, Clock, User, Search, Tag } from 'lucide-react';
-
-export const metadata = {
-  title: 'Blog | WellPlan - Marketing Automation Tips & Insights',
-  description: 'Learn how to grow your business with marketing automation, AI chatbots, omnichannel messaging, and CRM best practices.',
-};
+import { useTranslations } from '../lib/translations';
 
 // Blog post data - this would typically come from a CMS
 const blogPosts = [
@@ -15,7 +13,7 @@ const blogPosts = [
     category: 'WhatsApp',
     author: 'WellPlan Team',
     date: '2026-02-01',
-    readTime: '12 min read',
+    readTime: 12,
     image: '/blog/whatsapp-marketing.jpg',
     featured: true,
   },
@@ -26,7 +24,7 @@ const blogPosts = [
     category: 'AI & Automation',
     author: 'WellPlan Team',
     date: '2026-01-28',
-    readTime: '8 min read',
+    readTime: 8,
     image: '/blog/ai-chatbots.jpg',
     featured: true,
   },
@@ -37,7 +35,7 @@ const blogPosts = [
     category: 'Strategy',
     author: 'WellPlan Team',
     date: '2026-01-25',
-    readTime: '10 min read',
+    readTime: 10,
     image: '/blog/omnichannel.jpg',
     featured: false,
   },
@@ -48,7 +46,7 @@ const blogPosts = [
     category: 'Automation',
     author: 'WellPlan Team',
     date: '2026-01-22',
-    readTime: '15 min read',
+    readTime: 15,
     image: '/blog/crm-automation.jpg',
     featured: false,
   },
@@ -59,7 +57,7 @@ const blogPosts = [
     category: 'Instagram',
     author: 'WellPlan Team',
     date: '2026-01-18',
-    readTime: '9 min read',
+    readTime: 9,
     image: '/blog/instagram-dm.jpg',
     featured: false,
   },
@@ -70,13 +68,11 @@ const blogPosts = [
     category: 'Sales',
     author: 'WellPlan Team',
     date: '2026-01-15',
-    readTime: '11 min read',
+    readTime: 11,
     image: '/blog/lead-scoring.jpg',
     featured: false,
   },
 ];
-
-const categories = ['All', 'WhatsApp', 'Instagram', 'Facebook', 'AI & Automation', 'Email', 'SMS', 'Sales', 'Strategy'];
 
 function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString('en-US', {
@@ -87,8 +83,22 @@ function formatDate(dateString) {
 }
 
 export default function BlogPage() {
+  const t = useTranslations('blogPage');
+  
   const featuredPosts = blogPosts.filter(post => post.featured);
   const recentPosts = blogPosts.filter(post => !post.featured);
+  
+  const categories = [
+    { key: 'all', label: t('categories.all') },
+    { key: 'whatsapp', label: t('categories.whatsapp') },
+    { key: 'instagram', label: t('categories.instagram') },
+    { key: 'facebook', label: t('categories.facebook') },
+    { key: 'aiAutomation', label: t('categories.aiAutomation') },
+    { key: 'email', label: t('categories.email') },
+    { key: 'sms', label: t('categories.sms') },
+    { key: 'sales', label: t('categories.sales') },
+    { key: 'strategy', label: t('categories.strategy') },
+  ];
   
   return (
     <div className="bg-[#0a0a0a] text-white min-h-screen">
@@ -99,10 +109,10 @@ export default function BlogPage() {
         <div className="relative max-w-7xl mx-auto px-6 py-20">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-black mb-6">
-              The <span className="bg-gradient-to-r from-[#214CE5] to-purple-400 bg-clip-text text-transparent">WellPlan</span> Blog
+              <span className="bg-gradient-to-r from-[#214CE5] to-purple-400 bg-clip-text text-transparent">{t('title')}</span>
             </h1>
             <p className="text-xl text-gray-400 mb-8">
-              Insights, strategies, and best practices for marketing automation, AI chatbots, and omnichannel messaging.
+              {t('subtitle')}
             </p>
             
             {/* Search Bar */}
@@ -110,7 +120,7 @@ export default function BlogPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder={t('searchPlaceholder')}
                 className="w-full pl-12 pr-4 py-4 bg-[#111111] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#214CE5]/50"
               />
             </div>
@@ -122,16 +132,16 @@ export default function BlogPage() {
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
-            {categories.map((category) => (
+            {categories.map((category, idx) => (
               <button
-                key={category}
+                key={category.key}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition ${
-                  category === 'All' 
+                  idx === 0 
                     ? 'bg-[#214CE5] text-white' 
                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                 }`}
               >
-                {category}
+                {category.label}
               </button>
             ))}
           </div>
@@ -143,7 +153,7 @@ export default function BlogPage() {
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-[#214CE5]" />
-            Featured Articles
+            {t('featuredPosts')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -163,7 +173,7 @@ export default function BlogPage() {
                     </span>
                     <span className="text-xs text-gray-400 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
-                      {post.readTime}
+                      {post.readTime} {t('minRead')}
                     </span>
                   </div>
                   
@@ -181,7 +191,7 @@ export default function BlogPage() {
                       {formatDate(post.date)}
                     </div>
                     <span className="text-[#214CE5] font-semibold text-sm group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                      Read More <ArrowRight className="w-4 h-4" />
+                      {t('readMore')} <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
@@ -194,7 +204,7 @@ export default function BlogPage() {
         <div>
           <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            Recent Articles
+            {t('recentPosts')}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -212,7 +222,7 @@ export default function BlogPage() {
                     <span className="px-2 py-1 rounded bg-white/10 text-gray-400 text-xs font-medium">
                       {post.category}
                     </span>
-                    <span className="text-xs text-gray-500">{post.readTime}</span>
+                    <span className="text-xs text-gray-500">{post.readTime} {t('minRead')}</span>
                   </div>
                   
                   <h3 className="text-lg font-bold mb-2 group-hover:text-[#6B8EFF] transition line-clamp-2">
@@ -235,24 +245,24 @@ export default function BlogPage() {
 
         {/* Newsletter CTA */}
         <div className="mt-20 p-12 rounded-3xl bg-gradient-to-r from-[#214CE5]/20 to-purple-500/20 border border-white/10 text-center">
-          <h3 className="text-3xl font-bold mb-4">Stay in the Loop</h3>
+          <h3 className="text-3xl font-bold mb-4">{t('newsletter.title')}</h3>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Get the latest marketing automation tips, product updates, and industry insights delivered to your inbox.
+            {t('newsletter.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t('newsletter.placeholder')}
               className="flex-1 px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#214CE5]/50"
             />
             <button className="px-6 py-3 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-semibold rounded-xl transition">
-              Subscribe
+              {t('newsletter.button')}
             </button>
           </div>
           
           <p className="text-xs text-gray-500 mt-4">
-            No spam. Unsubscribe anytime.
+            {t('newsletter.privacy')}
           </p>
         </div>
       </div>

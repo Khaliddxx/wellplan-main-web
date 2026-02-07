@@ -252,9 +252,105 @@
     "includedFeatures": ["Gratis onboarding", "Mobiele app toegang", "API toegang", "99.9% uptime", "SSL beveiliging", "AVG compliant"]
   },
   "demo": {
-    "title": "Plan een Demo",
-    "subtitle": "Ontdek hoe WellPlan je bedrijf kan transformeren in een persoonlijke 30-minuten walkthrough.",
-    "benefits": ["Zie het platform in actie", "Krijg antwoord op je vragen", "Aangepaste aanbevelingen voor jouw bedrijf", "Geen verplichting"]
+    "badge": "30-Minuten Demo",
+    "headline": "Zie WellPlan",
+    "headlineHighlight": "In Actie",
+    "description": "Krijg een persoonlijke walkthrough van het platform. Ons team laat je precies zien hoe WellPlan je sales en marketing kan transformeren.",
+    "scheduleTitle": "Plan Je Demo",
+    "whatYouSee": {
+      "inbox": { "title": "Omnichannel Inbox Tour", "description": "Zie hoe je WhatsApp, Instagram, Facebook en e-mail beheert op één plek" },
+      "ai": { "title": "AI Bot Configuratie", "description": "Kijk hoe we een AI-assistent opzetten die 24/7 leads kwalificeert" },
+      "automation": { "title": "Automatisering Workflows", "description": "Leer hoe je follow-up sequenties bouwt die deals op de automatische piloot sluiten" },
+      "qa": { "title": "Persoonlijke Q&A", "description": "Krijg antwoord op je specifieke vragen en use cases" }
+    },
+    "trustBadge": {
+      "businesses": "5.000+ bedrijven",
+      "rating": "4.9/5 beoordeling"
+    },
+    "afterDemo": {
+      "title": "Wat Gebeurt Er Na de Demo?",
+      "subtitle": "Geen druk, gewoon duidelijkheid of WellPlan bij je past",
+      "step1": { "title": "Krijg Je Vragen Beantwoord", "description": "Ons team behandelt je specifieke behoeften en toont relevante functies" },
+      "step2": { "title": "Ontvang een Maatwerkvoorstel", "description": "Krijg prijzen en een migratieplan op maat voor jouw bedrijf" },
+      "step3": { "title": "Start Je Gratis Proefperiode", "description": "Probeer WellPlan risicovrij 14 dagen met volledige ondersteuning" }
+    },
+    "faq": {
+      "title": "Veelgestelde Vragen",
+      "q1": { "question": "Hoe lang duurt de demo?", "answer": "Demo's duren meestal 30 minuten, maar we kunnen aanpassen aan je behoeften. Complexe implementaties kunnen 45-60 minuten vergen." },
+      "q2": { "question": "Zit ik ergens aan vast na de demo?", "answer": "Absoluut niet. De demo is simpelweg om je te helpen begrijpen of WellPlan de juiste fit is. Geen druk, geen agressieve follow-ups." },
+      "q3": { "question": "Kan ik mijn team uitnodigen?", "answer": "Ja! We moedigen je aan om iedereen mee te nemen die het platform zou gebruiken. Hoe meer stakeholders, hoe betere vragen we kunnen beantwoorden." },
+      "q4": { "question": "Wat moet ik voorbereiden?", "answer": "Denk aan je huidige pijnpunten, de tools die je gebruikt en je doelen. Dat helpt ons de demo aan te passen aan jouw situatie." }
+    },
+    "cta": {
+      "title": "Klaar om nu te beginnen?",
+      "subtitle": "Sla de demo over en start je gratis 14-daagse proefperiode. Geen creditcard nodig.",
+      "button": "Start Gratis Proefperiode"
+    }
+  },
+  "blogPage": {
+    "title": "Marketing Inzichten",
+    "subtitle": "Tips, handleidingen en best practices voor het laten groeien van je bedrijf met automatisering.",
+    "searchPlaceholder": "Zoek artikelen...",
+    "featuredPosts": "Uitgelichte Artikelen",
+    "readArticle": "Lees artikel",
+    "recentPosts": "Recente Artikelen",
+    "readMore": "Lees Meer",
+    "minRead": "min leestijd",
+    "newsletter": {
+      "title": "Blijf Op de Hoogte",
+      "subtitle": "Ontvang de laatste marketing automatiseringstips in je inbox.",
+      "placeholder": "Vul je e-mail in",
+      "button": "Abonneren",
+      "privacy": "We respecteren je privacy. Uitschrijven kan altijd."
+    },
+    "categories": {
+      "all": "Alles",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "aiAutomation": "AI & Automatisering",
+      "email": "E-mail",
+      "sms": "SMS",
+      "sales": "Sales",
+      "strategy": "Strategie"
+    }
+  },
+  "roiPage": {
+    "badge": "ROI Calculator",
+    "headline": "Bereken Je",
+    "headlineHighlight": "Potentiële Besparingen",
+    "description": "Zie precies hoeveel tijd en geld WellPlan je bedrijf elke maand kan besparen.",
+    "businessMetrics": "Je Bedrijfsmetrics",
+    "timeCosts": "Tijd & Kosten",
+    "monthlyLeads": "Maandelijkse Leads",
+    "avgDealValue": "Gemiddelde Dealwaarde",
+    "currentCloseRate": "Huidige Conversieratio",
+    "hoursManualTasks": "Uren aan Handmatige Taken (per week)",
+    "yourHourlyRate": "Je Uurtarief",
+    "numCurrentTools": "Aantal Huidige Tools",
+    "avgToolCost": "Gem. Maandelijkse Kosten per Tool",
+    "hours": "uur",
+    "tools": "tools",
+    "perHour": "/uur",
+    "perMonth": "/mnd",
+    "estimatedROI": "Je Geschatte Maandelijkse ROI",
+    "returnOnInvestment": "rendement op investering",
+    "monthlySavings": "Maandelijkse Besparingen",
+    "annualSavings": "Jaarlijkse Besparingen",
+    "revenueIncrease": "Omzetstijging",
+    "revenueIncreaseDesc": "25% betere conversie + 15% meer leads",
+    "timeSaved": "Tijd Bespaard",
+    "timeSavedDesc": "{hours} uur/week geautomatiseerd",
+    "toolConsolidation": "Tool Consolidatie",
+    "toolConsolidationDesc": "Vervang {count} tools door WellPlan",
+    "readyResults": "Klaar om deze resultaten te zien?",
+    "freeTrial": "14-daagse gratis proefperiode, geen creditcard nodig",
+    "freeMigration": "Gratis migratie van je huidige tools",
+    "dedicatedOnboarding": "Toegewijde onboarding specialist",
+    "startFreeTrial": "Start Gratis Proefperiode",
+    "bookDemo": "Plan een Demo",
+    "methodologyTitle": "Hoe we deze schattingen berekenen:",
+    "methodologyText": "Onze ROI calculator gebruikt gemiddelde verbeteringspercentages gebaseerd op data van duizenden WellPlan klanten. Werkelijke resultaten kunnen variëren op basis van je branche, huidige processen en implementatie. De schattingen gaan uit van: 25% verbetering in conversieratio's door betere lead nurturing en follow-up, 15% stijging in vastgelegde leads door omnichannel engagement, en 60% reductie in handmatige taken door automatisering."
   },
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
@@ -390,21 +486,128 @@
     "badge": "Gebouwd voor Coaches & Consultants",
     "headline1": "Schaal Je Coaching",
     "headline2": "Zonder Burn-out",
-    "description": "Automatiseer klantbeheer, lever cursussen op schaal en bouw een bloeiende community. Meer impact, minder gesjouw.",
-    "cta": "Boek Coach Demo",
-    "ctaTrial": "Start Gratis Proefperiode",
-    "featuresTitle": "Alles wat Coaches Nodig Hebben",
-    "featuresSubtitle": "Gebouwd voor 1:1 relaties op schaal",
-    "ctaTitle": "Klaar om Je Coaching te Schalen?",
-    "ctaSubtitle": "Sluit je aan bij 1.000+ coaches die al groeien met WellPlan",
+    "description": "Stop met tijd ruilen voor geld. WellPlan automatiseert je klantwerving, onboarding en follow-ups zodat jij kunt focussen op wat je het beste doet — coachen.",
+    "cta": "Boek een Gratis Strategiegesprek",
+    "viewPricing": "Bekijk Prijzen",
+    "stats": {
+      "coaches": "500+",
+      "coachesLabel": "Coaches Onboard",
+      "roi": "10x",
+      "roiLabel": "Gemiddelde ROI",
+      "support": "24/7",
+      "supportLabel": "AI Support",
+      "rating": "4.9★",
+      "ratingLabel": "Klantbeoordeling"
+    },
+    "painTitle": "Klinkt",
+    "painTitleHighlight": "Bekend?",
+    "painSubtitle": "Je werd coach om levens te veranderen, niet om fulltime admin te worden",
+    "painPoints": {
+      "admin": { "title": "Verdrinken in Administratie", "description": "20+ uur/week besteden aan planning, follow-ups en klantbeheer in plaats van coachen" },
+      "leads": { "title": "Inconsistente Lead Flow", "description": "Feast or famine cyclus — of te veel leads of radiostilte" },
+      "cold": { "title": "Leads die Koud Worden", "description": "Potentiële klanten glippen weg omdat je niet snel genoeg kunt reageren" },
+      "scale": { "title": "Moeite met Schalen", "description": "Een inkomensplafond bereiken omdat er maar één van jou is" }
+    },
+    "painCta": "Wat als je",
+    "painCtaHighlight": "80% hiervan kon automatiseren?",
+    "featuresTitle": "Alles Wat Je Nodig Hebt om",
+    "featuresTitleHighlight": "Je Coaching Business te Laten Groeien",
+    "featuresSubtitle": "Eén platform om leads te vangen, relaties te onderhouden en high-ticket klanten te sluiten",
     "features": {
-      "calendar": { "title": "Agenda & Boekingen", "description": "Laat klanten direct sessies boeken. Sync met Google, Outlook en meer." },
-      "messaging": { "title": "Klant Berichten", "description": "WhatsApp, SMS, e-mail - alles in één inbox. Mis nooit een klantbericht." },
-      "community": { "title": "Community & Cursussen", "description": "Host groepsprogramma's, cursussen en communities. Vergroot je impact." },
-      "ai": { "title": "AI Assistent", "description": "AI beantwoordt FAQ's, kwalificeert leads en boekt sessies 24/7." },
-      "progress": { "title": "Voortgang Bijhouden", "description": "Volg klantvoortgang, stel doelen en vier successen samen." },
-      "followups": { "title": "Geautomatiseerde Follow-ups", "description": "Verlies nooit een klant. Geautomatiseerde sequenties houden engagement hoog." }
-    }
+      "calendar": { "title": "Slimme Agenda Boekingen", "description": "Laat klanten direct sessies boeken. Automatische herinneringen, herschikking en no-show follow-ups." },
+      "ai": { "title": "AI Lead Kwalificatie", "description": "24/7 AI chat die leads kwalificeert, FAQ's beantwoordt en discovery calls boekt terwijl jij slaapt." },
+      "messaging": { "title": "Geautomatiseerde Nurture Sequenties", "description": "E-mail, SMS en WhatsApp sequenties die leads warm houden tot ze klaar zijn om te committen." },
+      "community": { "title": "Klantportaal & Community", "description": "Membership areas voor cursussen, community forums en resource libraries voor je klanten." },
+      "progress": { "title": "Pipeline & CRM", "description": "Volg elke lead van eerste contact tot betalende klant. Weet precies waar iedereen staat." },
+      "followups": { "title": "Betalingen & Facturering", "description": "Accepteer betalingen, stel abonnementen in en verstuur facturen automatisch." }
+    },
+    "pricingTitle": "Kies Je",
+    "pricingTitleHighlight": "Pad naar Groei",
+    "pricingSubtitle": "Of je nu DIY bent of white-glove service wilt, we hebben een plan dat past",
+    "pricing": {
+      "mostPopular": "MEEST POPULAIR",
+      "setupFee": "setup fee",
+      "setup": "setup",
+      "addon": "ADD-ON",
+      "addToAnyPlan": "Toevoegen aan Elk Plan",
+      "selfSetup": {
+        "name": "Self-Setup",
+        "subtitle": "DIY met begeleiding",
+        "description": "Perfect voor tech-savvy coaches die zelf willen instellen",
+        "features": "Kant-en-klare coaching snapshot|Video tutorial bibliotheek|Setup documentatie|Community support|Alle kernfuncties",
+        "cta": "Aan de Slag"
+      },
+      "doneWithYou": {
+        "name": "Done-With-You",
+        "subtitle": "We stellen het samen in",
+        "description": "Wij regelen de technische setup zodat jij snel leads kunt genereren",
+        "features": "Volledige system setup door ons team|Merk customization|Domein & e-mail configuratie|1× onboarding call (60 min)|Priority e-mail support|Alle kernfuncties",
+        "cta": "Boek Setup Call"
+      },
+      "doneForYou": {
+        "name": "Done-For-You",
+        "subtitle": "White-glove service",
+        "description": "Wij bouwen je volledige systeem, funnels en sequenties voor je",
+        "features": "Alles in Done-With-You|Complete funnel bouw|Nurture sequenties geschreven|Landing page copywriting|3× strategie calls|Slack support kanaal",
+        "cta": "Boek Strategie Call"
+      },
+      "aiAddon": {
+        "name": "AI Medewerker",
+        "description": "Voeg een 24/7 AI assistent toe die leads kwalificeert en afspraken boekt",
+        "features": "24/7 AI chat op je website|Lead kwalificatie bot|Afspraak boekings AI|FAQ automatisering|Custom training op jouw diensten"
+      }
+    },
+    "testimonialsTitle": "Coaches",
+    "testimonialsTitleHighlight": "Zijn Dol op WellPlan",
+    "testimonials": {
+      "sami": {
+        "quote": "Deze software is een game-changer voor mijn bedrijf. Het heeft alles beheren zoveel makkelijker en sneller gemaakt.",
+        "author": "Dr. Sami Osman",
+        "title": "Fysiotherapeut & Fitness Coach",
+        "result": "Bedrijf getransformeerd"
+      },
+      "federico": {
+        "quote": "Dit is beyond Awesome! Ik kan niet geloven hoe het mijn frustraties heeft aangepakt over het moeten leren en jongleren met ZOVEEL ANDERE TOOLS.",
+        "author": "Dr. Federico Georga",
+        "title": "Psychotherapeut",
+        "result": "Alle tools geconsolideerd"
+      },
+      "omar": {
+        "quote": "Ik was altijd onzeker over het implementeren van een afspraakboekingssysteem. Het leek altijd een onnodige uitgave. Dit verandert Alles!",
+        "author": "Omar El Alfy",
+        "title": "Airzone Egypt",
+        "result": "5 vestigingen geautomatiseerd"
+      }
+    },
+    "faqTitle": "Vragen?",
+    "faqTitleHighlight": "Beantwoord.",
+    "faq": {
+      "setup": {
+        "question": "Hoe lang duurt de setup?",
+        "answer": "Self-Setup: Je kunt binnen een dag live zijn met onze video tutorials. Done-With-You: We hebben je binnen 3-5 werkdagen ingericht. Done-For-You: Volledige systeembouw duurt 1-2 weken."
+      },
+      "technical": {
+        "question": "Heb ik technische vaardigheden nodig?",
+        "answer": "Helemaal niet! Onze Done-With-You en Done-For-You plannen regelen alles technische. Zelfs Self-Setup komt met stap-voor-stap video handleidingen die iedereen kan volgen."
+      },
+      "switch": {
+        "question": "Kan ik later van plan wisselen?",
+        "answer": "Ja! Je kunt altijd upgraden. Als je begint met Self-Setup en besluit dat je meer hulp wilt, crediteren we je setup fee naar een hogere tier."
+      },
+      "integrations": {
+        "question": "Welke integraties ondersteunen jullie?",
+        "answer": "WellPlan integreert met 200+ tools waaronder Zoom, Google Calendar, Stripe, PayPal, Calendly en meer. We hebben ook een Zapier integratie voor al het andere."
+      },
+      "cancel": {
+        "question": "Is er een contract of kan ik altijd opzeggen?",
+        "answer": "Geen langetermijncontracten. Je kunt je abonnement altijd opzeggen. Setup fees zijn eenmalig en niet-restitueerbaar."
+      }
+    },
+    "ctaTitle": "Klaar om Je",
+    "ctaTitleHighlight": "Coaching Business te Schalen?",
+    "ctaSubtitle": "Boek een gratis strategiegesprek. We laten je precies zien hoe je klantwerving kunt automatiseren.",
+    "ctaButton": "Boek Gratis Strategiegesprek",
+    "ctaNote": "Geen verplichting. 30-minuten gesprek. We stippelen je volledige automatiseringsstrategie uit."
   },
   "salesPage": {
     "badge": "Gebouwd voor Sales Teams",

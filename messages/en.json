@@ -252,9 +252,105 @@
     "includedFeatures": ["Free onboarding", "Mobile app access", "API access", "99.9% uptime", "SSL security", "GDPR compliant"]
   },
   "demo": {
-    "title": "Book a Demo",
-    "subtitle": "See how WellPlan can transform your business in a personalized 30-minute walkthrough.",
-    "benefits": ["See the platform in action", "Get your questions answered", "Custom recommendations for your business", "No commitment required"]
+    "badge": "30-Minute Demo",
+    "headline": "See WellPlan",
+    "headlineHighlight": "In Action",
+    "description": "Get a personalized walkthrough of the platform. Our team will show you exactly how WellPlan can transform your sales and marketing.",
+    "scheduleTitle": "Schedule Your Demo",
+    "whatYouSee": {
+      "inbox": { "title": "Omnichannel Inbox Tour", "description": "See how to manage WhatsApp, Instagram, Facebook, and email in one place" },
+      "ai": { "title": "AI Bot Configuration", "description": "Watch us set up an AI assistant that qualifies leads 24/7" },
+      "automation": { "title": "Automation Workflows", "description": "Learn how to build follow-up sequences that close deals on autopilot" },
+      "qa": { "title": "Custom Q&A", "description": "Get answers to your specific questions and use cases" }
+    },
+    "trustBadge": {
+      "businesses": "5,000+ businesses",
+      "rating": "4.9/5 rating"
+    },
+    "afterDemo": {
+      "title": "What Happens After the Demo?",
+      "subtitle": "No pressure, just clarity on whether WellPlan is right for you",
+      "step1": { "title": "Get Your Questions Answered", "description": "Our team will address your specific needs and show relevant features" },
+      "step2": { "title": "Receive a Custom Proposal", "description": "Get pricing and a migration plan tailored to your business" },
+      "step3": { "title": "Start Your Free Trial", "description": "Try WellPlan risk-free for 14 days with full support" }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": { "question": "How long is the demo?", "answer": "Demos typically run 30 minutes, but we can adjust based on your needs. Complex implementations may require 45-60 minutes." },
+      "q2": { "question": "Is there any obligation after the demo?", "answer": "Absolutely not. The demo is simply to help you understand if WellPlan is the right fit. No pressure, no aggressive follow-ups." },
+      "q3": { "question": "Can I invite my team?", "answer": "Yes! We encourage you to bring anyone who would be using the platform. The more stakeholders, the better questions we can answer." },
+      "q4": { "question": "What should I prepare?", "answer": "Think about your current pain points, the tools you're using, and your goals. That helps us customize the demo to your situation." }
+    },
+    "cta": {
+      "title": "Ready to get started now?",
+      "subtitle": "Skip the demo and start your free 14-day trial. No credit card required.",
+      "button": "Start Free Trial"
+    }
+  },
+  "blogPage": {
+    "title": "Marketing Insights",
+    "subtitle": "Tips, guides, and best practices for growing your business with automation.",
+    "searchPlaceholder": "Search articles...",
+    "featuredPosts": "Featured Posts",
+    "readArticle": "Read article",
+    "recentPosts": "Recent Posts",
+    "readMore": "Read More",
+    "minRead": "min read",
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Get the latest marketing automation tips delivered to your inbox.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "privacy": "We respect your privacy. Unsubscribe at any time."
+    },
+    "categories": {
+      "all": "All",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "aiAutomation": "AI & Automation",
+      "email": "Email",
+      "sms": "SMS",
+      "sales": "Sales",
+      "strategy": "Strategy"
+    }
+  },
+  "roiPage": {
+    "badge": "ROI Calculator",
+    "headline": "Calculate Your",
+    "headlineHighlight": "Potential Savings",
+    "description": "See exactly how much time and money WellPlan can save your business every month.",
+    "businessMetrics": "Your Business Metrics",
+    "timeCosts": "Time & Costs",
+    "monthlyLeads": "Monthly Leads",
+    "avgDealValue": "Average Deal Value",
+    "currentCloseRate": "Current Close Rate",
+    "hoursManualTasks": "Hours on Manual Tasks (per week)",
+    "yourHourlyRate": "Your Hourly Rate",
+    "numCurrentTools": "Number of Current Tools",
+    "avgToolCost": "Avg. Monthly Cost per Tool",
+    "hours": "hrs",
+    "tools": "tools",
+    "perHour": "/hr",
+    "perMonth": "/mo",
+    "estimatedROI": "Your Estimated Monthly ROI",
+    "returnOnInvestment": "return on investment",
+    "monthlySavings": "Monthly Savings",
+    "annualSavings": "Annual Savings",
+    "revenueIncrease": "Revenue Increase",
+    "revenueIncreaseDesc": "25% better close rate + 15% more leads",
+    "timeSaved": "Time Saved",
+    "timeSavedDesc": "{hours} hours/week automated",
+    "toolConsolidation": "Tool Consolidation",
+    "toolConsolidationDesc": "Replace {count} tools with WellPlan",
+    "readyResults": "Ready to see these results?",
+    "freeTrial": "14-day free trial, no credit card required",
+    "freeMigration": "Free migration from your current tools",
+    "dedicatedOnboarding": "Dedicated onboarding specialist",
+    "startFreeTrial": "Start Free Trial",
+    "bookDemo": "Book a Demo",
+    "methodologyTitle": "How we calculate these estimates:",
+    "methodologyText": "Our ROI calculator uses industry-average improvement rates based on data from thousands of WellPlan customers. Actual results may vary based on your industry, current processes, and implementation. The estimates assume: 25% improvement in close rates through better lead nurturing and follow-up, 15% increase in captured leads through omnichannel engagement, and 60% reduction in manual tasks through automation."
   },
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",
@@ -389,22 +485,129 @@
   "coachesPage": {
     "badge": "Built for Coaches & Consultants",
     "headline1": "Scale Your Coaching",
-    "headline2": "Without Burnout",
-    "description": "Automate client management, deliver courses at scale, and build a thriving community. More impact, less hustle.",
-    "cta": "Book Coach Demo",
-    "ctaTrial": "Start Free Trial",
-    "featuresTitle": "Everything Coaches Need",
-    "featuresSubtitle": "Built for 1:1 relationships at scale",
-    "ctaTitle": "Ready to Scale Your Coaching?",
-    "ctaSubtitle": "Join 1,000+ coaches already growing with WellPlan",
+    "headline2": "Without Burning Out",
+    "description": "Stop trading time for money. WellPlan automates your client acquisition, onboarding, and follow-ups so you can focus on what you do best — coaching.",
+    "cta": "Book a Free Strategy Call",
+    "viewPricing": "View Pricing",
+    "stats": {
+      "coaches": "500+",
+      "coachesLabel": "Coaches Onboarded",
+      "roi": "10x",
+      "roiLabel": "Average ROI",
+      "support": "24/7",
+      "supportLabel": "AI Support",
+      "rating": "4.9★",
+      "ratingLabel": "Client Rating"
+    },
+    "painTitle": "Sound",
+    "painTitleHighlight": "Familiar?",
+    "painSubtitle": "You became a coach to change lives, not to become a full-time admin",
+    "painPoints": {
+      "admin": { "title": "Drowning in Admin Work", "description": "Spending 20+ hours/week on scheduling, follow-ups, and client management instead of coaching" },
+      "leads": { "title": "Inconsistent Lead Flow", "description": "Feast or famine cycle — either too many leads to handle or radio silence" },
+      "cold": { "title": "Leads Going Cold", "description": "Potential clients slip away because you can't respond fast enough" },
+      "scale": { "title": "Struggling to Scale", "description": "Hitting an income ceiling because there's only one of you" }
+    },
+    "painCta": "What if you could automate",
+    "painCtaHighlight": "80% of this?",
+    "featuresTitle": "Everything You Need to",
+    "featuresTitleHighlight": "Grow Your Coaching Business",
+    "featuresSubtitle": "One platform to capture leads, nurture relationships, and close high-ticket clients",
     "features": {
-      "calendar": { "title": "Calendar & Booking", "description": "Let clients book sessions directly. Sync with Google, Outlook, and more." },
-      "messaging": { "title": "Client Messaging", "description": "WhatsApp, SMS, email - all in one inbox. Never miss a client message." },
-      "community": { "title": "Community & Courses", "description": "Host group programs, courses, and communities. Scale your impact." },
-      "ai": { "title": "AI Assistant", "description": "AI handles FAQs, qualifies leads, and books sessions 24/7." },
-      "progress": { "title": "Progress Tracking", "description": "Track client progress, set goals, and celebrate wins together." },
-      "followups": { "title": "Automated Follow-ups", "description": "Never lose a client. Automated sequences keep engagement high." }
-    }
+      "calendar": { "title": "Smart Calendar Booking", "description": "Let clients book sessions directly. Automatic reminders, rescheduling, and no-show follow-ups." },
+      "ai": { "title": "AI Lead Qualification", "description": "24/7 AI chat that qualifies leads, answers FAQs, and books discovery calls while you sleep." },
+      "messaging": { "title": "Automated Nurture Sequences", "description": "Email, SMS, and WhatsApp sequences that keep leads warm until they're ready to commit." },
+      "community": { "title": "Client Portal & Community", "description": "Membership areas for courses, community forums, and resource libraries for your clients." },
+      "progress": { "title": "Pipeline & CRM", "description": "Track every lead from first touch to paid client. Know exactly where everyone is." },
+      "followups": { "title": "Payment & Invoicing", "description": "Accept payments, set up subscriptions, and send invoices automatically." }
+    },
+    "pricingTitle": "Choose Your",
+    "pricingTitleHighlight": "Path to Growth",
+    "pricingSubtitle": "Whether you're DIY or want white-glove service, we have a plan that fits",
+    "pricing": {
+      "mostPopular": "MOST POPULAR",
+      "setupFee": "setup fee",
+      "setup": "setup",
+      "addon": "ADD-ON",
+      "addToAnyPlan": "Add to Any Plan",
+      "selfSetup": {
+        "name": "Self-Setup",
+        "subtitle": "DIY with guidance",
+        "description": "Perfect for tech-savvy coaches who want to set things up themselves",
+        "features": "Pre-built coaching snapshot|Video tutorial library|Setup documentation|Community support|All core features",
+        "cta": "Get Started"
+      },
+      "doneWithYou": {
+        "name": "Done-With-You",
+        "subtitle": "We set it up together",
+        "description": "We handle the technical setup so you can start generating leads fast",
+        "features": "Full system setup by our team|Brand customization|Domain & email configuration|1× onboarding call (60 min)|Priority email support|All core features",
+        "cta": "Book Setup Call"
+      },
+      "doneForYou": {
+        "name": "Done-For-You",
+        "subtitle": "White-glove service",
+        "description": "We build your entire system, funnels, and sequences for you",
+        "features": "Everything in Done-With-You|Complete funnel build|Nurture sequences written|Landing page copywriting|3× strategy calls|Slack support channel",
+        "cta": "Book Strategy Call"
+      },
+      "aiAddon": {
+        "name": "AI Employee",
+        "description": "Add a 24/7 AI assistant that qualifies leads and books appointments",
+        "features": "24/7 AI chat on your website|Lead qualification bot|Appointment booking AI|FAQ automation|Custom training on your services"
+      }
+    },
+    "testimonialsTitle": "Coaches",
+    "testimonialsTitleHighlight": "Love WellPlan",
+    "testimonials": {
+      "sami": {
+        "quote": "This software has been a game-changer for my business. It's made managing everything so much easier and quicker.",
+        "author": "Dr. Sami Osman",
+        "title": "Physiotherapist & Fitness Coach",
+        "result": "Business transformed"
+      },
+      "federico": {
+        "quote": "This is beyond Awesome! I cannot believe how it addressed my frustrations about having to learn and juggle SO MANY OTHER TOOLS.",
+        "author": "Dr. Federico Georga",
+        "title": "Psychotherapist",
+        "result": "All tools consolidated"
+      },
+      "omar": {
+        "quote": "I was always not sure to implement an appointment booking system. It always seemed like an unnecessary expense. This changes Everything!",
+        "author": "Omar El Alfy",
+        "title": "Airzone Egypt",
+        "result": "5 branches automated"
+      }
+    },
+    "faqTitle": "Questions?",
+    "faqTitleHighlight": "Answered.",
+    "faq": {
+      "setup": {
+        "question": "How long does setup take?",
+        "answer": "Self-Setup: You can be live in a day with our video tutorials. Done-With-You: We'll have you set up within 3-5 business days. Done-For-You: Full system build takes 1-2 weeks."
+      },
+      "technical": {
+        "question": "Do I need any technical skills?",
+        "answer": "Not at all! Our Done-With-You and Done-For-You plans handle everything technical. Even Self-Setup comes with step-by-step video guides that anyone can follow."
+      },
+      "switch": {
+        "question": "Can I switch plans later?",
+        "answer": "Yes! You can upgrade anytime. If you start with Self-Setup and decide you want more help, we'll credit your setup fee toward a higher tier."
+      },
+      "integrations": {
+        "question": "What integrations do you support?",
+        "answer": "WellPlan integrates with 200+ tools including Zoom, Google Calendar, Stripe, PayPal, Calendly, and more. We also have a Zapier integration for anything else."
+      },
+      "cancel": {
+        "question": "Is there a contract or can I cancel anytime?",
+        "answer": "No long-term contracts. You can cancel your subscription anytime. Setup fees are one-time and non-refundable."
+      }
+    },
+    "ctaTitle": "Ready to Scale Your",
+    "ctaTitleHighlight": "Coaching Business?",
+    "ctaSubtitle": "Book a free strategy call. We'll show you exactly how to automate your client acquisition.",
+    "ctaButton": "Book Free Strategy Call",
+    "ctaNote": "No obligation. 30-minute call. We'll map out your entire automation strategy."
   },
   "salesPage": {
     "badge": "Built for Sales Teams",

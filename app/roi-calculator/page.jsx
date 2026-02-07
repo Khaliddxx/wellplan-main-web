@@ -3,8 +3,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Calculator, DollarSign, Clock, TrendingUp, Users, ArrowRight, Check, Zap } from 'lucide-react';
+import { useTranslations } from '../lib/translations';
 
 export default function ROICalculatorPage() {
+  const t = useTranslations('roiPage');
+  
   // Input states
   const [monthlyLeads, setMonthlyLeads] = useState(500);
   const [avgDealValue, setAvgDealValue] = useState(1000);
@@ -85,15 +88,15 @@ export default function ROICalculatorPage() {
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30 mb-6">
               <Calculator className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm font-semibold text-emerald-400">ROI Calculator</span>
+              <span className="text-sm font-semibold text-emerald-400">{t('badge')}</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-              Calculate Your <span className="bg-gradient-to-r from-emerald-400 to-[#214CE5] bg-clip-text text-transparent">Potential Savings</span>
+              {t('headline')} <span className="bg-gradient-to-r from-emerald-400 to-[#214CE5] bg-clip-text text-transparent">{t('headlineHighlight')}</span>
             </h1>
             
             <p className="text-xl text-gray-400">
-              See exactly how much time and money WellPlan can save your business every month.
+              {t('description')}
             </p>
           </div>
         </div>
@@ -106,13 +109,13 @@ export default function ROICalculatorPage() {
             <div className="p-8 rounded-2xl bg-[#111111] border border-white/10">
               <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
                 <Users className="w-5 h-5 text-[#214CE5]" />
-                Your Business Metrics
+                {t('businessMetrics')}
               </h2>
               
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Monthly Leads</label>
+                    <label className="text-sm text-gray-400">{t('monthlyLeads')}</label>
                     <span className="text-sm font-semibold text-white">{monthlyLeads.toLocaleString()}</span>
                   </div>
                   <input
@@ -132,7 +135,7 @@ export default function ROICalculatorPage() {
 
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Average Deal Value</label>
+                    <label className="text-sm text-gray-400">{t('avgDealValue')}</label>
                     <span className="text-sm font-semibold text-white">{formatCurrency(avgDealValue)}</span>
                   </div>
                   <input
@@ -152,7 +155,7 @@ export default function ROICalculatorPage() {
 
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Current Close Rate</label>
+                    <label className="text-sm text-gray-400">{t('currentCloseRate')}</label>
                     <span className="text-sm font-semibold text-white">{closeRate}%</span>
                   </div>
                   <input
@@ -175,14 +178,14 @@ export default function ROICalculatorPage() {
             <div className="p-8 rounded-2xl bg-[#111111] border border-white/10">
               <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
                 <Clock className="w-5 h-5 text-purple-400" />
-                Time & Costs
+                {t('timeCosts')}
               </h2>
               
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Hours on Manual Tasks (per week)</label>
-                    <span className="text-sm font-semibold text-white">{hoursOnManualTasks} hrs</span>
+                    <label className="text-sm text-gray-400">{t('hoursManualTasks')}</label>
+                    <span className="text-sm font-semibold text-white">{hoursOnManualTasks} {t('hours')}</span>
                   </div>
                   <input
                     type="range"
@@ -197,8 +200,8 @@ export default function ROICalculatorPage() {
 
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Your Hourly Rate</label>
-                    <span className="text-sm font-semibold text-white">{formatCurrency(hourlyRate)}/hr</span>
+                    <label className="text-sm text-gray-400">{t('yourHourlyRate')}</label>
+                    <span className="text-sm font-semibold text-white">{formatCurrency(hourlyRate)}{t('perHour')}</span>
                   </div>
                   <input
                     type="range"
@@ -213,8 +216,8 @@ export default function ROICalculatorPage() {
 
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Number of Current Tools</label>
-                    <span className="text-sm font-semibold text-white">{currentTools} tools</span>
+                    <label className="text-sm text-gray-400">{t('numCurrentTools')}</label>
+                    <span className="text-sm font-semibold text-white">{currentTools} {t('tools')}</span>
                   </div>
                   <input
                     type="range"
@@ -229,8 +232,8 @@ export default function ROICalculatorPage() {
 
                 <div>
                   <div className="flex justify-between mb-2">
-                    <label className="text-sm text-gray-400">Avg. Monthly Cost per Tool</label>
-                    <span className="text-sm font-semibold text-white">{formatCurrency(avgToolCost)}/mo</span>
+                    <label className="text-sm text-gray-400">{t('avgToolCost')}</label>
+                    <span className="text-sm font-semibold text-white">{formatCurrency(avgToolCost)}{t('perMonth')}</span>
                   </div>
                   <input
                     type="range"
@@ -251,22 +254,22 @@ export default function ROICalculatorPage() {
             {/* ROI Summary Card */}
             <div className="p-8 rounded-2xl bg-gradient-to-br from-[#214CE5]/20 to-emerald-500/20 border border-[#214CE5]/30">
               <div className="text-center mb-8">
-                <div className="text-sm text-gray-400 mb-2">Your Estimated Monthly ROI</div>
+                <div className="text-sm text-gray-400 mb-2">{t('estimatedROI')}</div>
                 <div className="text-6xl font-black bg-gradient-to-r from-emerald-400 to-[#214CE5] bg-clip-text text-transparent">
                   {results.roi.toFixed(0)}%
                 </div>
-                <div className="text-gray-400 mt-2">return on investment</div>
+                <div className="text-gray-400 mt-2">{t('returnOnInvestment')}</div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-black/30">
-                  <div className="text-sm text-gray-400 mb-1">Monthly Savings</div>
+                  <div className="text-sm text-gray-400 mb-1">{t('monthlySavings')}</div>
                   <div className="text-2xl font-bold text-emerald-400">
                     {formatCurrency(results.totalSavings)}
                   </div>
                 </div>
                 <div className="p-4 rounded-xl bg-black/30">
-                  <div className="text-sm text-gray-400 mb-1">Annual Savings</div>
+                  <div className="text-sm text-gray-400 mb-1">{t('annualSavings')}</div>
                   <div className="text-2xl font-bold text-white">
                     {formatCurrency(results.totalSavings * 12)}
                   </div>
@@ -283,12 +286,12 @@ export default function ROICalculatorPage() {
                       <TrendingUp className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">Revenue Increase</div>
-                      <div className="text-xs text-gray-600">25% better close rate + 15% more leads</div>
+                      <div className="text-sm text-gray-400">{t('revenueIncrease')}</div>
+                      <div className="text-xs text-gray-600">{t('revenueIncreaseDesc')}</div>
                     </div>
                   </div>
                   <div className="text-xl font-bold text-emerald-400">
-                    +{formatCurrency(results.revenueIncrease)}/mo
+                    +{formatCurrency(results.revenueIncrease)}{t('perMonth')}
                   </div>
                 </div>
               </div>
@@ -300,12 +303,12 @@ export default function ROICalculatorPage() {
                       <Clock className="w-5 h-5 text-purple-400" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">Time Saved</div>
-                      <div className="text-xs text-gray-600">{results.timeSaved.toFixed(0)} hours/week automated</div>
+                      <div className="text-sm text-gray-400">{t('timeSaved')}</div>
+                      <div className="text-xs text-gray-600">{t('timeSavedDesc').replace('{hours}', results.timeSaved.toFixed(0))}</div>
                     </div>
                   </div>
                   <div className="text-xl font-bold text-purple-400">
-                    +{formatCurrency(results.laborSavings)}/mo
+                    +{formatCurrency(results.laborSavings)}{t('perMonth')}
                   </div>
                 </div>
               </div>
@@ -317,12 +320,12 @@ export default function ROICalculatorPage() {
                       <DollarSign className="w-5 h-5 text-[#6B8EFF]" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">Tool Consolidation</div>
-                      <div className="text-xs text-gray-600">Replace {currentTools} tools with WellPlan</div>
+                      <div className="text-sm text-gray-400">{t('toolConsolidation')}</div>
+                      <div className="text-xs text-gray-600">{t('toolConsolidationDesc').replace('{count}', currentTools)}</div>
                     </div>
                   </div>
                   <div className="text-xl font-bold text-[#6B8EFF]">
-                    +{formatCurrency(results.toolSavings)}/mo
+                    +{formatCurrency(results.toolSavings)}{t('perMonth')}
                   </div>
                 </div>
               </div>
@@ -332,21 +335,21 @@ export default function ROICalculatorPage() {
             <div className="p-6 rounded-2xl bg-[#111111] border border-white/10">
               <h3 className="font-bold mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-[#214CE5]" />
-                Ready to see these results?
+                {t('readyResults')}
               </h3>
               
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center gap-2 text-sm text-gray-400">
                   <Check className="w-4 h-4 text-emerald-400" />
-                  14-day free trial, no credit card required
+                  {t('freeTrial')}
                 </li>
                 <li className="flex items-center gap-2 text-sm text-gray-400">
                   <Check className="w-4 h-4 text-emerald-400" />
-                  Free migration from your current tools
+                  {t('freeMigration')}
                 </li>
                 <li className="flex items-center gap-2 text-sm text-gray-400">
                   <Check className="w-4 h-4 text-emerald-400" />
-                  Dedicated onboarding specialist
+                  {t('dedicatedOnboarding')}
                 </li>
               </ul>
               
@@ -355,14 +358,14 @@ export default function ROICalculatorPage() {
                   href="/demo"
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#214CE5] hover:bg-[#1a3db8] text-white font-semibold rounded-xl transition"
                 >
-                  Start Free Trial
+                  {t('startFreeTrial')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link 
                   href="/demo"
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition"
                 >
-                  Book a Demo
+                  {t('bookDemo')}
                 </Link>
               </div>
             </div>
@@ -371,12 +374,9 @@ export default function ROICalculatorPage() {
 
         {/* Methodology Note */}
         <div className="mt-16 p-6 rounded-xl bg-[#111111] border border-white/10">
-          <h4 className="font-semibold mb-2">How we calculate these estimates:</h4>
+          <h4 className="font-semibold mb-2">{t('methodologyTitle')}</h4>
           <p className="text-sm text-gray-500">
-            Our ROI calculator uses industry-average improvement rates based on data from thousands of WellPlan customers. 
-            Actual results may vary based on your industry, current processes, and implementation. The estimates assume:
-            25% improvement in close rates through better lead nurturing and follow-up, 15% increase in captured leads through 
-            omnichannel engagement, and 60% reduction in manual tasks through automation.
+            {t('methodologyText')}
           </p>
         </div>
       </div>
