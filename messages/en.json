@@ -259,5 +259,115 @@
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",
     "description": "The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans."
+  },
+  "capturePage": {
+    "badge": "STEP 1",
+    "badgeSub": "of the Customer Journey",
+    "headline": "CAPTURE",
+    "headlineSub": "More Leads",
+    "description": "Turn website visitors into qualified leads with beautiful forms, landing pages, and chat widgets that convert.",
+    "cta": "Start Capturing Leads",
+    "ctaDemo": "See Demo",
+    "toolsTitle": "Lead Capture Tools",
+    "toolsSubtitle": "Everything you need to attract and capture high-quality leads",
+    "moreTitle": "View 8 More Capture Features",
+    "moreSubtitle": "Advanced tools to maximize your lead generation",
+    "journeyTitle": "Continue the Customer Journey",
+    "journeySubtitle": "Capture is just the beginning. See what comes next.",
+    "current": "Current",
+    "next": "Next",
+    "ctaTitle": "Ready to capture more leads?",
+    "ctaSubtitle": "Start your free trial and see results in days, not months.",
+    "features": {
+      "forms": {
+        "title": "Smart Forms & Surveys",
+        "description": "Create beautiful, conversion-optimized forms with conditional logic, multi-step wizards, and instant lead capture.",
+        "benefits": ["Drag-and-drop builder", "Conditional logic", "File uploads", "Payment collection"]
+      },
+      "landing": {
+        "title": "Landing Page Builder",
+        "description": "Build stunning landing pages in minutes with our visual editor. No coding required.",
+        "benefits": ["100+ templates", "A/B testing", "Mobile-optimized", "Custom domains"]
+      },
+      "chat": {
+        "title": "Website Chat Widget",
+        "description": "Engage visitors instantly with a customizable chat widget that captures leads 24/7.",
+        "benefits": ["Custom branding", "Auto-responses", "Lead qualification", "File sharing"]
+      }
+    },
+    "moreFeatures": {
+      "domains": { "title": "Custom Domains", "description": "Use your own domain for landing pages and forms" },
+      "popups": { "title": "Popup Builder", "description": "Exit-intent and timed popups to capture leaving visitors" },
+      "aiForm": { "title": "AI Form Assistant", "description": "AI helps visitors complete forms with smart suggestions" },
+      "clicks": { "title": "Click Tracking", "description": "See exactly how visitors interact with your pages" },
+      "magnets": { "title": "Lead Magnets", "description": "Deliver PDFs, videos, and files on form submission" },
+      "analytics": { "title": "Conversion Analytics", "description": "Track conversion rates and optimize your funnels" },
+      "team": { "title": "Team Collaboration", "description": "Multiple team members can build and manage forms" },
+      "notifications": { "title": "Instant Notifications", "description": "Get alerted the moment a new lead comes in" }
+    }
+  },
+  "nurturePage": {
+    "badge": "STEP 2",
+    "badgeSub": "of the Customer Journey",
+    "headline": "NURTURE",
+    "headlineSub": "Your Leads",
+    "description": "Build lasting relationships with automated email, SMS, and WhatsApp sequences that engage leads at the perfect moment.",
+    "cta": "Start Nurturing Leads",
+    "ctaDemo": "See Demo",
+    "toolsTitle": "Lead Nurturing Tools",
+    "toolsSubtitle": "Everything you need to engage and build trust with your leads",
+    "current": "Current",
+    "previous": "Previous",
+    "ctaTitle": "Ready to nurture your leads?",
+    "ctaSubtitle": "Start your free trial and see results in days, not months.",
+    "features": {
+      "email": {
+        "title": "Email Marketing",
+        "description": "Design beautiful emails with our drag-and-drop editor. Automate campaigns that convert.",
+        "benefits": ["Visual email builder", "A/B testing", "Personalization", "Analytics"]
+      },
+      "sms": {
+        "title": "SMS & WhatsApp",
+        "description": "Reach leads where they are with instant messaging campaigns and automation.",
+        "benefits": ["Two-way messaging", "WhatsApp Business API", "Auto-responses", "Templates"]
+      },
+      "automation": {
+        "title": "Workflow Automation",
+        "description": "Create powerful automation sequences that nurture leads on autopilot.",
+        "benefits": ["Visual builder", "Triggers & actions", "Conditional logic", "Multi-channel"]
+      }
+    }
+  },
+  "closePage": {
+    "badge": "STEP 3",
+    "badgeSub": "of the Customer Journey",
+    "headline": "CLOSE",
+    "headlineSub": "More Deals",
+    "description": "Convert leads into paying customers with smart CRM, AI-powered lead scoring, and seamless payment processing.",
+    "cta": "Start Closing Deals",
+    "ctaDemo": "See Demo",
+    "toolsTitle": "Deal Closing Tools",
+    "toolsSubtitle": "Everything you need to convert leads into revenue",
+    "current": "Current",
+    "previous": "Previous",
+    "ctaTitle": "Ready to close more deals?",
+    "ctaSubtitle": "Start your free trial and see results in days, not months.",
+    "features": {
+      "crm": {
+        "title": "Smart CRM",
+        "description": "Manage your entire sales pipeline with our intuitive CRM built for closing.",
+        "benefits": ["Visual pipeline", "Deal tracking", "Activity timeline", "Mobile app"]
+      },
+      "scoring": {
+        "title": "AI Lead Scoring",
+        "description": "Let AI prioritize your hottest leads so you focus on deals most likely to close.",
+        "benefits": ["Behavioral scoring", "Engagement tracking", "Priority alerts", "Predictions"]
+      },
+      "payments": {
+        "title": "Payment Processing",
+        "description": "Accept payments directly within your workflow. Invoices, subscriptions, and more.",
+        "benefits": ["Stripe integration", "Invoicing", "Subscriptions", "Payment links"]
+      }
+    }
   }
 }

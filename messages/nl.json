@@ -259,5 +259,115 @@
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
     "description": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans."
+  },
+  "capturePage": {
+    "badge": "STAP 1",
+    "badgeSub": "van de Klantreis",
+    "headline": "VASTLEGGEN",
+    "headlineSub": "Meer Leads",
+    "description": "Zet websitebezoekers om in gekwalificeerde leads met mooie formulieren, landingspagina's en chatwidgets die converteren.",
+    "cta": "Begin met Leads Vastleggen",
+    "ctaDemo": "Bekijk Demo",
+    "toolsTitle": "Lead Capture Tools",
+    "toolsSubtitle": "Alles wat je nodig hebt om hoogwaardige leads aan te trekken en vast te leggen",
+    "moreTitle": "Bekijk 8 Extra Capture Functies",
+    "moreSubtitle": "Geavanceerde tools om je leadgeneratie te maximaliseren",
+    "journeyTitle": "Vervolg de Klantreis",
+    "journeySubtitle": "Vastleggen is nog maar het begin. Ontdek wat er volgt.",
+    "current": "Huidig",
+    "next": "Volgende",
+    "ctaTitle": "Klaar om meer leads vast te leggen?",
+    "ctaSubtitle": "Start je gratis proefperiode en zie resultaten binnen dagen, niet maanden.",
+    "features": {
+      "forms": {
+        "title": "Slimme Formulieren & Enquêtes",
+        "description": "Maak mooie, conversie-geoptimaliseerde formulieren met conditionele logica, meerstaps wizards en directe lead capture.",
+        "benefits": ["Drag-and-drop bouwer", "Conditionele logica", "Bestandsuploads", "Betalingen innen"]
+      },
+      "landing": {
+        "title": "Landingspagina Bouwer",
+        "description": "Bouw prachtige landingspagina's in minuten met onze visuele editor. Geen code nodig.",
+        "benefits": ["100+ templates", "A/B testen", "Mobiel geoptimaliseerd", "Eigen domeinen"]
+      },
+      "chat": {
+        "title": "Website Chat Widget",
+        "description": "Betrek bezoekers direct met een aanpasbare chatwidget die 24/7 leads vastlegt.",
+        "benefits": ["Eigen huisstijl", "Auto-antwoorden", "Lead kwalificatie", "Bestanden delen"]
+      }
+    },
+    "moreFeatures": {
+      "domains": { "title": "Eigen Domeinen", "description": "Gebruik je eigen domein voor landingspagina's en formulieren" },
+      "popups": { "title": "Popup Bouwer", "description": "Exit-intent en getimede popups om vertrekkende bezoekers te vangen" },
+      "aiForm": { "title": "AI Formulier Assistent", "description": "AI helpt bezoekers formulieren invullen met slimme suggesties" },
+      "clicks": { "title": "Klik Tracking", "description": "Zie precies hoe bezoekers met je pagina's interacteren" },
+      "magnets": { "title": "Lead Magnets", "description": "Lever PDF's, video's en bestanden bij formulierinzending" },
+      "analytics": { "title": "Conversie Analytics", "description": "Volg conversieratio's en optimaliseer je funnels" },
+      "team": { "title": "Team Samenwerking", "description": "Meerdere teamleden kunnen formulieren bouwen en beheren" },
+      "notifications": { "title": "Directe Notificaties", "description": "Ontvang een melding zodra er een nieuwe lead binnenkomt" }
+    }
+  },
+  "nurturePage": {
+    "badge": "STAP 2",
+    "badgeSub": "van de Klantreis",
+    "headline": "NURTURE",
+    "headlineSub": "Je Leads",
+    "description": "Bouw duurzame relaties met geautomatiseerde e-mail, SMS en WhatsApp-sequenties die leads op het perfecte moment betrekken.",
+    "cta": "Begin met Lead Nurturing",
+    "ctaDemo": "Bekijk Demo",
+    "toolsTitle": "Lead Nurturing Tools",
+    "toolsSubtitle": "Alles wat je nodig hebt om vertrouwen op te bouwen met je leads",
+    "current": "Huidig",
+    "previous": "Vorige",
+    "ctaTitle": "Klaar om je leads te nurturen?",
+    "ctaSubtitle": "Start je gratis proefperiode en zie resultaten binnen dagen, niet maanden.",
+    "features": {
+      "email": {
+        "title": "E-mail Marketing",
+        "description": "Ontwerp mooie e-mails met onze drag-and-drop editor. Automatiseer campagnes die converteren.",
+        "benefits": ["Visuele e-mail bouwer", "A/B testen", "Personalisatie", "Analytics"]
+      },
+      "sms": {
+        "title": "SMS & WhatsApp",
+        "description": "Bereik leads waar ze zijn met instant messaging campagnes en automatisering.",
+        "benefits": ["Tweerichtings berichten", "WhatsApp Business API", "Auto-antwoorden", "Templates"]
+      },
+      "automation": {
+        "title": "Workflow Automatisering",
+        "description": "Maak krachtige automatiseringssequenties die leads op de automatische piloot nurturen.",
+        "benefits": ["Visuele bouwer", "Triggers & acties", "Conditionele logica", "Multi-channel"]
+      }
+    }
+  },
+  "closePage": {
+    "badge": "STAP 3",
+    "badgeSub": "van de Klantreis",
+    "headline": "AFSLUITEN",
+    "headlineSub": "Meer Deals",
+    "description": "Zet leads om in betalende klanten met slimme CRM, AI-gestuurde lead scoring en naadloze betalingsverwerking.",
+    "cta": "Begin met Deals Sluiten",
+    "ctaDemo": "Bekijk Demo",
+    "toolsTitle": "Deal Closing Tools",
+    "toolsSubtitle": "Alles wat je nodig hebt om leads om te zetten in omzet",
+    "current": "Huidig",
+    "previous": "Vorige",
+    "ctaTitle": "Klaar om meer deals te sluiten?",
+    "ctaSubtitle": "Start je gratis proefperiode en zie resultaten binnen dagen, niet maanden.",
+    "features": {
+      "crm": {
+        "title": "Slimme CRM",
+        "description": "Beheer je volledige sales pipeline met onze intuïtieve CRM gebouwd voor afsluiten.",
+        "benefits": ["Visuele pipeline", "Deal tracking", "Activiteit tijdlijn", "Mobiele app"]
+      },
+      "scoring": {
+        "title": "AI Lead Scoring",
+        "description": "Laat AI je heetste leads prioriteren zodat je focust op deals die het meest waarschijnlijk sluiten.",
+        "benefits": ["Gedragsscore", "Engagement tracking", "Prioriteit alerts", "Voorspellingen"]
+      },
+      "payments": {
+        "title": "Betalingsverwerking",
+        "description": "Accepteer betalingen direct in je workflow. Facturen, abonnementen en meer.",
+        "benefits": ["Stripe integratie", "Facturering", "Abonnementen", "Betaallinks"]
+      }
+    }
   }
 }
