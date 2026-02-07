@@ -156,8 +156,8 @@ export default function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           <Link 
             href="/" 
             className="flex items-center"
@@ -167,7 +167,7 @@ export default function Navigation() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <img src="/Frame 69.png" alt="WellPlan" className="h-10 sm:h-8" />
+            <img src="/Frame 69.png" alt="WellPlan" className="h-8 sm:h-10" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
@@ -205,11 +205,15 @@ export default function Navigation() {
             <Link href="https://app.wellplan.io" target="_blank" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">Login</Link>
           </div>
 
-          <button className="lg:hidden p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg" onClick={() => setMobileOpen(!mobileOpen)}>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
-            </svg>
-          </button>
+          {/* Mobile: Language Switcher + Burger */}
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageSwitcher />
+            <button className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg" onClick={() => setMobileOpen(!mobileOpen)}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -274,14 +278,6 @@ export default function Navigation() {
           <Link href="/demo" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Book a Demo</Link>
           <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>Support</a>
           <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>API Reference</a>
-          
-          {/* Language Switcher */}
-          <div className="pt-4 mt-4 border-t border-white/10">
-            <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Language</div>
-            <div className="px-4">
-              <LanguageSwitcher variant="footer" />
-            </div>
-          </div>
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
