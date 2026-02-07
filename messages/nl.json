@@ -872,6 +872,66 @@
     },
     "cta2": { "title": "Bouw Slimmere Automatiseringen", "subtitle": "Laat AI beslissingen nemen in je workflows.", "button": "Boek een Demo" }
   },
+  "partnersPage": {
+    "badge": "Partner Programma",
+    "headline": "Groei Samen met",
+    "headlineHighlight": "WellPlan",
+    "subtitle": "Sluit je aan bij ons partnernetwerk en lever marketingautomatisering van wereldklasse aan je klanten. White-label oplossingen, dedicated support en omzetdeling.",
+    "stats": { "network": "Partner Netwerk", "revenue": "Omzetdeling", "whiteLabel": "White-Label" },
+    "gridTitle": "Onze Partners",
+    "gridSubtitle": "Bedrijven waarmee we samenwerken om uitzonderlijke resultaten te leveren.",
+    "learnMore": "Meer informatie",
+    "comingSoon": "Binnenkort beschikbaar",
+    "cta": { "title": "Word een Partner", "subtitle": "Geïnteresseerd in een partnerschap met WellPlan? Laten we bespreken hoe we samen kunnen groeien.", "button": "Neem Contact Op" },
+    "partners": {
+      "pseo": { "name": "Programmatic SEO", "tagline": "Schaal SEO met automatisering", "description": "Partner met WellPlan om end-to-end marketingautomatisering te leveren aan je SEO-klanten. White-label oplossing inbegrepen.", "benefits": "White-label CRM|Dedicated snapshots|Omzetdeling" },
+      "ffc": { "name": "FFC", "tagline": "Binnenkort beschikbaar", "description": "Partnerschap details volgen binnenkort." }
+    }
+  },
+  "pseoPartnerPage": {
+    "badge": { "partner": "PSEO", "divider": "×", "platform": "WellPlan" },
+    "headline": "Schaal Je SEO Bureau met",
+    "headlineHighlight": "Marketing Automatisering",
+    "subtitle": "Als PSEO-partner krijg je exclusieve toegang tot WellPlan's alles-in-één marketingplatform met een dedicated snapshot geoptimaliseerd voor SEO-bureaus.",
+    "cta": { "bookCall": "Boek een Strategiegesprek", "viewPricing": "Bekijk Prijzen" },
+    "trust": { "verified": "PSEO Geverifieerde Partner", "support": "Priority Support", "onboarding": "Snelle Onboarding" },
+    "benefitsTitle": "Alles Wat Je Nodig Hebt om",
+    "benefitsHighlight": "SEO Verkeer te Converteren",
+    "benefitsSubtitle": "Genereer verkeer met PSEO. Converteer dat verkeer met WellPlan.",
+    "benefits": {
+      "inbox": { "title": "Omnichannel Inbox", "description": "Beheer WhatsApp, Instagram, Facebook en e-mail vanuit één uniforme inbox." },
+      "ai": { "title": "AI Automatisering", "description": "24/7 AI die leads kwalificeert, afspraken boekt en klantenservice afhandelt." },
+      "marketing": { "title": "Marketing Automatisering", "description": "E-mail, SMS en WhatsApp-sequenties die leads automatisch opvolgen." },
+      "funnels": { "title": "Landingspagina's & Funnels", "description": "Bouw hoogconverterende pagina's en funnels zonder te coderen." },
+      "crm": { "title": "CRM & Pipeline", "description": "Volg elke lead van eerste contact tot gesloten deal met visuele pipelines." },
+      "analytics": { "title": "Analytics & Rapportage", "description": "Zie wat werkt met realtime dashboards en conversietracking." }
+    },
+    "pricingTitle": "Exclusieve PSEO Partner",
+    "pricingHighlight": "Prijzen",
+    "pricingSubtitle": "Speciale tarieven voor PSEO-partners. Start vandaag nog.",
+    "plan": {
+      "label": "PSEO PARTNER PLAN",
+      "name": "WellPlan Pro",
+      "price": "€197",
+      "period": "/ma",
+      "setup": "+ €497 eenmalige setup",
+      "cta": "Aan de Slag — Boek Je Setup Call",
+      "guarantee": "14 dagen geld-terug-garantie • Opzeggen wanneer je wilt"
+    },
+    "features": "Dedicated account setup|PSEO-geoptimaliseerde snapshot|Onboarding support|WhatsApp Business API|AI Lead Bot inbegrepen|E-mail & SMS marketing|Landingspagina bouwer|CRM & pipeline management|Agenda & boekingssysteem|Workflow automatisering|Analytics dashboard|Priority support",
+    "calendarTitle": "Boek Je",
+    "calendarHighlight": "Strategiegesprek",
+    "calendarSubtitle": "Plan een gesprek om je behoeften te bespreken en je dedicated WellPlan-account in te stellen.",
+    "faqTitle": "Vragen?",
+    "faqHighlight": "Wij Hebben Antwoorden",
+    "faq": {
+      "setup": { "q": "Wat is inbegrepen bij de setup-kosten?", "a": "De €497 setup-kosten dekken je dedicated snapshot-configuratie, aangepaste velden, pipelines, automatiseringen en een 1-op-1 onboardingsessie om ervoor te zorgen dat alles is ingesteld voor je specifieke behoeften." },
+      "onboarding": { "q": "Hoe lang duurt onboarding?", "a": "De meeste partners zijn binnen 48-72 uur volledig ingesteld. We plannen je onboarding-gesprek direct na betaling, en je hebt meteen toegang tot je account." },
+      "whitelabel": { "q": "Kan ik WellPlan white-labelen voor mijn klanten?", "a": "Ja! WellPlan ondersteunt aangepaste domeinen en branding. Je kunt WellPlan aanbieden als je eigen platform aan je SEO-klanten." },
+      "cancel": { "q": "Is er een contract of kan ik op elk moment opzeggen?", "a": "Geen langetermijncontracten. Je kunt op elk moment opzeggen. We bieden ook een 14 dagen geld-terug-garantie als je niet tevreden bent." }
+    },
+    "finalCta": { "title": "Klaar om Je Bureau te Schalen?", "subtitle": "Sluit je aan bij andere PSEO-partners die WellPlan al gebruiken om hun SEO-verkeer te converteren.", "button": "Boek Je Setup Call" }
+  },
   "meta": {
     "title": "WellPlan | Vastleggen. Nurture. Afsluiten.",
     "description": "Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans."

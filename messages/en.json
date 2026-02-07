@@ -871,6 +871,66 @@
     },
     "cta2": { "title": "Build Smarter Automations", "subtitle": "Let AI make decisions in your workflows.", "button": "Book a Demo" }
   },
+  "partnersPage": {
+    "badge": "Partner Program",
+    "headline": "Grow Together with",
+    "headlineHighlight": "WellPlan",
+    "subtitle": "Join our partner network and deliver world-class marketing automation to your clients. White-label solutions, dedicated support, and revenue sharing.",
+    "stats": { "network": "Partner Network", "revenue": "Revenue Share", "whiteLabel": "White-Label" },
+    "gridTitle": "Our Partners",
+    "gridSubtitle": "Companies we work with to deliver exceptional results.",
+    "learnMore": "Learn more",
+    "comingSoon": "Coming soon",
+    "cta": { "title": "Become a Partner", "subtitle": "Interested in partnering with WellPlan? Let's talk about how we can grow together.", "button": "Contact Us" },
+    "partners": {
+      "pseo": { "name": "Programmatic SEO", "tagline": "Scale SEO with automation", "description": "Partner with WellPlan to deliver end-to-end marketing automation to your SEO clients. White-label solution included.", "benefits": "White-label CRM|Dedicated snapshots|Revenue share" },
+      "ffc": { "name": "FFC", "tagline": "Coming soon", "description": "Partnership details coming soon." }
+    }
+  },
+  "pseoPartnerPage": {
+    "badge": { "partner": "PSEO", "divider": "×", "platform": "WellPlan" },
+    "headline": "Scale Your SEO Agency with",
+    "headlineHighlight": "Marketing Automation",
+    "subtitle": "As a PSEO partner, you get exclusive access to WellPlan's all-in-one marketing platform with a dedicated snapshot optimized for SEO agencies.",
+    "cta": { "bookCall": "Book a Strategy Call", "viewPricing": "View Pricing" },
+    "trust": { "verified": "PSEO Verified Partner", "support": "Priority Support", "onboarding": "Fast Onboarding" },
+    "benefitsTitle": "Everything You Need to",
+    "benefitsHighlight": "Convert SEO Traffic",
+    "benefitsSubtitle": "Drive traffic with PSEO. Convert that traffic with WellPlan.",
+    "benefits": {
+      "inbox": { "title": "Omnichannel Inbox", "description": "Manage WhatsApp, Instagram, Facebook, and email from one unified inbox." },
+      "ai": { "title": "AI Automation", "description": "24/7 AI that qualifies leads, books appointments, and handles customer support." },
+      "marketing": { "title": "Marketing Automation", "description": "Email, SMS, and WhatsApp sequences that nurture leads on autopilot." },
+      "funnels": { "title": "Landing Pages & Funnels", "description": "Build high-converting pages and funnels without any coding." },
+      "crm": { "title": "CRM & Pipeline", "description": "Track every lead from first touch to closed deal with visual pipelines." },
+      "analytics": { "title": "Analytics & Reporting", "description": "See what's working with real-time dashboards and conversion tracking." }
+    },
+    "pricingTitle": "Exclusive PSEO Partner",
+    "pricingHighlight": "Pricing",
+    "pricingSubtitle": "Special rates for PSEO partners. Get started today.",
+    "plan": {
+      "label": "PSEO PARTNER PLAN",
+      "name": "WellPlan Pro",
+      "price": "$197",
+      "period": "/mo",
+      "setup": "+ $497 one-time setup",
+      "cta": "Get Started — Book Your Setup Call",
+      "guarantee": "14-day money-back guarantee • Cancel anytime"
+    },
+    "features": "Dedicated account setup|PSEO-optimized snapshot|Onboarding support|WhatsApp Business API|AI Lead Bot included|Email & SMS marketing|Landing page builder|CRM & pipeline management|Calendar & booking system|Workflow automation|Analytics dashboard|Priority support",
+    "calendarTitle": "Book Your",
+    "calendarHighlight": "Strategy Call",
+    "calendarSubtitle": "Schedule a call to discuss your needs and get your dedicated WellPlan account set up.",
+    "faqTitle": "Questions?",
+    "faqHighlight": "We've Got Answers",
+    "faq": {
+      "setup": { "q": "What's included in the setup fee?", "a": "The $497 setup fee covers your dedicated snapshot configuration, custom fields, pipelines, automations, and a 1-on-1 onboarding session to ensure everything is set up for your specific needs." },
+      "onboarding": { "q": "How long does onboarding take?", "a": "Most partners are fully set up within 48-72 hours. We'll schedule your onboarding call right after payment, and you'll have access to your account immediately." },
+      "whitelabel": { "q": "Can I white-label WellPlan for my clients?", "a": "Yes! WellPlan supports custom domains and branding. You can offer WellPlan as your own platform to your SEO clients." },
+      "cancel": { "q": "Is there a contract or can I cancel anytime?", "a": "No long-term contracts. You can cancel anytime. We also offer a 14-day money-back guarantee if you're not satisfied." }
+    },
+    "finalCta": { "title": "Ready to Scale Your Agency?", "subtitle": "Join other PSEO partners already using WellPlan to convert their SEO traffic.", "button": "Book Your Setup Call" }
+  },
   "meta": {
     "title": "WellPlan | Capture. Nurture. Close.",
     "description": "The all-in-one platform that turns visitors into leads, leads into customers, and customers into raving fans."
