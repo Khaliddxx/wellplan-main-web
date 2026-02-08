@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { Bot, Building2, Target, Briefcase, ArrowRight } from 'lucide-react';
-import { useTranslations } from '../lib/translations';
 import { usePathname } from 'next/navigation';
 
 function useLocalePath() {
@@ -19,7 +18,6 @@ function useLocalePath() {
 }
 
 export default function DiscoverPlatform() {
-  const t = useTranslations('discover');
   const localePath = useLocalePath();
   
   return (
@@ -32,13 +30,13 @@ export default function DiscoverPlatform() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 rounded-full bg-[#214CE5]/10 border border-[#214CE5]/30 text-[#214CE5] text-sm font-semibold mb-4">
-            {t('badge') || 'Explore the Platform'}
+            Explore the Platform
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('title') || 'Everything You Need to Grow'}
+            Everything You Need to Grow
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            {t('subtitle') || 'From AI employees to industry solutions — discover what WellPlan can do for your business.'}
+            From AI employees to industry solutions — discover what WellPlan can do for your business.
           </p>
         </div>
         
@@ -59,10 +57,10 @@ export default function DiscoverPlatform() {
                 <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">NEW</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#214CE5] transition-colors">
-                {t('aiSuiteTitle') || 'AI Employee Suite'}
+                AI Employee Suite
               </h3>
               <p className="text-gray-400 mb-6">
-                {t('aiSuiteDesc') || '6 AI-powered tools that work 24/7 — from conversation bots to voice agents, content writers, and more.'}
+                6 AI-powered tools that work 24/7 — from conversation bots to voice agents, content writers, and more.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Conversation Bot', 'Voice Agent', 'Content Writer', 'Reviews', 'Funnels', 'Workflows'].map((tool) => (
@@ -72,7 +70,7 @@ export default function DiscoverPlatform() {
                 ))}
               </div>
               <div className="mt-6 flex items-center gap-2 text-[#214CE5] font-semibold group-hover:gap-3 transition-all">
-                {t('explore') || 'Explore AI Suite'} <ArrowRight className="w-4 h-4" />
+                Explore AI Suite <ArrowRight className="w-4 h-4" />
               </div>
             </div>
           </Link>
@@ -87,8 +85,8 @@ export default function DiscoverPlatform() {
                 <Building2 className="w-7 h-7 text-blue-400" />
               </div>
               <div className="flex-1">
-                <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors">{t('agencies') || 'For Agencies'}</h4>
-                <p className="text-sm text-gray-500 mt-1">{t('agenciesDesc') || 'Scale client management'}</p>
+                <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors">For Agencies</h4>
+                <p className="text-sm text-gray-500 mt-1">White-label & scale client management</p>
               </div>
               <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
             </Link>
@@ -101,8 +99,8 @@ export default function DiscoverPlatform() {
                 <Target className="w-7 h-7 text-purple-400" />
               </div>
               <div className="flex-1">
-                <h4 className="font-bold text-white group-hover:text-purple-400 transition-colors">{t('coaches') || 'For Coaches'}</h4>
-                <p className="text-sm text-gray-500 mt-1">{t('coachesDesc') || 'Automate client booking'}</p>
+                <h4 className="font-bold text-white group-hover:text-purple-400 transition-colors">For Coaches</h4>
+                <p className="text-sm text-gray-500 mt-1">Automate booking & client follow-ups</p>
               </div>
               <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" />
             </Link>
@@ -115,8 +113,8 @@ export default function DiscoverPlatform() {
                 <Briefcase className="w-7 h-7 text-emerald-400" />
               </div>
               <div className="flex-1">
-                <h4 className="font-bold text-white group-hover:text-emerald-400 transition-colors">{t('salesTeams') || 'For Sales Teams'}</h4>
-                <p className="text-sm text-gray-500 mt-1">{t('salesTeamsDesc') || 'Close deals faster'}</p>
+                <h4 className="font-bold text-white group-hover:text-emerald-400 transition-colors">For Sales Teams</h4>
+                <p className="text-sm text-gray-500 mt-1">Close deals faster with AI</p>
               </div>
               <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
             </Link>
