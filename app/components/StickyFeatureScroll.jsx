@@ -111,6 +111,57 @@ const features = [
             </div>
           </div>
         </motion.div>
+        
+        {/* Email notification - LEFT */}
+        <motion.div 
+          className="absolute -left-2 sm:-left-4 top-[12%] bg-[#1a1d24] border border-[#EA4335]/50 rounded-xl p-2 sm:p-3 shadow-xl shadow-[#EA4335]/20"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.2, repeat: Infinity, delay: 0.3 }}
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#EA4335] flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4 sm:w-5 sm:h-5"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div className="text-[10px] sm:text-xs font-semibold text-white">New Email</div>
+              <div className="text-[9px] sm:text-[10px] text-gray-500">sarah@company.com</div>
+            </div>
+          </div>
+        </motion.div>
+        
+        {/* Website notification - LEFT */}
+        <motion.div 
+          className="absolute -left-2 sm:-left-4 top-[40%] bg-[#1a1d24] border border-[#214CE5]/50 rounded-xl p-2 sm:p-3 shadow-xl shadow-[#214CE5]/20"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.8, repeat: Infinity, delay: 0.7 }}
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#214CE5] flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4 sm:w-5 sm:h-5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <div>
+              <div className="text-[10px] sm:text-xs font-semibold text-white">Website Form</div>
+              <div className="text-[9px] sm:text-[10px] text-gray-500">Demo request</div>
+            </div>
+          </div>
+        </motion.div>
+        
+        {/* SMS notification - LEFT */}
+        <motion.div 
+          className="absolute -left-2 sm:-left-4 top-[68%] bg-[#1a1d24] border border-[#5865F2]/50 rounded-xl p-2 sm:p-3 shadow-xl shadow-[#5865F2]/20"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, delay: 1.2 }}
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#5865F2] flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4 sm:w-5 sm:h-5"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12zM7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+            </div>
+            <div>
+              <div className="text-[10px] sm:text-xs font-semibold text-white">SMS Lead</div>
+              <div className="text-[9px] sm:text-[10px] text-gray-500">+1 (555) 123-4567</div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     ),
   },
