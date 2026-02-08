@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <ClientProviders>
           <LocaleWrapper>
             <Navigation />
-            <main>{children}</main>
+            <main className="pt-20 sm:pt-24">{children}</main>
             <Footer />
           </LocaleWrapper>
         </ClientProviders>

@@ -180,9 +180,9 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+        <div className="flex justify-between items-center h-20 sm:h-24">
           <Link 
             href="/" 
             className="flex items-center"
@@ -192,7 +192,7 @@ export default function Navigation() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <img src="/Frame 69.png" alt="WellPlan" className="h-8 sm:h-10" />
+            <img src="/Frame 69.png" alt="WellPlan" className="h-10 sm:h-12" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
@@ -243,7 +243,7 @@ export default function Navigation() {
       </div>
 
       {activeDropdown && (
-        <div className="absolute left-1/2 -translate-x-1/2 top-16 pt-2" onMouseEnter={() => handleMouseEnter(activeDropdown)} onMouseLeave={handleMouseLeave}>
+        <div className="absolute left-1/2 -translate-x-1/2 top-20 sm:top-24 pt-2" onMouseEnter={() => handleMouseEnter(activeDropdown)} onMouseLeave={handleMouseLeave}>
           <div className="bg-[#0f1115] border border-white/10 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden">
             {activeDropdown === 'features' && <FeaturesDropdown onClose={() => setActiveDropdown(null)} localePath={localePath} />}
             {activeDropdown === 'solutions' && <SolutionsDropdown onClose={() => setActiveDropdown(null)} localePath={localePath} />}
