@@ -420,7 +420,7 @@ function FeatureSection({ feature, index, learnMore }) {
           {/* Visual */}
           <motion.div 
             style={{ opacity, scale, y: yVisual }}
-            className="lg:[direction:ltr] h-[320px] sm:h-[400px] lg:h-[500px] relative"
+            className="lg:[direction:ltr] h-[260px] sm:h-[400px] lg:h-[500px] relative"
           >
             {feature.visual}
           </motion.div>
