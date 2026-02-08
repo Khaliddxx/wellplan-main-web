@@ -182,63 +182,63 @@ const features = [
     visual: (
       <div className="relative w-full h-full">
         {/* Workflow Canvas */}
-        <div className="absolute inset-4 bg-[#0f1115] rounded-2xl border border-white/10 overflow-hidden shadow-2xl p-6">
-          {/* Workflow nodes */}
-          <div className="flex items-center justify-between">
+        <div className="absolute inset-2 sm:inset-4 bg-[#0f1115] rounded-2xl border border-white/10 overflow-hidden shadow-2xl p-3 sm:p-6">
+          {/* Workflow nodes - vertical on mobile, horizontal on desktop */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
             {/* Trigger */}
             <motion.div 
-              className="w-24 h-24 bg-purple-500/20 border border-purple-500/50 rounded-xl flex flex-col items-center justify-center"
+              className="w-full sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-purple-500/20 border border-purple-500/50 rounded-xl flex flex-row sm:flex-col items-center justify-center sm:justify-center gap-2 sm:gap-0 px-3 sm:px-0"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <span className="text-2xl">📧</span>
-              <span className="text-[10px] text-purple-400 mt-1">Trigger</span>
+              <span className="text-xl sm:text-2xl">📧</span>
+              <span className="text-[10px] text-purple-400 sm:mt-1">Trigger</span>
             </motion.div>
             
-            {/* Arrow */}
+            {/* Arrow - vertical on mobile */}
             <motion.div 
-              className="flex-1 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-2"
+              className="w-0.5 h-4 sm:w-auto sm:h-0.5 sm:flex-1 bg-gradient-to-b sm:bg-gradient-to-r from-purple-500 to-pink-500 sm:mx-2"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
             
             {/* Wait */}
-            <div className="w-24 h-24 bg-white/5 border border-white/10 rounded-xl flex flex-col items-center justify-center">
-              <span className="text-2xl">⏰</span>
-              <span className="text-[10px] text-gray-400 mt-1">Wait 2 days</span>
+            <div className="w-full sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-white/5 border border-white/10 rounded-xl flex flex-row sm:flex-col items-center justify-center sm:justify-center gap-2 sm:gap-0 px-3 sm:px-0">
+              <span className="text-xl sm:text-2xl">⏰</span>
+              <span className="text-[10px] text-gray-400 sm:mt-1">Wait 2 days</span>
             </div>
             
             {/* Arrow */}
             <motion.div 
-              className="flex-1 h-0.5 bg-gradient-to-r from-pink-500 to-orange-500 mx-2"
+              className="w-0.5 h-4 sm:w-auto sm:h-0.5 sm:flex-1 bg-gradient-to-b sm:bg-gradient-to-r from-pink-500 to-orange-500 sm:mx-2"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
             />
             
             {/* SMS */}
             <motion.div 
-              className="w-24 h-24 bg-pink-500/20 border border-pink-500/50 rounded-xl flex flex-col items-center justify-center"
+              className="w-full sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-pink-500/20 border border-pink-500/50 rounded-xl flex flex-row sm:flex-col items-center justify-center sm:justify-center gap-2 sm:gap-0 px-3 sm:px-0"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity, delay: 1 }}
             >
-              <span className="text-2xl">💬</span>
-              <span className="text-[10px] text-pink-400 mt-1">Send SMS</span>
+              <span className="text-xl sm:text-2xl">💬</span>
+              <span className="text-[10px] text-pink-400 sm:mt-1">Send SMS</span>
             </motion.div>
           </div>
           
           {/* Stats below */}
-          <div className="mt-8 grid grid-cols-3 gap-4">
-            <div className="bg-white/5 rounded-lg p-3 text-center">
-              <div className="text-xl font-bold text-purple-400">1,234</div>
-              <div className="text-[10px] text-gray-500">Active sequences</div>
+          <div className="mt-4 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4">
+            <div className="bg-white/5 rounded-lg p-2 sm:p-3 text-center">
+              <div className="text-base sm:text-xl font-bold text-purple-400">1,234</div>
+              <div className="text-[8px] sm:text-[10px] text-gray-500">Active sequences</div>
             </div>
-            <div className="bg-white/5 rounded-lg p-3 text-center">
-              <div className="text-xl font-bold text-pink-400">89%</div>
-              <div className="text-[10px] text-gray-500">Delivery rate</div>
+            <div className="bg-white/5 rounded-lg p-2 sm:p-3 text-center">
+              <div className="text-base sm:text-xl font-bold text-pink-400">89%</div>
+              <div className="text-[8px] sm:text-[10px] text-gray-500">Delivery rate</div>
             </div>
-            <div className="bg-white/5 rounded-lg p-3 text-center">
-              <div className="text-xl font-bold text-orange-400">4.2x</div>
-              <div className="text-[10px] text-gray-500">ROI</div>
+            <div className="bg-white/5 rounded-lg p-2 sm:p-3 text-center">
+              <div className="text-base sm:text-xl font-bold text-orange-400">4.2x</div>
+              <div className="text-[8px] sm:text-[10px] text-gray-500">ROI</div>
             </div>
           </div>
         </div>
