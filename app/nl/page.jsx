@@ -4,6 +4,7 @@ import ComparisonMatrix from '../components/ComparisonMatrix';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 import FinalCTA from '../components/FinalCTA';
 import IntegrationLogoCarousel from '../components/IntegrationLogoCarousel';
+import DiscoverPlatform from '../components/DiscoverPlatform';
 
 export const metadata = {
   title: 'WellPlan | Vastleggen. Nurture. Afsluiten.',
@@ -29,6 +30,7 @@ export default function HomePage() {
     <>
       <EnhancedHero />
       <StickyFeatureScroll />
+      <DiscoverPlatform />
       <IntegrationLogoCarousel />
       <ComparisonMatrix />
       <TestimonialCarousel />
