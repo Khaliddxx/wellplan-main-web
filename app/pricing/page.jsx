@@ -32,8 +32,6 @@ export default function PricingPage() {
         'Marketing suite (email, funnels, blogs, campaigns)',
         'Websites, memberships & communities',
         'All reporting & tools',
-        'Up to 2,500 contacts',
-        '3 users',
         'Email support'
       ]
     },
@@ -52,8 +50,6 @@ export default function PricingPage() {
         'Automated Pipelines',
         '52 Weekly SMS Templates',
         '12 Monthly Email Nurture',
-        'Up to 2,500 contacts',
-        '3 users',
         'Full Setup Support'
       ]
     },
@@ -71,9 +67,7 @@ export default function PricingPage() {
         'Handles Common Questions',
         'Professional Voice Response',
         'Calendar Integration',
-        'Call Analytics & Reports',
-        'Up to 2,500 contacts',
-        '3 users'
+        'Call Analytics & Reports'
       ]
     }
   ];
