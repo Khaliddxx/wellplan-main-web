@@ -22,47 +22,58 @@ export default function PricingPage() {
     {
       name: 'Starter',
       price: annual ? 77 : 97,
-      description: 'Perfect for small businesses getting started',
+      description: 'Complete WellPlan Software Access',
       icon: Zap,
       color: 'blue',
       features: [
-        'Up to 1,000 contacts',
-        'Email marketing',
-        'Basic automations',
-        'Landing pages',
-        'Forms & surveys',
-        'Community support'
+        'All conversations (WhatsApp, Instagram, SMS, Email, Web Chat, GMB, FB)',
+        'Social media management (Instagram, Facebook, TikTok, Google)',
+        'Full CRM, payments & pipeline',
+        'Marketing suite (email, funnels, blogs, campaigns)',
+        'Websites, memberships & communities',
+        'All reporting & tools',
+        'Up to 2,500 contacts',
+        '3 users',
+        'Email support'
       ]
     },
     {
-      name: 'Professional',
-      price: annual ? 157 : 197,
-      description: 'For growing businesses that need more power',
+      name: 'Essential + Business Automation',
+      price: annual ? 77 : 97,
+      description: 'WellPlan + Complete automation suite',
       icon: Star,
       color: 'purple',
       popular: true,
+      valueTag: 'Automation normally: $2,000 — FREE',
       features: [
-        'Up to 10,000 contacts',
         'Everything in Starter',
-        'WhatsApp Business API',
-        'Advanced automations',
-        'Pipeline management',
-        'Priority support'
+        '7+ Sales Funnels & 11+ Forms',
+        '100+ Workflow Actions',
+        'Automated Pipelines',
+        '52 Weekly SMS Templates',
+        '12 Monthly Email Nurture',
+        'Up to 2,500 contacts',
+        '3 users',
+        'Full Setup Support'
       ]
     },
     {
-      name: 'Enterprise',
+      name: 'Essential + AI Employee',
       price: annual ? 397 : 497,
-      description: 'For large teams with advanced needs',
+      description: 'WellPlan + Your virtual receptionist',
       icon: Building2,
       color: 'emerald',
+      setupFee: 'Setup: $1,000',
       features: [
-        'Unlimited contacts',
-        'Everything in Professional',
-        'AI Lead Bot',
-        'Custom integrations',
-        'Dedicated account manager',
-        'SLA guarantee'
+        'Everything in Starter',
+        'Answers Every Call 24/7',
+        'Books Appointments Automatically',
+        'Handles Common Questions',
+        'Professional Voice Response',
+        'Calendar Integration',
+        'Call Analytics & Reports',
+        'Up to 2,500 contacts',
+        '3 users'
       ]
     }
   ];
@@ -100,7 +111,7 @@ export default function PricingPage() {
             Simple, <span className="bg-gradient-to-r from-[#214CE5] to-purple-400 bg-clip-text text-transparent">Transparent</span> Pricing
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-            Start free, upgrade as you grow. No hidden fees, no surprises.
+            One price. All features. No hidden fees, no surprises.
           </p>
           
           {/* Billing Toggle */}
@@ -142,7 +153,14 @@ export default function PricingPage() {
                 </div>
                 
                 <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-gray-500 text-sm mb-6">{plan.description}</p>
+                <p className="text-gray-500 text-sm mb-2">{plan.description}</p>
+                {plan.valueTag && (
+                  <p className="text-xs font-semibold text-emerald-400 mb-4">{plan.valueTag}</p>
+                )}
+                {plan.setupFee && (
+                  <p className="text-xs font-semibold text-orange-400 mb-4">{plan.setupFee}</p>
+                )}
+                {!plan.valueTag && !plan.setupFee && <div className="mb-4" />}
                 
                 <div className="mb-6">
                   <span className="text-5xl font-black text-white">${plan.price}</span>
@@ -173,7 +191,7 @@ export default function PricingPage() {
         <div className="text-center mb-20">
           <h2 className="text-2xl font-bold text-white mb-8">All plans include</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-            {['Free onboarding', 'Mobile app access', 'API access', '99.9% uptime', 'SSL security', 'GDPR compliant'].map((item) => (
+            {['Free onboarding', 'Mobile app access', 'API access', '99.9% uptime', 'WhatsApp & Instagram included', 'All channels included'].map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-gray-400">
                 <Check className="w-4 h-4 text-[#214CE5]" />
                 {item}
@@ -192,11 +210,11 @@ export default function PricingPage() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <h3 className="text-2xl font-bold text-white">AI Lead Bot Add-on</h3>
+                <h3 className="text-2xl font-bold text-white">AI Employee Add-on</h3>
                 <span className="px-2 py-0.5 bg-[#214CE5]/20 text-[#6B8EFF] text-xs font-bold rounded">NEW</span>
               </div>
               <p className="text-gray-400 mb-4">
-                24/7 AI that qualifies leads, books appointments, and helps close deals automatically.
+                Your virtual receptionist — answers every call 24/7, books appointments, and handles common questions automatically.
               </p>
               <div className="flex items-center justify-center md:justify-start gap-4">
                 <span className="text-3xl font-black text-white">+$397</span>
