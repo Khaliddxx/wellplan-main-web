@@ -20,7 +20,7 @@ export default function PricingPage() {
 
   const plans = [
     {
-      name: 'Starter',
+      name: 'Agency',
       price: annual ? 77 : 97,
       description: 'Complete WellPlan Software Access',
       icon: Zap,
@@ -30,44 +30,38 @@ export default function PricingPage() {
         'Social media management (Instagram, Facebook, TikTok, Google)',
         'Full CRM, payments & pipeline',
         'Marketing suite (email, funnels, blogs, campaigns)',
+        'Automation & workflows',
         'Websites, memberships & communities',
         'All reporting & tools',
+        'Up to 10,000 contacts',
         'Email support'
       ]
     },
     {
-      name: 'Essential + Business Automation',
-      price: annual ? 77 : 97,
-      description: 'WellPlan + Complete automation suite',
+      name: 'Business',
+      price: annual ? 157 : 197,
+      description: 'For growing businesses that need no limits',
       icon: Star,
       color: 'purple',
       popular: true,
-      valueTag: 'Automation normally: $2,000 — FREE',
       features: [
-        'Everything in Starter',
-        '7+ Sales Funnels & 11+ Forms',
-        '100+ Workflow Actions',
-        'Automated Pipelines',
-        '52 Weekly SMS Templates',
-        '12 Monthly Email Nurture',
-        'Full Setup Support'
+        'Everything in Agency',
+        'Unlimited contacts',
+        'Priority support'
       ]
     },
     {
-      name: 'Essential + AI Employee',
-      price: annual ? 397 : 497,
-      description: 'WellPlan + Your virtual receptionist',
+      name: 'Enterprise',
+      price: null,
+      description: 'Custom solutions for large organizations',
       icon: Building2,
       color: 'emerald',
-      setupFee: 'Setup: $1,000',
+      contactPricing: true,
       features: [
-        'Everything in Starter',
-        'Answers Every Call 24/7',
-        'Books Appointments Automatically',
-        'Handles Common Questions',
-        'Professional Voice Response',
-        'Calendar Integration',
-        'Call Analytics & Reports'
+        'Everything in Business',
+        'Dedicated client portal',
+        'Custom development',
+        'Dedicated account manager'
       ]
     }
   ];
@@ -157,15 +151,21 @@ export default function PricingPage() {
                 {!plan.valueTag && !plan.setupFee && <div className="mb-4" />}
                 
                 <div className="mb-6">
-                  <span className="text-5xl font-black text-white">${plan.price}</span>
-                  <span className="text-gray-500">/month</span>
+                  {plan.contactPricing ? (
+                    <span className="text-3xl font-black text-white">Contact for pricing</span>
+                  ) : (
+                    <>
+                      <span className="text-5xl font-black text-white">${plan.price}</span>
+                      <span className="text-gray-500">/month</span>
+                    </>
+                  )}
                 </div>
                 
                 <Link
-                  href="/demo"
+                  href={plan.contactPricing ? '/contact' : '/demo'}
                   className={`block w-full py-3 px-6 rounded-xl font-semibold text-center transition ${colors.button}`}
                 >
-                  Get Started
+                  {plan.contactPricing ? 'Contact Us' : 'Get Started'}
                 </Link>
                 
                 <ul className="mt-8 space-y-3">
