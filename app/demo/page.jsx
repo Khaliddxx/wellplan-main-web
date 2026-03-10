@@ -97,14 +97,14 @@ export default function DemoPage() {
 
             {/* Right: Calendar Widget */}
             <div className="lg:pl-8">
-              <div className="p-6 rounded-3xl bg-[#111111] border border-white/10 shadow-2xl">
-                <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+              <div className="p-4 md:p-6 rounded-3xl bg-[#111111] border border-white/10 shadow-2xl h-fit lg:h-[750px] flex flex-col">
+                <h2 className="text-xl font-bold mb-4 md:mb-6 flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-[#214CE5]" />
                   {t('scheduleTitle')}
                 </h2>
                 
                 {/* Calendar Widget */}
-                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5">
+                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5 flex-1">
                   <CalendarWidget />
                 </div>
               </div>
