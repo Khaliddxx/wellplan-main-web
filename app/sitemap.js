@@ -1,4 +1,6 @@
 import { integrations } from './lib/integrations';
+import { glossaryTerms } from './lib/glossary';
+import { industries } from './lib/industries';
 
 export default function sitemap() {
   const baseUrl = 'https://wellplan.io';
@@ -76,6 +78,20 @@ export default function sitemap() {
     { route: '/compare/wellplan-vs-gohighlevel', priority: 0.9, changeFreq: 'monthly' },
     { route: '/compare/wellplan-vs-activecampaign', priority: 0.9, changeFreq: 'monthly' },
 
+    // Alternative positioning
+    { route: '/alternatives/all-in-one-marketing-platform', priority: 0.8, changeFreq: 'monthly' },
+
+    // Resources
+    { route: '/resources', priority: 0.7, changeFreq: 'monthly' },
+    { route: '/resources/whatsapp-crm', priority: 0.85, changeFreq: 'monthly' },
+
+    // Guides
+    { route: '/guides/migrate-from-hubspot', priority: 0.8, changeFreq: 'monthly' },
+    { route: '/guides/migrate-to-wellplan', priority: 0.7, changeFreq: 'monthly' },
+
+    // Glossary
+    { route: '/glossary', priority: 0.7, changeFreq: 'monthly' },
+
     // Legal
     { route: '/privacy', priority: 0.3, changeFreq: 'yearly' },
     { route: '/terms', priority: 0.3, changeFreq: 'yearly' },
@@ -115,10 +131,25 @@ export default function sitemap() {
     buildPagePair({ route: `/integrations/${integration.slug}`, priority: 0.6, changeFreq: 'monthly' }),
   );
 
+  // Industry detail pages
+  const industryPages = industries.flatMap((industry) =>
+    buildPagePair({ route: `/industries/${industry.slug}`, priority: 0.7, changeFreq: 'monthly' }),
+  );
+
+  // Glossary detail pages (EN only — NL not yet localized)
+  const glossaryPages = glossaryTerms.map((term) => ({
+    url: `${baseUrl}/glossary/${term.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
   return [
     rootHomepage,
     nlHomepage,
     ...staticPages,
     ...integrationPages,
+    ...industryPages,
+    ...glossaryPages,
   ];
 }

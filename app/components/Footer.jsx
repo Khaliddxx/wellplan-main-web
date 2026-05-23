@@ -62,10 +62,10 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4 text-sm">{t('resources')}</h4>
             <ul className="space-y-3">
               <li><Link href="/blog" className="text-gray-500 hover:text-white text-sm transition">{t('blog')}</Link></li>
-              <li><Link href="/case-studies" className="text-gray-500 hover:text-white text-sm transition">{t('caseStudies')}</Link></li>
+              <li><Link href="/glossary" className="text-gray-500 hover:text-white text-sm transition">{t('glossary') || 'Glossary'}</Link></li>
+              <li><Link href="/resources/whatsapp-crm" className="text-gray-500 hover:text-white text-sm transition">{t('whatsappCrmGuide') || 'WhatsApp CRM Guide'}</Link></li>
+              <li><Link href="/compare" className="text-gray-500 hover:text-white text-sm transition">{t('compare') || 'Compare'}</Link></li>
               <li><Link href="/roi-calculator" className="text-gray-500 hover:text-white text-sm transition">{t('roiCalculator')}</Link></li>
-              <li><a href="https://knowledge.wellplan.io/kb" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('documentation')}</a></li>
-              <li><a href="https://www.youtube.com/playlist?list=PLcZ6Hm093rEIL4yidwy2fDCCkImFLcn7K" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('videoTutorials')}</a></li>
             </ul>
           </div>
 
@@ -78,7 +78,7 @@ export default function Footer() {
               <li><Link href="/demo" className="text-gray-500 hover:text-white text-sm transition">{t('bookDemo')}</Link></li>
               <li><Link href="/partners" className="text-gray-500 hover:text-white text-sm transition">{t('partners')}</Link></li>
               <li><Link href="/contact" className="text-gray-500 hover:text-white text-sm transition">{t('contact')}</Link></li>
-              <li><a href="https://help.leadconnectorhq.com/support/home" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition">{t('support')}</a></li>
+              <li><Link href="/contact" className="text-gray-500 hover:text-white text-sm transition">{t('support')}</Link></li>
             </ul>
           </div>
         </div>

@@ -32,13 +32,12 @@ export const comparisons = {
   },
   gohighlevel: {
     competitorName: 'GoHighLevel',
-    competitorTagline: 'Powerful platform — but you handle setup, support, and maintenance.',
+    competitorTagline: 'Powerful toolbox — but setup, support, and maintenance are on you.',
     summary:
-      'WellPlan is built on the same enterprise infrastructure as GoHighLevel — but where GoHighLevel hands you a toolbox and walks away, WellPlan gives you a configured platform, onboarding, and our team behind you. The honest difference: all the HighLevel power, minus the setup curve.',
+      'WellPlan and GoHighLevel cover similar territory: CRM, automation, funnels, WhatsApp, SMS, and AI. The honest difference: WellPlan ships configured, with workflows pre-built, onboarding included, and our team behind you. GoHighLevel hands you a toolbox and expects you to learn it.',
     heroPitch:
-      'All the HighLevel power. Without the steep learning curve.',
+      'All the power. Without the learning curve.',
     rows: [
-      { feature: 'Underlying infrastructure', wellplan: 'HighLevel-powered', competitor: 'HighLevel' },
       { feature: 'Onboarding included', wellplan: 'Yes — done-for-you', competitor: 'DIY' },
       { feature: 'Setup support', wellplan: 'Included', competitor: 'Self-serve / paid add-ons' },
       { feature: 'Pre-built workflows', wellplan: 'Yes — ready to ship', competitor: 'Build your own' },
@@ -49,7 +48,7 @@ export const comparisons = {
       { feature: 'Price', wellplan: 'From $97/mo', competitor: '$97/mo (Starter) – $497/mo (Agency)' },
     ],
     whenToChoose: [
-      'You want HighLevel power but don\'t want to learn the platform yourself',
+      'You want a fully-featured marketing platform without learning every detail yourself',
       'You\'re a coach, consultant, or SMB without a technical team',
       'You want pre-built workflows for WhatsApp, Instagram, email, and SMS',
       'You operate in Europe or MENA and need regional defaults out of the box',

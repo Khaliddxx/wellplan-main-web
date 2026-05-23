@@ -103,6 +103,7 @@ export const organizationJsonLd = {
 
 /**
  * JSON-LD: SoftwareApplication for the platform.
+ * Note: aggregateRating intentionally omitted — only add once real review data exists.
  */
 export const softwareApplicationJsonLd = {
   '@context': 'https://schema.org',
@@ -118,11 +119,6 @@ export const softwareApplicationJsonLd = {
     lowPrice: '97',
     highPrice: '497',
     offerCount: 3,
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '127',
   },
   url: SITE_URL,
 };

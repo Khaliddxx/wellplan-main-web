@@ -3,18 +3,174 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
-import { Target, CheckCircle, ArrowRight, Zap, Calendar, MessageSquare, Users, TrendingUp, Clock, Bot, Star, Play } from 'lucide-react';
+import {
+  Target,
+  CheckCircle,
+  ArrowRight,
+  Zap,
+  Calendar,
+  MessageSquare,
+  Users,
+  TrendingUp,
+  Clock,
+  Bot,
+  Star,
+  Play,
+  Workflow,
+  Inbox,
+  CreditCard,
+  Globe,
+  PhoneCall,
+  GraduationCap,
+  Sparkles,
+} from 'lucide-react';
 import { useTranslations } from '../../lib/translations';
 
+const coachFaqs = [
+  {
+    q: 'Can I run my entire coaching business inside WellPlan?',
+    a: 'Yes. WellPlan handles lead capture (forms, funnels, landing pages), CRM with custom pipelines, discovery call booking (calendar), client communication (unified inbox across email, SMS, WhatsApp, Instagram DM, and Messenger), program delivery (memberships), payments, and automated check-ins — without bolting on separate tools.',
+  },
+  {
+    q: 'How does the AI chatbot help with lead screening?',
+    a: 'The AI chatbot greets visitors on your site or in DMs, asks the qualification questions you define (niche, budget, timeline, current situation), tags the contact in your CRM, and either books them directly into your calendar or routes hot leads to you for follow-up. It runs 24/7 so you never lose a midnight inquiry.',
+  },
+  {
+    q: 'Can I deliver group programs and 1:1 coaching from the same workspace?',
+    a: 'Yes. Use Opportunities pipelines for 1:1 client engagements, group/class calendars for cohort calls, and memberships for course content and resources. Workflow automation handles welcome sequences, milestone check-ins, and renewal nudges across both delivery models.',
+  },
+  {
+    q: 'Do I need a separate course platform?',
+    a: 'In most cases, no. WellPlan memberships host video, modules, and downloads, gate content by enrollment, and tie into the same CRM your sales and onboarding workflows run on — so enrollment, billing, and engagement all stay in one system.',
+  },
+  {
+    q: 'How do I handle webinar or workshop registrations?',
+    a: 'Build a landing page in WellPlan with a registration form, route registrants into a workflow that sends reminders by email and SMS or WhatsApp, drop them into your CRM with a "webinar registered" tag, and trigger a post-event follow-up sequence automatically based on whether they attended.',
+  },
+];
+
+const coachWorkflows = [
+  {
+    name: 'Discovery call booking flow',
+    description:
+      'Visitor lands on your funnel, fills in a short qualification form, gets screened by the AI chatbot, books into your calendar, and receives SMS and email reminders.',
+    steps: [
+      { label: 'Web form submission on landing page', icon: Globe },
+      { label: 'AI chatbot asks qualification questions', icon: Bot },
+      { label: 'Lead books into your discovery calendar', icon: Calendar },
+      { label: 'Automated SMS + email reminders before call', icon: MessageSquare },
+    ],
+  },
+  {
+    name: 'Group program enrollment',
+    description:
+      'Long-form application captures fit data, you review and approve, and the welcome sequence delivers onboarding modules, expectations, and the first cohort call link.',
+    steps: [
+      { label: 'Landing page + multi-step application form', icon: Globe },
+      { label: 'Application enters review pipeline stage', icon: Workflow },
+      { label: 'Manual approval triggers onboarding workflow', icon: CheckCircle },
+      { label: 'Welcome emails, payment link, course access', icon: GraduationCap },
+    ],
+  },
+  {
+    name: 'Client retention check-in',
+    description:
+      'After enrollment, automated 30, 60, and 90-day check-ins go out via WhatsApp or email — celebrating wins, surfacing blockers, and routing at-risk clients to your inbox.',
+    steps: [
+      { label: 'Day 30: WhatsApp/email progress check-in', icon: MessageSquare },
+      { label: 'Day 60: milestone celebration + survey', icon: Sparkles },
+      { label: 'Day 90: testimonial + renewal/upsell prompt', icon: TrendingUp },
+      { label: 'At-risk clients auto-routed to your inbox', icon: Inbox },
+    ],
+  },
+];
+
+const topTools = [
+  {
+    icon: Calendar,
+    title: 'Calendar booking',
+    description: 'Discovery calls, 1:1 sessions, group cohort calls, and class calendars with round-robin, buffer times, and Google/Microsoft 365 sync.',
+  },
+  {
+    icon: Bot,
+    title: 'AI chatbot',
+    description: 'Greets, qualifies, and books leads 24/7 across your website, WhatsApp, Instagram DM, and Messenger using questions you define.',
+  },
+  {
+    icon: Workflow,
+    title: 'Workflow automation',
+    description: 'Multi-step nurture, onboarding, and retention sequences with branching, wait timers, and triggers across every channel.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Memberships',
+    description: 'Host course content, gate by enrollment status, and tie progress back to the same CRM that runs your sales and follow-up.',
+  },
+  {
+    icon: Inbox,
+    title: 'Unified inbox',
+    description: 'Every conversation — email, SMS, WhatsApp, Instagram, Messenger, web chat — in one inbox tied to each contact record.',
+  },
+  {
+    icon: CreditCard,
+    title: 'Payments',
+    description: 'Sell programs, subscriptions, and one-off sessions with built-in checkout, invoicing, and recurring billing.',
+  },
+];
+
+const coachBenefits = [
+  {
+    title: '24/7 lead engagement',
+    description:
+      'Inquiries don\'t wait for business hours. WellPlan auto-responds across web chat, WhatsApp, SMS, and Instagram DM the moment a lead reaches out, capturing context and booking calls while you sleep.',
+    icon: Clock,
+  },
+  {
+    title: 'AI chatbot for screening',
+    description:
+      'Define your qualification questions once and let the AI chatbot screen every inbound. It tags contacts in your CRM, routes hot leads to your inbox, and books qualified prospects straight into your calendar.',
+    icon: Bot,
+  },
+  {
+    title: 'Webinar registration automation',
+    description:
+      'Build a registration landing page, capture sign-ups, and trigger an end-to-end sequence: confirmation, multi-channel reminders, replay delivery for no-shows, and tailored follow-ups for attendees.',
+    icon: PhoneCall,
+  },
+  {
+    title: 'Client onboarding',
+    description:
+      'New clients get a fully automated welcome: payment confirmation, intake form, membership access, calendar invites for kickoff calls, and a paced first-30-day sequence — without you touching anything.',
+    icon: GraduationCap,
+  },
+];
+
 export default function CoachesPage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: coachFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <div className="bg-[#0a0a0a] text-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <HeroSection />
       <PainPointsSection />
+      <WhyCoachesSection />
+      <CoachWorkflowsSection />
+      <TopToolsSection />
       <FeaturesSection />
       <PricingSection />
       <TestimonialsSection />
-      <FAQSection />
+      <CoachFAQSection />
       <CTASection />
     </div>
   );
@@ -23,12 +179,12 @@ export default function CoachesPage() {
 function HeroSection() {
   const t = useTranslations('coachesPage');
   const tc = useTranslations('common');
-  
+
   return (
     <section className="relative pt-32 pb-24 px-6 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-[120px] -translate-y-1/2" />
-      
+
       <div className="max-w-6xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +196,7 @@ function HeroSection() {
             <Target className="w-4 h-4 text-purple-400" />
             <span className="text-sm font-medium text-purple-400">{t('badge')}</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
             {t('headline1')}
             <br />
@@ -48,27 +204,27 @@ function HeroSection() {
               {t('headline2')}
             </span>
           </h1>
-          
+
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
             {t('description')}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
+            <Link
               href="/demo"
               className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all flex items-center gap-2"
             >
               {t('cta')}
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link 
+            <Link
               href="#pricing"
               className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl font-semibold hover:bg-white/10 transition-all"
             >
               {t('viewPricing')}
             </Link>
           </div>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-8 mt-12 pt-12 border-t border-white/5">
             <div className="text-center">
               <div className="text-3xl font-black text-purple-400">{t('stats.coaches')}</div>
@@ -153,6 +309,155 @@ function PainPointsSection() {
             {t('painCta')} <span className="text-purple-400">{t('painCtaHighlight')}</span>
           </p>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function WhyCoachesSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Why coaches choose <span className="text-purple-400">WellPlan</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Four capabilities that turn your coaching practice from a calendar full of admin into a system that scales while you focus on clients.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {coachBenefits.map((b, idx) => {
+            const Icon = b.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: idx * 0.1 }}
+                className="p-6 sm:p-8 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-purple-500/30 transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{b.title}</h3>
+                    <p className="text-gray-400 leading-relaxed text-base">{b.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CoachWorkflowsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="py-24 px-6 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Common coach <span className="text-purple-400">workflows</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Three plug-and-play workflows the WellPlan coaching community runs to win back hours every week.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-3 gap-6">
+          {coachWorkflows.map((w, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: idx * 0.1 }}
+              className="p-6 sm:p-8 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-purple-500/30 transition-all"
+            >
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
+                <Workflow className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">{w.name}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">{w.description}</p>
+              <div className="space-y-3">
+                {w.steps.map((s, i) => {
+                  const SIcon = s.icon;
+                  return (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                        <SIcon className="w-4 h-4 text-purple-400" />
+                      </div>
+                      <span className="text-gray-300 text-sm pt-1">{s.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TopToolsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Tools coaches use most in <span className="text-pink-400">WellPlan</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            The six features that show up in nearly every coach&apos;s daily workflow.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {topTools.map((tool, idx) => {
+            const Icon = tool.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: idx * 0.05 }}
+                className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-pink-500/30 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                  <Icon className="w-6 h-6 text-pink-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-white">{tool.title}</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">{tool.description}</p>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -247,7 +552,7 @@ function PricingSection() {
           {tiers.map((tier, idx) => {
             const features = t(`pricing.${tier.key}.features`);
             const featureList = typeof features === 'string' ? features.split('|') : [];
-            
+
             return (
               <motion.div
                 key={idx}
@@ -255,8 +560,8 @@ function PricingSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: idx * 0.1 }}
                 className={`relative p-8 rounded-2xl border ${
-                  tier.popular 
-                    ? 'bg-gradient-to-b from-purple-500/10 to-pink-500/10 border-purple-500/50' 
+                  tier.popular
+                    ? 'bg-gradient-to-b from-purple-500/10 to-pink-500/10 border-purple-500/50'
                     : 'bg-white/[0.02] border-white/10'
                 }`}
               >
@@ -265,7 +570,7 @@ function PricingSection() {
                     {t('pricing.mostPopular')}
                   </div>
                 )}
-                
+
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-white">{t(`pricing.${tier.key}.name`)}</h3>
                   <p className="text-gray-500 text-sm">{t(`pricing.${tier.key}.subtitle`)}</p>
@@ -334,7 +639,7 @@ function PricingSection() {
                   <p className="text-gray-400 text-sm">{t('pricing.aiAddon.description')}</p>
                 </div>
               </div>
-              
+
               <div className="grid sm:grid-cols-2 gap-3">
                 {t('pricing.aiAddon.features').split('|').map((feature, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -405,9 +710,9 @@ function TestimonialsSection() {
                   <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                 ))}
               </div>
-              
+
               <p className="text-gray-300 mb-6 italic">"{t(`testimonials.${testimonial.key}.quote`)}"</p>
-              
+
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-sm font-bold">
                   {testimonial.avatar}
@@ -417,7 +722,7 @@ function TestimonialsSection() {
                   <div className="text-sm text-gray-500">{t(`testimonials.${testimonial.key}.title`)}</div>
                 </div>
               </div>
-              
+
               <div className="px-3 py-2 bg-purple-500/10 rounded-lg">
                 <div className="text-xs text-purple-400 font-semibold">{t(`testimonials.${testimonial.key}.result`)}</div>
               </div>
@@ -429,13 +734,10 @@ function TestimonialsSection() {
   );
 }
 
-function FAQSection() {
+function CoachFAQSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [openIndex, setOpenIndex] = useState(null);
-  const t = useTranslations('coachesPage');
-
-  const faqKeys = ['setup', 'technical', 'switch', 'integrations', 'cancel'];
 
   return (
     <section ref={ref} className="py-24 px-6 bg-gradient-to-b from-transparent to-purple-500/5">
@@ -446,29 +748,32 @@ function FAQSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
-            {t('faqTitle')} <span className="text-purple-400">{t('faqTitleHighlight')}</span>
+            Coach <span className="text-purple-400">FAQs</span>
           </h2>
+          <p className="text-gray-400 text-lg">
+            Real questions from coaches running 1:1, group, and hybrid practices.
+          </p>
         </motion.div>
 
         <div className="space-y-4">
-          {faqKeys.map((key, idx) => (
+          {coachFaqs.map((f, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: idx * 0.1 }}
-              className="border border-white/10 rounded-xl overflow-hidden"
+              className="border border-white/10 rounded-xl overflow-hidden bg-white/[0.02]"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition"
               >
-                <span className="font-semibold text-white">{t(`faq.${key}.question`)}</span>
-                <ArrowRight className={`w-5 h-5 text-gray-500 transition-transform ${openIndex === idx ? 'rotate-90' : ''}`} />
+                <span className="font-semibold text-white">{f.q}</span>
+                <ArrowRight className={`w-5 h-5 text-gray-500 transition-transform flex-shrink-0 ml-4 ${openIndex === idx ? 'rotate-90' : ''}`} />
               </button>
               {openIndex === idx && (
                 <div className="px-6 pb-6">
-                  <p className="text-gray-400">{t(`faq.${key}.answer`)}</p>
+                  <p className="text-gray-400 leading-relaxed">{f.a}</p>
                 </div>
               )}
             </motion.div>
@@ -481,7 +786,7 @@ function FAQSection() {
 
 function CTASection() {
   const t = useTranslations('coachesPage');
-  
+
   return (
     <section className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
@@ -498,11 +803,11 @@ function CTASection() {
               {t('ctaTitleHighlight')}
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             {t('ctaSubtitle')}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/demo"
@@ -512,7 +817,7 @@ function CTASection() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
-          
+
           <p className="text-sm text-gray-500 mt-6">
             {t('ctaNote')}
           </p>

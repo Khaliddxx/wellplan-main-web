@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, ChevronRight, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users, Bot, Handshake } from 'lucide-react';
+import { ChevronDown, ChevronRight, Zap, ArrowRight, BarChart3, BookOpen, FileText, Calculator, HelpCircle, Play, Newspaper, Calendar, Briefcase, GraduationCap, Stethoscope, Car, Utensils, Dumbbell, ShoppingCart, Home, Target, Building2, Users, Bot, Handshake, MessageSquare, ScrollText } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslations, useLocale } from '../lib/translations';
 
@@ -320,6 +320,8 @@ export default function Navigation() {
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('resources')}</div>
           <Link href={localePath('/integrations')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('integrations')}</Link>
           <Link href={localePath('/blog')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('blog')}</Link>
+          <Link href={localePath('/resources/whatsapp-crm')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('whatsappCrmGuide') || 'WhatsApp CRM Guide'}</Link>
+          <Link href={localePath('/glossary')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('glossary') || 'Glossary'}</Link>
           <Link href={localePath('/case-studies')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('caseStudies')}</Link>
           <Link href={localePath('/roi-calculator')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('roiCalculator')}</Link>
           <a href="https://knowledge.wellplan.io/kb" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('documentation')}</a>
@@ -330,8 +332,8 @@ export default function Navigation() {
           <div className="px-4 py-2 mt-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('company')}</div>
           <Link href={localePath('/pricing')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('pricing')}</Link>
           <Link href={localePath('/demo')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('bookDemo')}</Link>
-          <a href="https://help.leadconnectorhq.com/support/home" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('support')}</a>
-          <a href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('apiReference')}</a>
+          <Link href={localePath('/contact')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{tc('support')}</Link>
+          <Link href={localePath('/glossary')} className="block px-4 py-2.5 text-gray-300 hover:bg-white/5 rounded-lg" onClick={() => setMobileOpen(false)}>{t('glossary') || 'Glossary'}</Link>
           
           {/* CTA */}
           <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
@@ -640,6 +642,24 @@ function ResourcesDropdown({ onClose, localePath }) {
             <p className="text-[11px] text-gray-500">{t('roiCalculatorDesc')}</p>
           </div>
         </Link>
+        <Link onClick={onClose} href={lp("/resources/whatsapp-crm")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition">
+            <MessageSquare className="w-5 h-5 text-emerald-400" />
+          </div>
+          <div>
+            <p className="font-semibold text-[13px] text-white group-hover:text-emerald-400">{t('whatsappCrmGuide') || 'WhatsApp CRM Guide'}</p>
+            <p className="text-[11px] text-gray-500">{t('whatsappCrmGuideDesc') || 'Complete guide to WhatsApp as a CRM channel.'}</p>
+          </div>
+        </Link>
+        <Link onClick={onClose} href={lp("/glossary")} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+          <div className="w-10 h-10 rounded-xl bg-[#214CE5]/20 flex items-center justify-center group-hover:scale-110 transition">
+            <ScrollText className="w-5 h-5 text-[#6B8EFF]" />
+          </div>
+          <div>
+            <p className="font-semibold text-[13px] text-white group-hover:text-[#6B8EFF]">{t('glossary') || 'Glossary'}</p>
+            <p className="text-[11px] text-gray-500">{t('glossaryDesc') || 'CRM and marketing automation terms, defined.'}</p>
+          </div>
+        </Link>
       </div>
       <div className="flex-1 space-y-1">
         <div className="flex items-center gap-2 mb-4">
@@ -655,16 +675,16 @@ function ResourcesDropdown({ onClose, localePath }) {
             <p className="text-[11px] text-gray-500">{t('videoTutorialsDesc')}</p>
           </div>
         </Link>
-        <Link href="https://marketplace.gohighlevel.com/docs/" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="/glossary" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <FileText className="w-5 h-5 text-orange-400" />
           </div>
           <div>
-            <p className="font-semibold text-[13px] text-white group-hover:text-orange-400">{t('apiReference')}</p>
-            <p className="text-[11px] text-gray-500">{t('apiReferenceDesc')}</p>
+            <p className="font-semibold text-[13px] text-white group-hover:text-orange-400">{t('glossary') || 'Glossary'}</p>
+            <p className="text-[11px] text-gray-500">{t('glossaryDesc') || 'CRM &amp; marketing terms defined'}</p>
           </div>
         </Link>
-        <Link href="https://help.leadconnectorhq.com/support/home" target="_blank" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
+        <Link href="/contact" className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.04] transition group">
           <div className="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition">
             <HelpCircle className="w-5 h-5 text-cyan-400" />
           </div>
