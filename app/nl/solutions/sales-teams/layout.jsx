@@ -1,14 +1,11 @@
-export const metadata = {
-  title: 'Voor Sales Teams | WellPlan',
-  description: 'Sluit meer deals sneller. Pipeline management, teamcollaboratie, lead scoring en prestatie-analytics voor sales teams.',
-  openGraph: {
-    title: 'Voor Sales Teams | WellPlan',
-    description: 'Sluit meer deals sneller met pipeline management en lead scoring.',
-    url: 'https://wellplan.io/nl/solutions/sales-teams',
-  },
-  alternates: {
-    languages: { en: 'https://wellplan.io/en/solutions/sales-teams', nl: 'https://wellplan.io/nl/solutions/sales-teams' },
-  },
-};
+import { buildMetadata } from '../../../lib/seo';
 
-export default function Layout({ children }) { return children; }
+export const metadata = buildMetadata({
+  path: "/nl/solutions/sales-teams",
+  title: "Voor Sales Teams | WellPlan",
+  description: "Sluit meer deals sneller. Pipeline management, teamcollaboratie, lead scoring en prestatie-analytics voor sales teams.",
+});
+
+export default function Layout({ children }) {
+  return children;
+}

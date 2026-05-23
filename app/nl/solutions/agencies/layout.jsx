@@ -1,14 +1,11 @@
-export const metadata = {
-  title: 'Voor Bureaus | WellPlan',
-  description: 'White-label marketingautomatisering voor bureaus. Onbeperkte sub-accounts, eigen branding, klantdashboards en resellerprizen.',
-  openGraph: {
-    title: 'Voor Bureaus | WellPlan',
-    description: 'White-label marketingautomatisering met onbeperkte sub-accounts.',
-    url: 'https://wellplan.io/nl/solutions/agencies',
-  },
-  alternates: {
-    languages: { en: 'https://wellplan.io/en/solutions/agencies', nl: 'https://wellplan.io/nl/solutions/agencies' },
-  },
-};
+import { buildMetadata } from '../../../lib/seo';
 
-export default function Layout({ children }) { return children; }
+export const metadata = buildMetadata({
+  path: "/nl/solutions/agencies",
+  title: "Voor Bureaus | WellPlan",
+  description: "White-label marketingautomatisering voor bureaus. Onbeperkte sub-accounts, eigen branding, klantdashboards en resellerprizen.",
+});
+
+export default function Layout({ children }) {
+  return children;
+}

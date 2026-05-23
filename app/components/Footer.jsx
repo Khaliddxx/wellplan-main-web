@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center mb-4">
-              <img src="/Frame 69.png" alt="WellPlan" className="h-8" />
+              <img src="/wellplan-logo.png" alt="WellPlan logo" className="h-8" />
             </Link>
             <p className="text-gray-500 text-sm mb-6 max-w-xs">
               {t('description')}

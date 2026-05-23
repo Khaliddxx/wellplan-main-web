@@ -5,25 +5,13 @@ import TestimonialCarousel from '../components/TestimonialCarousel';
 import FinalCTA from '../components/FinalCTA';
 import IntegrationLogoCarousel from '../components/IntegrationLogoCarousel';
 import DiscoverPlatform from '../components/DiscoverPlatform';
+import { buildMetadata } from '../lib/seo';
 
-export const metadata = {
-  title: 'WellPlan | Vastleggen. Nurture. Afsluiten.',
-  description: 'Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans.',
-  alternates: {
-    canonical: 'https://wellplan.io/nl',
-    languages: {
-      'en': 'https://wellplan.io/en',
-      'nl': 'https://wellplan.io/nl',
-    },
-  },
-  openGraph: {
-    title: 'WellPlan | Vastleggen. Nurture. Afsluiten.',
-    description: 'Het alles-in-één platform dat bezoekers omzet in leads, leads in klanten, en klanten in enthousiaste fans.',
-    url: 'https://wellplan.io/nl',
-    locale: 'nl_NL',
-    alternateLocale: 'en_US',
-  },
-};
+export const metadata = buildMetadata({
+  path: '/nl',
+  title: 'WellPlan — Het AI Lead Generatie Platform | Vastleggen. Nurture. Afsluiten.',
+  description: 'WellPlan zet bezoekers om in leads, leads in klanten, en klanten in enthousiaste fans. All-in-one CRM met WhatsApp, AI chatbots, voice agents en 200+ integraties.',
+});
 
 export default function HomePage() {
   return (

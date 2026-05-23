@@ -1,12 +1,10 @@
-export const metadata = {
-  title: 'Funnel AI | WellPlan',
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata = buildMetadata({
+  path: '/features/ai-funnel',
+  title: 'AI Funnel Builder — Landing Pages in Seconds | WellPlan',
   description: 'Build landing pages and funnels with AI. Just describe what you need and AI generates conversion-optimized pages in seconds.',
-  openGraph: {
-    title: 'Funnel AI | WellPlan',
-    description: 'Build landing pages with AI. Just describe what you need.',
-    url: 'https://wellplan.io/features/ai-funnel',
-  },
-};
+});
 
 export default function AIFunnelLayout({ children }) {
   return children;

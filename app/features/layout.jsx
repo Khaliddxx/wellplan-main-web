@@ -1,12 +1,10 @@
-export const metadata = {
-  title: 'Features | WellPlan',
-  description: 'All-in-one marketing automation features. CRM, email marketing, SMS, landing pages, funnels, AI chatbots, and more.',
-  openGraph: {
-    title: 'Features | WellPlan',
-    description: 'All-in-one marketing automation: CRM, email, SMS, funnels, AI, and more.',
-    url: 'https://wellplan.io/features',
-  },
-};
+import { buildMetadata } from '../lib/seo';
+
+export const metadata = buildMetadata({
+  path: '/features',
+  title: 'WellPlan Features — All-in-One CRM, Automation & AI Suite',
+  description: 'CRM, email marketing, SMS, WhatsApp, landing pages, funnels, AI chatbots, voice agents, and more — every feature you need to capture, nurture, and close leads.',
+});
 
 export default function FeaturesLayout({ children }) {
   return children;

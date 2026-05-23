@@ -1,12 +1,10 @@
-export const metadata = {
-  title: 'Blog | WellPlan',
-  description: 'Marketing tips, product updates, and growth strategies from WellPlan. Learn how to capture, nurture, and close more leads.',
-  openGraph: {
-    title: 'Blog | WellPlan',
-    description: 'Marketing tips, product updates, and growth strategies.',
-    url: 'https://wellplan.io/blog',
-  },
-};
+import { buildMetadata } from '../lib/seo';
+
+export const metadata = buildMetadata({
+  path: '/blog',
+  title: 'WellPlan Blog — CRM, WhatsApp Marketing & AI Lead Generation',
+  description: 'Guides, playbooks, and case studies on CRM automation, WhatsApp marketing, AI lead qualification, and growing your business with WellPlan.',
+});
 
 export default function BlogLayout({ children }) {
   return children;

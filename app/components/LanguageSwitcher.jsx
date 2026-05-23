@@ -31,21 +31,17 @@ export default function LanguageSwitcher({ variant = 'default' }) {
 
   const switchLocale = (newLocale) => {
     setIsOpen(false);
-    
-    // Parse current pathname
+
+    // Strip any existing locale prefix to get the bare path
     const segments = pathname.split('/').filter(Boolean);
-    
-    // Check if first segment is a locale
     if (segments[0] === 'en' || segments[0] === 'nl') {
-      // Replace existing locale
-      segments[0] = newLocale;
-    } else {
-      // No locale prefix - we're on root routes like / or /pricing
-      // Navigate to the locale version
-      segments.unshift(newLocale);
+      segments.shift();
     }
-    
-    const newPath = '/' + segments.join('/');
+
+    // EN is the default locale — no prefix. NL gets a /nl prefix.
+    const prefix = newLocale === 'en' ? '' : `/${newLocale}`;
+    const bare = segments.length ? '/' + segments.join('/') : '';
+    const newPath = (prefix + bare) || '/';
     router.push(newPath);
   };
 

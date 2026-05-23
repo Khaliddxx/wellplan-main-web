@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, User, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import { buildMetadata, SITE_URL } from '@/app/lib/seo';
 
 // Blog post content - this would typically come from a CMS
-const blogPosts = {
+export const blogPosts = {
   'whatsapp-business-api-complete-guide': {
     title: 'The Complete Guide to WhatsApp Business API in 2026',
     excerpt: 'Everything you need to know about WhatsApp Business API: setup, pricing, templates, and best practices for business messaging.',
@@ -725,31 +726,26 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const post = blogPosts[params.slug];
-  if (!post) return { title: 'Post Not Found' };
-  
-  const url = `https://wellplan.io/blog/${params.slug}`;
-  
-  return {
+  if (!post) {
+    return buildMetadata({
+      path: `/blog/${params.slug}`,
+      title: 'Post Not Found',
+      description: 'The blog post you are looking for could not be found.',
+      noindex: true,
+    });
+  }
+
+  const meta = buildMetadata({
+    path: `/blog/${params.slug}`,
     title: `${post.title} | WellPlan Blog`,
     description: post.excerpt,
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: 'article',
-      publishedTime: post.date,
-      url: url,
-      siteName: 'WellPlan',
-      locale: 'en_US',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-    },
-  };
+    ogTitle: post.title,
+    ogType: 'article',
+  });
+
+  // Add article-specific OG fields
+  meta.openGraph = { ...meta.openGraph, publishedTime: post.date };
+  return meta;
 }
 
 export default function BlogPost({ params }) {
@@ -773,11 +769,12 @@ export default function BlogPost({ params }) {
     publisher: {
       '@type': 'Organization',
       name: 'WellPlan',
-      url: 'https://wellplan.io',
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/wellplan-logo.png` },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://wellplan.io/blog/${params.slug}`,
+      '@id': `${SITE_URL}/blog/${params.slug}`,
     },
   };
 

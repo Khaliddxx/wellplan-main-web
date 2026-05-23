@@ -1,14 +1,11 @@
-export const metadata = {
-  title: 'AI Medewerker Suite | WellPlan',
-  description: '6 AI-tools die 24/7 werken: Conversatie AI, Voice AI, Reviews AI, Content AI, Funnel AI en Workflow AI. Automatiseer je bedrijf op autopilot.',
-  openGraph: {
-    title: 'AI Medewerker Suite | WellPlan',
-    description: '6 krachtige AI-tools om je bedrijf 24/7 te automatiseren.',
-    url: 'https://wellplan.io/nl/features/ai',
-  },
-  alternates: {
-    languages: { en: 'https://wellplan.io/en/features/ai', nl: 'https://wellplan.io/nl/features/ai' },
-  },
-};
+import { buildMetadata } from '../../../lib/seo';
 
-export default function Layout({ children }) { return children; }
+export const metadata = buildMetadata({
+  path: "/nl/features/ai",
+  title: "AI Medewerker Suite | WellPlan",
+  description: "6 AI-tools die 24/7 werken: Conversatie AI, Voice AI, Reviews AI, Content AI, Funnel AI en Workflow AI. Automatiseer je bedrijf op autopilot.",
+});
+
+export default function Layout({ children }) {
+  return children;
+}

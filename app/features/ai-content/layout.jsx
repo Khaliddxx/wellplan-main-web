@@ -1,12 +1,10 @@
-export const metadata = {
-  title: 'Content AI | WellPlan',
-  description: 'Generate emails, SMS, social posts, and blog content in seconds with AI. Train it on your brand voice for consistent messaging.',
-  openGraph: {
-    title: 'Content AI | WellPlan',
-    description: 'Generate marketing content in seconds with AI.',
-    url: 'https://wellplan.io/features/ai-content',
-  },
-};
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata = buildMetadata({
+  path: '/features/ai-content',
+  title: 'AI Content Generation — Email, SMS & Social Copy | WellPlan',
+  description: 'Generate emails, SMS, social posts, and blog content in seconds with AI. Train it on your brand voice for consistent, on-brand messaging.',
+});
 
 export default function AIContentLayout({ children }) {
   return children;

@@ -192,7 +192,7 @@ export default function Navigation() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <img src="/Frame 69.png" alt="WellPlan" className="h-10 sm:h-12" />
+            <img src="/wellplan-logo.png" alt="WellPlan logo" className="h-10 sm:h-12" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
