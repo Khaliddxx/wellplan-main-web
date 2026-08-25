@@ -11,7 +11,7 @@ const blogPosts = [
     title: 'Google Search Console Now Tracks Instagram, TikTok, X and YouTube',
     excerpt: 'Google opened Search Console to social platforms in July 2026. See the exact search terms bringing people to your posts, what the reports show, and what connecting an account does and does not change.',
     category: 'Instagram',
-    author: 'WellPlan Team',
+    author: 'Khalid Mohamed',
     date: '2026-08-25',
     readTime: 9,
     image: '/blog/gsc/performance-report.webp',
