@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Instagram, TikTok, X and YouTube are supported. Facebook and LinkedIn are not.">
+  <defs>
+    <linearGradient id="okg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2540"/><stop offset="1" stop-color="#141A2B"/>
+    </linearGradient>
+    <style>
+      .t{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      .lbl{font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+      .nm{font-size:27px;font-weight:700;fill:#FFFFFF}
+      .no{font-size:25px;font-weight:600;fill:#6B7280}
+      .note{font-size:17px;fill:#9CA3AF}
+    </style>
+  </defs>
+
+  <rect width="1200" height="420" fill="#0D0D0F"/>
+
+  <text class="t lbl" x="60" y="52" fill="#6B8EFF">Supported at launch</text>
+
+  <g>
+    <rect x="60"  y="80" width="258" height="118" rx="18" fill="url(#okg)" stroke="#214CE5" stroke-width="2"/>
+    <rect x="342" y="80" width="258" height="118" rx="18" fill="url(#okg)" stroke="#214CE5" stroke-width="2"/>
+    <rect x="624" y="80" width="258" height="118" rx="18" fill="url(#okg)" stroke="#214CE5" stroke-width="2"/>
+    <rect x="906" y="80" width="234" height="118" rx="18" fill="url(#okg)" stroke="#214CE5" stroke-width="2"/>
+
+    <g fill="none" stroke="#6B8EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="96" y="120" width="38" height="38" rx="11"/>
+      <circle cx="115" cy="139" r="10"/>
+      <circle cx="127.5" cy="126.5" r="2.6" fill="#6B8EFF" stroke="none"/>
+      <path d="M400 118v37a12 12 0 1 1-10.5-11.9"/>
+      <path d="M400 118c1.7 8.8 7.5 14.3 16.3 15.3"/>
+      <path d="M666 120l38 38M704 120l-38 38"/>
+      <rect x="942" y="120" width="46" height="34" rx="10"/>
+      <path d="M958 130l18 7-18 7z" fill="#6B8EFF"/>
+    </g>
+
+    <text class="t nm" x="152" y="146">Instagram</text>
+    <text class="t nm" x="434" y="146">TikTok</text>
+    <text class="t nm" x="716" y="146">X</text>
+    <text class="t nm" x="1004" y="146">YouTube</text>
+  </g>
+
+  <text class="t lbl" x="60" y="268" fill="#6B7280">Not supported</text>
+
+  <g>
+    <rect x="60"  y="292" width="258" height="86" rx="18" fill="#141416" stroke="#2A2A2E" stroke-width="2" stroke-dasharray="7 6"/>
+    <rect x="342" y="292" width="258" height="86" rx="18" fill="#141416" stroke="#2A2A2E" stroke-width="2" stroke-dasharray="7 6"/>
+    <text class="t no" x="96"  y="343">Facebook</text>
+    <text class="t no" x="378" y="343">LinkedIn</text>
+  </g>
+
+  <text class="t note" x="640" y="330">Google has not said whether more platforms follow.</text>
+  <text class="t note" x="640" y="356">Rolling out gradually, so yours may not show yet.</text>
+</svg>

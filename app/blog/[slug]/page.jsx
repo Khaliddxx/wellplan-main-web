@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, User, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { buildMetadata, SITE_URL } from '@/app/lib/seo';
 
 // Blog post content - this would typically come from a CMS
@@ -14,101 +15,105 @@ export const blogPosts = {
     date: '2026-08-25',
     readTime: '9 min read',
     content: `
-On 7 July 2026, Google added a new property type to Search Console called **platform properties**. It lets you connect a social account and see how your posts perform in Google Search and Discover.
+Google added a new property type to Search Console on 7 July 2026. It is called a **platform property**, and it lets you connect a social account and see how your posts perform in Google Search and Discover.
 
-Until now, Search Console was for people who owned a website. If your audience lived on Instagram or TikTok, none of that data was available to you. That changed.
+Search Console used to be for people who owned a website. If your audience lived on Instagram or TikTok, none of this data existed for you.
 
-## What it actually does
+> **The short version.** Your posts were already showing up in Google. Now you can see which ones, and for which searches. Connecting changes nothing about how you rank, it only lets you measure what was already happening.
 
-Once you connect an account, you get three reports covering your posts on Google Search and Discover.
+![The Search Console performance report for a connected social account, showing clicks, impressions and top queries](/blog/gsc/performance-report.webp)
 
-**Performance.** Total clicks, impressions and related metrics. You can filter and sort to see which individual posts and which queries drive the most traffic, and export the data if you would rather analyse it elsewhere.
+*Clicks, impressions and the queries behind them, for a social account rather than a domain.*
 
-**Insights.** A higher level view of recent traffic trends, your best performing posts, and how people are discovering your account on Google.
+## What you get
 
-**Achievements.** Milestone tracking, such as passing a new threshold for total clicks from Search in the last 28 days.
+![The three reports: Performance, Insights and Achievements](/blog/gsc/reports.svg)
 
-The useful part is the query data. You can finally see the words somebody typed into Google immediately before they landed on one of your posts.
+The query list is the valuable part. It is the only place you can see the words somebody typed into Google immediately before they landed on one of your posts.
 
-## Which platforms are supported
+## Which platforms
 
-Four at launch:
+![Instagram, TikTok, X and YouTube are supported. Facebook and LinkedIn are not.](/blog/gsc/platforms.svg)
 
-- Instagram
-- TikTok
-- X
-- YouTube
-
-Facebook and LinkedIn are not supported yet.
-
-## How to set it up
+## How to connect an account
 
 1. Open Search Console.
-2. Go to the verification page, or open the property selector dropdown anywhere in Search Console and click **Add property**.
-3. Choose one of the four platforms.
-4. Follow the on screen steps to authorise the connection.
+2. Open the property selector, or go to the verification page, and click **Add property**.
+3. Pick one of the four platforms.
+4. Authorise the connection and choose the account.
 
-It takes about a minute per account. **You do not need to own a website**, which is the part most people miss. This is the first time Search Console has been available to accounts with no site attached.
+![Choosing which channel to connect when adding a platform property](/blog/gsc/select-channel.webp)
 
-Platform properties rolled out gradually, so if the option is not in your account yet, it is on its way.
+*You pick the specific account, so agencies managing several can connect each one separately.*
+
+> **You do not need a website.** This is the first time Search Console has worked for accounts with no site attached, and it is the part most coverage skips. It takes about a minute per account.
 
 ## What it does not do
 
-Worth being clear, because this gets misreported.
+Connecting a platform property **does not affect your ranking**. It does not change how your posts are indexed and it does not make them more likely to appear in Search or Discover.
 
-Connecting a platform property **does not affect your ranking**. It does not change how your posts are indexed, and it does not make them more likely to appear in Search or Discover. Google has never used Search Console as a ranking input, and this is no different.
+Search Console has never been a ranking input. This is a reporting tool, and it is worth saying plainly because a lot of the coverage implies otherwise.
 
-It is a reporting tool. Your posts were already being surfaced in Google Search. The only thing that changed is that you can now see it.
+> That is still worth doing. You cannot optimise for something you cannot measure, and until July this was unmeasurable.
 
-That is still significant, because you cannot optimise for something you cannot measure.
+## Read the queries, not the totals
 
-## Why the query data matters more than the clicks
+Most people open the Performance report, look at the click count and close it.
 
-Most people will open the Performance report, look at the click count, and close it. The queries are the valuable part.
+Hashtags stopped being the main discovery mechanism a while ago. Search took over, and it works much the way it always has on the open web: somebody types a phrase describing what they want, and the platform matches it against your words.
 
-Hashtags stopped being the main discovery mechanism on social platforms some time ago. Search took over, and it behaves much the way search on the open web always has: somebody types a phrase describing what they want, and the platform matches it against your words.
+So the query list is really a content brief. It tells you which phrases already bring people in, which of those are growing, and which post each search landed on.
 
-Which means the query list in Search Console is a content brief. It tells you:
-
-- which phrases already bring people to you
-- which of those are growing
-- which specific post each search landed on
-
-You stop guessing what to post next and make more of whatever is already pulling.
+| What you see | What it means |
+| --- | --- |
+| High impressions, low clicks | People find you and scroll past. A hook problem, not a reach problem. |
+| A query you did not target | Language your audience actually uses. Use their words. |
+| A query climbing week on week | Rising demand. Make the next post about it. |
+| One post carrying most clicks | A format worth repeating rather than a one off. |
 
 ## The connection to AI answers
 
-There is a second reason this data is worth watching.
+AI assistants that answer with current information are grounded in a search index. When somebody asks for a recommendation rather than a link, the answer is built from content the system can find and read.
 
-AI assistants that answer with current information are grounded in a search index. When somebody asks one for a recommendation rather than a link, the answer is assembled from content that system can find and read.
+Search Console now shows which of your posts Google surfaces and for which phrases, which is the closest available proxy for how discoverable you are to anything reading that index.
 
-Your social posts are part of what is out there. Search Console now shows which of them Google surfaces and for which phrases, which is the closest proxy available for how discoverable your content is to anything reading that index.
+> To be precise: Google has not said platform properties feed AI answers, and connecting an account does not change how any assistant treats you. What you get is visibility into the same surface those systems draw from.
 
-To be precise: Google has not said platform properties feed AI answers, and connecting an account does not change how any assistant treats you. What you get is visibility into the same surface those systems draw from.
+## Managing access
 
-## What to do with it in the first week
+Platform properties use the same permissions model as the rest of Search Console, so you can give a client or a contractor access without handing over the account itself.
 
-**Connect every account you actually post on.** It costs a minute each, and the data only starts accumulating once connected.
+![Adding a user to a Search Console property with a permission level](/blog/gsc/add-user.webp)
 
-**Read the query list, not the totals.** Sort by impressions and look for phrases you did not expect.
+![The users and permissions screen for a connected property](/blog/gsc/users-permissions.webp)
 
-**Find the gap.** Queries with high impressions and low clicks mean people are seeing you and not choosing you. That is usually a hook or thumbnail problem, not a reach problem.
+*Full or Restricted, per user, and removable at any time.*
 
-**Make more of what is climbing.** The Insights report flags rising trends. That is your next post.
+![Property settings showing when the property was added to the account](/blog/gsc/settings-property.webp)
+
+## Your first week
+
+**Connect every account you actually post on.** Data only starts accumulating once connected, so there is a cost to waiting.
+
+**Sort by impressions and read the query list.** Look for phrases you did not expect.
+
+**Find the gap.** High impressions with low clicks is the fastest thing to fix.
+
+**Make the next post about whatever is climbing.**
 
 ## Frequently asked questions
 
 **Do I need a website?**
-No. Platform properties work for accounts with no site attached, which is new for Search Console.
+No. Platform properties work for accounts with no site attached.
 
 **Does connecting improve my ranking?**
-No. It is reporting only. Nothing about your visibility changes when you connect.
+No. It is reporting only.
 
 **Which platforms work?**
 Instagram, TikTok, X and YouTube. Facebook and LinkedIn are not supported at launch.
 
 **Is it free?**
-Yes. Search Console has always been free.
+Yes.
 
 **Why can I not see the option?**
 It rolled out gradually. If the property type is not in your selector yet, it should appear.
@@ -955,8 +960,8 @@ export default function BlogPost({ params }) {
       
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <article className="prose prose-invert prose-base sm:prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-8 sm:prose-h2:mt-12 prose-h2:mb-4 sm:prose-h2:mb-6 prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-[#6B8EFF] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:my-1 prose-table:text-xs sm:prose-table:text-sm prose-th:bg-white/5 prose-th:px-2 sm:prose-th:px-4 prose-th:py-2 prose-td:px-2 sm:prose-td:px-4 prose-td:py-2 prose-td:border-white/10 prose-code:bg-white/10 prose-code:px-1 prose-code:rounded prose-code:text-sm prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10 prose-pre:text-xs sm:prose-pre:text-sm prose-pre:overflow-x-auto">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+        <article className="prose prose-invert prose-base sm:prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-8 sm:prose-h2:mt-12 prose-h2:mb-4 sm:prose-h2:mb-6 prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-p:text-gray-300 prose-p:leading-relaxed prose-a:text-[#6B8EFF] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-blockquote:not-italic prose-blockquote:border-l-4 prose-blockquote:border-[#214CE5] prose-blockquote:bg-white/[0.04] prose-blockquote:rounded-r-xl prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:text-gray-200 [&_blockquote_p]:before:content-none [&_blockquote_p]:after:content-none prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-img:w-full prose-img:my-6 prose-em:text-gray-500 prose-em:text-sm prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:my-1 prose-table:text-xs sm:prose-table:text-sm prose-th:bg-white/5 prose-th:px-2 sm:prose-th:px-4 prose-th:py-2 prose-td:px-2 sm:prose-td:px-4 prose-td:py-2 prose-td:border-white/10 prose-code:bg-white/10 prose-code:px-1 prose-code:rounded prose-code:text-sm prose-pre:bg-[#111111] prose-pre:border prose-pre:border-white/10 prose-pre:text-xs sm:prose-pre:text-sm prose-pre:overflow-x-auto">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
         </article>
         
         {/* CTA */}

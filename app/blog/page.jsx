@@ -14,7 +14,7 @@ const blogPosts = [
     author: 'WellPlan Team',
     date: '2026-08-25',
     readTime: 9,
-    image: '/blog/search-console-social.jpg',
+    image: '/blog/gsc/performance-report.webp',
     featured: true,
   },
   {
