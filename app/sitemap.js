@@ -1,6 +1,7 @@
 import { integrations } from './lib/integrations';
 import { glossaryTerms } from './lib/glossary';
 import { industries } from './lib/industries';
+import { blogPosts } from './blog/[slug]/page';
 
 export default function sitemap() {
   const baseUrl = 'https://wellplan.io';
@@ -136,6 +137,14 @@ export default function sitemap() {
     buildPagePair({ route: `/industries/${industry.slug}`, priority: 0.7, changeFreq: 'monthly' }),
   );
 
+  // Blog posts: /blog was listed but individual posts never were
+  const blogPostPages = Object.keys(blogPosts).map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
   // Glossary detail pages (EN only — NL not yet localized)
   const glossaryPages = glossaryTerms.map((term) => ({
     url: `${baseUrl}/glossary/${term.slug}`,
@@ -148,6 +157,7 @@ export default function sitemap() {
     rootHomepage,
     nlHomepage,
     ...staticPages,
+    ...blogPostPages,
     ...integrationPages,
     ...industryPages,
     ...glossaryPages,
