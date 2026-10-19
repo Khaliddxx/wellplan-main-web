@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from '../lib/translations';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 
@@ -12,7 +12,6 @@ const languages = [
 
 export default function LanguageSwitcher({ variant = 'default' }) {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -32,6 +31,10 @@ export default function LanguageSwitcher({ variant = 'default' }) {
   const switchLocale = (newLocale) => {
     setIsOpen(false);
 
+    // Persist the explicit choice (including 'en') so the middleware stops
+    // redirecting unprefixed URLs to a geo- or previously-chosen locale.
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+
     // Strip any existing locale prefix to get the bare path
     const segments = pathname.split('/').filter(Boolean);
     if (segments[0] === 'en' || segments[0] === 'nl') {
@@ -42,7 +45,9 @@ export default function LanguageSwitcher({ variant = 'default' }) {
     const prefix = newLocale === 'en' ? '' : `/${newLocale}`;
     const bare = segments.length ? '/' + segments.join('/') : '';
     const newPath = (prefix + bare) || '/';
-    router.push(newPath);
+    // Full navigation rather than router.push: the client router may hold a
+    // prefetched redirect (e.g. '/' -> '/nl') captured under the old cookie.
+    window.location.assign(newPath);
   };
 
   if (variant === 'footer') {

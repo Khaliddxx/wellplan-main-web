@@ -27,19 +27,12 @@ export function middleware(request) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  // If user is on a locale route, set cookie and continue
+  // Locale-prefixed routes render as-is. Don't persist a preference here:
+  // merely landing on a /nl page (e.g. from search) is not a language choice,
+  // and a sticky 'nl' cookie would redirect every English URL back to /nl.
+  // The preference cookie is only written by the LanguageSwitcher.
   if (pathnameHasLocale) {
-    const locale = pathname.split('/')[1];
-    const response = NextResponse.next();
-    
-    // Set cookie to remember locale preference (1 year)
-    response.cookies.set('NEXT_LOCALE', locale, {
-      maxAge: 60 * 60 * 24 * 365,
-      path: '/',
-      sameSite: 'lax',
-    });
-    
-    return response;
+    return NextResponse.next();
   }
 
   // For non-locale routes, determine preferred locale
@@ -65,14 +58,9 @@ export function middleware(request) {
     const url = request.nextUrl.clone();
     url.pathname = `/${preferredLocale}${pathname}`;
     
-    const response = NextResponse.redirect(url);
-    // Set cookie so subsequent requests don't need geo lookup
-    response.cookies.set('NEXT_LOCALE', preferredLocale, {
-      maxAge: 60 * 60 * 24 * 365,
-      path: '/',
-      sameSite: 'lax',
-    });
-    return response;
+    // Don't set a cookie here: a geo guess must not harden into a
+    // preference that outlives an explicit choice.
+    return NextResponse.redirect(url);
   }
 
   // Default locale (en) - no redirect, just continue
