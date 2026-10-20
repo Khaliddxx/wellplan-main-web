@@ -26,9 +26,9 @@ export default function MeetTheFounder() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto p-8 sm:p-12 bg-white/[0.02] border border-white/10 rounded-3xl"
+        className="max-w-5xl mx-auto p-6 sm:p-12 overflow-hidden bg-white/[0.02] border border-white/10 rounded-3xl"
       >
-        <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[auto_minmax(0,1fr)] gap-8 md:gap-12 items-center min-w-0">
           <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto md:mx-0">
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#214CE5] to-purple-600 opacity-70 blur-md" aria-hidden="true" />
             <Image
@@ -41,23 +41,25 @@ export default function MeetTheFounder() {
             />
           </div>
 
-          <div className="text-center md:text-left">
+          <div className="min-w-0 text-center md:text-left [overflow-wrap:anywhere]">
             <p className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3">{t('eyebrow')}</p>
             <h2 id="founder-title" className="text-3xl sm:text-4xl font-black mb-2">{t('name')}</h2>
             <p className="text-gray-400 mb-6">
               {t('role')} · <a href={INSTAGRAM} {...ext} className="hover:text-white transition">{t('handle')}</a>
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start min-w-0">
               <a
                 href={SITE}
                 {...ext}
-                className="w-full sm:w-auto justify-center whitespace-nowrap inline-flex items-center gap-2 px-5 sm:px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition"
+                className="w-full max-w-full sm:w-auto min-w-0 justify-center text-center inline-flex items-center gap-2 px-5 sm:px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition"
               >
-                {t('button')}
+                <span className="sm:hidden">{t('buttonShort')}</span>
+                <span className="hidden sm:inline">{t('button')}</span>
                 <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
                 <span className="sr-only">{t('newTab')}</span>
               </a>
+              <div className="flex items-center justify-center gap-3 min-w-0">
               <a
                 href={INSTAGRAM}
                 {...ext}
@@ -75,9 +77,10 @@ export default function MeetTheFounder() {
                   </span>
                 </span>
               </a>
-              <a href={GITHUB} {...ext} aria-label={t('github')} className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 transition">
+              <a href={GITHUB} {...ext} aria-label={t('github')} className="flex-none w-11 h-11 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 transition">
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>
+              </div>
             </div>
           </div>
         </div>
