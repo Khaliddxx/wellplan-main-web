@@ -18,12 +18,12 @@ export default function HomePage() {
   return (
     <>
       <EnhancedHero />
+      <MeetTheFounder />
       <StickyFeatureScroll />
       <DiscoverPlatform />
       <IntegrationLogoCarousel />
       <ComparisonMatrix />
       <TestimonialCarousel />
-      <MeetTheFounder />
       <FinalCTA />
     </>
   );

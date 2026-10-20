@@ -21,7 +21,7 @@ export default function MeetTheFounder() {
   const ext = { target: '_blank', rel: 'noopener noreferrer' };
 
   return (
-    <section aria-labelledby="founder-title" className="py-20 px-4 sm:px-6">
+    <section aria-labelledby="founder-title" className="py-16 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -44,10 +44,9 @@ export default function MeetTheFounder() {
           <div className="text-center md:text-left">
             <p className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3">{t('eyebrow')}</p>
             <h2 id="founder-title" className="text-3xl sm:text-4xl font-black mb-2">{t('name')}</h2>
-            <p className="text-gray-400 mb-5">
+            <p className="text-gray-400 mb-6">
               {t('role')} · <a href={INSTAGRAM} {...ext} className="hover:text-white transition">{t('handle')}</a>
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto md:mx-0 mb-8">{t('bio')}</p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <a
@@ -83,7 +82,7 @@ export default function MeetTheFounder() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-white/10">
+        <div className="mt-8 pt-8 border-t border-white/10">
           <p className="text-xs text-slate-400 uppercase tracking-wide mb-4 text-center md:text-left">{t('reelsLabel')}</p>
           <ul className="grid grid-cols-4 gap-3 sm:gap-4 max-w-xl mx-auto md:mx-0">
             {REELS.map((r) => (
