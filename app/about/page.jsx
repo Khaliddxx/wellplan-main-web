@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Heart, Zap, Globe, ArrowRight } from 'lucide-react';
 import { useTranslations } from '@/app/lib/translations';
+import MeetTheFounder from '@/app/components/MeetTheFounder';
 
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
@@ -58,6 +59,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <MeetTheFounder />
 
       {/* Values */}
       <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-transparent to-[#0f0f15]">

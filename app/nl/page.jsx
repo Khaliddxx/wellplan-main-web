@@ -2,6 +2,7 @@ import EnhancedHero from '../components/EnhancedHero';
 import StickyFeatureScroll from '../components/StickyFeatureScroll';
 import ComparisonMatrix from '../components/ComparisonMatrix';
 import TestimonialCarousel from '../components/TestimonialCarousel';
+import MeetTheFounder from '../components/MeetTheFounder';
 import FinalCTA from '../components/FinalCTA';
 import IntegrationLogoCarousel from '../components/IntegrationLogoCarousel';
 import DiscoverPlatform from '../components/DiscoverPlatform';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <IntegrationLogoCarousel />
       <ComparisonMatrix />
       <TestimonialCarousel />
+      <MeetTheFounder />
       <FinalCTA />
     </>
   );
